@@ -1,0 +1,9 @@
+<wsdlParameters xmlns='http://microsoft.com/webReference/'>
+	<language>c#</language>
+	<protocol>Soap</protocol>
+	<nologo>true</nologo>
+	<sharetypes>false</sharetypes>
+	<webReferenceOptions>
+		<codeGenerationOptions>properties oldAsync</codeGenerationOptions>
+	</webReferenceOptions>
+</wsdlParameters>

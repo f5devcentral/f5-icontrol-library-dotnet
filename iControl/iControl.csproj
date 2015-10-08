@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35C536F8-D648-45EF-AA4C-8097FEAFAD56}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iControl</RootNamespace>
+    <AssemblyName>iControl</AssemblyName>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>DevCentral.pfx</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionInfo.cs" />
+    <Compile Include="Dialogs\ConnectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ConnectionDialog.designer.cs">
+      <DependentUpon>ConnectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ASM\ASMPolicyGroup.cs" />
+    <Compile Include="Interfaces\Classification\ClassificationApplication.cs" />
+    <Compile Include="Interfaces\Classification\ClassificationCategory.cs" />
+    <Compile Include="Interfaces\Classification\ClassificationCommon.cs" />
+    <Compile Include="Interfaces\Classification\ClassificationSignatureDefinition.cs" />
+    <Compile Include="Interfaces\Classification\ClassificationSignatureUpdateSchedule.cs" />
+    <Compile Include="Interfaces\Classification\ClassificationSignatureVersion.cs" />
+    <Compile Include="Interfaces\iCall\iCallCommon.cs" />
+    <Compile Include="Interfaces\iCall\iCallPeriodicHandler.cs" />
+    <Compile Include="Interfaces\iCall\iCallPerpetualHandler.cs" />
+    <Compile Include="Interfaces\iCall\iCallScript.cs" />
+    <Compile Include="Interfaces\iCall\iCallTriggeredHandler.cs" />
+    <Compile Include="Interfaces\iControlInterface.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interfaces.cs" />
+    <Compile Include="Interfaces\ASM\ASMCommon.cs" />
+    <Compile Include="Interfaces\ASM\ASMLoggingProfile.cs" />
+    <Compile Include="Interfaces\ASM\ASMObjectParams.cs" />
+    <Compile Include="Interfaces\ASM\ASMPolicy.cs" />
+    <Compile Include="Interfaces\ASM\ASMSystemConfiguration.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ASM\ASMWebApplication.cs" />
+    <Compile Include="Interfaces\ASM\ASMWebApplicationGroup.cs" />
+    <Compile Include="Interfaces\Common\Common.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBApplication.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBCommon.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBDataCenter.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBDNSSECKey.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBDNSSECZone.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBGlobals.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBLink.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBMonitor.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBPool.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBPoolMember.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBProberPool.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBRegion.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBRule.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBServer.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBTopology.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBVirtualServer.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBVirtualServerV2.cs" />
+    <Compile Include="Interfaces\GlobalLB\GlobalLBWideip.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBClass.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBCommon.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBDataGroupFile.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBDNSCache.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBDNSExpress.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBDNSGlobals.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBDNSServer.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBDNSTSIGKey.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBDNSZone.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBiFile.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBiFileFile.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBLSNPool.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBMonitor.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBNAT.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBNATV2.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBNodeAddress.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBNodeAddressV2.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBPool.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBPoolMember.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileAnalytics.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileAuth.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileClassification.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileClientSSL.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileDiameter.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileDiameterEndpoint.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileDNS.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileDNSLogging.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileFastHTTP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileFastL4.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileFIX.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileFTP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileHTTP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileHTTPClass.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileHttpCompression.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileICAP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileIIOP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileOneConnect.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfilePCP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfilePersistence.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfilePPTP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileRADIUS.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileRequestAdapt.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileRequestLogging.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileResponseAdapt.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileRTSP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileSCTP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileServerSSL.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileSIP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileSMTPS.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileSPDY.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileSPM.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileStream.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileTCP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileUDP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBPRofileUserStatistic.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileWebAcceleration.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileXML.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBRAMCacheInformation.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBRateClass.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBRule.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBSNAT.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBSNATPool.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBSNATPoolMember.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBSNATTranslationAddress.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBSNATTranslationAddressV2.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBVirtualAddress.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBVirtualAddressV2.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBVirtualServer.cs" />
+    <Compile Include="Interfaces\Log\LogCommon.cs" />
+    <Compile Include="Interfaces\Log\LogDestinationArcSight.cs" />
+    <Compile Include="Interfaces\Log\LogDestinationIPFIX.cs" />
+    <Compile Include="Interfaces\Log\LogDestinationLocalSyslog.cs" />
+    <Compile Include="Interfaces\Log\LogDestinationRemoteHighSpeedLog.cs" />
+    <Compile Include="Interfaces\Log\LogDestinationRemoteSyslog.cs" />
+    <Compile Include="Interfaces\Log\LogDestinationSplunk.cs" />
+    <Compile Include="Interfaces\Log\LogFilter.cs" />
+    <Compile Include="Interfaces\Log\LogPublisher.cs" />
+    <Compile Include="Interfaces\LTConfig\LTConfigClass.cs" />
+    <Compile Include="Interfaces\LTConfig\LTConfigCommon.cs" />
+    <Compile Include="Interfaces\LTConfig\LTConfigField.cs" />
+    <Compile Include="Interfaces\Management\ManagementApplicationPresentationScript.cs" />
+    <Compile Include="Interfaces\Management\ManagementApplicationService.cs" />
+    <Compile Include="Interfaces\Management\ManagementApplicationTemplate.cs" />
+    <Compile Include="Interfaces\Management\ManagementCCLDAPConfiguration.cs" />
+    <Compile Include="Interfaces\Management\ManagementCertLDAPConfiguration.cs" />
+    <Compile Include="Interfaces\Management\ManagementChangeControl.cs" />
+    <Compile Include="Interfaces\Management\ManagementCLIScript.cs" />
+    <Compile Include="Interfaces\Management\ManagementCommon.cs" />
+    <Compile Include="Interfaces\Management\ManagementCRLDPConfiguration.cs" />
+    <Compile Include="Interfaces\Management\ManagementCRLDPServer.cs" />
+    <Compile Include="Interfaces\Management\ManagementDBVariable.cs" />
+    <Compile Include="Interfaces\Management\ManagementDevice.cs" />
+    <Compile Include="Interfaces\Management\ManagementDeviceGroup.cs" />
+    <Compile Include="Interfaces\Management\ManagementEM.cs" />
+    <Compile Include="Interfaces\Management\ManagementEventNotification.cs" />
+    <Compile Include="Interfaces\Management\ManagementEventSubscription.cs" />
+    <Compile Include="Interfaces\Management\ManagementFeatureModule.cs" />
+    <Compile Include="Interfaces\Management\ManagementFolder.cs" />
+    <Compile Include="Interfaces\Management\ManagementGlobals.cs" />
+    <Compile Include="Interfaces\Management\ManagementKeyCertificate.cs" />
+    <Compile Include="Interfaces\Management\ManagementLDAPConfiguration.cs" />
+    <Compile Include="Interfaces\Management\ManagementLicenseAdministration.cs" />
+    <Compile Include="Interfaces\Management\ManagementNamed.cs" />
+    <Compile Include="Interfaces\Management\ManagementOCSPConfiguration.cs" />
+    <Compile Include="Interfaces\Management\ManagementOCSPResponder.cs" />
+    <Compile Include="Interfaces\Management\ManagementPartition.cs" />
+    <Compile Include="Interfaces\Management\ManagementProvision.cs" />
+    <Compile Include="Interfaces\Management\ManagementRadiusConfiguration.cs" />
+    <Compile Include="Interfaces\Management\ManagementRadiusServer.cs" />
+    <Compile Include="Interfaces\Management\ManagementResourceRecord.cs" />
+    <Compile Include="Interfaces\Management\ManagementSFlowDataSource.cs" />
+    <Compile Include="Interfaces\Management\ManagementSFlowGlobals.cs" />
+    <Compile Include="Interfaces\Management\ManagementSFlowReceiver.cs" />
+    <Compile Include="Interfaces\Management\ManagementSMTPConfiguration.cs" />
+    <Compile Include="Interfaces\Management\ManagementSNMPConfiguration.cs" />
+    <Compile Include="Interfaces\Management\ManagementTACACSConfiguration.cs" />
+    <Compile Include="Interfaces\Management\ManagementTMOSModule.cs" />
+    <Compile Include="Interfaces\Management\ManagementTrafficGroup.cs" />
+    <Compile Include="Interfaces\Management\ManagementTrust.cs" />
+    <Compile Include="Interfaces\Management\ManagementUserManagement.cs" />
+    <Compile Include="Interfaces\Management\ManagementView.cs" />
+    <Compile Include="Interfaces\Management\ManagementZone.cs" />
+    <Compile Include="Interfaces\Management\ManagementZoneRunner.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingAdminIP.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingArp.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingBWControllerPolicy.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingCommon.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingInterfaces.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingIPsecIkeDaemon.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingIPsecIkePeer.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingIPsecManualSecurityAssociation.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingIPsecPolicy.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingIPsecTrafficSelector.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingiSessionAdvertisedRoute.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingiSessionAdvertisedRouteV2.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingiSessionDatastor.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingiSessionDeduplication.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingiSessionLocalInterface.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingiSessionPeerDiscovery.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingiSessionRemoteInterface.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingiSessionRemoteInterfaceV2.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingLLDPGlobals.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingPacketFilter.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingPacketFilterGlobals.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingPortMirror.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingProfileFEC.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingProfileGRE.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingProfileIPIP.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingProfileIPsec.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingProfileV6RD.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingProfileVXLAN.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingProfileWCCPGRE.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingRouteDomain.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingRouteDomainV2.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingRouterAdvertisement.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingRouteTable.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingRouteTableV2.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingSelfIP.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingSelfIPPortLockdown.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingSelfIPV2.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingSTPGlobals.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingSTPInstance.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingSTPInstanceV2.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingTrunk.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingTunnel.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingVLAN.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingVLANGroup.cs" />
+    <Compile Include="Interfaces\PEM\PEMCommon.cs" />
+    <Compile Include="Interfaces\PEM\PEMFormatScript.cs" />
+    <Compile Include="Interfaces\PEM\PEMForwardingEndpoint.cs" />
+    <Compile Include="Interfaces\PEM\PEMInterceptionEndpoint.cs" />
+    <Compile Include="Interfaces\PEM\PEMListener.cs" />
+    <Compile Include="Interfaces\PEM\PEMPolicy.cs" />
+    <Compile Include="Interfaces\PEM\PEMServiceChainEndpoint.cs" />
+    <Compile Include="Interfaces\PEM\PEMSubscriber.cs" />
+    <Compile Include="Interfaces\Security\SecurityCommon.cs" />
+    <Compile Include="Interfaces\Security\SecurityDoSDevice.cs" />
+    <Compile Include="Interfaces\Security\SecurityDoSWhitelist.cs" />
+    <Compile Include="Interfaces\Security\SecurityFirewallAddressList.cs" />
+    <Compile Include="Interfaces\Security\SecurityFirewallGlobalAdminIPRuleList.cs" />
+    <Compile Include="Interfaces\Security\SecurityFirewallGlobalRuleList.cs" />
+    <Compile Include="Interfaces\Security\SecurityFirewallPolicy.cs" />
+    <Compile Include="Interfaces\Security\SecurityFirewallPortList.cs" />
+    <Compile Include="Interfaces\Security\SecurityFirewallRuleList.cs" />
+    <Compile Include="Interfaces\Security\SecurityFirewallWeeklySchedule.cs" />
+    <Compile Include="Interfaces\Security\SecurityIPIntelligenceBlacklistCategory.cs" />
+    <Compile Include="Interfaces\Security\SecurityIPIntelligenceFeedList.cs" />
+    <Compile Include="Interfaces\Security\SecurityIPIntelligenceGlobalPolicy.cs" />
+    <Compile Include="Interfaces\Security\SecurityIPIntelligencePolicy.cs" />
+    <Compile Include="Interfaces\Security\SecurityLogProfile.cs" />
+    <Compile Include="Interfaces\Security\SecurityProfileDNSSecurity.cs" />
+    <Compile Include="Interfaces\Security\SecurityProfileDoS.cs" />
+    <Compile Include="Interfaces\Security\SecurityProfileIPIntelligence.cs" />
+    <Compile Include="Interfaces\System\SystemCertificateRevocationListFile.cs" />
+    <Compile Include="Interfaces\System\SystemCluster.cs" />
+    <Compile Include="Interfaces\System\SystemCommon.cs" />
+    <Compile Include="Interfaces\System\SystemConfigSync.cs" />
+    <Compile Include="Interfaces\System\SystemConnections.cs" />
+    <Compile Include="Interfaces\System\SystemDisk.cs" />
+    <Compile Include="Interfaces\System\SystemExternalMonitorFile.cs" />
+    <Compile Include="Interfaces\System\SystemFailover.cs" />
+    <Compile Include="Interfaces\System\SystemGeoIP.cs" />
+    <Compile Include="Interfaces\System\SystemHAGroup.cs" />
+    <Compile Include="Interfaces\System\SystemHAStatus.cs" />
+    <Compile Include="Interfaces\System\SystemInet.cs" />
+    <Compile Include="Interfaces\System\SystemInternal.cs" />
+    <Compile Include="Interfaces\System\SystemPerformanceSFlow.cs" />
+    <Compile Include="Interfaces\System\SystemServices.cs" />
+    <Compile Include="Interfaces\System\SystemSession.cs" />
+    <Compile Include="Interfaces\System\SystemSoftwareManagement.cs" />
+    <Compile Include="Interfaces\System\SystemStatistics.cs" />
+    <Compile Include="Interfaces\System\SystemSystemInfo.cs" />
+    <Compile Include="Interfaces\System\SystemVCMP.cs" />
+    <Compile Include="Interfaces\WebAccelerator\WebAcceleratorApplications.cs" />
+    <Compile Include="Interfaces\WebAccelerator\WebAcceleratorCommon.cs" />
+    <Compile Include="Interfaces\WebAccelerator\WebAcceleratorPolicies.cs" />
+    <Compile Include="Interfaces\WebAccelerator\WebAcceleratorProxyMessage.cs" />
+    <Compile Include="Interfaces\WebServiceWrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\NetworkAddressComparer.cs" />
+    <Compile Include="Utility\Configuration.cs" />
+    <Compile Include="Utility\Converter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\ConnectionDialog.resx">
+      <DependentUpon>ConnectionDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DevCentral.pfx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
