@@ -12,10 +12,12 @@ namespace iControl {
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="System.SoftwareManagementBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemSoftwareManagementSoftwareStatus))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemSoftwareManagementsoftwareBlockDeviceHotfix))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemSoftwareManagementrepositoryImageID))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemSoftwareManagementsoftwareBlockDeviceImage))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemSoftwareManagementHotFixInformation))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemSoftwareManagementInstallationID))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemSoftwareManagementsoftwareRepositoryHotfix))]
-	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemSoftwareManagementrepositoryImageID))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemSoftwareManagementsoftwareRepositoryImage))]
 	public partial class SystemSoftwareManagement : iControlInterface {
 		public SystemSoftwareManagement() {
@@ -121,6 +123,90 @@ namespace iControl {
 	public SystemSoftwareManagementSoftwareStatus [] Endget_all_software_status(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((SystemSoftwareManagementSoftwareStatus [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_block_device_software_hotfix
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/SoftwareManagement", 
+		RequestNamespace="urn:iControl:System/SoftwareManagement", ResponseNamespace="urn:iControl:System/SoftwareManagement")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemSoftwareManagementsoftwareBlockDeviceHotfix [] get_block_device_software_hotfix(
+		SystemSoftwareManagementrepositoryImageID [] imageIDs
+	) {
+		object [] results = this.Invoke("get_block_device_software_hotfix", new object [] {
+				imageIDs});
+		return ((SystemSoftwareManagementsoftwareBlockDeviceHotfix [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_block_device_software_hotfix(SystemSoftwareManagementrepositoryImageID [] imageIDs, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_block_device_software_hotfix", new object[] {
+			imageIDs}, callback, asyncState);
+	}
+	public SystemSoftwareManagementsoftwareBlockDeviceHotfix [] Endget_block_device_software_hotfix(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemSoftwareManagementsoftwareBlockDeviceHotfix [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_block_device_software_hotfix_list
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/SoftwareManagement", 
+		RequestNamespace="urn:iControl:System/SoftwareManagement", ResponseNamespace="urn:iControl:System/SoftwareManagement")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemSoftwareManagementrepositoryImageID [] get_block_device_software_hotfix_list(
+
+	) {
+		object [] results = this.Invoke("get_block_device_software_hotfix_list", new object [0]);
+		return ((SystemSoftwareManagementrepositoryImageID [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_block_device_software_hotfix_list(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_block_device_software_hotfix_list", new object[0], callback, asyncState);
+	}
+	public SystemSoftwareManagementrepositoryImageID [] Endget_block_device_software_hotfix_list(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemSoftwareManagementrepositoryImageID [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_block_device_software_image
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/SoftwareManagement", 
+		RequestNamespace="urn:iControl:System/SoftwareManagement", ResponseNamespace="urn:iControl:System/SoftwareManagement")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemSoftwareManagementsoftwareBlockDeviceImage [] get_block_device_software_image(
+		SystemSoftwareManagementrepositoryImageID [] imageIDs
+	) {
+		object [] results = this.Invoke("get_block_device_software_image", new object [] {
+				imageIDs});
+		return ((SystemSoftwareManagementsoftwareBlockDeviceImage [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_block_device_software_image(SystemSoftwareManagementrepositoryImageID [] imageIDs, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_block_device_software_image", new object[] {
+			imageIDs}, callback, asyncState);
+	}
+	public SystemSoftwareManagementsoftwareBlockDeviceImage [] Endget_block_device_software_image(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemSoftwareManagementsoftwareBlockDeviceImage [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_block_device_software_image_list
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/SoftwareManagement", 
+		RequestNamespace="urn:iControl:System/SoftwareManagement", ResponseNamespace="urn:iControl:System/SoftwareManagement")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemSoftwareManagementrepositoryImageID [] get_block_device_software_image_list(
+
+	) {
+		object [] results = this.Invoke("get_block_device_software_image_list", new object [0]);
+		return ((SystemSoftwareManagementrepositoryImageID [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_block_device_software_image_list(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_block_device_software_image_list", new object[0], callback, asyncState);
+	}
+	public SystemSoftwareManagementrepositoryImageID [] Endget_block_device_software_image_list(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemSoftwareManagementrepositoryImageID [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -573,6 +659,16 @@ namespace iControl {
 	// Enums
 	//=======================================================================
 
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.SoftwareManagement.SoftwareBlockDeviceAgent", Namespace = "urn:iControl")]
+	public enum SystemSoftwareManagementSoftwareBlockDeviceAgent
+	{
+		DEVICE_AGENT_VCMP_VIRTUAL_CDROM,
+		DEVICE_AGENT_UNKNOWN,
+	}
+
 	//=======================================================================
 	// Structs
 	//=======================================================================
@@ -716,6 +812,164 @@ namespace iControl {
 		{
 			get { return this.filenameField; }
 			set { this.filenameField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.SoftwareManagement.softwareBlockDeviceHotfix", Namespace = "urn:iControl")]
+	public partial class SystemSoftwareManagementsoftwareBlockDeviceHotfix
+	{
+		private long chassis_slot_idField;
+		public long chassis_slot_id
+		{
+			get { return this.chassis_slot_idField; }
+			set { this.chassis_slot_idField = value; }
+		}
+		private string filenameField;
+		public string filename
+		{
+			get { return this.filenameField; }
+			set { this.filenameField = value; }
+		}
+		private string productField;
+		public string product
+		{
+			get { return this.productField; }
+			set { this.productField = value; }
+		}
+		private string versionField;
+		public string version
+		{
+			get { return this.versionField; }
+			set { this.versionField = value; }
+		}
+		private string buildField;
+		public string build
+		{
+			get { return this.buildField; }
+			set { this.buildField = value; }
+		}
+		private string chksumField;
+		public string chksum
+		{
+			get { return this.chksumField; }
+			set { this.chksumField = value; }
+		}
+		private bool verifiedField;
+		public bool verified
+		{
+			get { return this.verifiedField; }
+			set { this.verifiedField = value; }
+		}
+		private string hotfix_idField;
+		public string hotfix_id
+		{
+			get { return this.hotfix_idField; }
+			set { this.hotfix_idField = value; }
+		}
+		private string hotfix_titleField;
+		public string hotfix_title
+		{
+			get { return this.hotfix_titleField; }
+			set { this.hotfix_titleField = value; }
+		}
+		private SystemSoftwareManagementSoftwareBlockDeviceAgent device_agentField;
+		public SystemSoftwareManagementSoftwareBlockDeviceAgent device_agent
+		{
+			get { return this.device_agentField; }
+			set { this.device_agentField = value; }
+		}
+		private string resource_idField;
+		public string resource_id
+		{
+			get { return this.resource_idField; }
+			set { this.resource_idField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.SoftwareManagement.softwareBlockDeviceImage", Namespace = "urn:iControl")]
+	public partial class SystemSoftwareManagementsoftwareBlockDeviceImage
+	{
+		private long chassis_slot_idField;
+		public long chassis_slot_id
+		{
+			get { return this.chassis_slot_idField; }
+			set { this.chassis_slot_idField = value; }
+		}
+		private string filenameField;
+		public string filename
+		{
+			get { return this.filenameField; }
+			set { this.filenameField = value; }
+		}
+		private string productField;
+		public string product
+		{
+			get { return this.productField; }
+			set { this.productField = value; }
+		}
+		private string versionField;
+		public string version
+		{
+			get { return this.versionField; }
+			set { this.versionField = value; }
+		}
+		private string buildField;
+		public string build
+		{
+			get { return this.buildField; }
+			set { this.buildField = value; }
+		}
+		private string chksumField;
+		public string chksum
+		{
+			get { return this.chksumField; }
+			set { this.chksumField = value; }
+		}
+		private bool verifiedField;
+		public bool verified
+		{
+			get { return this.verifiedField; }
+			set { this.verifiedField = value; }
+		}
+		private string build_dateField;
+		public string build_date
+		{
+			get { return this.build_dateField; }
+			set { this.build_dateField = value; }
+		}
+		private string last_modifiedField;
+		public string last_modified
+		{
+			get { return this.last_modifiedField; }
+			set { this.last_modifiedField = value; }
+		}
+		private string file_sizeField;
+		public string file_size
+		{
+			get { return this.file_sizeField; }
+			set { this.file_sizeField = value; }
+		}
+		private SystemSoftwareManagementSoftwareBlockDeviceAgent device_agentField;
+		public SystemSoftwareManagementSoftwareBlockDeviceAgent device_agent
+		{
+			get { return this.device_agentField; }
+			set { this.device_agentField = value; }
+		}
+		private string resource_idField;
+		public string resource_id
+		{
+			get { return this.resource_idField; }
+			set { this.resource_idField = value; }
 		}
 	};
 

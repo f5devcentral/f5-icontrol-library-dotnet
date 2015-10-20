@@ -10,6 +10,17 @@ namespace iControl
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Log.LogProtocol", Namespace = "urn:iControl")]
+	public enum LogLogProtocol
+	{
+		LOG_PROTOCOL_UNKNOWN,
+		LOG_PROTOCOL_TCP,
+		LOG_PROTOCOL_UDP,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Log.SyslogFacility", Namespace = "urn:iControl")]
 	public enum LogSyslogFacility
 	{

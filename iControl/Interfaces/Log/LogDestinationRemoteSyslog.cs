@@ -49,6 +49,35 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// create_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Log/DestinationRemoteSyslog", 
+		RequestNamespace="urn:iControl:Log/DestinationRemoteSyslog", ResponseNamespace="urn:iControl:Log/DestinationRemoteSyslog")]
+	public void create_v2(
+		string [] destinations,
+		LogSyslogFacility [] facilities,
+		LogSyslogLevel [] levels,
+		string [] forwarding_destinations
+	) {
+		this.Invoke("create_v2", new object [] {
+				destinations,
+				facilities,
+				levels,
+				forwarding_destinations});
+
+	}
+	public System.IAsyncResult Begincreate_v2(string [] destinations,LogSyslogFacility [] facilities,LogSyslogLevel [] levels,string [] forwarding_destinations, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("create_v2", new object[] {
+			destinations,
+			facilities,
+			levels,
+			forwarding_destinations}, callback, asyncState);
+	}
+	public void Endcreate_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// delete_all_remote_syslog_destinations
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Log/DestinationRemoteSyslog", 
@@ -172,6 +201,28 @@ namespace iControl {
 	public LogSyslogFormat [] Endget_format(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LogSyslogFormat [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_forwarding_destination
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Log/DestinationRemoteSyslog", 
+		RequestNamespace="urn:iControl:Log/DestinationRemoteSyslog", ResponseNamespace="urn:iControl:Log/DestinationRemoteSyslog")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_forwarding_destination(
+		string [] destinations
+	) {
+		object [] results = this.Invoke("get_forwarding_destination", new object [] {
+				destinations});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_forwarding_destination(string [] destinations, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_forwarding_destination", new object[] {
+			destinations}, callback, asyncState);
+	}
+	public string [] Endget_forwarding_destination(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -327,6 +378,29 @@ namespace iControl {
 			formats}, callback, asyncState);
 	}
 	public void Endset_format(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_forwarding_destination
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Log/DestinationRemoteSyslog", 
+		RequestNamespace="urn:iControl:Log/DestinationRemoteSyslog", ResponseNamespace="urn:iControl:Log/DestinationRemoteSyslog")]
+	public void set_forwarding_destination(
+		string [] destinations,
+		string [] forwarding_destinations
+	) {
+		this.Invoke("set_forwarding_destination", new object [] {
+				destinations,
+				forwarding_destinations});
+
+	}
+	public System.IAsyncResult Beginset_forwarding_destination(string [] destinations,string [] forwarding_destinations, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_forwarding_destination", new object[] {
+			destinations,
+			forwarding_destinations}, callback, asyncState);
+	}
+	public void Endset_forwarding_destination(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

@@ -13,6 +13,8 @@ namespace iControl {
 	[System.Web.Services.WebServiceBindingAttribute(Name="LocalLB.ProfileOneConnectBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileOneConnectProfileOneConnectStatistics))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileOneConnectProfileLimitType))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileEnabledState))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileIPAddress))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStatisticsByVirtual))]
 	public partial class LocalLBProfileOneConnect : iControlInterface {
@@ -168,6 +170,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_limit_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileOneConnect", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileOneConnect", ResponseNamespace="urn:iControl:LocalLB/ProfileOneConnect")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileOneConnectProfileLimitType [] get_limit_type(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_limit_type", new object [] {
+				profile_names});
+		return ((LocalLBProfileOneConnectProfileLimitType [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_limit_type(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_limit_type", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileOneConnectProfileLimitType [] Endget_limit_type(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileOneConnectProfileLimitType [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_list
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileOneConnect", 
@@ -251,6 +275,28 @@ namespace iControl {
 	public LocalLBProfileULong [] Endget_maximum_reuse(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_share_pools_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileOneConnect", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileOneConnect", ResponseNamespace="urn:iControl:LocalLB/ProfileOneConnect")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_share_pools_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_share_pools_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_share_pools_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_share_pools_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_share_pools_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -501,6 +547,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_limit_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileOneConnect", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileOneConnect", ResponseNamespace="urn:iControl:LocalLB/ProfileOneConnect")]
+	public void set_limit_type(
+		string [] profile_names,
+		LocalLBProfileOneConnectProfileLimitType [] limit_types
+	) {
+		this.Invoke("set_limit_type", new object [] {
+				profile_names,
+				limit_types});
+
+	}
+	public System.IAsyncResult Beginset_limit_type(string [] profile_names,LocalLBProfileOneConnectProfileLimitType [] limit_types, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_limit_type", new object[] {
+			profile_names,
+			limit_types}, callback, asyncState);
+	}
+	public void Endset_limit_type(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_maximum_age
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileOneConnect", 
@@ -570,6 +639,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_share_pools_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileOneConnect", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileOneConnect", ResponseNamespace="urn:iControl:LocalLB/ProfileOneConnect")]
+	public void set_share_pools_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_share_pools_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_share_pools_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_share_pools_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_share_pools_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_source_mask
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileOneConnect", 
@@ -597,9 +689,43 @@ namespace iControl {
 	// Enums
 	//=======================================================================
 
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileOneConnect.LimitType", Namespace = "urn:iControl")]
+	public enum LocalLBProfileOneConnectLimitType
+	{
+		ONECONNECT_LIMIT_TYPE_UNKNOWN,
+		ONECONNECT_LIMIT_TYPE_NONE,
+		ONECONNECT_LIMIT_TYPE_IDLE,
+		ONECONNECT_LIMIT_TYPE_STRICT,
+	}
+
 	//=======================================================================
 	// Structs
 	//=======================================================================
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileOneConnect.ProfileLimitType", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileOneConnectProfileLimitType
+	{
+		private LocalLBProfileOneConnectLimitType valueField;
+		public LocalLBProfileOneConnectLimitType value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
 
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]

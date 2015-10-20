@@ -71,6 +71,7 @@ namespace iControl
 		HARDWARE_BASE_BOARD,
 		HARDWARE_PSU,
 		HARDWARE_COPROCESSOR,
+		HARDWARE_PHDISK,
 	}
 
 	/// <remarks/>
@@ -84,6 +85,18 @@ namespace iControl
 		PS_INPUT_STATE,
 		PS_OUTPUT_STATE,
 		PS_FAN_STATE,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.SystemProfileType", Namespace = "urn:iControl")]
+	public enum SystemSystemProfileType
+	{
+		PROFILE_TYPE_UNKNOWN,
+		PROFILE_TYPE_TCP,
+		PROFILE_TYPE_SERVER_SSL,
+		PROFILE_TYPE_CLIENT_SSL,
 	}
 
 	/// <remarks/>
@@ -825,6 +838,28 @@ namespace iControl
 		{
 			get { return this.annunciator_board_part_revisionField; }
 			set { this.annunciator_board_part_revisionField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.SystemProfileAttribute", Namespace = "urn:iControl")]
+	public partial class SystemSystemProfileAttribute
+	{
+		private string profile_nameField;
+		public string profile_name
+		{
+			get { return this.profile_nameField; }
+			set { this.profile_nameField = value; }
+		}
+		private SystemSystemProfileType profile_typeField;
+		public SystemSystemProfileType profile_type
+		{
+			get { return this.profile_typeField; }
+			set { this.profile_typeField = value; }
 		}
 	};
 

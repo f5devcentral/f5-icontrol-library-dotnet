@@ -669,6 +669,7 @@ namespace iControl {
 		APPV_OWNER_AVR,
 		APPV_OWNER_AFM,
 		APPV_OWNER_SWG,
+		APPV_OWNER_ASM,
 	}
 
 	/// <remarks/>

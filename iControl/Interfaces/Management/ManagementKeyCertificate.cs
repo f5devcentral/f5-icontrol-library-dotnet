@@ -13,6 +13,7 @@ namespace iControl {
 	[System.Web.Services.WebServiceBindingAttribute(Name="Management.KeyCertificateBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateX509Data))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificate))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateExtension))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateRequest))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateDetail))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateDetail_v2))]
@@ -302,6 +303,41 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// certificate_generate_with_extensions
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/KeyCertificate", 
+		RequestNamespace="urn:iControl:Management/KeyCertificate", ResponseNamespace="urn:iControl:Management/KeyCertificate")]
+	public void certificate_generate_with_extensions(
+		ManagementKeyCertificateManagementModeType mode,
+		ManagementKeyCertificateCertificate [] certs,
+		ManagementKeyCertificateX509Data [] x509_data,
+		long [] lifetime_days,
+		ManagementKeyCertificateCertificateExtension [] [] extensions,
+		bool overwrite
+	) {
+		this.Invoke("certificate_generate_with_extensions", new object [] {
+				mode,
+				certs,
+				x509_data,
+				lifetime_days,
+				extensions,
+				overwrite});
+
+	}
+	public System.IAsyncResult Begincertificate_generate_with_extensions(ManagementKeyCertificateManagementModeType mode,ManagementKeyCertificateCertificate [] certs,ManagementKeyCertificateX509Data [] x509_data,long [] lifetime_days,ManagementKeyCertificateCertificateExtension [] [] extensions,bool overwrite, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("certificate_generate_with_extensions", new object[] {
+			mode,
+			certs,
+			x509_data,
+			lifetime_days,
+			extensions,
+			overwrite}, callback, asyncState);
+	}
+	public void Endcertificate_generate_with_extensions(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// certificate_import_from_file
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/KeyCertificate", 
@@ -462,6 +498,38 @@ namespace iControl {
 			overwrite}, callback, asyncState);
 	}
 	public void Endcertificate_request_generate(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// certificate_request_generate_with_extensions
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/KeyCertificate", 
+		RequestNamespace="urn:iControl:Management/KeyCertificate", ResponseNamespace="urn:iControl:Management/KeyCertificate")]
+	public void certificate_request_generate_with_extensions(
+		ManagementKeyCertificateManagementModeType mode,
+		ManagementKeyCertificateCertificateRequest [] csrs,
+		ManagementKeyCertificateX509Data [] x509_data,
+		ManagementKeyCertificateCertificateExtension [] [] extensions,
+		bool overwrite
+	) {
+		this.Invoke("certificate_request_generate_with_extensions", new object [] {
+				mode,
+				csrs,
+				x509_data,
+				extensions,
+				overwrite});
+
+	}
+	public System.IAsyncResult Begincertificate_request_generate_with_extensions(ManagementKeyCertificateManagementModeType mode,ManagementKeyCertificateCertificateRequest [] csrs,ManagementKeyCertificateX509Data [] x509_data,ManagementKeyCertificateCertificateExtension [] [] extensions,bool overwrite, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("certificate_request_generate_with_extensions", new object[] {
+			mode,
+			csrs,
+			x509_data,
+			extensions,
+			overwrite}, callback, asyncState);
+	}
+	public void Endcertificate_request_generate_with_extensions(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -1418,6 +1486,17 @@ namespace iControl {
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Management.KeyCertificate.CertificateExtensionType", Namespace = "urn:iControl")]
+	public enum ManagementKeyCertificateCertificateExtensionType
+	{
+		CERTIFICATE_EXTENSION_UNKNOWN,
+		CERTIFICATE_EXTENSION_NONE,
+		CERTIFICATE_EXTENSION_SAN,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Management.KeyCertificate.CertificateType", Namespace = "urn:iControl")]
 	public enum ManagementKeyCertificateCertificateType
 	{
@@ -1658,6 +1737,28 @@ namespace iControl {
 		{
 			get { return this.curve_nameField; }
 			set { this.curve_nameField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Management.KeyCertificate.CertificateExtension", Namespace = "urn:iControl")]
+	public partial class ManagementKeyCertificateCertificateExtension
+	{
+		private ManagementKeyCertificateCertificateExtensionType extension_typeField;
+		public ManagementKeyCertificateCertificateExtensionType extension_type
+		{
+			get { return this.extension_typeField; }
+			set { this.extension_typeField = value; }
+		}
+		private string valueField;
+		public string value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
 		}
 	};
 

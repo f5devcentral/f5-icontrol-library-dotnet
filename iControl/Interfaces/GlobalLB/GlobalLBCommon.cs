@@ -48,6 +48,21 @@ namespace iControl
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.DNSReturnCode", Namespace = "urn:iControl")]
+	public enum GlobalLBDNSReturnCode
+	{
+		RETURN_CODE_UNKNOWN,
+		RETURN_CODE_NO_ERROR,
+		RETURN_CODE_FORMAT_ERROR,
+		RETURN_CODE_SERVER_FAILURE,
+		RETURN_CODE_NON_EXISTENT_DOMAIN,
+		RETURN_CODE_NOT_IMPLEMENTED,
+		RETURN_CODE_REFUSED,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.DomainNameCheckMode", Namespace = "urn:iControl")]
 	public enum GlobalLBDomainNameCheckMode
 	{
@@ -61,6 +76,21 @@ namespace iControl
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.GTMQueryType", Namespace = "urn:iControl")]
+	public enum GlobalLBGTMQueryType
+	{
+		GTM_QUERY_TYPE_UNKNOWN,
+		GTM_QUERY_TYPE_A,
+		GTM_QUERY_TYPE_CNAME,
+		GTM_QUERY_TYPE_MX,
+		GTM_QUERY_TYPE_AAAA,
+		GTM_QUERY_TYPE_SRV,
+		GTM_QUERY_TYPE_NAPTR,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.HardwareSecurityModuleType", Namespace = "urn:iControl")]
 	public enum GlobalLBHardwareSecurityModuleType
 	{
@@ -68,6 +98,21 @@ namespace iControl
 		HARDWARE_SECURITY_MODULE_TYPE_NONE,
 		HARDWARE_SECURITY_MODULE_TYPE_INTERNAL,
 		HARDWARE_SECURITY_MODULE_TYPE_EXTERNAL,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.LBDecisionLogVerbosity", Namespace = "urn:iControl")]
+	public enum GlobalLBLBDecisionLogVerbosity
+	{
+		LB_DECISION_LOG_UNKNOWN,
+		LB_DECISION_LOG_NONE,
+		LB_DECISION_POOL_SELECTION,
+		LB_DECISION_POOL_TRAVERSAL,
+		LB_DECISION_PM_SELECTION,
+		LB_DECISION_PM_TRAVERSAL,
+		LB_DECISION_LOG_ALL,
 	}
 
 	/// <remarks/>
@@ -358,6 +403,28 @@ namespace iControl
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.PoolID", Namespace = "urn:iControl")]
+	public partial class GlobalLBPoolID
+	{
+		private string pool_nameField;
+		public string pool_name
+		{
+			get { return this.pool_nameField; }
+			set { this.pool_nameField = value; }
+		}
+		private GlobalLBGTMQueryType pool_typeField;
+		public GlobalLBGTMQueryType pool_type
+		{
+			get { return this.pool_typeField; }
+			set { this.pool_typeField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.VirtualServerDefinition", Namespace = "urn:iControl")]
 	public partial class GlobalLBVirtualServerDefinition
 	{
@@ -400,6 +467,28 @@ namespace iControl
 		{
 			get { return this.serverField; }
 			set { this.serverField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.WideIPID", Namespace = "urn:iControl")]
+	public partial class GlobalLBWideIPID
+	{
+		private string wideip_nameField;
+		public string wideip_name
+		{
+			get { return this.wideip_nameField; }
+			set { this.wideip_nameField = value; }
+		}
+		private GlobalLBGTMQueryType wideip_typeField;
+		public GlobalLBGTMQueryType wideip_type
+		{
+			get { return this.wideip_typeField; }
+			set { this.wideip_typeField = value; }
 		}
 	};
 

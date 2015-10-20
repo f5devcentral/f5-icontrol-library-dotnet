@@ -200,6 +200,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_zone_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/Zone", 
+		RequestNamespace="urn:iControl:Management/Zone", ResponseNamespace="urn:iControl:Management/Zone")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public ManagementZoneInfo [] get_zone_v2(
+		ManagementViewZone [] view_zones
+	) {
+		object [] results = this.Invoke("get_zone_v2", new object [] {
+				view_zones});
+		return ((ManagementZoneInfo [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_zone_v2(ManagementViewZone [] view_zones, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_zone_v2", new object[] {
+			view_zones}, callback, asyncState);
+	}
+	public ManagementZoneInfo [] Endget_zone_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((ManagementZoneInfo [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// set_zone_option
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/Zone", 

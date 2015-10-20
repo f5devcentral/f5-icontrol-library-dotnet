@@ -217,6 +217,50 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_customer_id
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/VLAN", 
+		RequestNamespace="urn:iControl:Networking/VLAN", ResponseNamespace="urn:iControl:Networking/VLAN")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_customer_id(
+		string [] vlans
+	) {
+		object [] results = this.Invoke("get_customer_id", new object [] {
+				vlans});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_customer_id(string [] vlans, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_customer_id", new object[] {
+			vlans}, callback, asyncState);
+	}
+	public string [] Endget_customer_id(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_dag_round_robin_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/VLAN", 
+		RequestNamespace="urn:iControl:Networking/VLAN", ResponseNamespace="urn:iControl:Networking/VLAN")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState [] get_dag_round_robin_state(
+		string [] vlans
+	) {
+		object [] results = this.Invoke("get_dag_round_robin_state", new object [] {
+				vlans});
+		return ((CommonEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_dag_round_robin_state(string [] vlans, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_dag_round_robin_state", new object[] {
+			vlans}, callback, asyncState);
+	}
+	public CommonEnabledState [] Endget_dag_round_robin_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_description
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/VLAN", 
@@ -432,6 +476,31 @@ namespace iControl {
 	public NetworkingVLANMemberEntry [] [] Endget_member(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((NetworkingVLANMemberEntry [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_member_tag_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/VLAN", 
+		RequestNamespace="urn:iControl:Networking/VLAN", ResponseNamespace="urn:iControl:Networking/VLAN")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public NetworkingMemberTagMode [] [] get_member_tag_mode(
+		string [] vlans,
+		string [] [] members
+	) {
+		object [] results = this.Invoke("get_member_tag_mode", new object [] {
+				vlans,
+				members});
+		return ((NetworkingMemberTagMode [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_member_tag_mode(string [] vlans,string [] [] members, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_member_tag_mode", new object[] {
+			vlans,
+			members}, callback, asyncState);
+	}
+	public NetworkingMemberTagMode [] [] Endget_member_tag_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((NetworkingMemberTagMode [] [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -832,6 +901,52 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_customer_id
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/VLAN", 
+		RequestNamespace="urn:iControl:Networking/VLAN", ResponseNamespace="urn:iControl:Networking/VLAN")]
+	public void set_customer_id(
+		string [] vlans,
+		string [] customer_ids
+	) {
+		this.Invoke("set_customer_id", new object [] {
+				vlans,
+				customer_ids});
+
+	}
+	public System.IAsyncResult Beginset_customer_id(string [] vlans,string [] customer_ids, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_customer_id", new object[] {
+			vlans,
+			customer_ids}, callback, asyncState);
+	}
+	public void Endset_customer_id(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_dag_round_robin_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/VLAN", 
+		RequestNamespace="urn:iControl:Networking/VLAN", ResponseNamespace="urn:iControl:Networking/VLAN")]
+	public void set_dag_round_robin_state(
+		string [] vlans,
+		CommonEnabledState [] states
+	) {
+		this.Invoke("set_dag_round_robin_state", new object [] {
+				vlans,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_dag_round_robin_state(string [] vlans,CommonEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_dag_round_robin_state", new object[] {
+			vlans,
+			states}, callback, asyncState);
+	}
+	public void Endset_dag_round_robin_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_description
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/VLAN", 
@@ -966,6 +1081,32 @@ namespace iControl {
 			mac_masquerade_addresses}, callback, asyncState);
 	}
 	public void Endset_mac_masquerade_address(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_member_tag_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/VLAN", 
+		RequestNamespace="urn:iControl:Networking/VLAN", ResponseNamespace="urn:iControl:Networking/VLAN")]
+	public void set_member_tag_mode(
+		string [] vlans,
+		string [] [] members,
+		NetworkingMemberTagMode [] [] tag_modes
+	) {
+		this.Invoke("set_member_tag_mode", new object [] {
+				vlans,
+				members,
+				tag_modes});
+
+	}
+	public System.IAsyncResult Beginset_member_tag_mode(string [] vlans,string [] [] members,NetworkingMemberTagMode [] [] tag_modes, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_member_tag_mode", new object[] {
+			vlans,
+			members,
+			tag_modes}, callback, asyncState);
+	}
+	public void Endset_member_tag_mode(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

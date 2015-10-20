@@ -177,6 +177,26 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_client_ldap_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
+		RequestNamespace="urn:iControl:System/Statistics", ResponseNamespace="urn:iControl:System/Statistics")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemStatisticsSystemStatistics get_client_ldap_statistics(
+
+	) {
+		object [] results = this.Invoke("get_client_ldap_statistics", new object [0]);
+		return ((SystemStatisticsSystemStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_client_ldap_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_client_ldap_statistics", new object[0], callback, asyncState);
+	}
+	public SystemStatisticsSystemStatistics Endget_client_ldap_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemStatisticsSystemStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_client_ssl_statistics
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
@@ -1176,6 +1196,26 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_server_ldap_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
+		RequestNamespace="urn:iControl:System/Statistics", ResponseNamespace="urn:iControl:System/Statistics")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemStatisticsSystemStatistics get_server_ldap_statistics(
+
+	) {
+		object [] results = this.Invoke("get_server_ldap_statistics", new object [0]);
+		return ((SystemStatisticsSystemStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_server_ldap_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_server_ldap_statistics", new object[0], callback, asyncState);
+	}
+	public SystemStatisticsSystemStatistics Endget_server_ldap_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemStatisticsSystemStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_server_ssl_statistics
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
@@ -1211,6 +1251,46 @@ namespace iControl {
 		return this.BeginInvoke("get_sip_statistics", new object[0], callback, asyncState);
 	}
 	public SystemStatisticsSystemStatistics Endget_sip_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemStatisticsSystemStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_siprouter_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
+		RequestNamespace="urn:iControl:System/Statistics", ResponseNamespace="urn:iControl:System/Statistics")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemStatisticsSystemStatistics get_siprouter_statistics(
+
+	) {
+		object [] results = this.Invoke("get_siprouter_statistics", new object [0]);
+		return ((SystemStatisticsSystemStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_siprouter_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_siprouter_statistics", new object[0], callback, asyncState);
+	}
+	public SystemStatisticsSystemStatistics Endget_siprouter_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemStatisticsSystemStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_sipsession_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
+		RequestNamespace="urn:iControl:System/Statistics", ResponseNamespace="urn:iControl:System/Statistics")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemStatisticsSystemStatistics get_sipsession_statistics(
+
+	) {
+		object [] results = this.Invoke("get_sipsession_statistics", new object [0]);
+		return ((SystemStatisticsSystemStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_sipsession_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_sipsession_statistics", new object[0], callback, asyncState);
+	}
+	public SystemStatisticsSystemStatistics Endget_sipsession_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((SystemStatisticsSystemStatistics)(results[0]));
 	}
@@ -1271,6 +1351,26 @@ namespace iControl {
 		return this.BeginInvoke("get_tcp_statistics", new object[0], callback, asyncState);
 	}
 	public SystemStatisticsSystemStatistics Endget_tcp_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemStatisticsSystemStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_tftp_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
+		RequestNamespace="urn:iControl:System/Statistics", ResponseNamespace="urn:iControl:System/Statistics")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemStatisticsSystemStatistics get_tftp_statistics(
+
+	) {
+		object [] results = this.Invoke("get_tftp_statistics", new object [0]);
+		return ((SystemStatisticsSystemStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_tftp_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_tftp_statistics", new object[0], callback, asyncState);
+	}
+	public SystemStatisticsSystemStatistics Endget_tftp_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((SystemStatisticsSystemStatistics)(results[0]));
 	}
@@ -1434,6 +1534,24 @@ namespace iControl {
 		return this.BeginInvoke("reset_authentication_statistics", new object[0], callback, asyncState);
 	}
 	public void Endreset_authentication_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// reset_client_ldap_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
+		RequestNamespace="urn:iControl:System/Statistics", ResponseNamespace="urn:iControl:System/Statistics")]
+	public void reset_client_ldap_statistics(
+
+	) {
+		this.Invoke("reset_client_ldap_statistics", new object [0]);
+
+	}
+	public System.IAsyncResult Beginreset_client_ldap_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("reset_client_ldap_statistics", new object[0], callback, asyncState);
+	}
+	public void Endreset_client_ldap_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -2077,6 +2195,24 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// reset_server_ldap_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
+		RequestNamespace="urn:iControl:System/Statistics", ResponseNamespace="urn:iControl:System/Statistics")]
+	public void reset_server_ldap_statistics(
+
+	) {
+		this.Invoke("reset_server_ldap_statistics", new object [0]);
+
+	}
+	public System.IAsyncResult Beginreset_server_ldap_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("reset_server_ldap_statistics", new object[0], callback, asyncState);
+	}
+	public void Endreset_server_ldap_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// reset_server_ssl_statistics
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
@@ -2109,6 +2245,42 @@ namespace iControl {
 		return this.BeginInvoke("reset_sip_statistics", new object[0], callback, asyncState);
 	}
 	public void Endreset_sip_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// reset_siprouter_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
+		RequestNamespace="urn:iControl:System/Statistics", ResponseNamespace="urn:iControl:System/Statistics")]
+	public void reset_siprouter_statistics(
+
+	) {
+		this.Invoke("reset_siprouter_statistics", new object [0]);
+
+	}
+	public System.IAsyncResult Beginreset_siprouter_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("reset_siprouter_statistics", new object[0], callback, asyncState);
+	}
+	public void Endreset_siprouter_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// reset_sipsession_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
+		RequestNamespace="urn:iControl:System/Statistics", ResponseNamespace="urn:iControl:System/Statistics")]
+	public void reset_sipsession_statistics(
+
+	) {
+		this.Invoke("reset_sipsession_statistics", new object [0]);
+
+	}
+	public System.IAsyncResult Beginreset_sipsession_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("reset_sipsession_statistics", new object[0], callback, asyncState);
+	}
+	public void Endreset_sipsession_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -2163,6 +2335,24 @@ namespace iControl {
 		return this.BeginInvoke("reset_tcp_statistics", new object[0], callback, asyncState);
 	}
 	public void Endreset_tcp_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// reset_tftp_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
+		RequestNamespace="urn:iControl:System/Statistics", ResponseNamespace="urn:iControl:System/Statistics")]
+	public void reset_tftp_statistics(
+
+	) {
+		this.Invoke("reset_tftp_statistics", new object [0]);
+
+	}
+	public System.IAsyncResult Beginreset_tftp_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("reset_tftp_statistics", new object[0], callback, asyncState);
+	}
+	public void Endreset_tftp_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

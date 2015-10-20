@@ -10,6 +10,18 @@ namespace iControl
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ActivationMode", Namespace = "urn:iControl")]
+	public enum LocalLBActivationMode
+	{
+		STARTTLS_ACTIVATION_UNKNOWN,
+		STARTTLS_ACTIVATION_NONE,
+		STARTTLS_ACTIVATION_ALLOW,
+		STARTTLS_ACTIVATION_REQUIRE,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.AdaptServiceDownAction", Namespace = "urn:iControl")]
 	public enum LocalLBAdaptServiceDownAction
 	{
@@ -257,6 +269,41 @@ namespace iControl
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.LogAction", Namespace = "urn:iControl")]
+	public enum LocalLBLogAction
+	{
+		LOG_ACTION_UNKNOWN,
+		LOG_ACTION_DISABLED,
+		LOG_ACTION_ENABLED,
+		LOG_ACTION_BACKUP_ALLOCATION_ONLY,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.LogElement", Namespace = "urn:iControl")]
+	public enum LocalLBLogElement
+	{
+		LOG_ELEMENT_UNKNOWN,
+		LOG_ELEMENT_DESTINATION,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.MessageRoutingProtocol", Namespace = "urn:iControl")]
+	public enum LocalLBMessageRoutingProtocol
+	{
+		MESSAGE_ROUTING_PROTOCOL_UNKNOWN,
+		MESSAGE_ROUTING_PROTOCOL_NONE,
+		MESSAGE_ROUTING_PROTOCOL_GENERIC_MESSAGE,
+		MESSAGE_ROUTING_PROTOCOL_SIP,
+		MESSAGE_ROUTING_PROTOCOL_DIAMETER,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.MonitorAssociationRemovalRule", Namespace = "urn:iControl")]
 	public enum LocalLBMonitorAssociationRemovalRule
 	{
@@ -330,6 +377,107 @@ namespace iControl
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.PolicyEvent", Namespace = "urn:iControl")]
+	public enum LocalLBPolicyEvent
+	{
+		POLICY_EVENT_UNKNOWN,
+		POLICY_EVENT_CLIENT_ACCEPTED,
+		POLICY_EVENT_CLIENTSSL_CLIENTHELLO,
+		POLICY_EVENT_SERVER_CONNECTED,
+		POLICY_EVENT_SERVERSSL_SERVERHELLO,
+		POLICY_EVENT_SERVERSSL_HANDSHAKE,
+		POLICY_EVENT_HTTP_REQUEST,
+		POLICY_EVENT_HTTP_RESPONSE,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.PolicyOperand", Namespace = "urn:iControl")]
+	public enum LocalLBPolicyOperand
+	{
+		POLICY_OPERAND_UNKNOWN,
+		POLICY_OPERAND_TCP,
+		POLICY_OPERAND_CLIENT_SSL,
+		POLICY_OPERAND_HTTP_METHOD,
+		POLICY_OPERAND_HTTP_URI,
+		POLICY_OPERAND_HTTP_VERSION,
+		POLICY_OPERAND_HTTP_STATUS,
+		POLICY_OPERAND_HTTP_HOST,
+		POLICY_OPERAND_HTTP_HEADER,
+		POLICY_OPERAND_HTTP_REFERER,
+		POLICY_OPERAND_HTTP_COOKIE,
+		POLICY_OPERAND_HTTP_SET_COOKIE,
+		POLICY_OPERAND_HTTP_BASIC_AUTH,
+		POLICY_OPERAND_HTTP_USER_AGENT,
+		POLICY_OPERAND_SSL_EXTENSION,
+		POLICY_OPERAND_SSL_CERT,
+		POLICY_OPERAND_GEOIP,
+		POLICY_OPERAND_CPU_USAGE,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.PolicySelector", Namespace = "urn:iControl")]
+	public enum LocalLBPolicySelector
+	{
+		POLICY_SELECTOR_UNKNOWN,
+		POLICY_SELECTOR_ALL,
+		POLICY_SELECTOR_NAME,
+		POLICY_SELECTOR_VALUE,
+		POLICY_SELECTOR_ADDRESS,
+		POLICY_SELECTOR_HEADER,
+		POLICY_SELECTOR_SCHEME,
+		POLICY_SELECTOR_HOST,
+		POLICY_SELECTOR_PORT,
+		POLICY_SELECTOR_PATH,
+		POLICY_SELECTOR_QUERY_STRING,
+		POLICY_SELECTOR_EXTENSION,
+		POLICY_SELECTOR_PATH_SEGMENT,
+		POLICY_SELECTOR_QUERY_PARAM,
+		POLICY_SELECTOR_UNNAMED_QUERY_PARAM,
+		POLICY_SELECTOR_MAJOR,
+		POLICY_SELECTOR_MINOR,
+		POLICY_SELECTOR_CODE,
+		POLICY_SELECTOR_TEXT,
+		POLICY_SELECTOR_DOMAIN,
+		POLICY_SELECTOR_EXPIRY,
+		POLICY_SELECTOR_VERSION,
+		POLICY_SELECTOR_USERNAME,
+		POLICY_SELECTOR_PASSWORD,
+		POLICY_SELECTOR_PROTOCOL,
+		POLICY_SELECTOR_CIPHER,
+		POLICY_SELECTOR_CIPHER_BITS,
+		POLICY_SELECTOR_RTT,
+		POLICY_SELECTOR_MSS,
+		POLICY_SELECTOR_VLAN,
+		POLICY_SELECTOR_VLAN_ID,
+		POLICY_SELECTOR_ROUTE_DOMAIN,
+		POLICY_SELECTOR_SERVER_NAME,
+		POLICY_SELECTOR_COMMON_NAME,
+		POLICY_SELECTOR_NPN,
+		POLICY_SELECTOR_ALPN,
+		POLICY_SELECTOR_CONTINENT,
+		POLICY_SELECTOR_COUNTRY_CODE,
+		POLICY_SELECTOR_COUNTRY_NAME,
+		POLICY_SELECTOR_REGION_NAME,
+		POLICY_SELECTOR_REGION_CODE,
+		POLICY_SELECTOR_ORG,
+		POLICY_SELECTOR_ISP,
+		POLICY_SELECTOR_LAST_15SECS,
+		POLICY_SELECTOR_LAST_1MIN,
+		POLICY_SELECTOR_LAST_5MINS,
+		POLICY_SELECTOR_DEVICE_MAKE,
+		POLICY_SELECTOR_DEVICE_MODEL,
+		POLICY_SELECTOR_BROWSER_TYPE,
+		POLICY_SELECTOR_BROWSER_VERSION,
+		POLICY_SELECTOR_UA_TOKEN,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileContextType", Namespace = "urn:iControl")]
 	public enum LocalLBProfileContextType
 	{
@@ -394,6 +542,22 @@ namespace iControl
 		PROFILE_TYPE_HTTPSECURITY,
 		PROFILE_TYPE_PPTP,
 		PROFILE_TYPE_FIX,
+		PROFILE_TYPE_SIP_ROUTER,
+		PROFILE_TYPE_SIP_SESSION,
+		PROFILE_TYPE_CLIENT_LDAP,
+		PROFILE_TYPE_SERVER_LDAP,
+		PROFILE_TYPE_TFTP,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.RPZActionType", Namespace = "urn:iControl")]
+	public enum LocalLBRPZActionType
+	{
+		RPZ_ACTION_TYPE_UNKNOWN,
+		RPZ_ACTION_TYPE_NXDOMAIN,
+		RPZ_ACTION_TYPE_WALLEDGARDEN,
 	}
 
 	/// <remarks/>
@@ -588,6 +752,10 @@ namespace iControl
 		TCP_CONGESTION_CONTROL_VEGAS,
 		TCP_CONGESTION_CONTROL_ILLINOIS,
 		TCP_CONGESTION_CONTROL_WOODSIDE,
+		TCP_CONGESTION_CONTROL_CHD,
+		TCP_CONGESTION_CONTROL_CDG,
+		TCP_CONGESTION_CONTROL_CUBIC,
+		TCP_CONGESTION_CONTROL_WESTWOOD,
 	}
 
 	/// <remarks/>
@@ -867,6 +1035,28 @@ namespace iControl
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileActivationMode", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileActivationMode
+	{
+		private LocalLBActivationMode valueField;
+		public LocalLBActivationMode value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileAdaptServiceDownAction", Namespace = "urn:iControl")]
 	public partial class LocalLBProfileAdaptServiceDownAction
 	{
@@ -1136,6 +1326,50 @@ namespace iControl
 	{
 		private string valueField;
 		public string value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileLogAction", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileLogAction
+	{
+		private LocalLBLogAction valueField;
+		public LocalLBLogAction value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileLogElementSequence", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileLogElementSequence
+	{
+		private LocalLBLogElement [] valueField;
+		public LocalLBLogElement [] value
 		{
 			get { return this.valueField; }
 			set { this.valueField = value; }

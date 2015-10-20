@@ -88,6 +88,116 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_adaptive_divergence_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/Monitor", 
+		RequestNamespace="urn:iControl:LocalLB/Monitor", ResponseNamespace="urn:iControl:LocalLB/Monitor")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBMonitorAdaptiveType [] get_adaptive_divergence_type(
+		string [] template_names
+	) {
+		object [] results = this.Invoke("get_adaptive_divergence_type", new object [] {
+				template_names});
+		return ((LocalLBMonitorAdaptiveType [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_adaptive_divergence_type(string [] template_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_adaptive_divergence_type", new object[] {
+			template_names}, callback, asyncState);
+	}
+	public LocalLBMonitorAdaptiveType [] Endget_adaptive_divergence_type(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBMonitorAdaptiveType [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_adaptive_divergence_value
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/Monitor", 
+		RequestNamespace="urn:iControl:LocalLB/Monitor", ResponseNamespace="urn:iControl:LocalLB/Monitor")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_adaptive_divergence_value(
+		string [] template_names
+	) {
+		object [] results = this.Invoke("get_adaptive_divergence_value", new object [] {
+				template_names});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_adaptive_divergence_value(string [] template_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_adaptive_divergence_value", new object[] {
+			template_names}, callback, asyncState);
+	}
+	public long [] Endget_adaptive_divergence_value(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_adaptive_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/Monitor", 
+		RequestNamespace="urn:iControl:LocalLB/Monitor", ResponseNamespace="urn:iControl:LocalLB/Monitor")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_adaptive_limit(
+		string [] template_names
+	) {
+		object [] results = this.Invoke("get_adaptive_limit", new object [] {
+				template_names});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_adaptive_limit(string [] template_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_adaptive_limit", new object[] {
+			template_names}, callback, asyncState);
+	}
+	public long [] Endget_adaptive_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_adaptive_sampling_timespan
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/Monitor", 
+		RequestNamespace="urn:iControl:LocalLB/Monitor", ResponseNamespace="urn:iControl:LocalLB/Monitor")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_adaptive_sampling_timespan(
+		string [] template_names
+	) {
+		object [] results = this.Invoke("get_adaptive_sampling_timespan", new object [] {
+				template_names});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_adaptive_sampling_timespan(string [] template_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_adaptive_sampling_timespan", new object[] {
+			template_names}, callback, asyncState);
+	}
+	public long [] Endget_adaptive_sampling_timespan(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_adaptive_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/Monitor", 
+		RequestNamespace="urn:iControl:LocalLB/Monitor", ResponseNamespace="urn:iControl:LocalLB/Monitor")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState [] get_adaptive_state(
+		string [] template_names
+	) {
+		object [] results = this.Invoke("get_adaptive_state", new object [] {
+				template_names});
+		return ((CommonEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_adaptive_state(string [] template_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_adaptive_state", new object[] {
+			template_names}, callback, asyncState);
+	}
+	public CommonEnabledState [] Endget_adaptive_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_description
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/Monitor", 
@@ -491,6 +601,121 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_adaptive_divergence_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/Monitor", 
+		RequestNamespace="urn:iControl:LocalLB/Monitor", ResponseNamespace="urn:iControl:LocalLB/Monitor")]
+	public void set_adaptive_divergence_type(
+		string [] template_names,
+		LocalLBMonitorAdaptiveType [] types
+	) {
+		this.Invoke("set_adaptive_divergence_type", new object [] {
+				template_names,
+				types});
+
+	}
+	public System.IAsyncResult Beginset_adaptive_divergence_type(string [] template_names,LocalLBMonitorAdaptiveType [] types, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_adaptive_divergence_type", new object[] {
+			template_names,
+			types}, callback, asyncState);
+	}
+	public void Endset_adaptive_divergence_type(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_adaptive_divergence_value
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/Monitor", 
+		RequestNamespace="urn:iControl:LocalLB/Monitor", ResponseNamespace="urn:iControl:LocalLB/Monitor")]
+	public void set_adaptive_divergence_value(
+		string [] template_names,
+		long [] values
+	) {
+		this.Invoke("set_adaptive_divergence_value", new object [] {
+				template_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_adaptive_divergence_value(string [] template_names,long [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_adaptive_divergence_value", new object[] {
+			template_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_adaptive_divergence_value(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_adaptive_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/Monitor", 
+		RequestNamespace="urn:iControl:LocalLB/Monitor", ResponseNamespace="urn:iControl:LocalLB/Monitor")]
+	public void set_adaptive_limit(
+		string [] template_names,
+		long [] limits
+	) {
+		this.Invoke("set_adaptive_limit", new object [] {
+				template_names,
+				limits});
+
+	}
+	public System.IAsyncResult Beginset_adaptive_limit(string [] template_names,long [] limits, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_adaptive_limit", new object[] {
+			template_names,
+			limits}, callback, asyncState);
+	}
+	public void Endset_adaptive_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_adaptive_sampling_timespan
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/Monitor", 
+		RequestNamespace="urn:iControl:LocalLB/Monitor", ResponseNamespace="urn:iControl:LocalLB/Monitor")]
+	public void set_adaptive_sampling_timespan(
+		string [] template_names,
+		long [] timespans
+	) {
+		this.Invoke("set_adaptive_sampling_timespan", new object [] {
+				template_names,
+				timespans});
+
+	}
+	public System.IAsyncResult Beginset_adaptive_sampling_timespan(string [] template_names,long [] timespans, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_adaptive_sampling_timespan", new object[] {
+			template_names,
+			timespans}, callback, asyncState);
+	}
+	public void Endset_adaptive_sampling_timespan(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_adaptive_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/Monitor", 
+		RequestNamespace="urn:iControl:LocalLB/Monitor", ResponseNamespace="urn:iControl:LocalLB/Monitor")]
+	public void set_adaptive_state(
+		string [] template_names,
+		CommonEnabledState [] states
+	) {
+		this.Invoke("set_adaptive_state", new object [] {
+				template_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_adaptive_state(string [] template_names,CommonEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_adaptive_state", new object[] {
+			template_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_adaptive_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_description
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/Monitor", 
@@ -721,6 +946,17 @@ namespace iControl {
 	//=======================================================================
 	// Enums
 	//=======================================================================
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.Monitor.AdaptiveType", Namespace = "urn:iControl")]
+	public enum LocalLBMonitorAdaptiveType
+	{
+		ATYPE_UNKNOWN,
+		ATYPE_RELATIVE,
+		ATYPE_ABSOLUTE,
+	}
 
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]

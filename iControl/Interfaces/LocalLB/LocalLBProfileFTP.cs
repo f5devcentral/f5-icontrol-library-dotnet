@@ -12,8 +12,9 @@ namespace iControl {
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="LocalLB.ProfileFTPBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileFTPProfileFTPStatistics))]
-	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfilePortNumber))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileEnabledState))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfilePortNumber))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileString))]
 	public partial class LocalLBProfileFTP : iControlInterface {
 		public LocalLBProfileFTP() {
 			this.Url = "https://url_to_service";
@@ -101,6 +102,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_allow_ftps_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFTP", ResponseNamespace="urn:iControl:LocalLB/ProfileFTP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_allow_ftps_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_allow_ftps_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_allow_ftps_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_allow_ftps_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_allow_ftps_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_data_channel_port
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFTP", 
@@ -184,6 +207,50 @@ namespace iControl {
 	public string [] Endget_list(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_log_profile
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFTP", ResponseNamespace="urn:iControl:LocalLB/ProfileFTP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileString [] get_log_profile(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_log_profile", new object [] {
+				profile_names});
+		return ((LocalLBProfileString [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_log_profile(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_log_profile", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileString [] Endget_log_profile(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileString [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_log_publisher
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFTP", ResponseNamespace="urn:iControl:LocalLB/ProfileFTP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileString [] get_log_publisher(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_log_publisher", new object [] {
+				profile_names});
+		return ((LocalLBProfileString [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_log_publisher(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_log_publisher", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileString [] Endget_log_publisher(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileString [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -339,6 +406,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_allow_ftps_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFTP", ResponseNamespace="urn:iControl:LocalLB/ProfileFTP")]
+	public void set_allow_ftps_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_allow_ftps_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_allow_ftps_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_allow_ftps_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_allow_ftps_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_data_channel_port
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFTP", 
@@ -404,6 +494,78 @@ namespace iControl {
 			descriptions}, callback, asyncState);
 	}
 	public void Endset_description(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_log_profile
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFTP", ResponseNamespace="urn:iControl:LocalLB/ProfileFTP")]
+	public void set_log_profile(
+		string [] profile_names,
+		LocalLBProfileString [] profiles
+	) {
+		this.Invoke("set_log_profile", new object [] {
+				profile_names,
+				profiles});
+
+	}
+	public System.IAsyncResult Beginset_log_profile(string [] profile_names,LocalLBProfileString [] profiles, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_log_profile", new object[] {
+			profile_names,
+			profiles}, callback, asyncState);
+	}
+	public void Endset_log_profile(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_log_publisher
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFTP", ResponseNamespace="urn:iControl:LocalLB/ProfileFTP")]
+	public void set_log_publisher(
+		string [] profile_names,
+		LocalLBProfileString [] publishers
+	) {
+		this.Invoke("set_log_publisher", new object [] {
+				profile_names,
+				publishers});
+
+	}
+	public System.IAsyncResult Beginset_log_publisher(string [] profile_names,LocalLBProfileString [] publishers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_log_publisher", new object[] {
+			profile_names,
+			publishers}, callback, asyncState);
+	}
+	public void Endset_log_publisher(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_log_settings
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFTP", ResponseNamespace="urn:iControl:LocalLB/ProfileFTP")]
+	public void set_log_settings(
+		string [] profile_names,
+		LocalLBProfileString [] publishers,
+		LocalLBProfileString [] profiles
+	) {
+		this.Invoke("set_log_settings", new object [] {
+				profile_names,
+				publishers,
+				profiles});
+
+	}
+	public System.IAsyncResult Beginset_log_settings(string [] profile_names,LocalLBProfileString [] publishers,LocalLBProfileString [] profiles, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_log_settings", new object[] {
+			profile_names,
+			publishers,
+			profiles}, callback, asyncState);
+	}
+	public void Endset_log_settings(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

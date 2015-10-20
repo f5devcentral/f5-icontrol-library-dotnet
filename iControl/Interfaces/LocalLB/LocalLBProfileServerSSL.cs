@@ -13,8 +13,8 @@ namespace iControl {
 	[System.Web.Services.WebServiceBindingAttribute(Name="LocalLB.ProfileServerSSLBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileServerSSLProfileServerSSLStatistics))]
-	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileString))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileEnabledState))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileString))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStringArray))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileResponseControlMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileServerSSLCertificateMode))]
@@ -129,6 +129,28 @@ namespace iControl {
 	public LocalLBProfileServerSSLProfileServerSSLStatistics Endget_all_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileServerSSLProfileServerSSLStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_allow_expired_crl_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_allow_expired_crl_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_allow_expired_crl_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_allow_expired_crl_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_allow_expired_crl_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_allow_expired_crl_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -746,6 +768,50 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_proxy_ssl_passthrough_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_proxy_ssl_passthrough_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_proxy_ssl_passthrough_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_proxy_ssl_passthrough_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_proxy_ssl_passthrough_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_proxy_ssl_passthrough_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_proxy_ssl_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_proxy_ssl_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_proxy_ssl_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_proxy_ssl_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_proxy_ssl_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_proxy_ssl_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_renegotiation_period
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
@@ -875,6 +941,28 @@ namespace iControl {
 	public LocalLBProfileString [] Endget_server_name(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileString [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_session_mirroring_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_session_mirroring_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_session_mirroring_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_session_mirroring_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_session_mirroring_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_session_mirroring_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -1229,6 +1317,29 @@ namespace iControl {
 			timeouts}, callback, asyncState);
 	}
 	public void Endset_alert_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_allow_expired_crl_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_allow_expired_crl_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_allow_expired_crl_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_allow_expired_crl_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_allow_expired_crl_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_allow_expired_crl_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -1834,6 +1945,52 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_proxy_ssl_passthrough_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_proxy_ssl_passthrough_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_proxy_ssl_passthrough_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_proxy_ssl_passthrough_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_proxy_ssl_passthrough_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_proxy_ssl_passthrough_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_proxy_ssl_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_proxy_ssl_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_proxy_ssl_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_proxy_ssl_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_proxy_ssl_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_proxy_ssl_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_renegotiation_period
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
@@ -1968,6 +2125,29 @@ namespace iControl {
 			server_names}, callback, asyncState);
 	}
 	public void Endset_server_name(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_session_mirroring_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_session_mirroring_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_session_mirroring_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_session_mirroring_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_session_mirroring_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_session_mirroring_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

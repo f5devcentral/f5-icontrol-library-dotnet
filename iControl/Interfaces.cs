@@ -1,6 +1,6 @@
 //===========================================================================
 //
-// File         : Interfaces.cs
+// File         : Interfaces
 //                   
 //---------------------------------------------------------------------------
 //
@@ -70,6 +70,7 @@ namespace iControl
         private GlobalLBMonitor m_GlobalLBMonitor;
         private GlobalLBPool m_GlobalLBPool;
         private GlobalLBPoolMember m_GlobalLBPoolMember;
+        private GlobalLBPoolV2 m_GlobalLBPoolV2;
         private GlobalLBProberPool m_GlobalLBProberPool;
         private GlobalLBRegion m_GlobalLBRegion;
         private GlobalLBRule m_GlobalLBRule;
@@ -78,13 +79,17 @@ namespace iControl
         private GlobalLBVirtualServer m_GlobalLBVirtualServer;
         private GlobalLBVirtualServerV2 m_GlobalLBVirtualServerV2;
         private GlobalLBWideIP m_GlobalLBWideIP;
+        private GlobalLBWideIPV2 m_GlobalLBWideIPV2;
 
         private iCallPeriodicHandler m_iCallPeriodicHandler;
         private iCallPerpetualHandler m_iCallPerpetualHandler;
         private iCallScript m_iCallScript;
         private iCallTriggeredHandler m_iCallTriggeredHandler;
 
+        private LocalLBALGLogProfile m_LocalLBALGLogProfile;
         private LocalLBClass m_LocalLBClass;
+        private LocalLBContentPolicy m_LocalLBContentPolicy;
+        private LocalLBContentPolicyStrategy m_LocalLBContentPolicyStrategy;
         private LocalLBDataGroupFile m_LocalLBDataGroupFile;
         private LocalLBDNSCache m_LocalLBDNSCache;
         private LocalLBDNSExpress m_LocalLBDNSExpress;
@@ -92,19 +97,26 @@ namespace iControl
         private LocalLBDNSServer m_LocalLBDNSServer;
         private LocalLBDNSTSIGKey m_LocalLBDNSTSIGKey;
         private LocalLBDNSZone m_LocalLBDNSZone;
+        private LocalLBFlowEvictionPolicy m_LocalLBFlowEvictionPolicy;
         private LocalLBiFile m_LocalLBiFile;
         private LocalLBiFileFile m_LocalLBiFileFile;
+        private LocalLBLSNLogProfile m_LocalLBLSNLogProfile;
         private LocalLBLSNPool m_LocalLBLSNPool;
+        private LocalLBMessageRoutingPeer m_LocalLBMessageRoutingPeer;
+        private LocalLBMessageRoutingSIPRoute m_LocalLBMessageRoutingSIPRoute;
+        private LocalLBMessageRoutingTransportConfig m_LocalLBMessageRoutingTransportConfig;
         private LocalLBMonitor m_LocalLBMonitor;
         private LocalLBNAT m_LocalLBNAT;
         private LocalLBNATV2 m_LocalLBNATV2;
         private LocalLBNodeAddress m_LocalLBNodeAddress;
         private LocalLBNodeAddressV2 m_LocalLBNodeAddressV2;
+        private LocalLBOCSPStaplingParameters m_LocalLBOCSPStaplingParameters;
         private LocalLBPool m_LocalLBPool;
         private LocalLBPoolMember m_LocalLBPoolMember;
         private LocalLBProfileAnalytics m_LocalLBProfileAnalytics;
         private LocalLBProfileAuth m_LocalLBProfileAuth;
         private LocalLBProfileClassification m_LocalLBProfileClassification;
+        private LocalLBProfileClientLDAP m_LocalLBProfileClientLDAP;
         private LocalLBProfileClientSSL m_LocalLBProfileClientSSL;
         private LocalLBProfileDiameter m_LocalLBProfileDiameter;
         private LocalLBProfileDiameterEndpoint m_LocalLBProfileDiameterEndpoint;
@@ -129,13 +141,17 @@ namespace iControl
         private LocalLBProfileResponseAdapt m_LocalLBProfileResponseAdapt;
         private LocalLBProfileRTSP m_LocalLBProfileRTSP;
         private LocalLBProfileSCTP m_LocalLBProfileSCTP;
+        private LocalLBProfileServerLDAP m_LocalLBProfileServerLDAP;
         private LocalLBProfileServerSSL m_LocalLBProfileServerSSL;
         private LocalLBProfileSIP m_LocalLBProfileSIP;
+        private LocalLBProfileSIPRouter m_LocalLBProfileSIPRouter;
+        private LocalLBProfileSIPSession m_LocalLBProfileSIPSession;
         private LocalLBProfileSMTPS m_LocalLBProfileSMTPS;
         private LocalLBProfileSPDY m_LocalLBProfileSPDY;
         private LocalLBProfileSPM m_LocalLBProfileSPM;
         private LocalLBProfileStream m_LocalLBProfileStream;
         private LocalLBProfileTCP m_LocalLBProfileTCP;
+        private LocalLBProfileTFTP m_LocalLBProfileTFTP;
         private LocalLBProfileUDP m_LocalLBProfileUDP;
         private LocalLBProfileUserStatistic m_LocalLBProfileUserStatistic;
         private LocalLBProfileWebAcceleration m_LocalLBProfileWebAcceleration;
@@ -155,10 +171,12 @@ namespace iControl
         private LogDestinationArcSight m_LogDestinationArcSight;
         private LogDestinationIPFIX m_LogDestinationIPFIX;
         private LogDestinationLocalSyslog m_LogDestinationLocalSyslog;
+        private LogDestinationManagementPort m_LogDestinationManagementPort;
         private LogDestinationRemoteHighSpeedLog m_LogDestinationRemoteHighSpeedLog;
         private LogDestinationRemoteSyslog m_LogDestinationRemoteSyslog;
         private LogDestinationSplunk m_LogDestinationSplunk;
         private LogFilter m_LogFilter;
+        private LogIPFIXInformationElement m_LogIPFIXInformationElement;
         private LogPublisher m_LogPublisher;
 
         private LTConfigClass m_LTConfigClass;
@@ -210,6 +228,8 @@ namespace iControl
         private NetworkingAdminIP m_NetworkingAdminIP;
         private NetworkingARP m_NetworkingARP;
         private NetworkingBWControllerPolicy m_NetworkingBWControllerPolicy;
+        private NetworkingBWPriorityGroup m_NetworkingBWPriorityGroup;
+        private NetworkingDNSResolver m_NetworkingDNSResolver;
         private NetworkingInterfaces m_NetworkingInterfaces;
         private NetworkingIPsecIkeDaemon m_NetworkingIPsecIkeDaemon;
         private NetworkingIPsecIkePeer m_NetworkingIPsecIkePeer;
@@ -229,9 +249,11 @@ namespace iControl
         private NetworkingPacketFilterGlobals m_NetworkingPacketFilterGlobals;
         private NetworkingPortMirror m_NetworkingPortMirror;
         private NetworkingProfileFEC m_NetworkingProfileFEC;
+        private NetworkingProfileGeneve m_NetworkingProfileGeneve;
         private NetworkingProfileGRE m_NetworkingProfileGRE;
         private NetworkingProfileIPIP m_NetworkingProfileIPIP;
         private NetworkingProfileIPsec m_NetworkingProfileIPsec;
+        private NetworkingProfileMAP m_NetworkingProfileMAP;
         private NetworkingProfileV6RD m_NetworkingProfileV6RD;
         private NetworkingProfileVXLAN m_NetworkingProfileVXLAN;
         private NetworkingProfileWCCPGRE m_NetworkingProfileWCCPGRE;
@@ -276,11 +298,13 @@ namespace iControl
         private SecurityProfileDNSSecurity m_SecurityProfileDNSSecurity;
         private SecurityProfileDoS m_SecurityProfileDoS;
         private SecurityProfileIPIntelligence m_SecurityProfileIPIntelligence;
-
         private SystemCertificateRevocationListFile m_SystemCertificateRevocationListFile;
         private SystemCluster m_SystemCluster;
+
         private SystemConfigSync m_SystemConfigSync;
         private SystemConnections m_SystemConnections;
+        private SystemCryptoClient m_SystemCryptoClient;
+        private SystemCryptoServer m_SystemCryptoServer;
         private SystemDisk m_SystemDisk;
         private SystemExternalMonitorFile m_SystemExternalMonitorFile;
         private SystemFailover m_SystemFailover;
@@ -296,11 +320,10 @@ namespace iControl
         private SystemStatistics m_SystemStatistics;
         private SystemSystemInfo m_SystemSystemInfo;
         private SystemVCMP m_SystemVCMP;
-
         private WebAcceleratorApplications m_WebAcceleratorApplications;
+
         private WebAcceleratorPolicies m_WebAcceleratorPolicies;
         private WebAcceleratorProxyMessage m_WebAcceleratorProxyMessage;
-
 
         private bool m_bInitialized = false;
         private ConnectionInfo m_ci = null;
@@ -343,6 +366,7 @@ namespace iControl
         public GlobalLBMonitor GlobalLBMonitor { get { verifyInitialized(); if (null == m_GlobalLBMonitor) { initializeInterface(m_GlobalLBMonitor = new GlobalLBMonitor()); } return m_GlobalLBMonitor; } }
         public GlobalLBPool GlobalLBPool { get { verifyInitialized(); if (null == m_GlobalLBPool) { initializeInterface(m_GlobalLBPool = new GlobalLBPool()); } return m_GlobalLBPool; } }
         public GlobalLBPoolMember GlobalLBPoolMember { get { verifyInitialized(); if (null == m_GlobalLBPoolMember) { initializeInterface(m_GlobalLBPoolMember = new GlobalLBPoolMember()); } return m_GlobalLBPoolMember; } }
+        public GlobalLBPoolV2 GlobalLBPoolV2 { get { verifyInitialized(); if (null == m_GlobalLBPoolV2) { initializeInterface(m_GlobalLBPoolV2 = new GlobalLBPoolV2()); } return m_GlobalLBPoolV2; } }
         public GlobalLBProberPool GlobalLBProberPool { get { verifyInitialized(); if (null == m_GlobalLBProberPool) { initializeInterface(m_GlobalLBProberPool = new GlobalLBProberPool()); } return m_GlobalLBProberPool; } }
         public GlobalLBRegion GlobalLBRegion { get { verifyInitialized(); if (null == m_GlobalLBRegion) { initializeInterface(m_GlobalLBRegion = new GlobalLBRegion()); } return m_GlobalLBRegion; } }
         public GlobalLBRule GlobalLBRule { get { verifyInitialized(); if (null == m_GlobalLBRule) { initializeInterface(m_GlobalLBRule = new GlobalLBRule()); } return m_GlobalLBRule; } }
@@ -351,13 +375,17 @@ namespace iControl
         public GlobalLBVirtualServer GlobalLBVirtualServer { get { verifyInitialized(); if (null == m_GlobalLBVirtualServer) { initializeInterface(m_GlobalLBVirtualServer = new GlobalLBVirtualServer()); } return m_GlobalLBVirtualServer; } }
         public GlobalLBVirtualServerV2 GlobalLBVirtualServerV2 { get { verifyInitialized(); if (null == m_GlobalLBVirtualServerV2) { initializeInterface(m_GlobalLBVirtualServerV2 = new GlobalLBVirtualServerV2()); } return m_GlobalLBVirtualServerV2; } }
         public GlobalLBWideIP GlobalLBWideIP { get { verifyInitialized(); if (null == m_GlobalLBWideIP) { initializeInterface(m_GlobalLBWideIP = new GlobalLBWideIP()); } return m_GlobalLBWideIP; } }
+        public GlobalLBWideIPV2 GlobalLBWideIPV2 { get { verifyInitialized(); if (null == m_GlobalLBWideIPV2) { initializeInterface(m_GlobalLBWideIPV2 = new GlobalLBWideIPV2()); } return m_GlobalLBWideIPV2; } }
 
         public iCallPeriodicHandler iCallPeriodicHandler { get { verifyInitialized(); if (null == m_iCallPeriodicHandler) { initializeInterface(m_iCallPeriodicHandler = new iCallPeriodicHandler()); } return m_iCallPeriodicHandler; } }
         public iCallPerpetualHandler iCallPerpetualHandler { get { verifyInitialized(); if (null == m_iCallPerpetualHandler) { initializeInterface(m_iCallPerpetualHandler = new iCallPerpetualHandler()); } return m_iCallPerpetualHandler; } }
         public iCallScript iCallScript { get { verifyInitialized(); if (null == m_iCallScript) { initializeInterface(m_iCallScript = new iCallScript()); } return m_iCallScript; } }
         public iCallTriggeredHandler iCallTriggeredHandler { get { verifyInitialized(); if (null == m_iCallTriggeredHandler) { initializeInterface(m_iCallTriggeredHandler = new iCallTriggeredHandler()); } return m_iCallTriggeredHandler; } }
 
+        public LocalLBALGLogProfile LocalLBALGLogProfile { get { verifyInitialized(); if (null == m_LocalLBALGLogProfile) { initializeInterface(m_LocalLBALGLogProfile = new LocalLBALGLogProfile()); } return m_LocalLBALGLogProfile; } }
         public LocalLBClass LocalLBClass { get { verifyInitialized(); if (null == m_LocalLBClass) { initializeInterface(m_LocalLBClass = new LocalLBClass()); } return m_LocalLBClass; } }
+        public LocalLBContentPolicy LocalLBContentPolicy { get { verifyInitialized(); if (null == m_LocalLBContentPolicy) { initializeInterface(m_LocalLBContentPolicy = new LocalLBContentPolicy()); } return m_LocalLBContentPolicy; } }
+        public LocalLBContentPolicyStrategy LocalLBContentPolicyStrategy { get { verifyInitialized(); if (null == m_LocalLBContentPolicyStrategy) { initializeInterface(m_LocalLBContentPolicyStrategy = new LocalLBContentPolicyStrategy()); } return m_LocalLBContentPolicyStrategy; } }
         public LocalLBDataGroupFile LocalLBDataGroupFile { get { verifyInitialized(); if (null == m_LocalLBDataGroupFile) { initializeInterface(m_LocalLBDataGroupFile = new LocalLBDataGroupFile()); } return m_LocalLBDataGroupFile; } }
         public LocalLBDNSCache LocalLBDNSCache { get { verifyInitialized(); if (null == m_LocalLBDNSCache) { initializeInterface(m_LocalLBDNSCache = new LocalLBDNSCache()); } return m_LocalLBDNSCache; } }
         public LocalLBDNSExpress LocalLBDNSExpress { get { verifyInitialized(); if (null == m_LocalLBDNSExpress) { initializeInterface(m_LocalLBDNSExpress = new LocalLBDNSExpress()); } return m_LocalLBDNSExpress; } }
@@ -365,19 +393,26 @@ namespace iControl
         public LocalLBDNSServer LocalLBDNSServer { get { verifyInitialized(); if (null == m_LocalLBDNSServer) { initializeInterface(m_LocalLBDNSServer = new LocalLBDNSServer()); } return m_LocalLBDNSServer; } }
         public LocalLBDNSTSIGKey LocalLBDNSTSIGKey { get { verifyInitialized(); if (null == m_LocalLBDNSTSIGKey) { initializeInterface(m_LocalLBDNSTSIGKey = new LocalLBDNSTSIGKey()); } return m_LocalLBDNSTSIGKey; } }
         public LocalLBDNSZone LocalLBDNSZone { get { verifyInitialized(); if (null == m_LocalLBDNSZone) { initializeInterface(m_LocalLBDNSZone = new LocalLBDNSZone()); } return m_LocalLBDNSZone; } }
+        public LocalLBFlowEvictionPolicy LocalLBFlowEvictionPolicy { get { verifyInitialized(); if (null == m_LocalLBFlowEvictionPolicy) { initializeInterface(m_LocalLBFlowEvictionPolicy = new LocalLBFlowEvictionPolicy()); } return m_LocalLBFlowEvictionPolicy; } }
         public LocalLBiFile LocalLBiFile { get { verifyInitialized(); if (null == m_LocalLBiFile) { initializeInterface(m_LocalLBiFile = new LocalLBiFile()); } return m_LocalLBiFile; } }
         public LocalLBiFileFile LocalLBiFileFile { get { verifyInitialized(); if (null == m_LocalLBiFileFile) { initializeInterface(m_LocalLBiFileFile = new LocalLBiFileFile()); } return m_LocalLBiFileFile; } }
+        public LocalLBLSNLogProfile LocalLBLSNLogProfile { get { verifyInitialized(); if (null == m_LocalLBLSNLogProfile) { initializeInterface(m_LocalLBLSNLogProfile = new LocalLBLSNLogProfile()); } return m_LocalLBLSNLogProfile; } }
         public LocalLBLSNPool LocalLBLSNPool { get { verifyInitialized(); if (null == m_LocalLBLSNPool) { initializeInterface(m_LocalLBLSNPool = new LocalLBLSNPool()); } return m_LocalLBLSNPool; } }
+        public LocalLBMessageRoutingPeer LocalLBMessageRoutingPeer { get { verifyInitialized(); if (null == m_LocalLBMessageRoutingPeer) { initializeInterface(m_LocalLBMessageRoutingPeer = new LocalLBMessageRoutingPeer()); } return m_LocalLBMessageRoutingPeer; } }
+        public LocalLBMessageRoutingSIPRoute LocalLBMessageRoutingSIPRoute { get { verifyInitialized(); if (null == m_LocalLBMessageRoutingSIPRoute) { initializeInterface(m_LocalLBMessageRoutingSIPRoute = new LocalLBMessageRoutingSIPRoute()); } return m_LocalLBMessageRoutingSIPRoute; } }
+        public LocalLBMessageRoutingTransportConfig LocalLBMessageRoutingTransportConfig { get { verifyInitialized(); if (null == m_LocalLBMessageRoutingTransportConfig) { initializeInterface(m_LocalLBMessageRoutingTransportConfig = new LocalLBMessageRoutingTransportConfig()); } return m_LocalLBMessageRoutingTransportConfig; } }
         public LocalLBMonitor LocalLBMonitor { get { verifyInitialized(); if (null == m_LocalLBMonitor) { initializeInterface(m_LocalLBMonitor = new LocalLBMonitor()); } return m_LocalLBMonitor; } }
         public LocalLBNAT LocalLBNAT { get { verifyInitialized(); if (null == m_LocalLBNAT) { initializeInterface(m_LocalLBNAT = new LocalLBNAT()); } return m_LocalLBNAT; } }
         public LocalLBNATV2 LocalLBNATV2 { get { verifyInitialized(); if (null == m_LocalLBNATV2) { initializeInterface(m_LocalLBNATV2 = new LocalLBNATV2()); } return m_LocalLBNATV2; } }
         public LocalLBNodeAddress LocalLBNodeAddress { get { verifyInitialized(); if (null == m_LocalLBNodeAddress) { initializeInterface(m_LocalLBNodeAddress = new LocalLBNodeAddress()); } return m_LocalLBNodeAddress; } }
         public LocalLBNodeAddressV2 LocalLBNodeAddressV2 { get { verifyInitialized(); if (null == m_LocalLBNodeAddressV2) { initializeInterface(m_LocalLBNodeAddressV2 = new LocalLBNodeAddressV2()); } return m_LocalLBNodeAddressV2; } }
+        public LocalLBOCSPStaplingParameters LocalLBOCSPStaplingParameters { get { verifyInitialized(); if (null == m_LocalLBOCSPStaplingParameters) { initializeInterface(m_LocalLBOCSPStaplingParameters = new LocalLBOCSPStaplingParameters()); } return m_LocalLBOCSPStaplingParameters; } }
         public LocalLBPool LocalLBPool { get { verifyInitialized(); if (null == m_LocalLBPool) { initializeInterface(m_LocalLBPool = new LocalLBPool()); } return m_LocalLBPool; } }
         public LocalLBPoolMember LocalLBPoolMember { get { verifyInitialized(); if (null == m_LocalLBPoolMember) { initializeInterface(m_LocalLBPoolMember = new LocalLBPoolMember()); } return m_LocalLBPoolMember; } }
         public LocalLBProfileAnalytics LocalLBProfileAnalytics { get { verifyInitialized(); if (null == m_LocalLBProfileAnalytics) { initializeInterface(m_LocalLBProfileAnalytics = new LocalLBProfileAnalytics()); } return m_LocalLBProfileAnalytics; } }
         public LocalLBProfileAuth LocalLBProfileAuth { get { verifyInitialized(); if (null == m_LocalLBProfileAuth) { initializeInterface(m_LocalLBProfileAuth = new LocalLBProfileAuth()); } return m_LocalLBProfileAuth; } }
         public LocalLBProfileClassification LocalLBProfileClassification { get { verifyInitialized(); if (null == m_LocalLBProfileClassification) { initializeInterface(m_LocalLBProfileClassification = new LocalLBProfileClassification()); } return m_LocalLBProfileClassification; } }
+        public LocalLBProfileClientLDAP LocalLBProfileClientLDAP { get { verifyInitialized(); if (null == m_LocalLBProfileClientLDAP) { initializeInterface(m_LocalLBProfileClientLDAP = new LocalLBProfileClientLDAP()); } return m_LocalLBProfileClientLDAP; } }
         public LocalLBProfileClientSSL LocalLBProfileClientSSL { get { verifyInitialized(); if (null == m_LocalLBProfileClientSSL) { initializeInterface(m_LocalLBProfileClientSSL = new LocalLBProfileClientSSL()); } return m_LocalLBProfileClientSSL; } }
         public LocalLBProfileDiameter LocalLBProfileDiameter { get { verifyInitialized(); if (null == m_LocalLBProfileDiameter) { initializeInterface(m_LocalLBProfileDiameter = new LocalLBProfileDiameter()); } return m_LocalLBProfileDiameter; } }
         public LocalLBProfileDiameterEndpoint LocalLBProfileDiameterEndpoint { get { verifyInitialized(); if (null == m_LocalLBProfileDiameterEndpoint) { initializeInterface(m_LocalLBProfileDiameterEndpoint = new LocalLBProfileDiameterEndpoint()); } return m_LocalLBProfileDiameterEndpoint; } }
@@ -402,13 +437,17 @@ namespace iControl
         public LocalLBProfileResponseAdapt LocalLBProfileResponseAdapt { get { verifyInitialized(); if (null == m_LocalLBProfileResponseAdapt) { initializeInterface(m_LocalLBProfileResponseAdapt = new LocalLBProfileResponseAdapt()); } return m_LocalLBProfileResponseAdapt; } }
         public LocalLBProfileRTSP LocalLBProfileRTSP { get { verifyInitialized(); if (null == m_LocalLBProfileRTSP) { initializeInterface(m_LocalLBProfileRTSP = new LocalLBProfileRTSP()); } return m_LocalLBProfileRTSP; } }
         public LocalLBProfileSCTP LocalLBProfileSCTP { get { verifyInitialized(); if (null == m_LocalLBProfileSCTP) { initializeInterface(m_LocalLBProfileSCTP = new LocalLBProfileSCTP()); } return m_LocalLBProfileSCTP; } }
+        public LocalLBProfileServerLDAP LocalLBProfileServerLDAP { get { verifyInitialized(); if (null == m_LocalLBProfileServerLDAP) { initializeInterface(m_LocalLBProfileServerLDAP = new LocalLBProfileServerLDAP()); } return m_LocalLBProfileServerLDAP; } }
         public LocalLBProfileServerSSL LocalLBProfileServerSSL { get { verifyInitialized(); if (null == m_LocalLBProfileServerSSL) { initializeInterface(m_LocalLBProfileServerSSL = new LocalLBProfileServerSSL()); } return m_LocalLBProfileServerSSL; } }
         public LocalLBProfileSIP LocalLBProfileSIP { get { verifyInitialized(); if (null == m_LocalLBProfileSIP) { initializeInterface(m_LocalLBProfileSIP = new LocalLBProfileSIP()); } return m_LocalLBProfileSIP; } }
+        public LocalLBProfileSIPRouter LocalLBProfileSIPRouter { get { verifyInitialized(); if (null == m_LocalLBProfileSIPRouter) { initializeInterface(m_LocalLBProfileSIPRouter = new LocalLBProfileSIPRouter()); } return m_LocalLBProfileSIPRouter; } }
+        public LocalLBProfileSIPSession LocalLBProfileSIPSession { get { verifyInitialized(); if (null == m_LocalLBProfileSIPSession) { initializeInterface(m_LocalLBProfileSIPSession = new LocalLBProfileSIPSession()); } return m_LocalLBProfileSIPSession; } }
         public LocalLBProfileSMTPS LocalLBProfileSMTPS { get { verifyInitialized(); if (null == m_LocalLBProfileSMTPS) { initializeInterface(m_LocalLBProfileSMTPS = new LocalLBProfileSMTPS()); } return m_LocalLBProfileSMTPS; } }
         public LocalLBProfileSPDY LocalLBProfileSPDY { get { verifyInitialized(); if (null == m_LocalLBProfileSPDY) { initializeInterface(m_LocalLBProfileSPDY = new LocalLBProfileSPDY()); } return m_LocalLBProfileSPDY; } }
         public LocalLBProfileSPM LocalLBProfileSPM { get { verifyInitialized(); if (null == m_LocalLBProfileSPM) { initializeInterface(m_LocalLBProfileSPM = new LocalLBProfileSPM()); } return m_LocalLBProfileSPM; } }
         public LocalLBProfileStream LocalLBProfileStream { get { verifyInitialized(); if (null == m_LocalLBProfileStream) { initializeInterface(m_LocalLBProfileStream = new LocalLBProfileStream()); } return m_LocalLBProfileStream; } }
         public LocalLBProfileTCP LocalLBProfileTCP { get { verifyInitialized(); if (null == m_LocalLBProfileTCP) { initializeInterface(m_LocalLBProfileTCP = new LocalLBProfileTCP()); } return m_LocalLBProfileTCP; } }
+        public LocalLBProfileTFTP LocalLBProfileTFTP { get { verifyInitialized(); if (null == m_LocalLBProfileTFTP) { initializeInterface(m_LocalLBProfileTFTP = new LocalLBProfileTFTP()); } return m_LocalLBProfileTFTP; } }
         public LocalLBProfileUDP LocalLBProfileUDP { get { verifyInitialized(); if (null == m_LocalLBProfileUDP) { initializeInterface(m_LocalLBProfileUDP = new LocalLBProfileUDP()); } return m_LocalLBProfileUDP; } }
         public LocalLBProfileUserStatistic LocalLBProfileUserStatistic { get { verifyInitialized(); if (null == m_LocalLBProfileUserStatistic) { initializeInterface(m_LocalLBProfileUserStatistic = new LocalLBProfileUserStatistic()); } return m_LocalLBProfileUserStatistic; } }
         public LocalLBProfileWebAcceleration LocalLBProfileWebAcceleration { get { verifyInitialized(); if (null == m_LocalLBProfileWebAcceleration) { initializeInterface(m_LocalLBProfileWebAcceleration = new LocalLBProfileWebAcceleration()); } return m_LocalLBProfileWebAcceleration; } }
@@ -428,10 +467,12 @@ namespace iControl
         public LogDestinationArcSight LogDestinationArcSight { get { verifyInitialized(); if (null == m_LogDestinationArcSight) { initializeInterface(m_LogDestinationArcSight = new LogDestinationArcSight()); } return m_LogDestinationArcSight; } }
         public LogDestinationIPFIX LogDestinationIPFIX { get { verifyInitialized(); if (null == m_LogDestinationIPFIX) { initializeInterface(m_LogDestinationIPFIX = new LogDestinationIPFIX()); } return m_LogDestinationIPFIX; } }
         public LogDestinationLocalSyslog LogDestinationLocalSyslog { get { verifyInitialized(); if (null == m_LogDestinationLocalSyslog) { initializeInterface(m_LogDestinationLocalSyslog = new LogDestinationLocalSyslog()); } return m_LogDestinationLocalSyslog; } }
+        public LogDestinationManagementPort LogDestinationManagementPort { get { verifyInitialized(); if (null == m_LogDestinationManagementPort) { initializeInterface(m_LogDestinationManagementPort = new LogDestinationManagementPort()); } return m_LogDestinationManagementPort; } }
         public LogDestinationRemoteHighSpeedLog LogDestinationRemoteHighSpeedLog { get { verifyInitialized(); if (null == m_LogDestinationRemoteHighSpeedLog) { initializeInterface(m_LogDestinationRemoteHighSpeedLog = new LogDestinationRemoteHighSpeedLog()); } return m_LogDestinationRemoteHighSpeedLog; } }
         public LogDestinationRemoteSyslog LogDestinationRemoteSyslog { get { verifyInitialized(); if (null == m_LogDestinationRemoteSyslog) { initializeInterface(m_LogDestinationRemoteSyslog = new LogDestinationRemoteSyslog()); } return m_LogDestinationRemoteSyslog; } }
         public LogDestinationSplunk LogDestinationSplunk { get { verifyInitialized(); if (null == m_LogDestinationSplunk) { initializeInterface(m_LogDestinationSplunk = new LogDestinationSplunk()); } return m_LogDestinationSplunk; } }
         public LogFilter LogFilter { get { verifyInitialized(); if (null == m_LogFilter) { initializeInterface(m_LogFilter = new LogFilter()); } return m_LogFilter; } }
+        public LogIPFIXInformationElement LogIPFIXInformationElement { get { verifyInitialized(); if (null == m_LogIPFIXInformationElement) { initializeInterface(m_LogIPFIXInformationElement = new LogIPFIXInformationElement()); } return m_LogIPFIXInformationElement; } }
         public LogPublisher LogPublisher { get { verifyInitialized(); if (null == m_LogPublisher) { initializeInterface(m_LogPublisher = new LogPublisher()); } return m_LogPublisher; } }
 
         public LTConfigClass LTConfigClass { get { verifyInitialized(); if (null == m_LTConfigClass) { initializeInterface(m_LTConfigClass = new LTConfigClass()); } return m_LTConfigClass; } }
@@ -483,6 +524,8 @@ namespace iControl
         public NetworkingAdminIP NetworkingAdminIP { get { verifyInitialized(); if (null == m_NetworkingAdminIP) { initializeInterface(m_NetworkingAdminIP = new NetworkingAdminIP()); } return m_NetworkingAdminIP; } }
         public NetworkingARP NetworkingARP { get { verifyInitialized(); if (null == m_NetworkingARP) { initializeInterface(m_NetworkingARP = new NetworkingARP()); } return m_NetworkingARP; } }
         public NetworkingBWControllerPolicy NetworkingBWControllerPolicy { get { verifyInitialized(); if (null == m_NetworkingBWControllerPolicy) { initializeInterface(m_NetworkingBWControllerPolicy = new NetworkingBWControllerPolicy()); } return m_NetworkingBWControllerPolicy; } }
+        public NetworkingBWPriorityGroup NetworkingBWPriorityGroup { get { verifyInitialized(); if (null == m_NetworkingBWPriorityGroup) { initializeInterface(m_NetworkingBWPriorityGroup = new NetworkingBWPriorityGroup()); } return m_NetworkingBWPriorityGroup; } }
+        public NetworkingDNSResolver NetworkingDNSResolver { get { verifyInitialized(); if (null == m_NetworkingDNSResolver) { initializeInterface(m_NetworkingDNSResolver = new NetworkingDNSResolver()); } return m_NetworkingDNSResolver; } }
         public NetworkingInterfaces NetworkingInterfaces { get { verifyInitialized(); if (null == m_NetworkingInterfaces) { initializeInterface(m_NetworkingInterfaces = new NetworkingInterfaces()); } return m_NetworkingInterfaces; } }
         public NetworkingIPsecIkeDaemon NetworkingIPsecIkeDaemon { get { verifyInitialized(); if (null == m_NetworkingIPsecIkeDaemon) { initializeInterface(m_NetworkingIPsecIkeDaemon = new NetworkingIPsecIkeDaemon()); } return m_NetworkingIPsecIkeDaemon; } }
         public NetworkingIPsecIkePeer NetworkingIPsecIkePeer { get { verifyInitialized(); if (null == m_NetworkingIPsecIkePeer) { initializeInterface(m_NetworkingIPsecIkePeer = new NetworkingIPsecIkePeer()); } return m_NetworkingIPsecIkePeer; } }
@@ -502,10 +545,12 @@ namespace iControl
         public NetworkingPacketFilterGlobals NetworkingPacketFilterGlobals { get { verifyInitialized(); if (null == m_NetworkingPacketFilterGlobals) { initializeInterface(m_NetworkingPacketFilterGlobals = new NetworkingPacketFilterGlobals()); } return m_NetworkingPacketFilterGlobals; } }
         public NetworkingPortMirror NetworkingPortMirror { get { verifyInitialized(); if (null == m_NetworkingPortMirror) { initializeInterface(m_NetworkingPortMirror = new NetworkingPortMirror()); } return m_NetworkingPortMirror; } }
         public NetworkingProfileFEC NetworkingProfileFEC { get { verifyInitialized(); if (null == m_NetworkingProfileFEC) { initializeInterface(m_NetworkingProfileFEC = new NetworkingProfileFEC()); } return m_NetworkingProfileFEC; } }
+        public NetworkingProfileGeneve NetworkingProfileGeneve { get { verifyInitialized(); if (null == m_NetworkingProfileGeneve) { initializeInterface(m_NetworkingProfileGeneve = new NetworkingProfileGeneve()); } return m_NetworkingProfileGeneve; } }
         public NetworkingProfileGRE NetworkingProfileGRE { get { verifyInitialized(); if (null == m_NetworkingProfileGRE) { initializeInterface(m_NetworkingProfileGRE = new NetworkingProfileGRE()); } return m_NetworkingProfileGRE; } }
         public NetworkingProfileIPIP NetworkingProfileIPIP { get { verifyInitialized(); if (null == m_NetworkingProfileIPIP) { initializeInterface(m_NetworkingProfileIPIP = new NetworkingProfileIPIP()); } return m_NetworkingProfileIPIP; } }
         public NetworkingProfileIPsec NetworkingProfileIPsec { get { verifyInitialized(); if (null == m_NetworkingProfileIPsec) { initializeInterface(m_NetworkingProfileIPsec = new NetworkingProfileIPsec()); } return m_NetworkingProfileIPsec; } }
-        public NetworkingProfileV6RD NetworkingProfileV6RC { get { verifyInitialized(); if (null == m_NetworkingProfileV6RD) { initializeInterface(m_NetworkingProfileV6RD = new NetworkingProfileV6RD()); } return m_NetworkingProfileV6RD; } }
+        public NetworkingProfileMAP NetworkingProfileMAP { get { verifyInitialized(); if (null == m_NetworkingProfileMAP) { initializeInterface(m_NetworkingProfileMAP = new NetworkingProfileMAP()); } return m_NetworkingProfileMAP; } }
+        public NetworkingProfileV6RD NetworkingProfileV6RD { get { verifyInitialized(); if (null == m_NetworkingProfileV6RD) { initializeInterface(m_NetworkingProfileV6RD = new NetworkingProfileV6RD()); } return m_NetworkingProfileV6RD; } }
         public NetworkingProfileVXLAN NetworkingProfileVXLAN { get { verifyInitialized(); if (null == m_NetworkingProfileVXLAN) { initializeInterface(m_NetworkingProfileVXLAN = new NetworkingProfileVXLAN()); } return m_NetworkingProfileVXLAN; } }
         public NetworkingProfileWCCPGRE NetworkingProfileWCCPGRE { get { verifyInitialized(); if (null == m_NetworkingProfileWCCPGRE) { initializeInterface(m_NetworkingProfileWCCPGRE = new NetworkingProfileWCCPGRE()); } return m_NetworkingProfileWCCPGRE; } }
         public NetworkingRouteDomain NetworkingRouteDomain { get { verifyInitialized(); if (null == m_NetworkingRouteDomain) { initializeInterface(m_NetworkingRouteDomain = new NetworkingRouteDomain()); } return m_NetworkingRouteDomain; } }
@@ -549,10 +594,13 @@ namespace iControl
         public SecurityProfileDNSSecurity SecurityProfileDNSSecurity { get { verifyInitialized(); if (null == m_SecurityProfileDNSSecurity) { initializeInterface(m_SecurityProfileDNSSecurity = new SecurityProfileDNSSecurity()); } return m_SecurityProfileDNSSecurity; } }
         public SecurityProfileDoS SecurityProfileDoS { get { verifyInitialized(); if (null == m_SecurityProfileDoS) { initializeInterface(m_SecurityProfileDoS = new SecurityProfileDoS()); } return m_SecurityProfileDoS; } }
         public SecurityProfileIPIntelligence SecurityProfileIPIntelligence { get { verifyInitialized(); if (null == m_SecurityProfileIPIntelligence) { initializeInterface(m_SecurityProfileIPIntelligence = new SecurityProfileIPIntelligence()); } return m_SecurityProfileIPIntelligence; } }
+
         public SystemCertificateRevocationListFile SystemCertificateRevocationListFile { get { verifyInitialized(); if (null == m_SystemCertificateRevocationListFile) { initializeInterface(m_SystemCertificateRevocationListFile = new SystemCertificateRevocationListFile()); } return m_SystemCertificateRevocationListFile; } }
         public SystemCluster SystemCluster { get { verifyInitialized(); if (null == m_SystemCluster) { initializeInterface(m_SystemCluster = new SystemCluster()); } return m_SystemCluster; } }
         public SystemConfigSync SystemConfigSync { get { verifyInitialized(); if (null == m_SystemConfigSync) { initializeInterface(m_SystemConfigSync = new SystemConfigSync()); } return m_SystemConfigSync; } }
         public SystemConnections SystemConnections { get { verifyInitialized(); if (null == m_SystemConnections) { initializeInterface(m_SystemConnections = new SystemConnections()); } return m_SystemConnections; } }
+        public SystemCryptoClient SystemCryptoClient { get { verifyInitialized(); if (null == m_SystemCryptoClient) { initializeInterface(m_SystemCryptoClient = new SystemCryptoClient()); } return m_SystemCryptoClient; } }
+        public SystemCryptoServer SystemCryptoServer { get { verifyInitialized(); if (null == m_SystemCryptoServer) { initializeInterface(m_SystemCryptoServer = new SystemCryptoServer()); } return m_SystemCryptoServer; } }
         public SystemDisk SystemDisk { get { verifyInitialized(); if (null == m_SystemDisk) { initializeInterface(m_SystemDisk = new SystemDisk()); } return m_SystemDisk; } }
         public SystemExternalMonitorFile SystemExternalMonitorFile { get { verifyInitialized(); if (null == m_SystemExternalMonitorFile) { initializeInterface(m_SystemExternalMonitorFile = new SystemExternalMonitorFile()); } return m_SystemExternalMonitorFile; } }
         public SystemFailover SystemFailover { get { verifyInitialized(); if (null == m_SystemFailover) { initializeInterface(m_SystemFailover = new SystemFailover()); } return m_SystemFailover; } }
@@ -572,6 +620,7 @@ namespace iControl
         public WebAcceleratorApplications WebAcceleratorApplications { get { verifyInitialized(); if (null == m_WebAcceleratorApplications) { initializeInterface(m_WebAcceleratorApplications = new WebAcceleratorApplications()); } return m_WebAcceleratorApplications; } }
         public WebAcceleratorPolicies WebAcceleratorPolicies { get { verifyInitialized(); if (null == m_WebAcceleratorPolicies) { initializeInterface(m_WebAcceleratorPolicies = new WebAcceleratorPolicies()); } return m_WebAcceleratorPolicies; } }
         public WebAcceleratorProxyMessage WebAcceleratorProxyMessage { get { verifyInitialized(); if (null == m_WebAcceleratorProxyMessage) { initializeInterface(m_WebAcceleratorProxyMessage = new WebAcceleratorProxyMessage()); } return m_WebAcceleratorProxyMessage; } }
+
         
         public bool initialized { get { return m_bInitialized; } }
         public iControl.ConnectionInfo ConnectionInfo { get { return m_ci; } }

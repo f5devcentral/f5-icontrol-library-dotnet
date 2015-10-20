@@ -992,6 +992,118 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_network_attack_vector_auto_blacklisting_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/ProfileDoS", 
+		RequestNamespace="urn:iControl:Security/ProfileDoS", ResponseNamespace="urn:iControl:Security/ProfileDoS")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState [] [] [] get_network_attack_vector_auto_blacklisting_state(
+		string [] profile_names,
+		string [] [] networks,
+		SecurityProfileDoSNetworkAttackVector [] [] [] vectors
+	) {
+		object [] results = this.Invoke("get_network_attack_vector_auto_blacklisting_state", new object [] {
+				profile_names,
+				networks,
+				vectors});
+		return ((CommonEnabledState [] [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_network_attack_vector_auto_blacklisting_state(string [] profile_names,string [] [] networks,SecurityProfileDoSNetworkAttackVector [] [] [] vectors, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_network_attack_vector_auto_blacklisting_state", new object[] {
+			profile_names,
+			networks,
+			vectors}, callback, asyncState);
+	}
+	public CommonEnabledState [] [] [] Endget_network_attack_vector_auto_blacklisting_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState [] [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_network_attack_vector_blacklist_category
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/ProfileDoS", 
+		RequestNamespace="urn:iControl:Security/ProfileDoS", ResponseNamespace="urn:iControl:Security/ProfileDoS")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] [] [] get_network_attack_vector_blacklist_category(
+		string [] profile_names,
+		string [] [] networks,
+		SecurityProfileDoSNetworkAttackVector [] [] [] vectors
+	) {
+		object [] results = this.Invoke("get_network_attack_vector_blacklist_category", new object [] {
+				profile_names,
+				networks,
+				vectors});
+		return ((string [] [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_network_attack_vector_blacklist_category(string [] profile_names,string [] [] networks,SecurityProfileDoSNetworkAttackVector [] [] [] vectors, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_network_attack_vector_blacklist_category", new object[] {
+			profile_names,
+			networks,
+			vectors}, callback, asyncState);
+	}
+	public string [] [] [] Endget_network_attack_vector_blacklist_category(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [] [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_network_attack_vector_blacklist_detection_seconds
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/ProfileDoS", 
+		RequestNamespace="urn:iControl:Security/ProfileDoS", ResponseNamespace="urn:iControl:Security/ProfileDoS")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] [] get_network_attack_vector_blacklist_detection_seconds(
+		string [] profile_names,
+		string [] [] networks,
+		SecurityProfileDoSNetworkAttackVector [] [] [] vectors
+	) {
+		object [] results = this.Invoke("get_network_attack_vector_blacklist_detection_seconds", new object [] {
+				profile_names,
+				networks,
+				vectors});
+		return ((long [] [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_network_attack_vector_blacklist_detection_seconds(string [] profile_names,string [] [] networks,SecurityProfileDoSNetworkAttackVector [] [] [] vectors, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_network_attack_vector_blacklist_detection_seconds", new object[] {
+			profile_names,
+			networks,
+			vectors}, callback, asyncState);
+	}
+	public long [] [] [] Endget_network_attack_vector_blacklist_detection_seconds(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_network_attack_vector_blacklist_duration
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/ProfileDoS", 
+		RequestNamespace="urn:iControl:Security/ProfileDoS", ResponseNamespace="urn:iControl:Security/ProfileDoS")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] [] get_network_attack_vector_blacklist_duration(
+		string [] profile_names,
+		string [] [] networks,
+		SecurityProfileDoSNetworkAttackVector [] [] [] vectors
+	) {
+		object [] results = this.Invoke("get_network_attack_vector_blacklist_duration", new object [] {
+				profile_names,
+				networks,
+				vectors});
+		return ((long [] [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_network_attack_vector_blacklist_duration(string [] profile_names,string [] [] networks,SecurityProfileDoSNetworkAttackVector [] [] [] vectors, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_network_attack_vector_blacklist_duration", new object[] {
+			profile_names,
+			networks,
+			vectors}, callback, asyncState);
+	}
+	public long [] [] [] Endget_network_attack_vector_blacklist_duration(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_network_attack_vector_rate_limit
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/ProfileDoS", 
@@ -2873,6 +2985,122 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_network_attack_vector_auto_blacklisting_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/ProfileDoS", 
+		RequestNamespace="urn:iControl:Security/ProfileDoS", ResponseNamespace="urn:iControl:Security/ProfileDoS")]
+	public void set_network_attack_vector_auto_blacklisting_state(
+		string [] profile_names,
+		string [] [] networks,
+		SecurityProfileDoSNetworkAttackVector [] [] [] vectors,
+		CommonEnabledState [] [] [] states
+	) {
+		this.Invoke("set_network_attack_vector_auto_blacklisting_state", new object [] {
+				profile_names,
+				networks,
+				vectors,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_network_attack_vector_auto_blacklisting_state(string [] profile_names,string [] [] networks,SecurityProfileDoSNetworkAttackVector [] [] [] vectors,CommonEnabledState [] [] [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_network_attack_vector_auto_blacklisting_state", new object[] {
+			profile_names,
+			networks,
+			vectors,
+			states}, callback, asyncState);
+	}
+	public void Endset_network_attack_vector_auto_blacklisting_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_network_attack_vector_blacklist_category
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/ProfileDoS", 
+		RequestNamespace="urn:iControl:Security/ProfileDoS", ResponseNamespace="urn:iControl:Security/ProfileDoS")]
+	public void set_network_attack_vector_blacklist_category(
+		string [] profile_names,
+		string [] [] networks,
+		SecurityProfileDoSNetworkAttackVector [] [] [] vectors,
+		string [] [] [] values
+	) {
+		this.Invoke("set_network_attack_vector_blacklist_category", new object [] {
+				profile_names,
+				networks,
+				vectors,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_network_attack_vector_blacklist_category(string [] profile_names,string [] [] networks,SecurityProfileDoSNetworkAttackVector [] [] [] vectors,string [] [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_network_attack_vector_blacklist_category", new object[] {
+			profile_names,
+			networks,
+			vectors,
+			values}, callback, asyncState);
+	}
+	public void Endset_network_attack_vector_blacklist_category(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_network_attack_vector_blacklist_detection_seconds
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/ProfileDoS", 
+		RequestNamespace="urn:iControl:Security/ProfileDoS", ResponseNamespace="urn:iControl:Security/ProfileDoS")]
+	public void set_network_attack_vector_blacklist_detection_seconds(
+		string [] profile_names,
+		string [] [] networks,
+		SecurityProfileDoSNetworkAttackVector [] [] [] vectors,
+		long [] [] [] values
+	) {
+		this.Invoke("set_network_attack_vector_blacklist_detection_seconds", new object [] {
+				profile_names,
+				networks,
+				vectors,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_network_attack_vector_blacklist_detection_seconds(string [] profile_names,string [] [] networks,SecurityProfileDoSNetworkAttackVector [] [] [] vectors,long [] [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_network_attack_vector_blacklist_detection_seconds", new object[] {
+			profile_names,
+			networks,
+			vectors,
+			values}, callback, asyncState);
+	}
+	public void Endset_network_attack_vector_blacklist_detection_seconds(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_network_attack_vector_blacklist_duration
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/ProfileDoS", 
+		RequestNamespace="urn:iControl:Security/ProfileDoS", ResponseNamespace="urn:iControl:Security/ProfileDoS")]
+	public void set_network_attack_vector_blacklist_duration(
+		string [] profile_names,
+		string [] [] networks,
+		SecurityProfileDoSNetworkAttackVector [] [] [] vectors,
+		long [] [] [] values
+	) {
+		this.Invoke("set_network_attack_vector_blacklist_duration", new object [] {
+				profile_names,
+				networks,
+				vectors,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_network_attack_vector_blacklist_duration(string [] profile_names,string [] [] networks,SecurityProfileDoSNetworkAttackVector [] [] [] vectors,long [] [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_network_attack_vector_blacklist_duration", new object[] {
+			profile_names,
+			networks,
+			vectors,
+			values}, callback, asyncState);
+	}
+	public void Endset_network_attack_vector_blacklist_duration(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_network_attack_vector_rate_limit
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/ProfileDoS", 
@@ -3672,6 +3900,27 @@ namespace iControl {
 		NETWORK_ATTACK_VECTOR_TCP_SYN_FLOOD,
 		NETWORK_ATTACK_VECTOR_TCP_RST_FLOOD,
 		NETWORK_ATTACK_VECTOR_UDP_FLOOD,
+		NETWORK_ATTACK_VECTOR_IP_OPT_FRAMES,
+		NETWORK_ATTACK_VECTOR_IP_FRAG_FLOOD,
+		NETWORK_ATTACK_VECTOR_TOO_MANY_EXT_HDRS,
+		NETWORK_ATTACK_VECTOR_EXT_HDR_TOO_LARGE,
+		NETWORK_ATTACK_VECTOR_IP_LOW_TTL,
+		NETWORK_ATTACK_VECTOR_HOP_CNT_LOW,
+		NETWORK_ATTACK_VECTOR_IPV6_EXT_HDR_FRAMES,
+		NETWORK_ATTACK_VECTOR_IPV6_FRAG_FLOOD,
+		NETWORK_ATTACK_VECTOR_UNK_TCP_OPT_TYPE,
+		NETWORK_ATTACK_VECTOR_OPT_PRESENT_WITH_ILLEGAL_LEN,
+		NETWORK_ATTACK_VECTOR_TCP_OPT_OVERRUNS_TCP_HDR,
+		NETWORK_ATTACK_VECTOR_TCP_SYNACK_FLOOD,
+		NETWORK_ATTACK_VECTOR_ICMPV4_FLOOD,
+		NETWORK_ATTACK_VECTOR_ICMP_FRAG,
+		NETWORK_ATTACK_VECTOR_ICMPV6_FLOOD,
+		NETWORK_ATTACK_VECTOR_HOST_UNREACHABLE,
+		NETWORK_ATTACK_VECTOR_TIDCMP,
+		NETWORK_ATTACK_VECTOR_SWEEP,
+		NETWORK_ATTACK_VECTOR_TCP_BAD_URGENT,
+		NETWORK_ATTACK_VECTOR_TCP_WINDOW_SIZE,
+		NETWORK_ATTACK_VECTOR_TCP_SYN_OVERSIZE,
 	}
 
 	/// <remarks/>

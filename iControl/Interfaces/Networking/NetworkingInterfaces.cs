@@ -502,6 +502,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_qinq_ether_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Interfaces", 
+		RequestNamespace="urn:iControl:Networking/Interfaces", ResponseNamespace="urn:iControl:Networking/Interfaces")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_qinq_ether_type(
+		string [] interfaces
+	) {
+		object [] results = this.Invoke("get_qinq_ether_type", new object [] {
+				interfaces});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_qinq_ether_type(string [] interfaces, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_qinq_ether_type", new object[] {
+			interfaces}, callback, asyncState);
+	}
+	public string [] Endget_qinq_ether_type(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_requested_flow_control
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Interfaces", 
@@ -1035,6 +1057,29 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_prefer_sfp_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_qinq_ether_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Interfaces", 
+		RequestNamespace="urn:iControl:Networking/Interfaces", ResponseNamespace="urn:iControl:Networking/Interfaces")]
+	public void set_qinq_ether_type(
+		string [] interfaces,
+		string [] ether_types
+	) {
+		this.Invoke("set_qinq_ether_type", new object [] {
+				interfaces,
+				ether_types});
+
+	}
+	public System.IAsyncResult Beginset_qinq_ether_type(string [] interfaces,string [] ether_types, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_qinq_ether_type", new object[] {
+			interfaces,
+			ether_types}, callback, asyncState);
+	}
+	public void Endset_qinq_ether_type(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

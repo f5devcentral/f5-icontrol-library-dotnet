@@ -390,6 +390,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_qinq_ether_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Trunk", 
+		RequestNamespace="urn:iControl:Networking/Trunk", ResponseNamespace="urn:iControl:Networking/Trunk")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_qinq_ether_type(
+		string [] trunks
+	) {
+		object [] results = this.Invoke("get_qinq_ether_type", new object [] {
+				trunks});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_qinq_ether_type(string [] trunks, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_qinq_ether_type", new object[] {
+			trunks}, callback, asyncState);
+	}
+	public string [] Endget_qinq_ether_type(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_statistics
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Trunk", 
@@ -675,6 +697,29 @@ namespace iControl {
 			policies}, callback, asyncState);
 	}
 	public void Endset_link_selection_policy(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_qinq_ether_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Trunk", 
+		RequestNamespace="urn:iControl:Networking/Trunk", ResponseNamespace="urn:iControl:Networking/Trunk")]
+	public void set_qinq_ether_type(
+		string [] trunks,
+		string [] ether_types
+	) {
+		this.Invoke("set_qinq_ether_type", new object [] {
+				trunks,
+				ether_types});
+
+	}
+	public System.IAsyncResult Beginset_qinq_ether_type(string [] trunks,string [] ether_types, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_qinq_ether_type", new object[] {
+			trunks,
+			ether_types}, callback, asyncState);
+	}
+	public void Endset_qinq_ether_type(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

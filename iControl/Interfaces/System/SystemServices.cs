@@ -373,6 +373,7 @@ namespace iControl {
 		SERVICE_EMSTATSD,
 		SERVICE_EMSNMPD,
 		SERVICE_SWIMD,
+		SERVICE_PKCS11D,
 	}
 
 	//=======================================================================

@@ -156,6 +156,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_internal_forwarding_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/iSessionLocalInterface", 
+		RequestNamespace="urn:iControl:Networking/iSessionLocalInterface", ResponseNamespace="urn:iControl:Networking/iSessionLocalInterface")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState [] get_internal_forwarding_state(
+		long [] wocs
+	) {
+		object [] results = this.Invoke("get_internal_forwarding_state", new object [] {
+				wocs});
+		return ((CommonEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_internal_forwarding_state(long [] wocs, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_internal_forwarding_state", new object[] {
+			wocs}, callback, asyncState);
+	}
+	public CommonEnabledState [] Endget_internal_forwarding_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_ip_list
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/iSessionLocalInterface", 
@@ -370,6 +392,29 @@ namespace iControl {
 			enabled_states}, callback, asyncState);
 	}
 	public void Endset_enabled_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_internal_forwarding_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/iSessionLocalInterface", 
+		RequestNamespace="urn:iControl:Networking/iSessionLocalInterface", ResponseNamespace="urn:iControl:Networking/iSessionLocalInterface")]
+	public void set_internal_forwarding_state(
+		long [] wocs,
+		CommonEnabledState [] states
+	) {
+		this.Invoke("set_internal_forwarding_state", new object [] {
+				wocs,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_internal_forwarding_state(long [] wocs,CommonEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_internal_forwarding_state", new object[] {
+			wocs,
+			states}, callback, asyncState);
+	}
+	public void Endset_internal_forwarding_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

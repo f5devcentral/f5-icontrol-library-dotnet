@@ -12,8 +12,8 @@ namespace iControl {
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="LocalLB.ProfileSCTPBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileSCTPProfileSCTPStatistics))]
-	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileEnabledState))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileString))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStatisticsByVirtual))]
 	public partial class LocalLBProfileSCTP : iControlInterface {
@@ -24,6 +24,29 @@ namespace iControl {
 	//=======================================================================
 	// Operations
 	//=======================================================================
+	//-----------------------------------------------------------------------
+	// add_multi_homing_address
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	public void add_multi_homing_address(
+		string [] profile_names,
+		string [] [] addresses
+	) {
+		this.Invoke("add_multi_homing_address", new object [] {
+				profile_names,
+				addresses});
+
+	}
+	public System.IAsyncResult Beginadd_multi_homing_address(string [] profile_names,string [] [] addresses, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("add_multi_homing_address", new object[] {
+			profile_names,
+			addresses}, callback, asyncState);
+	}
+	public void Endadd_multi_homing_address(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
 	//-----------------------------------------------------------------------
 	// create
 	//-----------------------------------------------------------------------
@@ -100,6 +123,28 @@ namespace iControl {
 	public LocalLBProfileSCTPProfileSCTPStatistics Endget_all_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileSCTPProfileSCTPStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_client_side_multi_homing_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_client_side_multi_homing_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_client_side_multi_homing_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_client_side_multi_homing_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_client_side_multi_homing_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_client_side_multi_homing_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -235,6 +280,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_heartbeat_max_burst
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_heartbeat_max_burst(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_heartbeat_max_burst", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_heartbeat_max_burst(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_heartbeat_max_burst", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_heartbeat_max_burst(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_idle_timeout
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
@@ -340,6 +407,94 @@ namespace iControl {
 	public string [] Endget_list(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_max_burst
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_max_burst(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_max_burst", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_max_burst(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_max_burst", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_max_burst(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_maximum_communication_paths
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_maximum_communication_paths(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_maximum_communication_paths", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_maximum_communication_paths(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_maximum_communication_paths", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_maximum_communication_paths(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_maximum_path_retransmit_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_maximum_path_retransmit_limit(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_maximum_path_retransmit_limit", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_maximum_path_retransmit_limit(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_maximum_path_retransmit_limit", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_maximum_path_retransmit_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_multi_homing_address
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] [] get_multi_homing_address(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_multi_homing_address", new object [] {
+				profile_names});
+		return ((string [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_multi_homing_address(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_multi_homing_address", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public string [] [] Endget_multi_homing_address(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [] [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -585,6 +740,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_server_side_multi_homing_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_server_side_multi_homing_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_server_side_multi_homing_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_server_side_multi_homing_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_server_side_multi_homing_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_server_side_multi_homing_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_statistics
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
@@ -720,6 +897,49 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// remove_all_multi_homing_addresses
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	public void remove_all_multi_homing_addresses(
+		string [] profile_names
+	) {
+		this.Invoke("remove_all_multi_homing_addresses", new object [] {
+				profile_names});
+
+	}
+	public System.IAsyncResult Beginremove_all_multi_homing_addresses(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_all_multi_homing_addresses", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public void Endremove_all_multi_homing_addresses(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_multi_homing_address
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	public void remove_multi_homing_address(
+		string [] profile_names,
+		string [] [] addresses
+	) {
+		this.Invoke("remove_multi_homing_address", new object [] {
+				profile_names,
+				addresses});
+
+	}
+	public System.IAsyncResult Beginremove_multi_homing_address(string [] profile_names,string [] [] addresses, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_multi_homing_address", new object[] {
+			profile_names,
+			addresses}, callback, asyncState);
+	}
+	public void Endremove_multi_homing_address(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// reset_statistics
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
@@ -759,6 +979,29 @@ namespace iControl {
 			virtual_names}, callback, asyncState);
 	}
 	public void Endreset_statistics_by_virtual(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_client_side_multi_homing_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	public void set_client_side_multi_homing_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_client_side_multi_homing_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_client_side_multi_homing_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_client_side_multi_homing_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_client_side_multi_homing_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -901,6 +1144,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_heartbeat_max_burst
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	public void set_heartbeat_max_burst(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_heartbeat_max_burst", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_heartbeat_max_burst(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_heartbeat_max_burst", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_heartbeat_max_burst(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_idle_timeout
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
@@ -989,6 +1255,75 @@ namespace iControl {
 			values}, callback, asyncState);
 	}
 	public void Endset_link_qos_to_peer(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_max_burst
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	public void set_max_burst(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_max_burst", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_max_burst(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_max_burst", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_max_burst(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_maximum_communication_paths
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	public void set_maximum_communication_paths(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_maximum_communication_paths", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_maximum_communication_paths(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_maximum_communication_paths", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_maximum_communication_paths(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_maximum_path_retransmit_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	public void set_maximum_path_retransmit_limit(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_maximum_path_retransmit_limit", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_maximum_path_retransmit_limit(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_maximum_path_retransmit_limit", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_maximum_path_retransmit_limit(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -1242,6 +1577,29 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_send_partial_data_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_server_side_multi_homing_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSCTP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSCTP", ResponseNamespace="urn:iControl:LocalLB/ProfileSCTP")]
+	public void set_server_side_multi_homing_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_server_side_multi_homing_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_server_side_multi_homing_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_server_side_multi_homing_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_server_side_multi_homing_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

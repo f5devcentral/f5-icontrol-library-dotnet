@@ -201,6 +201,17 @@ namespace iControl
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Networking.IPsecIkeVersion", Namespace = "urn:iControl")]
+	public enum NetworkingIPsecIkeVersion
+	{
+		IPSEC_IKE_VERSION_UNKNOWN,
+		IPSEC_IKE_VERSION_1,
+		IPSEC_IKE_VERSION_2,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Networking.IPsecManSaEncrAlgorithm", Namespace = "urn:iControl")]
 	public enum NetworkingIPsecManSaEncrAlgorithm
 	{
@@ -312,6 +323,19 @@ namespace iControl
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Networking.MemberTagMode", Namespace = "urn:iControl")]
+	public enum NetworkingMemberTagMode
+	{
+		MEMBER_TAG_MODE_UNKNOWN,
+		MEMBER_TAG_MODE_NONE,
+		MEMBER_TAG_MODE_SERVICE,
+		MEMBER_TAG_MODE_CUSTOMER,
+		MEMBER_TAG_MODE_DOUBLE,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Networking.MemberTagType", Namespace = "urn:iControl")]
 	public enum NetworkingMemberTagType
 	{
@@ -403,6 +427,26 @@ namespace iControl
 		STP_STATE_TYPE_LEARN,
 		STP_STATE_TYPE_FORWARD,
 		STP_STATE_TYPE_DISABLE,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Networking.TunnelProfileType", Namespace = "urn:iControl")]
+	public enum NetworkingTunnelProfileType
+	{
+		TUNNEL_PROFILE_UNKNOWN,
+		TUNNEL_PROFILE_ETHERIP,
+		TUNNEL_PROFILE_FEC,
+		TUNNEL_PROFILE_GRE,
+		TUNNEL_PROFILE_IPIP,
+		TUNNEL_PROFILE_PPP,
+		TUNNEL_PROFILE_TCPFORWARD,
+		TUNNEL_PROFILE_VXLAN,
+		TUNNEL_PROFILE_WCCPGRE,
+		TUNNEL_PROFILE_V6RD,
+		TUNNEL_PROFILE_IPSEC,
+		TUNNEL_PROFILE_GENEVE,
 	}
 
 	/// <remarks/>

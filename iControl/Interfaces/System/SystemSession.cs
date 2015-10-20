@@ -40,6 +40,46 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_dtd_processing_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Session", 
+		RequestNamespace="urn:iControl:System/Session", ResponseNamespace="urn:iControl:System/Session")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState get_dtd_processing_state(
+
+	) {
+		object [] results = this.Invoke("get_dtd_processing_state", new object [0]);
+		return ((CommonEnabledState)(results[0]));
+	}
+	public System.IAsyncResult Beginget_dtd_processing_state(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_dtd_processing_state", new object[0], callback, asyncState);
+	}
+	public CommonEnabledState Endget_dtd_processing_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_force_sessions_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Session", 
+		RequestNamespace="urn:iControl:System/Session", ResponseNamespace="urn:iControl:System/Session")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState get_force_sessions_state(
+
+	) {
+		object [] results = this.Invoke("get_force_sessions_state", new object [0]);
+		return ((CommonEnabledState)(results[0]));
+	}
+	public System.IAsyncResult Beginget_force_sessions_state(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_force_sessions_state", new object[0], callback, asyncState);
+	}
+	public CommonEnabledState Endget_force_sessions_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_maximum_sessions
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Session", 
@@ -216,6 +256,46 @@ namespace iControl {
 			folder}, callback, asyncState);
 	}
 	public void Endset_active_folder(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_dtd_processing_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Session", 
+		RequestNamespace="urn:iControl:System/Session", ResponseNamespace="urn:iControl:System/Session")]
+	public void set_dtd_processing_state(
+		CommonEnabledState state
+	) {
+		this.Invoke("set_dtd_processing_state", new object [] {
+				state});
+
+	}
+	public System.IAsyncResult Beginset_dtd_processing_state(CommonEnabledState state, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_dtd_processing_state", new object[] {
+			state}, callback, asyncState);
+	}
+	public void Endset_dtd_processing_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_force_sessions_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Session", 
+		RequestNamespace="urn:iControl:System/Session", ResponseNamespace="urn:iControl:System/Session")]
+	public void set_force_sessions_state(
+		CommonEnabledState state
+	) {
+		this.Invoke("set_force_sessions_state", new object [] {
+				state});
+
+	}
+	public System.IAsyncResult Beginset_force_sessions_state(CommonEnabledState state, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_force_sessions_state", new object[] {
+			state}, callback, asyncState);
+	}
+	public void Endset_force_sessions_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

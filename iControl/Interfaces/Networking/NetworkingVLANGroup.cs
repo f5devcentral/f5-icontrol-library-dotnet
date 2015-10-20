@@ -303,6 +303,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_if_index
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/VLANGroup", 
+		RequestNamespace="urn:iControl:Networking/VLANGroup", ResponseNamespace="urn:iControl:Networking/VLANGroup")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_if_index(
+		string [] vlan_groups
+	) {
+		object [] results = this.Invoke("get_if_index", new object [] {
+				vlan_groups});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_if_index(string [] vlan_groups, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_if_index", new object[] {
+			vlan_groups}, callback, asyncState);
+	}
+	public long [] Endget_if_index(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_list
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/VLANGroup", 

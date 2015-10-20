@@ -15,6 +15,7 @@ namespace iControl {
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileHardwareAccelerationMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileEnabledState))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileFastL4ProfileLateBindingTimeoutRecoveryMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileFastL4ProfilePVAOffloadState))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStatisticsByVirtual))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPOptionMode))]
@@ -300,6 +301,94 @@ namespace iControl {
 	public LocalLBProfileULong [] Endget_keep_alive_interval(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_late_binding_client_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_late_binding_client_timeout(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_late_binding_client_timeout", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_late_binding_client_timeout(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_late_binding_client_timeout", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_late_binding_client_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_late_binding_explicit_flow_migration_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_late_binding_explicit_flow_migration_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_late_binding_explicit_flow_migration_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_late_binding_explicit_flow_migration_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_late_binding_explicit_flow_migration_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_late_binding_explicit_flow_migration_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_late_binding_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_late_binding_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_late_binding_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_late_binding_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_late_binding_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_late_binding_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_late_binding_timeout_recovery_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileFastL4ProfileLateBindingTimeoutRecoveryMode [] get_late_binding_timeout_recovery_mode(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_late_binding_timeout_recovery_mode", new object [] {
+				profile_names});
+		return ((LocalLBProfileFastL4ProfileLateBindingTimeoutRecoveryMode [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_late_binding_timeout_recovery_mode(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_late_binding_timeout_recovery_mode", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileFastL4ProfileLateBindingTimeoutRecoveryMode [] Endget_late_binding_timeout_recovery_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileFastL4ProfileLateBindingTimeoutRecoveryMode [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -1038,6 +1127,98 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_late_binding_client_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	public void set_late_binding_client_timeout(
+		string [] profile_names,
+		LocalLBProfileULong [] timeouts
+	) {
+		this.Invoke("set_late_binding_client_timeout", new object [] {
+				profile_names,
+				timeouts});
+
+	}
+	public System.IAsyncResult Beginset_late_binding_client_timeout(string [] profile_names,LocalLBProfileULong [] timeouts, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_late_binding_client_timeout", new object[] {
+			profile_names,
+			timeouts}, callback, asyncState);
+	}
+	public void Endset_late_binding_client_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_late_binding_explicit_flow_migration_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	public void set_late_binding_explicit_flow_migration_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_late_binding_explicit_flow_migration_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_late_binding_explicit_flow_migration_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_late_binding_explicit_flow_migration_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_late_binding_explicit_flow_migration_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_late_binding_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	public void set_late_binding_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_late_binding_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_late_binding_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_late_binding_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_late_binding_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_late_binding_timeout_recovery_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	public void set_late_binding_timeout_recovery_mode(
+		string [] profile_names,
+		LocalLBProfileFastL4ProfileLateBindingTimeoutRecoveryMode [] modes
+	) {
+		this.Invoke("set_late_binding_timeout_recovery_mode", new object [] {
+				profile_names,
+				modes});
+
+	}
+	public System.IAsyncResult Beginset_late_binding_timeout_recovery_mode(string [] profile_names,LocalLBProfileFastL4ProfileLateBindingTimeoutRecoveryMode [] modes, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_late_binding_timeout_recovery_mode", new object[] {
+			profile_names,
+			modes}, callback, asyncState);
+	}
+	public void Endset_late_binding_timeout_recovery_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_link_qos_to_client
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
@@ -1413,6 +1594,17 @@ namespace iControl {
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileFastL4.LateBindingTimeoutRecoveryMode", Namespace = "urn:iControl")]
+	public enum LocalLBProfileFastL4LateBindingTimeoutRecoveryMode
+	{
+		LATE_BINDING_TIMEOUT_RECOVERY_UNKNOWN,
+		LATE_BINDING_TIMEOUT_RECOVERY_DISCONNECT,
+		LATE_BINDING_TIMEOUT_RECOVERY_FALLBACK,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileFastL4.PVAOffloadState", Namespace = "urn:iControl")]
 	public enum LocalLBProfileFastL4PVAOffloadState
 	{
@@ -1466,6 +1658,28 @@ namespace iControl {
 		{
 			get { return this.time_stampField; }
 			set { this.time_stampField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileFastL4.ProfileLateBindingTimeoutRecoveryMode", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileFastL4ProfileLateBindingTimeoutRecoveryMode
+	{
+		private LocalLBProfileFastL4LateBindingTimeoutRecoveryMode valueField;
+		public LocalLBProfileFastL4LateBindingTimeoutRecoveryMode value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
 		}
 	};
 

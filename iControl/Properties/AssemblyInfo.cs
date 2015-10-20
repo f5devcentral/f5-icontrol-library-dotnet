@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("iControl")]
-[assembly: AssemblyDescription("iControl API Library for Microsoft .NET")]
+[assembly: AssemblyDescription("iControl SOAP API Library for Microsoft .NET")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("F5 Networks, Inc.")]
 [assembly: AssemblyProduct("iControl")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("11.5.0.0")]
-[assembly: AssemblyFileVersion("11.5.0.0")]
+[assembly: AssemblyVersion("12.0.0.0")]
+[assembly: AssemblyFileVersion("12.0.0.0")]

@@ -12,6 +12,7 @@ namespace iControl {
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="Networking.BWControllerPolicyBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonRateUnit))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonULong64))]
 	public partial class NetworkingBWControllerPolicy : iControlInterface {
 		public NetworkingBWControllerPolicy() {
 			this.Url = "https://url_to_service";
@@ -159,6 +160,56 @@ namespace iControl {
 	public string [] [] Endget_category(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_category_ip_tos
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
+		RequestNamespace="urn:iControl:Networking/BWControllerPolicy", ResponseNamespace="urn:iControl:Networking/BWControllerPolicy")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_category_ip_tos(
+		string [] policies,
+		string [] [] categories
+	) {
+		object [] results = this.Invoke("get_category_ip_tos", new object [] {
+				policies,
+				categories});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_category_ip_tos(string [] policies,string [] [] categories, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_category_ip_tos", new object[] {
+			policies,
+			categories}, callback, asyncState);
+	}
+	public long [] [] Endget_category_ip_tos(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_category_link_qos
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
+		RequestNamespace="urn:iControl:Networking/BWControllerPolicy", ResponseNamespace="urn:iControl:Networking/BWControllerPolicy")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_category_link_qos(
+		string [] policies,
+		string [] [] categories
+	) {
+		object [] results = this.Invoke("get_category_link_qos", new object [] {
+				policies,
+				categories});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_category_link_qos(string [] policies,string [] [] categories, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_category_link_qos", new object[] {
+			policies,
+			categories}, callback, asyncState);
+	}
+	public long [] [] Endget_category_link_qos(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -320,6 +371,50 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_log_period
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
+		RequestNamespace="urn:iControl:Networking/BWControllerPolicy", ResponseNamespace="urn:iControl:Networking/BWControllerPolicy")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_log_period(
+		string [] policies
+	) {
+		object [] results = this.Invoke("get_log_period", new object [] {
+				policies});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_log_period(string [] policies, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_log_period", new object[] {
+			policies}, callback, asyncState);
+	}
+	public long [] Endget_log_period(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_log_publisher
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
+		RequestNamespace="urn:iControl:Networking/BWControllerPolicy", ResponseNamespace="urn:iControl:Networking/BWControllerPolicy")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_log_publisher(
+		string [] policies
+	) {
+		object [] results = this.Invoke("get_log_publisher", new object [] {
+				policies});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_log_publisher(string [] policies, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_log_publisher", new object[] {
+			policies}, callback, asyncState);
+	}
+	public string [] Endget_log_publisher(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_maximum_rate
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
@@ -361,6 +456,50 @@ namespace iControl {
 	public CommonRateUnit [] Endget_maximum_user_rate(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((CommonRateUnit [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_maximum_user_rate_pps
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
+		RequestNamespace="urn:iControl:Networking/BWControllerPolicy", ResponseNamespace="urn:iControl:Networking/BWControllerPolicy")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonULong64 [] get_maximum_user_rate_pps(
+		string [] policies
+	) {
+		object [] results = this.Invoke("get_maximum_user_rate_pps", new object [] {
+				policies});
+		return ((CommonULong64 [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_maximum_user_rate_pps(string [] policies, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_maximum_user_rate_pps", new object[] {
+			policies}, callback, asyncState);
+	}
+	public CommonULong64 [] Endget_maximum_user_rate_pps(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonULong64 [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_measurement_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
+		RequestNamespace="urn:iControl:Networking/BWControllerPolicy", ResponseNamespace="urn:iControl:Networking/BWControllerPolicy")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState [] get_measurement_state(
+		string [] policies
+	) {
+		object [] results = this.Invoke("get_measurement_state", new object [] {
+				policies});
+		return ((CommonEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_measurement_state(string [] policies, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_measurement_state", new object[] {
+			policies}, callback, asyncState);
+	}
+	public CommonEnabledState [] Endget_measurement_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -425,6 +564,58 @@ namespace iControl {
 			categories}, callback, asyncState);
 	}
 	public void Endremove_category(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_category_ip_tos
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
+		RequestNamespace="urn:iControl:Networking/BWControllerPolicy", ResponseNamespace="urn:iControl:Networking/BWControllerPolicy")]
+	public void set_category_ip_tos(
+		string [] policies,
+		string [] [] categories,
+		long [] [] values
+	) {
+		this.Invoke("set_category_ip_tos", new object [] {
+				policies,
+				categories,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_category_ip_tos(string [] policies,string [] [] categories,long [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_category_ip_tos", new object[] {
+			policies,
+			categories,
+			values}, callback, asyncState);
+	}
+	public void Endset_category_ip_tos(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_category_link_qos
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
+		RequestNamespace="urn:iControl:Networking/BWControllerPolicy", ResponseNamespace="urn:iControl:Networking/BWControllerPolicy")]
+	public void set_category_link_qos(
+		string [] policies,
+		string [] [] categories,
+		long [] [] values
+	) {
+		this.Invoke("set_category_link_qos", new object [] {
+				policies,
+				categories,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_category_link_qos(string [] policies,string [] [] categories,long [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_category_link_qos", new object[] {
+			policies,
+			categories,
+			values}, callback, asyncState);
+	}
+	public void Endset_category_link_qos(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -550,6 +741,52 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_log_period
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
+		RequestNamespace="urn:iControl:Networking/BWControllerPolicy", ResponseNamespace="urn:iControl:Networking/BWControllerPolicy")]
+	public void set_log_period(
+		string [] policies,
+		long [] periods
+	) {
+		this.Invoke("set_log_period", new object [] {
+				policies,
+				periods});
+
+	}
+	public System.IAsyncResult Beginset_log_period(string [] policies,long [] periods, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_log_period", new object[] {
+			policies,
+			periods}, callback, asyncState);
+	}
+	public void Endset_log_period(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_log_publisher
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
+		RequestNamespace="urn:iControl:Networking/BWControllerPolicy", ResponseNamespace="urn:iControl:Networking/BWControllerPolicy")]
+	public void set_log_publisher(
+		string [] policies,
+		string [] publishers
+	) {
+		this.Invoke("set_log_publisher", new object [] {
+				policies,
+				publishers});
+
+	}
+	public System.IAsyncResult Beginset_log_publisher(string [] policies,string [] publishers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_log_publisher", new object[] {
+			policies,
+			publishers}, callback, asyncState);
+	}
+	public void Endset_log_publisher(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_maximum_rate
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
@@ -592,6 +829,52 @@ namespace iControl {
 			rates}, callback, asyncState);
 	}
 	public void Endset_maximum_user_rate(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_maximum_user_rate_pps
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
+		RequestNamespace="urn:iControl:Networking/BWControllerPolicy", ResponseNamespace="urn:iControl:Networking/BWControllerPolicy")]
+	public void set_maximum_user_rate_pps(
+		string [] policies,
+		CommonULong64 [] rates
+	) {
+		this.Invoke("set_maximum_user_rate_pps", new object [] {
+				policies,
+				rates});
+
+	}
+	public System.IAsyncResult Beginset_maximum_user_rate_pps(string [] policies,CommonULong64 [] rates, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_maximum_user_rate_pps", new object[] {
+			policies,
+			rates}, callback, asyncState);
+	}
+	public void Endset_maximum_user_rate_pps(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_measurement_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/BWControllerPolicy", 
+		RequestNamespace="urn:iControl:Networking/BWControllerPolicy", ResponseNamespace="urn:iControl:Networking/BWControllerPolicy")]
+	public void set_measurement_state(
+		string [] policies,
+		CommonEnabledState [] states
+	) {
+		this.Invoke("set_measurement_state", new object [] {
+				policies,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_measurement_state(string [] policies,CommonEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_measurement_state", new object[] {
+			policies,
+			states}, callback, asyncState);
+	}
+	public void Endset_measurement_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

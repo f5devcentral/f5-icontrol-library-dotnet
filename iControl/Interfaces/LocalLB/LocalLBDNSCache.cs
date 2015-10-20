@@ -94,6 +94,35 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// add_response_policy_zone
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/DNSCache", 
+		RequestNamespace="urn:iControl:LocalLB/DNSCache", ResponseNamespace="urn:iControl:LocalLB/DNSCache")]
+	public void add_response_policy_zone(
+		string [] caches,
+		string [] [] zones,
+		LocalLBRPZActionType [] [] actions,
+		string [] [] walled_gardens
+	) {
+		this.Invoke("add_response_policy_zone", new object [] {
+				caches,
+				zones,
+				actions,
+				walled_gardens});
+
+	}
+	public System.IAsyncResult Beginadd_response_policy_zone(string [] caches,string [] [] zones,LocalLBRPZActionType [] [] actions,string [] [] walled_gardens, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("add_response_policy_zone", new object[] {
+			caches,
+			zones,
+			actions,
+			walled_gardens}, callback, asyncState);
+	}
+	public void Endadd_response_policy_zone(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// add_root_hint
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/DNSCache", 
@@ -678,6 +707,78 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_response_policy_zone
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/DNSCache", 
+		RequestNamespace="urn:iControl:LocalLB/DNSCache", ResponseNamespace="urn:iControl:LocalLB/DNSCache")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] [] get_response_policy_zone(
+		string [] caches
+	) {
+		object [] results = this.Invoke("get_response_policy_zone", new object [] {
+				caches});
+		return ((string [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_response_policy_zone(string [] caches, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_response_policy_zone", new object[] {
+			caches}, callback, asyncState);
+	}
+	public string [] [] Endget_response_policy_zone(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_response_policy_zone_action
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/DNSCache", 
+		RequestNamespace="urn:iControl:LocalLB/DNSCache", ResponseNamespace="urn:iControl:LocalLB/DNSCache")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBRPZActionType [] [] get_response_policy_zone_action(
+		string [] caches,
+		string [] [] zones
+	) {
+		object [] results = this.Invoke("get_response_policy_zone_action", new object [] {
+				caches,
+				zones});
+		return ((LocalLBRPZActionType [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_response_policy_zone_action(string [] caches,string [] [] zones, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_response_policy_zone_action", new object[] {
+			caches,
+			zones}, callback, asyncState);
+	}
+	public LocalLBRPZActionType [] [] Endget_response_policy_zone_action(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBRPZActionType [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_response_policy_zone_walled_garden
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/DNSCache", 
+		RequestNamespace="urn:iControl:LocalLB/DNSCache", ResponseNamespace="urn:iControl:LocalLB/DNSCache")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] [] get_response_policy_zone_walled_garden(
+		string [] caches,
+		string [] [] zones
+	) {
+		object [] results = this.Invoke("get_response_policy_zone_walled_garden", new object [] {
+				caches,
+				zones});
+		return ((string [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_response_policy_zone_walled_garden(string [] caches,string [] [] zones, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_response_policy_zone_walled_garden", new object[] {
+			caches,
+			zones}, callback, asyncState);
+	}
+	public string [] [] Endget_response_policy_zone_walled_garden(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_root_hint
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/DNSCache", 
@@ -1003,6 +1104,26 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// remove_all_response_policy_zones
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/DNSCache", 
+		RequestNamespace="urn:iControl:LocalLB/DNSCache", ResponseNamespace="urn:iControl:LocalLB/DNSCache")]
+	public void remove_all_response_policy_zones(
+		string [] caches
+	) {
+		this.Invoke("remove_all_response_policy_zones", new object [] {
+				caches});
+
+	}
+	public System.IAsyncResult Beginremove_all_response_policy_zones(string [] caches, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_all_response_policy_zones", new object[] {
+			caches}, callback, asyncState);
+	}
+	public void Endremove_all_response_policy_zones(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// remove_all_root_hints
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/DNSCache", 
@@ -1111,6 +1232,29 @@ namespace iControl {
 			nameservers}, callback, asyncState);
 	}
 	public void Endremove_nameserver(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_response_policy_zone
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/DNSCache", 
+		RequestNamespace="urn:iControl:LocalLB/DNSCache", ResponseNamespace="urn:iControl:LocalLB/DNSCache")]
+	public void remove_response_policy_zone(
+		string [] caches,
+		string [] [] zones
+	) {
+		this.Invoke("remove_response_policy_zone", new object [] {
+				caches,
+				zones});
+
+	}
+	public System.IAsyncResult Beginremove_response_policy_zone(string [] caches,string [] [] zones, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_response_policy_zone", new object[] {
+			caches,
+			zones}, callback, asyncState);
+	}
+	public void Endremove_response_policy_zone(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

@@ -14,6 +14,10 @@ namespace iControl {
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonULong64))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonIPNetmask))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemVCMPVirtualDisk))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemVCMPVCMPHAStatusStatistics))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemVCMPVCMPModuleProvisionStatistics))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemVCMPVCMPPromptStatistics))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemVCMPVCMPSoftwareStatistics))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemVCMPVCMPStatistics))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemVCMPVirtualDiskStatistics))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(SystemVCMPVCMPCompletionStatus))]
@@ -183,6 +187,86 @@ namespace iControl {
 	}
 	public void Enddelete_virtual_disk(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// get_all_ha_status_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
+		RequestNamespace="urn:iControl:System/VCMP", ResponseNamespace="urn:iControl:System/VCMP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemVCMPVCMPHAStatusStatistics get_all_ha_status_statistics(
+
+	) {
+		object [] results = this.Invoke("get_all_ha_status_statistics", new object [0]);
+		return ((SystemVCMPVCMPHAStatusStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_all_ha_status_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_all_ha_status_statistics", new object[0], callback, asyncState);
+	}
+	public SystemVCMPVCMPHAStatusStatistics Endget_all_ha_status_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemVCMPVCMPHAStatusStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_all_module_provision_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
+		RequestNamespace="urn:iControl:System/VCMP", ResponseNamespace="urn:iControl:System/VCMP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemVCMPVCMPModuleProvisionStatistics get_all_module_provision_statistics(
+
+	) {
+		object [] results = this.Invoke("get_all_module_provision_statistics", new object [0]);
+		return ((SystemVCMPVCMPModuleProvisionStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_all_module_provision_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_all_module_provision_statistics", new object[0], callback, asyncState);
+	}
+	public SystemVCMPVCMPModuleProvisionStatistics Endget_all_module_provision_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemVCMPVCMPModuleProvisionStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_all_prompt_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
+		RequestNamespace="urn:iControl:System/VCMP", ResponseNamespace="urn:iControl:System/VCMP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemVCMPVCMPPromptStatistics get_all_prompt_statistics(
+
+	) {
+		object [] results = this.Invoke("get_all_prompt_statistics", new object [0]);
+		return ((SystemVCMPVCMPPromptStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_all_prompt_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_all_prompt_statistics", new object[0], callback, asyncState);
+	}
+	public SystemVCMPVCMPPromptStatistics Endget_all_prompt_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemVCMPVCMPPromptStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_all_software_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
+		RequestNamespace="urn:iControl:System/VCMP", ResponseNamespace="urn:iControl:System/VCMP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemVCMPVCMPSoftwareStatistics get_all_software_statistics(
+
+	) {
+		object [] results = this.Invoke("get_all_software_statistics", new object [0]);
+		return ((SystemVCMPVCMPSoftwareStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_all_software_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_all_software_statistics", new object[0], callback, asyncState);
+	}
+	public SystemVCMPVCMPSoftwareStatistics Endget_all_software_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemVCMPVCMPSoftwareStatistics)(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -427,6 +511,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_ha_status_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
+		RequestNamespace="urn:iControl:System/VCMP", ResponseNamespace="urn:iControl:System/VCMP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemVCMPVCMPHAStatusStatistics get_ha_status_statistics(
+		string [] guests
+	) {
+		object [] results = this.Invoke("get_ha_status_statistics", new object [] {
+				guests});
+		return ((SystemVCMPVCMPHAStatusStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_ha_status_statistics(string [] guests, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_ha_status_statistics", new object[] {
+			guests}, callback, asyncState);
+	}
+	public SystemVCMPVCMPHAStatusStatistics Endget_ha_status_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemVCMPVCMPHAStatusStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_hostname
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
@@ -535,6 +641,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_module_provision_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
+		RequestNamespace="urn:iControl:System/VCMP", ResponseNamespace="urn:iControl:System/VCMP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemVCMPVCMPModuleProvisionStatistics get_module_provision_statistics(
+		string [] guests
+	) {
+		object [] results = this.Invoke("get_module_provision_statistics", new object [] {
+				guests});
+		return ((SystemVCMPVCMPModuleProvisionStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_module_provision_statistics(string [] guests, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_module_provision_statistics", new object[] {
+			guests}, callback, asyncState);
+	}
+	public SystemVCMPVCMPModuleProvisionStatistics Endget_module_provision_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemVCMPVCMPModuleProvisionStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_network_mode
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
@@ -557,6 +685,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_prompt_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
+		RequestNamespace="urn:iControl:System/VCMP", ResponseNamespace="urn:iControl:System/VCMP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemVCMPVCMPPromptStatistics get_prompt_statistics(
+		string [] guests
+	) {
+		object [] results = this.Invoke("get_prompt_statistics", new object [] {
+				guests});
+		return ((SystemVCMPVCMPPromptStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_prompt_statistics(string [] guests, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_prompt_statistics", new object[] {
+			guests}, callback, asyncState);
+	}
+	public SystemVCMPVCMPPromptStatistics Endget_prompt_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemVCMPVCMPPromptStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_slot_allocation
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
@@ -576,6 +726,50 @@ namespace iControl {
 	public SystemVCMPVCMPSlotAllocation [] Endget_slot_allocation(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((SystemVCMPVCMPSlotAllocation [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_software_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
+		RequestNamespace="urn:iControl:System/VCMP", ResponseNamespace="urn:iControl:System/VCMP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemVCMPVCMPSoftwareStatistics get_software_statistics(
+		string [] guests
+	) {
+		object [] results = this.Invoke("get_software_statistics", new object [] {
+				guests});
+		return ((SystemVCMPVCMPSoftwareStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_software_statistics(string [] guests, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_software_statistics", new object[] {
+			guests}, callback, asyncState);
+	}
+	public SystemVCMPVCMPSoftwareStatistics Endget_software_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemVCMPVCMPSoftwareStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_ssl_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
+		RequestNamespace="urn:iControl:System/VCMP", ResponseNamespace="urn:iControl:System/VCMP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemVCMPVCMPSSLMode [] get_ssl_mode(
+		string [] guests
+	) {
+		object [] results = this.Invoke("get_ssl_mode", new object [] {
+				guests});
+		return ((SystemVCMPVCMPSSLMode [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_ssl_mode(string [] guests, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_ssl_mode", new object[] {
+			guests}, callback, asyncState);
+	}
+	public SystemVCMPVCMPSSLMode [] Endget_ssl_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemVCMPVCMPSSLMode [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -1094,6 +1288,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_ssl_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
+		RequestNamespace="urn:iControl:System/VCMP", ResponseNamespace="urn:iControl:System/VCMP")]
+	public void set_ssl_mode(
+		string [] guests,
+		SystemVCMPVCMPSSLMode [] modes
+	) {
+		this.Invoke("set_ssl_mode", new object [] {
+				guests,
+				modes});
+
+	}
+	public System.IAsyncResult Beginset_ssl_mode(string [] guests,SystemVCMPVCMPSSLMode [] modes, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_ssl_mode", new object[] {
+			guests,
+			modes}, callback, asyncState);
+	}
+	public void Endset_ssl_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_virtual_disk
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
@@ -1129,6 +1346,7 @@ namespace iControl {
 	{
 		VCMP_CAPABILITY_UNKNOWN,
 		VCMP_CAPABILITY_APPLIANCE_MODE,
+		VCMP_CAPABILITY_STATS_ISOLATED_MODE,
 	}
 
 	/// <remarks/>
@@ -1152,6 +1370,7 @@ namespace iControl {
 		VCMP_NETWORK_MODE_UNKNOWN,
 		VCMP_NETWORK_MODE_BRIDGED,
 		VCMP_NETWORK_MODE_ISOLATED,
+		VCMP_NETWORK_MODE_HOST_ONLY,
 	}
 
 	/// <remarks/>
@@ -1163,6 +1382,18 @@ namespace iControl {
 		VCMP_OPERATING_SYSTEM_UNKNOWN,
 		VCMP_OPERATING_SYSTEM_TMOS,
 		VCMP_OPERATING_SYSTEM_LINUX,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.VCMP.VCMPSSLMode", Namespace = "urn:iControl")]
+	public enum SystemVCMPVCMPSSLMode
+	{
+		VCMP_SSL_MODE_UNKNOWN,
+		VCMP_SSL_MODE_SHARED,
+		VCMP_SSL_MODE_DEDICATED,
+		VCMP_SSL_MODE_NONE,
 	}
 
 	/// <remarks/>
@@ -1254,6 +1485,290 @@ namespace iControl {
 		{
 			get { return this.commentField; }
 			set { this.commentField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.VCMP.VCMPHAStatusStatisticEntry", Namespace = "urn:iControl")]
+	public partial class SystemVCMPVCMPHAStatusStatisticEntry
+	{
+		private string guestField;
+		public string guest
+		{
+			get { return this.guestField; }
+			set { this.guestField = value; }
+		}
+		private bool peerField;
+		public bool peer
+		{
+			get { return this.peerField; }
+			set { this.peerField = value; }
+		}
+		private long slotField;
+		public long slot
+		{
+			get { return this.slotField; }
+			set { this.slotField = value; }
+		}
+		private CommonFeature ha_featureField;
+		public CommonFeature ha_feature
+		{
+			get { return this.ha_featureField; }
+			set { this.ha_featureField = value; }
+		}
+		private string keyField;
+		public string key
+		{
+			get { return this.keyField; }
+			set { this.keyField = value; }
+		}
+		private CommonHAAction actionField;
+		public CommonHAAction action
+		{
+			get { return this.actionField; }
+			set { this.actionField = value; }
+		}
+		private bool enabledField;
+		public bool enabled
+		{
+			get { return this.enabledField; }
+			set { this.enabledField = value; }
+		}
+		private bool take_actionField;
+		public bool take_action
+		{
+			get { return this.take_actionField; }
+			set { this.take_actionField = value; }
+		}
+		private string processField;
+		public string process
+		{
+			get { return this.processField; }
+			set { this.processField = value; }
+		}
+		private long client_dataField;
+		public long client_data
+		{
+			get { return this.client_dataField; }
+			set { this.client_dataField = value; }
+		}
+		private long timeoutField;
+		public long timeout
+		{
+			get { return this.timeoutField; }
+			set { this.timeoutField = value; }
+		}
+		private bool failureField;
+		public bool failure
+		{
+			get { return this.failureField; }
+			set { this.failureField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.VCMP.VCMPHAStatusStatistics", Namespace = "urn:iControl")]
+	public partial class SystemVCMPVCMPHAStatusStatistics
+	{
+		private SystemVCMPVCMPHAStatusStatisticEntry [] statisticsField;
+		public SystemVCMPVCMPHAStatusStatisticEntry [] statistics
+		{
+			get { return this.statisticsField; }
+			set { this.statisticsField = value; }
+		}
+		private CommonTimeStamp time_stampField;
+		public CommonTimeStamp time_stamp
+		{
+			get { return this.time_stampField; }
+			set { this.time_stampField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.VCMP.VCMPModuleProvisionStatisticEntry", Namespace = "urn:iControl")]
+	public partial class SystemVCMPVCMPModuleProvisionStatisticEntry
+	{
+		private string guestField;
+		public string guest
+		{
+			get { return this.guestField; }
+			set { this.guestField = value; }
+		}
+		private string module_nameField;
+		public string module_name
+		{
+			get { return this.module_nameField; }
+			set { this.module_nameField = value; }
+		}
+		private CommonProvisionLevel provision_levelField;
+		public CommonProvisionLevel provision_level
+		{
+			get { return this.provision_levelField; }
+			set { this.provision_levelField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.VCMP.VCMPModuleProvisionStatistics", Namespace = "urn:iControl")]
+	public partial class SystemVCMPVCMPModuleProvisionStatistics
+	{
+		private SystemVCMPVCMPModuleProvisionStatisticEntry [] statisticsField;
+		public SystemVCMPVCMPModuleProvisionStatisticEntry [] statistics
+		{
+			get { return this.statisticsField; }
+			set { this.statisticsField = value; }
+		}
+		private CommonTimeStamp time_stampField;
+		public CommonTimeStamp time_stamp
+		{
+			get { return this.time_stampField; }
+			set { this.time_stampField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.VCMP.VCMPPromptStatisticEntry", Namespace = "urn:iControl")]
+	public partial class SystemVCMPVCMPPromptStatisticEntry
+	{
+		private string guestField;
+		public string guest
+		{
+			get { return this.guestField; }
+			set { this.guestField = value; }
+		}
+		private long slot_idField;
+		public long slot_id
+		{
+			get { return this.slot_idField; }
+			set { this.slot_idField = value; }
+		}
+		private string promptField;
+		public string prompt
+		{
+			get { return this.promptField; }
+			set { this.promptField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.VCMP.VCMPPromptStatistics", Namespace = "urn:iControl")]
+	public partial class SystemVCMPVCMPPromptStatistics
+	{
+		private SystemVCMPVCMPPromptStatisticEntry [] statisticsField;
+		public SystemVCMPVCMPPromptStatisticEntry [] statistics
+		{
+			get { return this.statisticsField; }
+			set { this.statisticsField = value; }
+		}
+		private CommonTimeStamp time_stampField;
+		public CommonTimeStamp time_stamp
+		{
+			get { return this.time_stampField; }
+			set { this.time_stampField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.VCMP.VCMPSoftwareStatisticEntry", Namespace = "urn:iControl")]
+	public partial class SystemVCMPVCMPSoftwareStatisticEntry
+	{
+		private string guestField;
+		public string guest
+		{
+			get { return this.guestField; }
+			set { this.guestField = value; }
+		}
+		private long slot_idField;
+		public long slot_id
+		{
+			get { return this.slot_idField; }
+			set { this.slot_idField = value; }
+		}
+		private string volumeField;
+		public string volume
+		{
+			get { return this.volumeField; }
+			set { this.volumeField = value; }
+		}
+		private string productField;
+		public string product
+		{
+			get { return this.productField; }
+			set { this.productField = value; }
+		}
+		private string versionField;
+		public string version
+		{
+			get { return this.versionField; }
+			set { this.versionField = value; }
+		}
+		private string buildField;
+		public string build
+		{
+			get { return this.buildField; }
+			set { this.buildField = value; }
+		}
+		private bool activeField;
+		public bool active
+		{
+			get { return this.activeField; }
+			set { this.activeField = value; }
+		}
+		private string statusField;
+		public string status
+		{
+			get { return this.statusField; }
+			set { this.statusField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "System.VCMP.VCMPSoftwareStatistics", Namespace = "urn:iControl")]
+	public partial class SystemVCMPVCMPSoftwareStatistics
+	{
+		private SystemVCMPVCMPSoftwareStatisticEntry [] statisticsField;
+		public SystemVCMPVCMPSoftwareStatisticEntry [] statistics
+		{
+			get { return this.statisticsField; }
+			set { this.statisticsField = value; }
+		}
+		private CommonTimeStamp time_stampField;
+		public CommonTimeStamp time_stamp
+		{
+			get { return this.time_stampField; }
+			set { this.time_stampField = value; }
 		}
 	};
 

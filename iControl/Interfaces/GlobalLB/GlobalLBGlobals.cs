@@ -320,6 +320,66 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_failure_response_return_code
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Globals", 
+		RequestNamespace="urn:iControl:GlobalLB/Globals", ResponseNamespace="urn:iControl:GlobalLB/Globals")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBDNSReturnCode get_failure_response_return_code(
+
+	) {
+		object [] results = this.Invoke("get_failure_response_return_code", new object [0]);
+		return ((GlobalLBDNSReturnCode)(results[0]));
+	}
+	public System.IAsyncResult Beginget_failure_response_return_code(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_failure_response_return_code", new object[0], callback, asyncState);
+	}
+	public GlobalLBDNSReturnCode Endget_failure_response_return_code(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBDNSReturnCode)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_failure_response_return_code_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Globals", 
+		RequestNamespace="urn:iControl:GlobalLB/Globals", ResponseNamespace="urn:iControl:GlobalLB/Globals")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState get_failure_response_return_code_state(
+
+	) {
+		object [] results = this.Invoke("get_failure_response_return_code_state", new object [0]);
+		return ((CommonEnabledState)(results[0]));
+	}
+	public System.IAsyncResult Beginget_failure_response_return_code_state(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_failure_response_return_code_state", new object[0], callback, asyncState);
+	}
+	public CommonEnabledState Endget_failure_response_return_code_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_failure_response_return_code_ttl
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Globals", 
+		RequestNamespace="urn:iControl:GlobalLB/Globals", ResponseNamespace="urn:iControl:GlobalLB/Globals")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long get_failure_response_return_code_ttl(
+
+	) {
+		object [] results = this.Invoke("get_failure_response_return_code_ttl", new object [0]);
+		return ((long)(results[0]));
+	}
+	public System.IAsyncResult Beginget_failure_response_return_code_ttl(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_failure_response_return_code_ttl", new object[0], callback, asyncState);
+	}
+	public long Endget_failure_response_return_code_ttl(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_fb_respect_acl_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Globals", 
@@ -1720,6 +1780,66 @@ namespace iControl {
 			state}, callback, asyncState);
 	}
 	public void Endset_dump_topology_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_failure_response_return_code
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Globals", 
+		RequestNamespace="urn:iControl:GlobalLB/Globals", ResponseNamespace="urn:iControl:GlobalLB/Globals")]
+	public void set_failure_response_return_code(
+		GlobalLBDNSReturnCode return_code
+	) {
+		this.Invoke("set_failure_response_return_code", new object [] {
+				return_code});
+
+	}
+	public System.IAsyncResult Beginset_failure_response_return_code(GlobalLBDNSReturnCode return_code, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_failure_response_return_code", new object[] {
+			return_code}, callback, asyncState);
+	}
+	public void Endset_failure_response_return_code(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_failure_response_return_code_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Globals", 
+		RequestNamespace="urn:iControl:GlobalLB/Globals", ResponseNamespace="urn:iControl:GlobalLB/Globals")]
+	public void set_failure_response_return_code_state(
+		CommonEnabledState state
+	) {
+		this.Invoke("set_failure_response_return_code_state", new object [] {
+				state});
+
+	}
+	public System.IAsyncResult Beginset_failure_response_return_code_state(CommonEnabledState state, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_failure_response_return_code_state", new object[] {
+			state}, callback, asyncState);
+	}
+	public void Endset_failure_response_return_code_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_failure_response_return_code_ttl
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Globals", 
+		RequestNamespace="urn:iControl:GlobalLB/Globals", ResponseNamespace="urn:iControl:GlobalLB/Globals")]
+	public void set_failure_response_return_code_ttl(
+		long value
+	) {
+		this.Invoke("set_failure_response_return_code_ttl", new object [] {
+				value});
+
+	}
+	public System.IAsyncResult Beginset_failure_response_return_code_ttl(long value, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_failure_response_return_code_ttl", new object[] {
+			value}, callback, asyncState);
+	}
+	public void Endset_failure_response_return_code_ttl(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

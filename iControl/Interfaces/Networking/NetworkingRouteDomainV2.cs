@@ -604,6 +604,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_connection_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/RouteDomainV2", 
+		RequestNamespace="urn:iControl:Networking/RouteDomainV2", ResponseNamespace="urn:iControl:Networking/RouteDomainV2")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_connection_limit(
+		string [] route_domains
+	) {
+		object [] results = this.Invoke("get_connection_limit", new object [] {
+				route_domains});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_connection_limit(string [] route_domains, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_connection_limit", new object[] {
+			route_domains}, callback, asyncState);
+	}
+	public long [] Endget_connection_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_description
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/RouteDomainV2", 
@@ -643,6 +665,28 @@ namespace iControl {
 			route_domains}, callback, asyncState);
 	}
 	public string [] Endget_enforced_firewall_policy(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_eviction_policy
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/RouteDomainV2", 
+		RequestNamespace="urn:iControl:Networking/RouteDomainV2", ResponseNamespace="urn:iControl:Networking/RouteDomainV2")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_eviction_policy(
+		string [] route_domains
+	) {
+		object [] results = this.Invoke("get_eviction_policy", new object [] {
+				route_domains});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_eviction_policy(string [] route_domains, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_eviction_policy", new object[] {
+			route_domains}, callback, asyncState);
+	}
+	public string [] Endget_eviction_policy(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [])(results[0]));
 	}
@@ -2604,6 +2648,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_connection_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/RouteDomainV2", 
+		RequestNamespace="urn:iControl:Networking/RouteDomainV2", ResponseNamespace="urn:iControl:Networking/RouteDomainV2")]
+	public void set_connection_limit(
+		string [] route_domains,
+		long [] limits
+	) {
+		this.Invoke("set_connection_limit", new object [] {
+				route_domains,
+				limits});
+
+	}
+	public System.IAsyncResult Beginset_connection_limit(string [] route_domains,long [] limits, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_connection_limit", new object[] {
+			route_domains,
+			limits}, callback, asyncState);
+	}
+	public void Endset_connection_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_description
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/RouteDomainV2", 
@@ -2646,6 +2713,29 @@ namespace iControl {
 			policies}, callback, asyncState);
 	}
 	public void Endset_enforced_firewall_policy(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_eviction_policy
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/RouteDomainV2", 
+		RequestNamespace="urn:iControl:Networking/RouteDomainV2", ResponseNamespace="urn:iControl:Networking/RouteDomainV2")]
+	public void set_eviction_policy(
+		string [] route_domains,
+		string [] policies
+	) {
+		this.Invoke("set_eviction_policy", new object [] {
+				route_domains,
+				policies});
+
+	}
+	public System.IAsyncResult Beginset_eviction_policy(string [] route_domains,string [] policies, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_eviction_policy", new object[] {
+			route_domains,
+			policies}, callback, asyncState);
+	}
+	public void Endset_eviction_policy(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -3281,6 +3371,7 @@ namespace iControl {
 		ROUTING_PROTOCOL_RIP,
 		ROUTING_PROTOCOL_RIP_NG,
 		ROUTING_PROTOCOL_BFD,
+		ROUTING_PROTOCOL_PIM,
 	}
 
 	//=======================================================================

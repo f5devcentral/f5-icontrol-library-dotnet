@@ -11,6 +11,9 @@ namespace iControl {
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="Networking.TunnelBinding", Namespace="urn:iControl")]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(NetworkingTunnelL2TunnelFDBEntry))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(NetworkingTunnelL2TunnelFDBEntryV2))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(NetworkingTunnelTunnelProfileAttribute))]
 	public partial class NetworkingTunnel : iControlInterface {
 		public NetworkingTunnel() {
 			this.Url = "https://url_to_service";
@@ -19,6 +22,52 @@ namespace iControl {
 	//=======================================================================
 	// Operations
 	//=======================================================================
+	//-----------------------------------------------------------------------
+	// add_static_forwarding
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	public void add_static_forwarding(
+		string [] tunnels,
+		NetworkingTunnelL2TunnelFDBEntry [] [] entries
+	) {
+		this.Invoke("add_static_forwarding", new object [] {
+				tunnels,
+				entries});
+
+	}
+	public System.IAsyncResult Beginadd_static_forwarding(string [] tunnels,NetworkingTunnelL2TunnelFDBEntry [] [] entries, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("add_static_forwarding", new object[] {
+			tunnels,
+			entries}, callback, asyncState);
+	}
+	public void Endadd_static_forwarding(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// add_static_forwarding_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	public void add_static_forwarding_v2(
+		string [] tunnels,
+		NetworkingTunnelL2TunnelFDBEntryV2 [] [] entries
+	) {
+		this.Invoke("add_static_forwarding_v2", new object [] {
+				tunnels,
+				entries});
+
+	}
+	public System.IAsyncResult Beginadd_static_forwarding_v2(string [] tunnels,NetworkingTunnelL2TunnelFDBEntryV2 [] [] entries, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("add_static_forwarding_v2", new object[] {
+			tunnels,
+			entries}, callback, asyncState);
+	}
+	public void Endadd_static_forwarding_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
 	//-----------------------------------------------------------------------
 	// create
 	//-----------------------------------------------------------------------
@@ -239,6 +288,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_if_index
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_if_index(
+		string [] tunnels
+	) {
+		object [] results = this.Invoke("get_if_index", new object [] {
+				tunnels});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_if_index(string [] tunnels, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_if_index", new object[] {
+			tunnels}, callback, asyncState);
+	}
+	public long [] Endget_if_index(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_key
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
@@ -369,6 +440,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_profile_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public NetworkingTunnelTunnelProfileAttribute [] get_profile_v2(
+		string [] tunnels
+	) {
+		object [] results = this.Invoke("get_profile_v2", new object [] {
+				tunnels});
+		return ((NetworkingTunnelTunnelProfileAttribute [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_profile_v2(string [] tunnels, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_profile_v2", new object[] {
+			tunnels}, callback, asyncState);
+	}
+	public NetworkingTunnelTunnelProfileAttribute [] Endget_profile_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((NetworkingTunnelTunnelProfileAttribute [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_remote_address
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
@@ -391,6 +484,72 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_secondary_address
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_secondary_address(
+		string [] tunnels
+	) {
+		object [] results = this.Invoke("get_secondary_address", new object [] {
+				tunnels});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_secondary_address(string [] tunnels, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_secondary_address", new object[] {
+			tunnels}, callback, asyncState);
+	}
+	public string [] Endget_secondary_address(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_static_forwarding
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public NetworkingTunnelL2TunnelFDBEntry [] [] get_static_forwarding(
+		string [] tunnels
+	) {
+		object [] results = this.Invoke("get_static_forwarding", new object [] {
+				tunnels});
+		return ((NetworkingTunnelL2TunnelFDBEntry [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_static_forwarding(string [] tunnels, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_static_forwarding", new object[] {
+			tunnels}, callback, asyncState);
+	}
+	public NetworkingTunnelL2TunnelFDBEntry [] [] Endget_static_forwarding(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((NetworkingTunnelL2TunnelFDBEntry [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_static_forwarding_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public NetworkingTunnelL2TunnelFDBEntryV2 [] [] get_static_forwarding_v2(
+		string [] tunnels
+	) {
+		object [] results = this.Invoke("get_static_forwarding_v2", new object [] {
+				tunnels});
+		return ((NetworkingTunnelL2TunnelFDBEntryV2 [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_static_forwarding_v2(string [] tunnels, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_static_forwarding_v2", new object[] {
+			tunnels}, callback, asyncState);
+	}
+	public NetworkingTunnelL2TunnelFDBEntryV2 [] [] Endget_static_forwarding_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((NetworkingTunnelL2TunnelFDBEntryV2 [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_tos
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
@@ -410,6 +569,28 @@ namespace iControl {
 	public long [] Endget_tos(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_traffic_group
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_traffic_group(
+		string [] tunnels
+	) {
+		object [] results = this.Invoke("get_traffic_group", new object [] {
+				tunnels});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_traffic_group(string [] tunnels, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_traffic_group", new object[] {
+			tunnels}, callback, asyncState);
+	}
+	public string [] Endget_traffic_group(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -454,6 +635,72 @@ namespace iControl {
 	public string Endget_version(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_all_static_forwardings
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	public void remove_all_static_forwardings(
+		string [] tunnels
+	) {
+		this.Invoke("remove_all_static_forwardings", new object [] {
+				tunnels});
+
+	}
+	public System.IAsyncResult Beginremove_all_static_forwardings(string [] tunnels, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_all_static_forwardings", new object[] {
+			tunnels}, callback, asyncState);
+	}
+	public void Endremove_all_static_forwardings(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_static_forwarding
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	public void remove_static_forwarding(
+		string [] tunnels,
+		NetworkingTunnelL2TunnelFDBEntry [] [] entries
+	) {
+		this.Invoke("remove_static_forwarding", new object [] {
+				tunnels,
+				entries});
+
+	}
+	public System.IAsyncResult Beginremove_static_forwarding(string [] tunnels,NetworkingTunnelL2TunnelFDBEntry [] [] entries, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_static_forwarding", new object[] {
+			tunnels,
+			entries}, callback, asyncState);
+	}
+	public void Endremove_static_forwarding(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_static_forwarding_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	public void remove_static_forwarding_v2(
+		string [] tunnels,
+		NetworkingTunnelL2TunnelFDBEntryV2 [] [] entries
+	) {
+		this.Invoke("remove_static_forwarding_v2", new object [] {
+				tunnels,
+				entries});
+
+	}
+	public System.IAsyncResult Beginremove_static_forwarding_v2(string [] tunnels,NetworkingTunnelL2TunnelFDBEntryV2 [] [] entries, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_static_forwarding_v2", new object[] {
+			tunnels,
+			entries}, callback, asyncState);
+	}
+	public void Endremove_static_forwarding_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
 	}
 
 	//-----------------------------------------------------------------------
@@ -690,6 +937,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_secondary_address
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	public void set_secondary_address(
+		string [] tunnels,
+		string [] addresses
+	) {
+		this.Invoke("set_secondary_address", new object [] {
+				tunnels,
+				addresses});
+
+	}
+	public System.IAsyncResult Beginset_secondary_address(string [] tunnels,string [] addresses, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_secondary_address", new object[] {
+			tunnels,
+			addresses}, callback, asyncState);
+	}
+	public void Endset_secondary_address(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_tos
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
@@ -709,6 +979,29 @@ namespace iControl {
 			values}, callback, asyncState);
 	}
 	public void Endset_tos(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_traffic_group
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/Tunnel", 
+		RequestNamespace="urn:iControl:Networking/Tunnel", ResponseNamespace="urn:iControl:Networking/Tunnel")]
+	public void set_traffic_group(
+		string [] tunnels,
+		string [] traffic_groups
+	) {
+		this.Invoke("set_traffic_group", new object [] {
+				tunnels,
+				traffic_groups});
+
+	}
+	public System.IAsyncResult Beginset_traffic_group(string [] tunnels,string [] traffic_groups, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_traffic_group", new object[] {
+			tunnels,
+			traffic_groups}, callback, asyncState);
+	}
+	public void Endset_traffic_group(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -755,5 +1048,77 @@ namespace iControl {
 	//=======================================================================
 	// Structs
 	//=======================================================================
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Networking.Tunnel.L2TunnelFDBEntry", Namespace = "urn:iControl")]
+	public partial class NetworkingTunnelL2TunnelFDBEntry
+	{
+		private string mac_addressField;
+		public string mac_address
+		{
+			get { return this.mac_addressField; }
+			set { this.mac_addressField = value; }
+		}
+		private string endpointField;
+		public string endpoint
+		{
+			get { return this.endpointField; }
+			set { this.endpointField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Networking.Tunnel.L2TunnelFDBEntryV2", Namespace = "urn:iControl")]
+	public partial class NetworkingTunnelL2TunnelFDBEntryV2
+	{
+		private string mac_addressField;
+		public string mac_address
+		{
+			get { return this.mac_addressField; }
+			set { this.mac_addressField = value; }
+		}
+		private string endpointField;
+		public string endpoint
+		{
+			get { return this.endpointField; }
+			set { this.endpointField = value; }
+		}
+		private string [] replicatorsField;
+		public string [] replicators
+		{
+			get { return this.replicatorsField; }
+			set { this.replicatorsField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Networking.Tunnel.TunnelProfileAttribute", Namespace = "urn:iControl")]
+	public partial class NetworkingTunnelTunnelProfileAttribute
+	{
+		private NetworkingTunnelProfileType profile_typeField;
+		public NetworkingTunnelProfileType profile_type
+		{
+			get { return this.profile_typeField; }
+			set { this.profile_typeField = value; }
+		}
+		private string profile_nameField;
+		public string profile_name
+		{
+			get { return this.profile_nameField; }
+			set { this.profile_nameField = value; }
+		}
+	};
 
 }

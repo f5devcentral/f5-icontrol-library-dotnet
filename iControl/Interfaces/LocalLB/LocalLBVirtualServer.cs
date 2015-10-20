@@ -85,6 +85,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// add_content_policy
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualServer", ResponseNamespace="urn:iControl:LocalLB/VirtualServer")]
+	public void add_content_policy(
+		string [] virtual_servers,
+		string [] [] policies
+	) {
+		this.Invoke("add_content_policy", new object [] {
+				virtual_servers,
+				policies});
+
+	}
+	public System.IAsyncResult Beginadd_content_policy(string [] virtual_servers,string [] [] policies, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("add_content_policy", new object[] {
+			virtual_servers,
+			policies}, callback, asyncState);
+	}
+	public void Endadd_content_policy(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// add_fw_rule
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
@@ -1007,6 +1030,50 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_content_policy
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualServer", ResponseNamespace="urn:iControl:LocalLB/VirtualServer")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] [] get_content_policy(
+		string [] virtual_servers
+	) {
+		object [] results = this.Invoke("get_content_policy", new object [] {
+				virtual_servers});
+		return ((string [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_content_policy(string [] virtual_servers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_content_policy", new object[] {
+			virtual_servers}, callback, asyncState);
+	}
+	public string [] [] Endget_content_policy(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_contribute_to_address_status
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualServer", ResponseNamespace="urn:iControl:LocalLB/VirtualServer")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public bool [] get_contribute_to_address_status(
+		string [] virtual_servers
+	) {
+		object [] results = this.Invoke("get_contribute_to_address_status", new object [] {
+				virtual_servers});
+		return ((bool [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_contribute_to_address_status(string [] virtual_servers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_contribute_to_address_status", new object[] {
+			virtual_servers}, callback, asyncState);
+	}
+	public bool [] Endget_contribute_to_address_status(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((bool [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_default_pool_name
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
@@ -1134,6 +1201,28 @@ namespace iControl {
 			virtual_servers}, callback, asyncState);
 	}
 	public string [] Endget_enforced_firewall_policy(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_eviction_policy
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualServer", ResponseNamespace="urn:iControl:LocalLB/VirtualServer")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_eviction_policy(
+		string [] virtual_servers
+	) {
+		object [] results = this.Invoke("get_eviction_policy", new object [] {
+				virtual_servers});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_eviction_policy(string [] virtual_servers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_eviction_policy", new object[] {
+			virtual_servers}, callback, asyncState);
+	}
+	public string [] Endget_eviction_policy(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [])(results[0]));
 	}
@@ -2968,6 +3057,26 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// remove_all_content_policies
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualServer", ResponseNamespace="urn:iControl:LocalLB/VirtualServer")]
+	public void remove_all_content_policies(
+		string [] virtual_servers
+	) {
+		this.Invoke("remove_all_content_policies", new object [] {
+				virtual_servers});
+
+	}
+	public System.IAsyncResult Beginremove_all_content_policies(string [] virtual_servers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_all_content_policies", new object[] {
+			virtual_servers}, callback, asyncState);
+	}
+	public void Endremove_all_content_policies(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// remove_all_fw_rule_destination_address_lists
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
@@ -3492,6 +3601,29 @@ namespace iControl {
 			clone_pools}, callback, asyncState);
 	}
 	public void Endremove_clone_pool(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_content_policy
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualServer", ResponseNamespace="urn:iControl:LocalLB/VirtualServer")]
+	public void remove_content_policy(
+		string [] virtual_servers,
+		string [] [] policies
+	) {
+		this.Invoke("remove_content_policy", new object [] {
+				virtual_servers,
+				policies});
+
+	}
+	public System.IAsyncResult Beginremove_content_policy(string [] virtual_servers,string [] [] policies, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_content_policy", new object[] {
+			virtual_servers,
+			policies}, callback, asyncState);
+	}
+	public void Endremove_content_policy(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -4202,6 +4334,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_contribute_to_address_status
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualServer", ResponseNamespace="urn:iControl:LocalLB/VirtualServer")]
+	public void set_contribute_to_address_status(
+		string [] virtual_servers,
+		bool [] contribute
+	) {
+		this.Invoke("set_contribute_to_address_status", new object [] {
+				virtual_servers,
+				contribute});
+
+	}
+	public System.IAsyncResult Beginset_contribute_to_address_status(string [] virtual_servers,bool [] contribute, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_contribute_to_address_status", new object[] {
+			virtual_servers,
+			contribute}, callback, asyncState);
+	}
+	public void Endset_contribute_to_address_status(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_default_pool_name
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
@@ -4336,6 +4491,29 @@ namespace iControl {
 			policies}, callback, asyncState);
 	}
 	public void Endset_enforced_firewall_policy(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_eviction_policy
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualServer", ResponseNamespace="urn:iControl:LocalLB/VirtualServer")]
+	public void set_eviction_policy(
+		string [] virtual_servers,
+		string [] policies
+	) {
+		this.Invoke("set_eviction_policy", new object [] {
+				virtual_servers,
+				policies});
+
+	}
+	public System.IAsyncResult Beginset_eviction_policy(string [] virtual_servers,string [] policies, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_eviction_policy", new object[] {
+			virtual_servers,
+			policies}, callback, asyncState);
+	}
+	public void Endset_eviction_policy(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -5570,6 +5748,7 @@ namespace iControl {
 		RESOURCE_TYPE_DHCP_RELAY,
 		RESOURCE_TYPE_UNKNOWN,
 		RESOURCE_TYPE_INTERNAL,
+		RESOURCE_TYPE_MESSAGE_ROUTING,
 	}
 
 	//=======================================================================

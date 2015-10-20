@@ -948,6 +948,7 @@ namespace iControl {
 		SPDY_VERSION_2,
 		SPDY_VERSION_3,
 		SPDY_VERSION_HTTP,
+		SPDY_VERSION_31,
 	}
 
 	//=======================================================================

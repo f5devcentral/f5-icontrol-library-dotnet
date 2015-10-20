@@ -201,6 +201,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_internal_forwarding
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/iSessionRemoteInterfaceV2", 
+		RequestNamespace="urn:iControl:Networking/iSessionRemoteInterfaceV2", ResponseNamespace="urn:iControl:Networking/iSessionRemoteInterfaceV2")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public NetworkingiSessionRemoteInterfaceV2InternalForwarding [] get_internal_forwarding(
+		string [] peers
+	) {
+		object [] results = this.Invoke("get_internal_forwarding", new object [] {
+				peers});
+		return ((NetworkingiSessionRemoteInterfaceV2InternalForwarding [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_internal_forwarding(string [] peers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_internal_forwarding", new object[] {
+			peers}, callback, asyncState);
+	}
+	public NetworkingiSessionRemoteInterfaceV2InternalForwarding [] Endget_internal_forwarding(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((NetworkingiSessionRemoteInterfaceV2InternalForwarding [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_list
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/iSessionRemoteInterfaceV2", 
@@ -509,6 +531,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_internal_forwarding
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/iSessionRemoteInterfaceV2", 
+		RequestNamespace="urn:iControl:Networking/iSessionRemoteInterfaceV2", ResponseNamespace="urn:iControl:Networking/iSessionRemoteInterfaceV2")]
+	public void set_internal_forwarding(
+		string [] peers,
+		NetworkingiSessionRemoteInterfaceV2InternalForwarding [] values
+	) {
+		this.Invoke("set_internal_forwarding", new object [] {
+				peers,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_internal_forwarding(string [] peers,NetworkingiSessionRemoteInterfaceV2InternalForwarding [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_internal_forwarding", new object[] {
+			peers,
+			values}, callback, asyncState);
+	}
+	public void Endset_internal_forwarding(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_management_address
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/iSessionRemoteInterfaceV2", 
@@ -696,6 +741,18 @@ namespace iControl {
 	//=======================================================================
 	// Enums
 	//=======================================================================
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Networking.iSessionRemoteInterfaceV2.InternalForwarding", Namespace = "urn:iControl")]
+	public enum NetworkingiSessionRemoteInterfaceV2InternalForwarding
+	{
+		WOC_INTERNAL_FORWARDING_UNKNOWN,
+		WOC_INTERNAL_FORWARDING_DEFAULT,
+		WOC_INTERNAL_FORWARDING_ENABLED,
+		WOC_INTERNAL_FORWARDING_DISABLED,
+	}
 
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]

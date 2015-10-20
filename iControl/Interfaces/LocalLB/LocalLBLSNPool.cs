@@ -172,6 +172,94 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_block_idle_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_block_idle_timeout(
+		string [] pools
+	) {
+		object [] results = this.Invoke("get_block_idle_timeout", new object [] {
+				pools});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_block_idle_timeout(string [] pools, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_block_idle_timeout", new object[] {
+			pools}, callback, asyncState);
+	}
+	public long [] Endget_block_idle_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_block_lifetime
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_block_lifetime(
+		string [] pools
+	) {
+		object [] results = this.Invoke("get_block_lifetime", new object [] {
+				pools});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_block_lifetime(string [] pools, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_block_lifetime", new object[] {
+			pools}, callback, asyncState);
+	}
+	public long [] Endget_block_lifetime(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_block_size
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_block_size(
+		string [] pools
+	) {
+		object [] results = this.Invoke("get_block_size", new object [] {
+				pools});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_block_size(string [] pools, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_block_size", new object[] {
+			pools}, callback, asyncState);
+	}
+	public long [] Endget_block_size(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_client_block_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_client_block_limit(
+		string [] pools
+	) {
+		object [] results = this.Invoke("get_client_block_limit", new object [] {
+				pools});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_client_block_limit(string [] pools, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_client_block_limit", new object[] {
+			pools}, callback, asyncState);
+	}
+	public long [] Endget_client_block_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_connection_limit
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
@@ -363,6 +451,28 @@ namespace iControl {
 		return this.BeginInvoke("get_list", new object[0], callback, asyncState);
 	}
 	public string [] Endget_list(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_log_profile
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_log_profile(
+		string [] pools
+	) {
+		object [] results = this.Invoke("get_log_profile", new object [] {
+				pools});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_log_profile(string [] pools, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_log_profile", new object[] {
+			pools}, callback, asyncState);
+	}
+	public string [] Endget_log_profile(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [])(results[0]));
 	}
@@ -632,6 +742,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_zombie_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_zombie_timeout(
+		string [] pools
+	) {
+		object [] results = this.Invoke("get_zombie_timeout", new object [] {
+				pools});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_zombie_timeout(string [] pools, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_zombie_timeout", new object[] {
+			pools}, callback, asyncState);
+	}
+	public long [] Endget_zombie_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// remove_all_backup_members
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
@@ -734,6 +866,98 @@ namespace iControl {
 			pools}, callback, asyncState);
 	}
 	public void Endreset_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_block_idle_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	public void set_block_idle_timeout(
+		string [] pools,
+		long [] timeouts
+	) {
+		this.Invoke("set_block_idle_timeout", new object [] {
+				pools,
+				timeouts});
+
+	}
+	public System.IAsyncResult Beginset_block_idle_timeout(string [] pools,long [] timeouts, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_block_idle_timeout", new object[] {
+			pools,
+			timeouts}, callback, asyncState);
+	}
+	public void Endset_block_idle_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_block_lifetime
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	public void set_block_lifetime(
+		string [] pools,
+		long [] values
+	) {
+		this.Invoke("set_block_lifetime", new object [] {
+				pools,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_block_lifetime(string [] pools,long [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_block_lifetime", new object[] {
+			pools,
+			values}, callback, asyncState);
+	}
+	public void Endset_block_lifetime(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_block_size
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	public void set_block_size(
+		string [] pools,
+		long [] sizes
+	) {
+		this.Invoke("set_block_size", new object [] {
+				pools,
+				sizes});
+
+	}
+	public System.IAsyncResult Beginset_block_size(string [] pools,long [] sizes, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_block_size", new object[] {
+			pools,
+			sizes}, callback, asyncState);
+	}
+	public void Endset_block_size(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_client_block_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	public void set_client_block_limit(
+		string [] pools,
+		long [] limits
+	) {
+		this.Invoke("set_client_block_limit", new object [] {
+				pools,
+				limits});
+
+	}
+	public System.IAsyncResult Beginset_client_block_limit(string [] pools,long [] limits, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_client_block_limit", new object[] {
+			pools,
+			limits}, callback, asyncState);
+	}
+	public void Endset_client_block_limit(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -918,6 +1142,29 @@ namespace iControl {
 			modes}, callback, asyncState);
 	}
 	public void Endset_inbound_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_log_profile
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	public void set_log_profile(
+		string [] pools,
+		string [] profiles
+	) {
+		this.Invoke("set_log_profile", new object [] {
+				pools,
+				profiles});
+
+	}
+	public System.IAsyncResult Beginset_log_profile(string [] pools,string [] profiles, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_log_profile", new object[] {
+			pools,
+			profiles}, callback, asyncState);
+	}
+	public void Endset_log_profile(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -1157,6 +1404,29 @@ namespace iControl {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
+	//-----------------------------------------------------------------------
+	// set_zombie_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	public void set_zombie_timeout(
+		string [] pools,
+		long [] timeouts
+	) {
+		this.Invoke("set_zombie_timeout", new object [] {
+				pools,
+				timeouts});
+
+	}
+	public System.IAsyncResult Beginset_zombie_timeout(string [] pools,long [] timeouts, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_zombie_timeout", new object[] {
+			pools,
+			timeouts}, callback, asyncState);
+	}
+	public void Endset_zombie_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
 	}
 	//=======================================================================
 	// Enums
@@ -1194,6 +1464,7 @@ namespace iControl {
 		LSN_MODE_UNKNOWN,
 		LSN_MODE_NAPT,
 		LSN_MODE_DETERMINISTIC,
+		LSN_MODE_PBA,
 	}
 
 	/// <remarks/>

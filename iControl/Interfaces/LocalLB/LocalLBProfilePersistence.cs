@@ -12,8 +12,9 @@ namespace iControl {
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="LocalLB.ProfilePersistenceBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileEnabledState))]
-	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfilePersistenceProfileCookieEncryption))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileString))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileCookiePersistenceMethod))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfilePersistenceProfilePersistenceHashMethod))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileIPAddress))]
@@ -176,6 +177,50 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_cookie_encryption
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePersistence", 
+		RequestNamespace="urn:iControl:LocalLB/ProfilePersistence", ResponseNamespace="urn:iControl:LocalLB/ProfilePersistence")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfilePersistenceProfileCookieEncryption [] get_cookie_encryption(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_cookie_encryption", new object [] {
+				profile_names});
+		return ((LocalLBProfilePersistenceProfileCookieEncryption [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_cookie_encryption(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_cookie_encryption", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfilePersistenceProfileCookieEncryption [] Endget_cookie_encryption(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfilePersistenceProfileCookieEncryption [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_cookie_encryption_passphrase
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePersistence", 
+		RequestNamespace="urn:iControl:LocalLB/ProfilePersistence", ResponseNamespace="urn:iControl:LocalLB/ProfilePersistence")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileString [] get_cookie_encryption_passphrase(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_cookie_encryption_passphrase", new object [] {
+				profile_names});
+		return ((LocalLBProfileString [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_cookie_encryption_passphrase(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_cookie_encryption_passphrase", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileString [] Endget_cookie_encryption_passphrase(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileString [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_cookie_expiration
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePersistence", 
@@ -242,6 +287,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_cookie_httponly_attribute
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePersistence", 
+		RequestNamespace="urn:iControl:LocalLB/ProfilePersistence", ResponseNamespace="urn:iControl:LocalLB/ProfilePersistence")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_cookie_httponly_attribute(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_cookie_httponly_attribute", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_cookie_httponly_attribute(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_cookie_httponly_attribute", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_cookie_httponly_attribute(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_cookie_name
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePersistence", 
@@ -283,6 +350,28 @@ namespace iControl {
 	public LocalLBProfileCookiePersistenceMethod [] Endget_cookie_persistence_method(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileCookiePersistenceMethod [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_cookie_secure_attribute
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePersistence", 
+		RequestNamespace="urn:iControl:LocalLB/ProfilePersistence", ResponseNamespace="urn:iControl:LocalLB/ProfilePersistence")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_cookie_secure_attribute(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_cookie_secure_attribute", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_cookie_secure_attribute(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_cookie_secure_attribute", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_cookie_secure_attribute(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -904,6 +993,52 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_cookie_encryption
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePersistence", 
+		RequestNamespace="urn:iControl:LocalLB/ProfilePersistence", ResponseNamespace="urn:iControl:LocalLB/ProfilePersistence")]
+	public void set_cookie_encryption(
+		string [] profile_names,
+		LocalLBProfilePersistenceProfileCookieEncryption [] types
+	) {
+		this.Invoke("set_cookie_encryption", new object [] {
+				profile_names,
+				types});
+
+	}
+	public System.IAsyncResult Beginset_cookie_encryption(string [] profile_names,LocalLBProfilePersistenceProfileCookieEncryption [] types, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_cookie_encryption", new object[] {
+			profile_names,
+			types}, callback, asyncState);
+	}
+	public void Endset_cookie_encryption(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_cookie_encryption_passphrase
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePersistence", 
+		RequestNamespace="urn:iControl:LocalLB/ProfilePersistence", ResponseNamespace="urn:iControl:LocalLB/ProfilePersistence")]
+	public void set_cookie_encryption_passphrase(
+		string [] profile_names,
+		LocalLBProfileString [] encryption_passphrases
+	) {
+		this.Invoke("set_cookie_encryption_passphrase", new object [] {
+				profile_names,
+				encryption_passphrases});
+
+	}
+	public System.IAsyncResult Beginset_cookie_encryption_passphrase(string [] profile_names,LocalLBProfileString [] encryption_passphrases, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_cookie_encryption_passphrase", new object[] {
+			profile_names,
+			encryption_passphrases}, callback, asyncState);
+	}
+	public void Endset_cookie_encryption_passphrase(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_cookie_expiration
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePersistence", 
@@ -973,6 +1108,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_cookie_httponly_attribute
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePersistence", 
+		RequestNamespace="urn:iControl:LocalLB/ProfilePersistence", ResponseNamespace="urn:iControl:LocalLB/ProfilePersistence")]
+	public void set_cookie_httponly_attribute(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_cookie_httponly_attribute", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_cookie_httponly_attribute(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_cookie_httponly_attribute", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_cookie_httponly_attribute(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_cookie_name
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePersistence", 
@@ -1015,6 +1173,29 @@ namespace iControl {
 			methods}, callback, asyncState);
 	}
 	public void Endset_cookie_persistence_method(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_cookie_secure_attribute
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePersistence", 
+		RequestNamespace="urn:iControl:LocalLB/ProfilePersistence", ResponseNamespace="urn:iControl:LocalLB/ProfilePersistence")]
+	public void set_cookie_secure_attribute(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_cookie_secure_attribute", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_cookie_secure_attribute(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_cookie_secure_attribute", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_cookie_secure_attribute(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -1486,6 +1667,18 @@ namespace iControl {
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfilePersistence.CookieEncryption", Namespace = "urn:iControl")]
+	public enum LocalLBProfilePersistenceCookieEncryption
+	{
+		PERSISTENCE_COOKIE_ENCRYPTION_UNKNOWN,
+		PERSISTENCE_COOKIE_ENCRYPTION_PREFERRED,
+		PERSISTENCE_COOKIE_ENCRYPTION_REQUIRED,
+		PERSISTENCE_COOKIE_ENCRYPTION_OFF,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfilePersistence.PersistenceHashMethod", Namespace = "urn:iControl")]
 	public enum LocalLBProfilePersistencePersistenceHashMethod
 	{
@@ -1498,6 +1691,28 @@ namespace iControl {
 	//=======================================================================
 	// Structs
 	//=======================================================================
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfilePersistence.ProfileCookieEncryption", Namespace = "urn:iControl")]
+	public partial class LocalLBProfilePersistenceProfileCookieEncryption
+	{
+		private LocalLBProfilePersistenceCookieEncryption valueField;
+		public LocalLBProfilePersistenceCookieEncryption value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
 
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]

@@ -19,6 +19,7 @@ namespace iControl {
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileString))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileEnabledState))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileDNSProfileDNSLastAction))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileDNSProfileDNSRapidResponseLastAction))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStatisticsByVirtual))]
 	public partial class LocalLBProfileDNS : iControlInterface {
 		public LocalLBProfileDNS() {
@@ -393,6 +394,50 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_dns_rapid_response_enabled_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileDNS", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileDNS", ResponseNamespace="urn:iControl:LocalLB/ProfileDNS")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_dns_rapid_response_enabled_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_dns_rapid_response_enabled_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_dns_rapid_response_enabled_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_dns_rapid_response_enabled_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_dns_rapid_response_enabled_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_dns_rapid_response_last_action
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileDNS", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileDNS", ResponseNamespace="urn:iControl:LocalLB/ProfileDNS")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileDNSProfileDNSRapidResponseLastAction [] get_dns_rapid_response_last_action(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_dns_rapid_response_last_action", new object [] {
+				profile_names});
+		return ((LocalLBProfileDNSProfileDNSRapidResponseLastAction [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_dns_rapid_response_last_action(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_dns_rapid_response_last_action", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileDNSProfileDNSRapidResponseLastAction [] Endget_dns_rapid_response_last_action(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileDNSProfileDNSRapidResponseLastAction [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_dns_security_profile
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileDNS", 
@@ -454,6 +499,50 @@ namespace iControl {
 			profile_names}, callback, asyncState);
 	}
 	public LocalLBProfileEnabledState [] Endget_gtm_enabled_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_hardware_caching_enabled_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileDNS", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileDNS", ResponseNamespace="urn:iControl:LocalLB/ProfileDNS")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_hardware_caching_enabled_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_hardware_caching_enabled_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_hardware_caching_enabled_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_hardware_caching_enabled_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_hardware_caching_enabled_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_hardware_validation_enabled_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileDNS", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileDNS", ResponseNamespace="urn:iControl:LocalLB/ProfileDNS")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_hardware_validation_enabled_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_hardware_validation_enabled_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_hardware_validation_enabled_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_hardware_validation_enabled_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_hardware_validation_enabled_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
@@ -978,6 +1067,52 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_dns_rapid_response_enabled_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileDNS", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileDNS", ResponseNamespace="urn:iControl:LocalLB/ProfileDNS")]
+	public void set_dns_rapid_response_enabled_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_dns_rapid_response_enabled_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_dns_rapid_response_enabled_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_dns_rapid_response_enabled_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_dns_rapid_response_enabled_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_dns_rapid_response_last_action
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileDNS", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileDNS", ResponseNamespace="urn:iControl:LocalLB/ProfileDNS")]
+	public void set_dns_rapid_response_last_action(
+		string [] profile_names,
+		LocalLBProfileDNSProfileDNSRapidResponseLastAction [] actions
+	) {
+		this.Invoke("set_dns_rapid_response_last_action", new object [] {
+				profile_names,
+				actions});
+
+	}
+	public System.IAsyncResult Beginset_dns_rapid_response_last_action(string [] profile_names,LocalLBProfileDNSProfileDNSRapidResponseLastAction [] actions, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_dns_rapid_response_last_action", new object[] {
+			profile_names,
+			actions}, callback, asyncState);
+	}
+	public void Endset_dns_rapid_response_last_action(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_dns_security_profile
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileDNS", 
@@ -1043,6 +1178,52 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_gtm_enabled_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_hardware_caching_enabled_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileDNS", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileDNS", ResponseNamespace="urn:iControl:LocalLB/ProfileDNS")]
+	public void set_hardware_caching_enabled_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_hardware_caching_enabled_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_hardware_caching_enabled_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_hardware_caching_enabled_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_hardware_caching_enabled_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_hardware_validation_enabled_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileDNS", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileDNS", ResponseNamespace="urn:iControl:LocalLB/ProfileDNS")]
+	public void set_hardware_validation_enabled_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_hardware_validation_enabled_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_hardware_validation_enabled_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_hardware_validation_enabled_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_hardware_validation_enabled_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -1137,6 +1318,21 @@ namespace iControl {
 		DNS_LAST_ACTION_NOERROR,
 	}
 
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileDNS.DNSRapidResponseLastAction", Namespace = "urn:iControl")]
+	public enum LocalLBProfileDNSDNSRapidResponseLastAction
+	{
+		DNS_RAPID_RESPONSE_ACTION_UNKNOWN,
+		DNS_RAPID_RESPONSE_ACTION_ALLOW,
+		DNS_RAPID_RESPONSE_ACTION_DROP,
+		DNS_RAPID_RESPONSE_ACTION_RESPOND_TC,
+		DNS_RAPID_RESPONSE_ACTION_RESPOND_NXDOMAIN,
+		DNS_RAPID_RESPONSE_ACTION_RESPOND_NOERROR,
+		DNS_RAPID_RESPONSE_ACTION_RESPOND_REFUSED,
+	}
+
 	//=======================================================================
 	// Structs
 	//=======================================================================
@@ -1195,6 +1391,28 @@ namespace iControl {
 	{
 		private LocalLBProfileDNSDNSLastAction valueField;
 		public LocalLBProfileDNSDNSLastAction value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileDNS.ProfileDNSRapidResponseLastAction", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileDNSProfileDNSRapidResponseLastAction
+	{
+		private LocalLBProfileDNSDNSRapidResponseLastAction valueField;
+		public LocalLBProfileDNSDNSRapidResponseLastAction value
 		{
 			get { return this.valueField; }
 			set { this.valueField = value; }

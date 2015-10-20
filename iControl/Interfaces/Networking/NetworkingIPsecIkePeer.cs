@@ -20,6 +20,52 @@ namespace iControl {
 	// Operations
 	//=======================================================================
 	//-----------------------------------------------------------------------
+	// add_ike_version
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	public void add_ike_version(
+		string [] peers,
+		NetworkingIPsecIkeVersion [] [] versions
+	) {
+		this.Invoke("add_ike_version", new object [] {
+				peers,
+				versions});
+
+	}
+	public System.IAsyncResult Beginadd_ike_version(string [] peers,NetworkingIPsecIkeVersion [] [] versions, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("add_ike_version", new object[] {
+			peers,
+			versions}, callback, asyncState);
+	}
+	public void Endadd_ike_version(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// add_traffic_selector
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	public void add_traffic_selector(
+		string [] peers,
+		string [] [] traffic_selectors
+	) {
+		this.Invoke("add_traffic_selector", new object [] {
+				peers,
+				traffic_selectors});
+
+	}
+	public System.IAsyncResult Beginadd_traffic_selector(string [] peers,string [] [] traffic_selectors, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("add_traffic_selector", new object[] {
+			peers,
+			traffic_selectors}, callback, asyncState);
+	}
+	public void Endadd_traffic_selector(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// create
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
@@ -260,6 +306,28 @@ namespace iControl {
 	public string [] Endget_ike_proposal_name(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_ike_version
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public NetworkingIPsecIkeVersion [] [] get_ike_version(
+		string [] peers
+	) {
+		object [] results = this.Invoke("get_ike_version", new object [] {
+				peers});
+		return ((NetworkingIPsecIkeVersion [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_ike_version(string [] peers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_ike_version", new object[] {
+			peers}, callback, asyncState);
+	}
+	public NetworkingIPsecIkeVersion [] [] Endget_ike_version(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((NetworkingIPsecIkeVersion [] [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -613,6 +681,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_phase1_pseudo_random_function
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public NetworkingIPsecIkeHashAlgorithm [] get_phase1_pseudo_random_function(
+		string [] peers
+	) {
+		object [] results = this.Invoke("get_phase1_pseudo_random_function", new object [] {
+				peers});
+		return ((NetworkingIPsecIkeHashAlgorithm [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_phase1_pseudo_random_function(string [] peers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_phase1_pseudo_random_function", new object[] {
+			peers}, callback, asyncState);
+	}
+	public NetworkingIPsecIkeHashAlgorithm [] Endget_phase1_pseudo_random_function(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((NetworkingIPsecIkeHashAlgorithm [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_preshared_key
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
@@ -723,6 +813,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_traffic_selector
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] [] get_traffic_selector(
+		string [] peers
+	) {
+		object [] results = this.Invoke("get_traffic_selector", new object [] {
+				peers});
+		return ((string [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_traffic_selector(string [] peers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_traffic_selector", new object[] {
+			peers}, callback, asyncState);
+	}
+	public string [] [] Endget_traffic_selector(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_verify_certificate_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
@@ -764,6 +876,92 @@ namespace iControl {
 	public string Endget_version(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_all_ike_versions
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	public void remove_all_ike_versions(
+		string [] peers
+	) {
+		this.Invoke("remove_all_ike_versions", new object [] {
+				peers});
+
+	}
+	public System.IAsyncResult Beginremove_all_ike_versions(string [] peers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_all_ike_versions", new object[] {
+			peers}, callback, asyncState);
+	}
+	public void Endremove_all_ike_versions(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_all_traffic_selectors
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	public void remove_all_traffic_selectors(
+		string [] peers
+	) {
+		this.Invoke("remove_all_traffic_selectors", new object [] {
+				peers});
+
+	}
+	public System.IAsyncResult Beginremove_all_traffic_selectors(string [] peers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_all_traffic_selectors", new object[] {
+			peers}, callback, asyncState);
+	}
+	public void Endremove_all_traffic_selectors(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_ike_version
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	public void remove_ike_version(
+		string [] peers,
+		NetworkingIPsecIkeVersion [] [] versions
+	) {
+		this.Invoke("remove_ike_version", new object [] {
+				peers,
+				versions});
+
+	}
+	public System.IAsyncResult Beginremove_ike_version(string [] peers,NetworkingIPsecIkeVersion [] [] versions, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_ike_version", new object[] {
+			peers,
+			versions}, callback, asyncState);
+	}
+	public void Endremove_ike_version(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_traffic_selector
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	public void remove_traffic_selector(
+		string [] peers,
+		string [] [] traffic_selectors
+	) {
+		this.Invoke("remove_traffic_selector", new object [] {
+				peers,
+				traffic_selectors});
+
+	}
+	public System.IAsyncResult Beginremove_traffic_selector(string [] peers,string [] [] traffic_selectors, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_traffic_selector", new object[] {
+			peers,
+			traffic_selectors}, callback, asyncState);
+	}
+	public void Endremove_traffic_selector(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
 	}
 
 	//-----------------------------------------------------------------------
@@ -1292,6 +1490,29 @@ namespace iControl {
 			secrecies}, callback, asyncState);
 	}
 	public void Endset_phase1_perfect_forward_secrecy(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_phase1_pseudo_random_function
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	public void set_phase1_pseudo_random_function(
+		string [] peers,
+		NetworkingIPsecIkeHashAlgorithm [] functions
+	) {
+		this.Invoke("set_phase1_pseudo_random_function", new object [] {
+				peers,
+				functions});
+
+	}
+	public System.IAsyncResult Beginset_phase1_pseudo_random_function(string [] peers,NetworkingIPsecIkeHashAlgorithm [] functions, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_phase1_pseudo_random_function", new object[] {
+			peers,
+			functions}, callback, asyncState);
+	}
+	public void Endset_phase1_pseudo_random_function(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

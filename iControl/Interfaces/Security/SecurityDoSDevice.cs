@@ -155,6 +155,106 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_vector_auto_blacklisting_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/DoSDevice", 
+		RequestNamespace="urn:iControl:Security/DoSDevice", ResponseNamespace="urn:iControl:Security/DoSDevice")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState [] [] get_vector_auto_blacklisting_state(
+		string [] devices,
+		SecurityDoSDeviceDoSDeviceVector [] [] vectors
+	) {
+		object [] results = this.Invoke("get_vector_auto_blacklisting_state", new object [] {
+				devices,
+				vectors});
+		return ((CommonEnabledState [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_vector_auto_blacklisting_state(string [] devices,SecurityDoSDeviceDoSDeviceVector [] [] vectors, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_vector_auto_blacklisting_state", new object[] {
+			devices,
+			vectors}, callback, asyncState);
+	}
+	public CommonEnabledState [] [] Endget_vector_auto_blacklisting_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_vector_blacklist_category
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/DoSDevice", 
+		RequestNamespace="urn:iControl:Security/DoSDevice", ResponseNamespace="urn:iControl:Security/DoSDevice")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] [] get_vector_blacklist_category(
+		string [] devices,
+		SecurityDoSDeviceDoSDeviceVector [] [] vectors
+	) {
+		object [] results = this.Invoke("get_vector_blacklist_category", new object [] {
+				devices,
+				vectors});
+		return ((string [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_vector_blacklist_category(string [] devices,SecurityDoSDeviceDoSDeviceVector [] [] vectors, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_vector_blacklist_category", new object[] {
+			devices,
+			vectors}, callback, asyncState);
+	}
+	public string [] [] Endget_vector_blacklist_category(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_vector_blacklist_detection_seconds
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/DoSDevice", 
+		RequestNamespace="urn:iControl:Security/DoSDevice", ResponseNamespace="urn:iControl:Security/DoSDevice")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_vector_blacklist_detection_seconds(
+		string [] devices,
+		SecurityDoSDeviceDoSDeviceVector [] [] vectors
+	) {
+		object [] results = this.Invoke("get_vector_blacklist_detection_seconds", new object [] {
+				devices,
+				vectors});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_vector_blacklist_detection_seconds(string [] devices,SecurityDoSDeviceDoSDeviceVector [] [] vectors, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_vector_blacklist_detection_seconds", new object[] {
+			devices,
+			vectors}, callback, asyncState);
+	}
+	public long [] [] Endget_vector_blacklist_detection_seconds(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_vector_blacklist_duration
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/DoSDevice", 
+		RequestNamespace="urn:iControl:Security/DoSDevice", ResponseNamespace="urn:iControl:Security/DoSDevice")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_vector_blacklist_duration(
+		string [] devices,
+		SecurityDoSDeviceDoSDeviceVector [] [] vectors
+	) {
+		object [] results = this.Invoke("get_vector_blacklist_duration", new object [] {
+				devices,
+				vectors});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_vector_blacklist_duration(string [] devices,SecurityDoSDeviceDoSDeviceVector [] [] vectors, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_vector_blacklist_duration", new object[] {
+			devices,
+			vectors}, callback, asyncState);
+	}
+	public long [] [] Endget_vector_blacklist_duration(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_vector_default_internal_rate_limit
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/DoSDevice", 
@@ -420,6 +520,110 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_vector_auto_blacklisting_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/DoSDevice", 
+		RequestNamespace="urn:iControl:Security/DoSDevice", ResponseNamespace="urn:iControl:Security/DoSDevice")]
+	public void set_vector_auto_blacklisting_state(
+		string [] devices,
+		SecurityDoSDeviceDoSDeviceVector [] [] vectors,
+		CommonEnabledState [] [] states
+	) {
+		this.Invoke("set_vector_auto_blacklisting_state", new object [] {
+				devices,
+				vectors,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_vector_auto_blacklisting_state(string [] devices,SecurityDoSDeviceDoSDeviceVector [] [] vectors,CommonEnabledState [] [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_vector_auto_blacklisting_state", new object[] {
+			devices,
+			vectors,
+			states}, callback, asyncState);
+	}
+	public void Endset_vector_auto_blacklisting_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_vector_blacklist_category
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/DoSDevice", 
+		RequestNamespace="urn:iControl:Security/DoSDevice", ResponseNamespace="urn:iControl:Security/DoSDevice")]
+	public void set_vector_blacklist_category(
+		string [] devices,
+		SecurityDoSDeviceDoSDeviceVector [] [] vectors,
+		string [] [] values
+	) {
+		this.Invoke("set_vector_blacklist_category", new object [] {
+				devices,
+				vectors,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_vector_blacklist_category(string [] devices,SecurityDoSDeviceDoSDeviceVector [] [] vectors,string [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_vector_blacklist_category", new object[] {
+			devices,
+			vectors,
+			values}, callback, asyncState);
+	}
+	public void Endset_vector_blacklist_category(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_vector_blacklist_detection_seconds
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/DoSDevice", 
+		RequestNamespace="urn:iControl:Security/DoSDevice", ResponseNamespace="urn:iControl:Security/DoSDevice")]
+	public void set_vector_blacklist_detection_seconds(
+		string [] devices,
+		SecurityDoSDeviceDoSDeviceVector [] [] vectors,
+		long [] [] values
+	) {
+		this.Invoke("set_vector_blacklist_detection_seconds", new object [] {
+				devices,
+				vectors,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_vector_blacklist_detection_seconds(string [] devices,SecurityDoSDeviceDoSDeviceVector [] [] vectors,long [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_vector_blacklist_detection_seconds", new object[] {
+			devices,
+			vectors,
+			values}, callback, asyncState);
+	}
+	public void Endset_vector_blacklist_detection_seconds(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_vector_blacklist_duration
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/DoSDevice", 
+		RequestNamespace="urn:iControl:Security/DoSDevice", ResponseNamespace="urn:iControl:Security/DoSDevice")]
+	public void set_vector_blacklist_duration(
+		string [] devices,
+		SecurityDoSDeviceDoSDeviceVector [] [] vectors,
+		long [] [] values
+	) {
+		this.Invoke("set_vector_blacklist_duration", new object [] {
+				devices,
+				vectors,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_vector_blacklist_duration(string [] devices,SecurityDoSDeviceDoSDeviceVector [] [] vectors,long [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_vector_blacklist_duration", new object[] {
+			devices,
+			vectors,
+			values}, callback, asyncState);
+	}
+	public void Endset_vector_blacklist_duration(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_vector_default_internal_rate_limit
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/DoSDevice", 
@@ -511,7 +715,7 @@ namespace iControl {
 		DOS_DEVICE_VECTOR_UNKNOWN,
 		DOS_DEVICE_VECTOR_ARP_FLOOD,
 		DOS_DEVICE_VECTOR_BAD_ICMP_FRAME,
-		DOS_DEVICE_VECTOR_BAD_IP_OPT,
+		DOS_DEVICE_VECTOR_IP_OPT_ILL_LEN,
 		DOS_DEVICE_VECTOR_BAD_IPV6_HOP_COUNT,
 		DOS_DEVICE_VECTOR_BAD_IPV6_VER,
 		DOS_DEVICE_VECTOR_BAD_TCP_CHECKSUM,
@@ -555,7 +759,7 @@ namespace iControl {
 		DOS_DEVICE_VECTOR_ROUTING_HEADER_TYPE_0,
 		DOS_DEVICE_VECTOR_SSL_RENEGOTIATION,
 		DOS_DEVICE_VECTOR_SYN_AND_FIN_SET,
-		DOS_DEVICE_VECTOR_TCP_ACK_FLOOD,
+		DOS_DEVICE_VECTOR_TCP_BADACK_FLOOD,
 		DOS_DEVICE_VECTOR_TCP_HEADER_LENGTH_GT_L2_LENGTH,
 		DOS_DEVICE_VECTOR_TCP_HEADER_LENGTH_TOO_SHORT,
 		DOS_DEVICE_VECTOR_TCP_LAND,
@@ -565,7 +769,7 @@ namespace iControl {
 		DOS_DEVICE_VECTOR_TCP_SYN_FLOOD,
 		DOS_DEVICE_VECTOR_TIDCMP,
 		DOS_DEVICE_VECTOR_TOO_MANY_EXT_HEADERS,
-		DOS_DEVICE_VECTOR_TTL_LEQ_ONE,
+		DOS_DEVICE_VECTOR_IP_LOW_TTL,
 		DOS_DEVICE_VECTOR_UDP_LAND,
 		DOS_DEVICE_VECTOR_UNK_TCP_OPT_TYPE,
 		DOS_DEVICE_VECTOR_FLOOD,
@@ -574,8 +778,59 @@ namespace iControl {
 		DOS_DEVICE_VECTOR_IPV6_DUPLICATE_EXTENSION_HEADERS,
 		DOS_DEVICE_VECTOR_IPV6_EXTENSION_HEADERS_WRONG_ORDER,
 		DOS_DEVICE_VECTOR_IPV6_EXTENSION_HEADERS_TOO_LARGE,
-		DOS_DEVICE_VECTOR_IPV6_HOP_COUNT_LEQ_ONE,
+		DOS_DEVICE_VECTOR_IPV6_HOP_COUNT_LOW,
 		DOS_DEVICE_VECTOR_UDP_FLOOD,
+		DOS_DEVICE_VECTOR_ICMPV4_FLOOD,
+		DOS_DEVICE_VECTOR_BAD_IGMP_FRAME,
+		DOS_DEVICE_VECTOR_IGMP_FLOOD,
+		DOS_DEVICE_VECTOR_DUP_EXT_HDR,
+		DOS_DEVICE_VECTOR_EXT_HDR_TOO_LARGE,
+		DOS_DEVICE_VECTOR_HOP_CNT_LOW,
+		DOS_DEVICE_VECTOR_BAD_EXT_HDR_ORDER,
+		DOS_DEVICE_VECTOR_IGMP_FRAG_FLOOD,
+		DOS_DEVICE_VECTOR_BAD_ICMP_CHKSUM,
+		DOS_DEVICE_VECTOR_TCP_BAD_URG,
+		DOS_DEVICE_VECTOR_TCP_WINDOW_SIZE,
+		DOS_DEVICE_VECTOR_IPV6_ATOMIC_FRAG,
+		DOS_DEVICE_VECTOR_BAD_UDP_HDR,
+		DOS_DEVICE_VECTOR_BAD_UDP_CHKSUM,
+		DOS_DEVICE_VECTOR_IP_BAD_SRC,
+		DOS_DEVICE_VECTOR_IPV6_BAD_ADDR,
+		DOS_DEVICE_VECTOR_DNS_OVERSIZE,
+		DOS_DEVICE_VECTOR_LAND_ATTACK,
+		DOS_DEVICE_VECTOR_UDPDNS_RESPONSE_FLOOD,
+		DOS_DEVICE_VECTOR_UDPDNS_MALFORMED,
+		DOS_DEVICE_VECTOR_UDPDNS_QDCOUNT_LIMIT,
+		DOS_DEVICE_VECTOR_UDPDNS_ANY_QUERY,
+		DOS_DEVICE_VECTOR_UDPDNS_A_QUERY,
+		DOS_DEVICE_VECTOR_UDPDNS_PTR_QUERY,
+		DOS_DEVICE_VECTOR_UDPDNS_NS_QUERY,
+		DOS_DEVICE_VECTOR_UDPDNS_SOA_QUERY,
+		DOS_DEVICE_VECTOR_UDPDNS_CNAME_QUERY,
+		DOS_DEVICE_VECTOR_UDPDNS_MX_QUERY,
+		DOS_DEVICE_VECTOR_UDPDNS_AAAA_QUERY,
+		DOS_DEVICE_VECTOR_UDPDNS_TXT_QUERY,
+		DOS_DEVICE_VECTOR_UDPDNS_SRV_QUERY,
+		DOS_DEVICE_VECTOR_UDPDNS_AXFR_QUERY,
+		DOS_DEVICE_VECTOR_UDPDNS_IXFR_QUERY,
+		DOS_DEVICE_VECTOR_UDPDNS_OTHER_QUERY,
+		DOS_DEVICE_VECTOR_UDPSIP_MALFORMED,
+		DOS_DEVICE_VECTOR_UDPSIP_INVITE_METHOD,
+		DOS_DEVICE_VECTOR_UDPSIP_ACK_METHOD,
+		DOS_DEVICE_VECTOR_UDPSIP_OPTIONS_METHOD,
+		DOS_DEVICE_VECTOR_UDPSIP_BYE_METHOD,
+		DOS_DEVICE_VECTOR_UDPSIP_CANCEL_METHOD,
+		DOS_DEVICE_VECTOR_UDPSIP_REGISTER_METHOD,
+		DOS_DEVICE_VECTOR_UDPSIP_PUBLISH_METHOD,
+		DOS_DEVICE_VECTOR_UDPSIP_NOTIFY_METHOD,
+		DOS_DEVICE_VECTOR_UDPSIP_SUBSCRIBE_METHOD,
+		DOS_DEVICE_VECTOR_UDPSIP_MESSAGE_METHOD,
+		DOS_DEVICE_VECTOR_UDPSIP_PRACK_METHOD,
+		DOS_DEVICE_VECTOR_UDPSIP_OTHER_METHOD,
+		DOS_DEVICE_VECTOR_UNK_IPOPT_TYPE,
+		DOS_DEVICE_VECTOR_BAD_SCTP_CHECKSUM,
+		DOS_DEVICE_VECTOR_IP_UNKNOWN_PROTOCOL,
+		DOS_DEVICE_VECTOR_TCP_SYN_OVERSIZE,
 	}
 
 	/// <remarks/>
@@ -585,8 +840,8 @@ namespace iControl {
 	public enum SecurityDoSDeviceDoSNetworkVectorPacketType
 	{
 		NETWORK_ATTACK_PACKET_UNKNOWN,
-		NETWORK_ATTACK_PACKET_IPV4_UDP,
-		NETWORK_ATTACK_PACKET_IPV4_TCP_SYN_ONLY,
+		NETWORK_ATTACK_PACKET_UDP,
+		NETWORK_ATTACK_PACKET_TCP_SYN_ONLY,
 		NETWORK_ATTACK_PACKET_IPV4_ICMP,
 		NETWORK_ATTACK_PACKET_IPV4_ANY,
 		NETWORK_ATTACK_PACKET_IPV6_UDP,

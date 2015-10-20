@@ -11,6 +11,7 @@ namespace iControl {
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="GlobalLB.ApplicationBinding", Namespace="urn:iControl")]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBWideIPID))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBApplicationApplicationContextObject))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonObjectStatus))]
 	public partial class GlobalLBApplication : iControlInterface {
@@ -21,6 +22,29 @@ namespace iControl {
 	//=======================================================================
 	// Operations
 	//=======================================================================
+	//-----------------------------------------------------------------------
+	// add_wide_ip
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Application", 
+		RequestNamespace="urn:iControl:GlobalLB/Application", ResponseNamespace="urn:iControl:GlobalLB/Application")]
+	public void add_wide_ip(
+		string [] applications,
+		GlobalLBWideIPID [] [] wideips
+	) {
+		this.Invoke("add_wide_ip", new object [] {
+				applications,
+				wideips});
+
+	}
+	public System.IAsyncResult Beginadd_wide_ip(string [] applications,GlobalLBWideIPID [] [] wideips, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("add_wide_ip", new object[] {
+			applications,
+			wideips}, callback, asyncState);
+	}
+	public void Endadd_wide_ip(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
 	//-----------------------------------------------------------------------
 	// create
 	//-----------------------------------------------------------------------
@@ -338,6 +362,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_wide_ip_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Application", 
+		RequestNamespace="urn:iControl:GlobalLB/Application", ResponseNamespace="urn:iControl:GlobalLB/Application")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBWideIPID [] [] get_wide_ip_v2(
+		string [] applications
+	) {
+		object [] results = this.Invoke("get_wide_ip_v2", new object [] {
+				applications});
+		return ((GlobalLBWideIPID [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_wide_ip_v2(string [] applications, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_wide_ip_v2", new object[] {
+			applications}, callback, asyncState);
+	}
+	public GlobalLBWideIPID [] [] Endget_wide_ip_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBWideIPID [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_wide_ips
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Application", 
@@ -357,6 +403,49 @@ namespace iControl {
 	public string [] [] Endget_wide_ips(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_all_wide_ips
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Application", 
+		RequestNamespace="urn:iControl:GlobalLB/Application", ResponseNamespace="urn:iControl:GlobalLB/Application")]
+	public void remove_all_wide_ips(
+		string [] applications
+	) {
+		this.Invoke("remove_all_wide_ips", new object [] {
+				applications});
+
+	}
+	public System.IAsyncResult Beginremove_all_wide_ips(string [] applications, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_all_wide_ips", new object[] {
+			applications}, callback, asyncState);
+	}
+	public void Endremove_all_wide_ips(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_wide_ip
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Application", 
+		RequestNamespace="urn:iControl:GlobalLB/Application", ResponseNamespace="urn:iControl:GlobalLB/Application")]
+	public void remove_wide_ip(
+		string [] applications,
+		GlobalLBWideIPID [] [] wideips
+	) {
+		this.Invoke("remove_wide_ip", new object [] {
+				applications,
+				wideips});
+
+	}
+	public System.IAsyncResult Beginremove_wide_ip(string [] applications,GlobalLBWideIPID [] [] wideips, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_wide_ip", new object[] {
+			applications,
+			wideips}, callback, asyncState);
+	}
+	public void Endremove_wide_ip(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
 	}
 
 	//-----------------------------------------------------------------------

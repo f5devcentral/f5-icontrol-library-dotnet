@@ -360,6 +360,7 @@ namespace iControl {
 		PROFILE_VXLAN_FLOODING_TYPE_NONE,
 		PROFILE_VXLAN_FLOODING_TYPE_MULTICAST,
 		PROFILE_VXLAN_FLOODING_TYPE_MULTIPOINT,
+		PROFILE_VXLAN_FLOODING_TYPE_REPLICATOR,
 	}
 
 	//=======================================================================

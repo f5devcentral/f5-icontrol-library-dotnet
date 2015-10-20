@@ -871,6 +871,50 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_dos_network_publisher
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_dos_network_publisher(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_dos_network_publisher", new object [] {
+				profile_names});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_dos_network_publisher(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_dos_network_publisher", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public string [] Endget_dos_network_publisher(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_ip_intelligence_log_aggregate_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_ip_intelligence_log_aggregate_rate_limit(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_ip_intelligence_log_aggregate_rate_limit", new object [] {
+				profile_names});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_ip_intelligence_log_aggregate_rate_limit(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_ip_intelligence_log_aggregate_rate_limit", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public long [] Endget_ip_intelligence_log_aggregate_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_ip_intelligence_log_publisher
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
@@ -1082,6 +1126,31 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_network_log_acl_match_accept_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_network_log_acl_match_accept_rate_limit(
+		string [] profile_names,
+		string [] [] networks
+	) {
+		object [] results = this.Invoke("get_network_log_acl_match_accept_rate_limit", new object [] {
+				profile_names,
+				networks});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_network_log_acl_match_accept_rate_limit(string [] profile_names,string [] [] networks, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_network_log_acl_match_accept_rate_limit", new object[] {
+			profile_names,
+			networks}, callback, asyncState);
+	}
+	public long [] [] Endget_network_log_acl_match_accept_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_network_log_acl_match_drop_filter_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
@@ -1104,6 +1173,31 @@ namespace iControl {
 	public CommonEnabledState [] [] Endget_network_log_acl_match_drop_filter_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((CommonEnabledState [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_network_log_acl_match_drop_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_network_log_acl_match_drop_rate_limit(
+		string [] profile_names,
+		string [] [] networks
+	) {
+		object [] results = this.Invoke("get_network_log_acl_match_drop_rate_limit", new object [] {
+				profile_names,
+				networks});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_network_log_acl_match_drop_rate_limit(string [] profile_names,string [] [] networks, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_network_log_acl_match_drop_rate_limit", new object[] {
+			profile_names,
+			networks}, callback, asyncState);
+	}
+	public long [] [] Endget_network_log_acl_match_drop_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -1132,6 +1226,56 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_network_log_acl_match_reject_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_network_log_acl_match_reject_rate_limit(
+		string [] profile_names,
+		string [] [] networks
+	) {
+		object [] results = this.Invoke("get_network_log_acl_match_reject_rate_limit", new object [] {
+				profile_names,
+				networks});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_network_log_acl_match_reject_rate_limit(string [] profile_names,string [] [] networks, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_network_log_acl_match_reject_rate_limit", new object[] {
+			profile_names,
+			networks}, callback, asyncState);
+	}
+	public long [] [] Endget_network_log_acl_match_reject_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_network_log_aggregate_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_network_log_aggregate_rate_limit(
+		string [] profile_names,
+		string [] [] networks
+	) {
+		object [] results = this.Invoke("get_network_log_aggregate_rate_limit", new object [] {
+				profile_names,
+				networks});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_network_log_aggregate_rate_limit(string [] profile_names,string [] [] networks, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_network_log_aggregate_rate_limit", new object[] {
+			profile_names,
+			networks}, callback, asyncState);
+	}
+	public long [] [] Endget_network_log_aggregate_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_network_log_ip_errors_filter_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
@@ -1154,6 +1298,31 @@ namespace iControl {
 	public CommonEnabledState [] [] Endget_network_log_ip_errors_filter_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((CommonEnabledState [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_network_log_ip_errors_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_network_log_ip_errors_rate_limit(
+		string [] profile_names,
+		string [] [] networks
+	) {
+		object [] results = this.Invoke("get_network_log_ip_errors_rate_limit", new object [] {
+				profile_names,
+				networks});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_network_log_ip_errors_rate_limit(string [] profile_names,string [] [] networks, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_network_log_ip_errors_rate_limit", new object[] {
+			profile_names,
+			networks}, callback, asyncState);
+	}
+	public long [] [] Endget_network_log_ip_errors_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -1207,6 +1376,31 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_network_log_tcp_errors_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_network_log_tcp_errors_rate_limit(
+		string [] profile_names,
+		string [] [] networks
+	) {
+		object [] results = this.Invoke("get_network_log_tcp_errors_rate_limit", new object [] {
+				profile_names,
+				networks});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_network_log_tcp_errors_rate_limit(string [] profile_names,string [] [] networks, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_network_log_tcp_errors_rate_limit", new object[] {
+			profile_names,
+			networks}, callback, asyncState);
+	}
+	public long [] [] Endget_network_log_tcp_errors_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_network_log_tcp_events_filter_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
@@ -1229,6 +1423,31 @@ namespace iControl {
 	public CommonEnabledState [] [] Endget_network_log_tcp_events_filter_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((CommonEnabledState [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_network_log_tcp_events_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_network_log_tcp_events_rate_limit(
+		string [] profile_names,
+		string [] [] networks
+	) {
+		object [] results = this.Invoke("get_network_log_tcp_events_rate_limit", new object [] {
+				profile_names,
+				networks});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_network_log_tcp_events_rate_limit(string [] profile_names,string [] [] networks, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_network_log_tcp_events_rate_limit", new object[] {
+			profile_names,
+			networks}, callback, asyncState);
+	}
+	public long [] [] Endget_network_log_tcp_events_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -3055,6 +3274,52 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_dos_network_publisher
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	public void set_dos_network_publisher(
+		string [] profile_names,
+		string [] publishers
+	) {
+		this.Invoke("set_dos_network_publisher", new object [] {
+				profile_names,
+				publishers});
+
+	}
+	public System.IAsyncResult Beginset_dos_network_publisher(string [] profile_names,string [] publishers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_dos_network_publisher", new object[] {
+			profile_names,
+			publishers}, callback, asyncState);
+	}
+	public void Endset_dos_network_publisher(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_ip_intelligence_log_aggregate_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	public void set_ip_intelligence_log_aggregate_rate_limit(
+		string [] profile_names,
+		long [] values
+	) {
+		this.Invoke("set_ip_intelligence_log_aggregate_rate_limit", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_ip_intelligence_log_aggregate_rate_limit(string [] profile_names,long [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_ip_intelligence_log_aggregate_rate_limit", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_ip_intelligence_log_aggregate_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_ip_intelligence_log_publisher
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
@@ -3231,6 +3496,32 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_network_log_acl_match_accept_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	public void set_network_log_acl_match_accept_rate_limit(
+		string [] profile_names,
+		string [] [] networks,
+		long [] [] values
+	) {
+		this.Invoke("set_network_log_acl_match_accept_rate_limit", new object [] {
+				profile_names,
+				networks,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_network_log_acl_match_accept_rate_limit(string [] profile_names,string [] [] networks,long [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_network_log_acl_match_accept_rate_limit", new object[] {
+			profile_names,
+			networks,
+			values}, callback, asyncState);
+	}
+	public void Endset_network_log_acl_match_accept_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_network_log_acl_match_drop_filter_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
@@ -3253,6 +3544,32 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_network_log_acl_match_drop_filter_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_network_log_acl_match_drop_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	public void set_network_log_acl_match_drop_rate_limit(
+		string [] profile_names,
+		string [] [] networks,
+		long [] [] values
+	) {
+		this.Invoke("set_network_log_acl_match_drop_rate_limit", new object [] {
+				profile_names,
+				networks,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_network_log_acl_match_drop_rate_limit(string [] profile_names,string [] [] networks,long [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_network_log_acl_match_drop_rate_limit", new object[] {
+			profile_names,
+			networks,
+			values}, callback, asyncState);
+	}
+	public void Endset_network_log_acl_match_drop_rate_limit(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -3283,6 +3600,58 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_network_log_acl_match_reject_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	public void set_network_log_acl_match_reject_rate_limit(
+		string [] profile_names,
+		string [] [] networks,
+		long [] [] values
+	) {
+		this.Invoke("set_network_log_acl_match_reject_rate_limit", new object [] {
+				profile_names,
+				networks,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_network_log_acl_match_reject_rate_limit(string [] profile_names,string [] [] networks,long [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_network_log_acl_match_reject_rate_limit", new object[] {
+			profile_names,
+			networks,
+			values}, callback, asyncState);
+	}
+	public void Endset_network_log_acl_match_reject_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_network_log_aggregate_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	public void set_network_log_aggregate_rate_limit(
+		string [] profile_names,
+		string [] [] networks,
+		long [] [] values
+	) {
+		this.Invoke("set_network_log_aggregate_rate_limit", new object [] {
+				profile_names,
+				networks,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_network_log_aggregate_rate_limit(string [] profile_names,string [] [] networks,long [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_network_log_aggregate_rate_limit", new object[] {
+			profile_names,
+			networks,
+			values}, callback, asyncState);
+	}
+	public void Endset_network_log_aggregate_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_network_log_ip_errors_filter_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
@@ -3305,6 +3674,32 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_network_log_ip_errors_filter_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_network_log_ip_errors_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	public void set_network_log_ip_errors_rate_limit(
+		string [] profile_names,
+		string [] [] networks,
+		long [] [] values
+	) {
+		this.Invoke("set_network_log_ip_errors_rate_limit", new object [] {
+				profile_names,
+				networks,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_network_log_ip_errors_rate_limit(string [] profile_names,string [] [] networks,long [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_network_log_ip_errors_rate_limit", new object[] {
+			profile_names,
+			networks,
+			values}, callback, asyncState);
+	}
+	public void Endset_network_log_ip_errors_rate_limit(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -3361,6 +3756,32 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_network_log_tcp_errors_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	public void set_network_log_tcp_errors_rate_limit(
+		string [] profile_names,
+		string [] [] networks,
+		long [] [] values
+	) {
+		this.Invoke("set_network_log_tcp_errors_rate_limit", new object [] {
+				profile_names,
+				networks,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_network_log_tcp_errors_rate_limit(string [] profile_names,string [] [] networks,long [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_network_log_tcp_errors_rate_limit", new object[] {
+			profile_names,
+			networks,
+			values}, callback, asyncState);
+	}
+	public void Endset_network_log_tcp_errors_rate_limit(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_network_log_tcp_events_filter_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
@@ -3383,6 +3804,32 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_network_log_tcp_events_filter_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_network_log_tcp_events_rate_limit
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Security/LogProfile", 
+		RequestNamespace="urn:iControl:Security/LogProfile", ResponseNamespace="urn:iControl:Security/LogProfile")]
+	public void set_network_log_tcp_events_rate_limit(
+		string [] profile_names,
+		string [] [] networks,
+		long [] [] values
+	) {
+		this.Invoke("set_network_log_tcp_events_rate_limit", new object [] {
+				profile_names,
+				networks,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_network_log_tcp_events_rate_limit(string [] profile_names,string [] [] networks,long [] [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_network_log_tcp_events_rate_limit", new object[] {
+			profile_names,
+			networks,
+			values}, callback, asyncState);
+	}
+	public void Endset_network_log_tcp_events_rate_limit(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

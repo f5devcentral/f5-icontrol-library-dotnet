@@ -939,6 +939,72 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_hsts_include_subdomains_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileHttp", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileHttp", ResponseNamespace="urn:iControl:LocalLB/ProfileHttp")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_hsts_include_subdomains_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_hsts_include_subdomains_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_hsts_include_subdomains_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_hsts_include_subdomains_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_hsts_include_subdomains_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_hsts_maximum_age
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileHttp", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileHttp", ResponseNamespace="urn:iControl:LocalLB/ProfileHttp")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_hsts_maximum_age(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_hsts_maximum_age", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_hsts_maximum_age(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_hsts_maximum_age", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_hsts_maximum_age(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_hsts_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileHttp", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileHttp", ResponseNamespace="urn:iControl:LocalLB/ProfileHttp")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_hsts_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_hsts_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_hsts_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_hsts_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_hsts_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_http_proxy_type
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileHttp", 
@@ -3010,6 +3076,75 @@ namespace iControl {
 			headers}, callback, asyncState);
 	}
 	public void Endset_header_insert(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_hsts_include_subdomains_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileHttp", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileHttp", ResponseNamespace="urn:iControl:LocalLB/ProfileHttp")]
+	public void set_hsts_include_subdomains_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_hsts_include_subdomains_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_hsts_include_subdomains_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_hsts_include_subdomains_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_hsts_include_subdomains_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_hsts_maximum_age
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileHttp", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileHttp", ResponseNamespace="urn:iControl:LocalLB/ProfileHttp")]
+	public void set_hsts_maximum_age(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_hsts_maximum_age", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_hsts_maximum_age(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_hsts_maximum_age", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_hsts_maximum_age(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_hsts_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileHttp", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileHttp", ResponseNamespace="urn:iControl:LocalLB/ProfileHttp")]
+	public void set_hsts_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_hsts_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_hsts_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_hsts_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_hsts_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

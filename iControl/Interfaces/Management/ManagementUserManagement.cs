@@ -15,8 +15,8 @@ namespace iControl {
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementUserManagementUserInfo))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementUserManagementUserInfo2))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementUserManagementUserInfo3))]
-	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementUserManagementUserID))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementUserManagementUserPermission))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementUserManagementUserID))]
 	public partial class ManagementUserManagement : iControlInterface {
 		public ManagementUserManagement() {
 			this.Url = "https://url_to_service";
@@ -168,6 +168,29 @@ namespace iControl {
 			user_names}, callback, asyncState);
 	}
 	public void Enddelete_user(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// delete_user_permission
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/UserManagement", 
+		RequestNamespace="urn:iControl:Management/UserManagement", ResponseNamespace="urn:iControl:Management/UserManagement")]
+	public void delete_user_permission(
+		string [] user_names,
+		ManagementUserManagementUserPermission [] [] permissions
+	) {
+		this.Invoke("delete_user_permission", new object [] {
+				user_names,
+				permissions});
+
+	}
+	public System.IAsyncResult Begindelete_user_permission(string [] user_names,ManagementUserManagementUserPermission [] [] permissions, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("delete_user_permission", new object[] {
+			user_names,
+			permissions}, callback, asyncState);
+	}
+	public void Enddelete_user_permission(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -867,6 +890,7 @@ namespace iControl {
 		USER_ROLE_ACCELERATION_POLICY_EDITOR,
 		USER_ROLE_IRULE_MANAGER,
 		USER_ROLE_FIREWALL_MANAGER,
+		USER_ROLE_FRAUD_PROTECTION_MANAGER,
 	}
 
 	//=======================================================================

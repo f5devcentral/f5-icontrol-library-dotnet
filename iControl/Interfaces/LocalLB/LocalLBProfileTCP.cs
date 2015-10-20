@@ -16,6 +16,7 @@ namespace iControl {
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPCongestionControlMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileString))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPProfileTCPMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStatisticsByVirtual))]
 	public partial class LocalLBProfileTCP : iControlInterface {
 		public LocalLBProfileTCP() {
@@ -214,6 +215,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_cmetrics_cache_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_cmetrics_cache_timeout(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_cmetrics_cache_timeout", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_cmetrics_cache_timeout(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_cmetrics_cache_timeout", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_cmetrics_cache_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_congestion_control_mode
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -368,6 +391,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_early_retransmit_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_early_retransmit_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_early_retransmit_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_early_retransmit_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_early_retransmit_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_early_retransmit_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_ecn_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -390,6 +435,72 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_fast_open_cookie_expiration
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_fast_open_cookie_expiration(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_fast_open_cookie_expiration", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_fast_open_cookie_expiration(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_fast_open_cookie_expiration", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_fast_open_cookie_expiration(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_fast_open_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_fast_open_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_fast_open_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_fast_open_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_fast_open_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_fast_open_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_fin_wait_2_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_fin_wait_2_timeout(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_fin_wait_2_timeout", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_fin_wait_2_timeout(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_fin_wait_2_timeout", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_fin_wait_2_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_fin_wait_timeout
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -409,6 +520,28 @@ namespace iControl {
 	public LocalLBProfileULong [] Endget_fin_wait_timeout(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_hardware_syn_cookie_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_hardware_syn_cookie_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_hardware_syn_cookie_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_hardware_syn_cookie_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_hardware_syn_cookie_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_hardware_syn_cookie_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -718,6 +851,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_minimum_rto
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_minimum_rto(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_minimum_rto", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_minimum_rto(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_minimum_rto", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_minimum_rto(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_mptcp_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -737,6 +892,28 @@ namespace iControl {
 	public LocalLBProfileEnabledState [] Endget_mptcp_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_nagle_algorithm_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileTCPProfileTCPMode [] get_nagle_algorithm_mode(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_nagle_algorithm_mode", new object [] {
+				profile_names});
+		return ((LocalLBProfileTCPProfileTCPMode [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_nagle_algorithm_mode(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_nagle_algorithm_mode", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileTCPProfileTCPMode [] Endget_nagle_algorithm_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileTCPProfileTCPMode [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -867,6 +1044,50 @@ namespace iControl {
 			profile_names}, callback, asyncState);
 	}
 	public LocalLBProfileEnabledState [] Endget_proxy_option_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_rate_pace_maximum_rate
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_rate_pace_maximum_rate(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_rate_pace_maximum_rate", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_rate_pace_maximum_rate(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_rate_pace_maximum_rate", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_rate_pace_maximum_rate(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_rate_pace_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_rate_pace_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_rate_pace_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_rate_pace_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_rate_pace_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_rate_pace_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
@@ -1070,6 +1291,28 @@ namespace iControl {
 	public LocalLBProfileStatisticsByVirtual Endget_statistics_by_virtual(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileStatisticsByVirtual)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_tail_loss_probe_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_tail_loss_probe_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_tail_loss_probe_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_tail_loss_probe_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_tail_loss_probe_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_tail_loss_probe_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -1429,6 +1672,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_cmetrics_cache_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_cmetrics_cache_timeout(
+		string [] profile_names,
+		LocalLBProfileULong [] timeouts
+	) {
+		this.Invoke("set_cmetrics_cache_timeout", new object [] {
+				profile_names,
+				timeouts});
+
+	}
+	public System.IAsyncResult Beginset_cmetrics_cache_timeout(string [] profile_names,LocalLBProfileULong [] timeouts, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_cmetrics_cache_timeout", new object[] {
+			profile_names,
+			timeouts}, callback, asyncState);
+	}
+	public void Endset_cmetrics_cache_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_congestion_control_mode
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -1590,6 +1856,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_early_retransmit_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_early_retransmit_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_early_retransmit_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_early_retransmit_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_early_retransmit_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_early_retransmit_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_ecn_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -1613,6 +1902,75 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_fast_open_cookie_expiration
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_fast_open_cookie_expiration(
+		string [] profile_names,
+		LocalLBProfileULong [] expirations
+	) {
+		this.Invoke("set_fast_open_cookie_expiration", new object [] {
+				profile_names,
+				expirations});
+
+	}
+	public System.IAsyncResult Beginset_fast_open_cookie_expiration(string [] profile_names,LocalLBProfileULong [] expirations, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_fast_open_cookie_expiration", new object[] {
+			profile_names,
+			expirations}, callback, asyncState);
+	}
+	public void Endset_fast_open_cookie_expiration(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_fast_open_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_fast_open_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_fast_open_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_fast_open_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_fast_open_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_fast_open_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_fin_wait_2_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_fin_wait_2_timeout(
+		string [] profile_names,
+		LocalLBProfileULong [] timeouts
+	) {
+		this.Invoke("set_fin_wait_2_timeout", new object [] {
+				profile_names,
+				timeouts});
+
+	}
+	public System.IAsyncResult Beginset_fin_wait_2_timeout(string [] profile_names,LocalLBProfileULong [] timeouts, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_fin_wait_2_timeout", new object[] {
+			profile_names,
+			timeouts}, callback, asyncState);
+	}
+	public void Endset_fin_wait_2_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_fin_wait_timeout
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -1632,6 +1990,29 @@ namespace iControl {
 			timeouts}, callback, asyncState);
 	}
 	public void Endset_fin_wait_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_hardware_syn_cookie_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_hardware_syn_cookie_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_hardware_syn_cookie_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_hardware_syn_cookie_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_hardware_syn_cookie_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_hardware_syn_cookie_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -1935,6 +2316,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_minimum_rto
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_minimum_rto(
+		string [] profile_names,
+		LocalLBProfileULong [] timeouts
+	) {
+		this.Invoke("set_minimum_rto", new object [] {
+				profile_names,
+				timeouts});
+
+	}
+	public System.IAsyncResult Beginset_minimum_rto(string [] profile_names,LocalLBProfileULong [] timeouts, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_minimum_rto", new object[] {
+			profile_names,
+			timeouts}, callback, asyncState);
+	}
+	public void Endset_minimum_rto(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_mptcp_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -1954,6 +2358,29 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_mptcp_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_nagle_algorithm_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_nagle_algorithm_mode(
+		string [] profile_names,
+		LocalLBProfileTCPProfileTCPMode [] modes
+	) {
+		this.Invoke("set_nagle_algorithm_mode", new object [] {
+				profile_names,
+				modes});
+
+	}
+	public System.IAsyncResult Beginset_nagle_algorithm_mode(string [] profile_names,LocalLBProfileTCPProfileTCPMode [] modes, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_nagle_algorithm_mode", new object[] {
+			profile_names,
+			modes}, callback, asyncState);
+	}
+	public void Endset_nagle_algorithm_mode(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -2092,6 +2519,52 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_proxy_option_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_rate_pace_maximum_rate
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_rate_pace_maximum_rate(
+		string [] profile_names,
+		LocalLBProfileULong [] rates
+	) {
+		this.Invoke("set_rate_pace_maximum_rate", new object [] {
+				profile_names,
+				rates});
+
+	}
+	public System.IAsyncResult Beginset_rate_pace_maximum_rate(string [] profile_names,LocalLBProfileULong [] rates, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_rate_pace_maximum_rate", new object[] {
+			profile_names,
+			rates}, callback, asyncState);
+	}
+	public void Endset_rate_pace_maximum_rate(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_rate_pace_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_rate_pace_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_rate_pace_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_rate_pace_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_rate_pace_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_rate_pace_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -2257,6 +2730,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_tail_loss_probe_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_tail_loss_probe_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_tail_loss_probe_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_tail_loss_probe_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_tail_loss_probe_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_tail_loss_probe_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_tcp_options
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -2399,9 +2895,43 @@ namespace iControl {
 	// Enums
 	//=======================================================================
 
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileTCP.TCPMode", Namespace = "urn:iControl")]
+	public enum LocalLBProfileTCPTCPMode
+	{
+		TCP_MODE_UNKNOWN,
+		TCP_MODE_DISABLED,
+		TCP_MODE_ENABLED,
+		TCP_MODE_AUTO,
+	}
+
 	//=======================================================================
 	// Structs
 	//=======================================================================
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileTCP.ProfileTCPMode", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileTCPProfileTCPMode
+	{
+		private LocalLBProfileTCPTCPMode valueField;
+		public LocalLBProfileTCPTCPMode value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
 
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
