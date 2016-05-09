@@ -12,6 +12,7 @@ namespace iControl {
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="LocalLB.LSNPoolBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBLSNPoolLSNPoolStatistics))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBLSNPoolLSNPoolStatistics_v2))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonVLANFilterList))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonPortRange))]
 	public partial class LocalLBLSNPool : iControlInterface {
@@ -147,6 +148,26 @@ namespace iControl {
 	public LocalLBLSNPoolLSNPoolStatistics Endget_all_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBLSNPoolLSNPoolStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_all_statistics_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBLSNPoolLSNPoolStatistics_v2 get_all_statistics_v2(
+
+	) {
+		object [] results = this.Invoke("get_all_statistics_v2", new object [0]);
+		return ((LocalLBLSNPoolLSNPoolStatistics_v2)(results[0]));
+	}
+	public System.IAsyncResult Beginget_all_statistics_v2(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_all_statistics_v2", new object[0], callback, asyncState);
+	}
+	public LocalLBLSNPoolLSNPoolStatistics_v2 Endget_all_statistics_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBLSNPoolLSNPoolStatistics_v2)(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -695,6 +716,28 @@ namespace iControl {
 	public LocalLBLSNPoolLSNPoolStatistics Endget_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBLSNPoolLSNPoolStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_statistics_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/LSNPool", 
+		RequestNamespace="urn:iControl:LocalLB/LSNPool", ResponseNamespace="urn:iControl:LocalLB/LSNPool")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBLSNPoolLSNPoolStatistics_v2 get_statistics_v2(
+		string [] pools
+	) {
+		object [] results = this.Invoke("get_statistics_v2", new object [] {
+				pools});
+		return ((LocalLBLSNPoolLSNPoolStatistics_v2)(results[0]));
+	}
+	public System.IAsyncResult Beginget_statistics_v2(string [] pools, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_statistics_v2", new object[] {
+			pools}, callback, asyncState);
+	}
+	public LocalLBLSNPoolLSNPoolStatistics_v2 Endget_statistics_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBLSNPoolLSNPoolStatistics_v2)(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -1488,6 +1531,28 @@ namespace iControl {
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.LSNPool.LSNPoolFailureStatistic", Namespace = "urn:iControl")]
+	public partial class LocalLBLSNPoolLSNPoolFailureStatistic
+	{
+		private string failure_causeField;
+		public string failure_cause
+		{
+			get { return this.failure_causeField; }
+			set { this.failure_causeField = value; }
+		}
+		private CommonULong64 failure_countField;
+		public CommonULong64 failure_count
+		{
+			get { return this.failure_countField; }
+			set { this.failure_countField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.LSNPool.LSNPoolStatisticEntry", Namespace = "urn:iControl")]
 	public partial class LocalLBLSNPoolLSNPoolStatisticEntry
 	{
@@ -1510,11 +1575,61 @@ namespace iControl {
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.LSNPool.LSNPoolStatisticEntry_v2", Namespace = "urn:iControl")]
+	public partial class LocalLBLSNPoolLSNPoolStatisticEntry_v2
+	{
+		private string poolField;
+		public string pool
+		{
+			get { return this.poolField; }
+			set { this.poolField = value; }
+		}
+		private CommonStatistic [] statisticsField;
+		public CommonStatistic [] statistics
+		{
+			get { return this.statisticsField; }
+			set { this.statisticsField = value; }
+		}
+		private LocalLBLSNPoolLSNPoolFailureStatistic [] failuresField;
+		public LocalLBLSNPoolLSNPoolFailureStatistic [] failures
+		{
+			get { return this.failuresField; }
+			set { this.failuresField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.LSNPool.LSNPoolStatistics", Namespace = "urn:iControl")]
 	public partial class LocalLBLSNPoolLSNPoolStatistics
 	{
 		private LocalLBLSNPoolLSNPoolStatisticEntry [] statisticsField;
 		public LocalLBLSNPoolLSNPoolStatisticEntry [] statistics
+		{
+			get { return this.statisticsField; }
+			set { this.statisticsField = value; }
+		}
+		private CommonTimeStamp time_stampField;
+		public CommonTimeStamp time_stamp
+		{
+			get { return this.time_stampField; }
+			set { this.time_stampField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.LSNPool.LSNPoolStatistics_v2", Namespace = "urn:iControl")]
+	public partial class LocalLBLSNPoolLSNPoolStatistics_v2
+	{
+		private LocalLBLSNPoolLSNPoolStatisticEntry_v2 [] statisticsField;
+		public LocalLBLSNPoolLSNPoolStatisticEntry_v2 [] statistics
 		{
 			get { return this.statisticsField; }
 			set { this.statisticsField = value; }

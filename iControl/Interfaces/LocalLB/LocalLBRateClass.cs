@@ -12,6 +12,7 @@ namespace iControl {
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="LocalLB.RateClassBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBRateClassRateUnit))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBRateClassRateUnitV2))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBRateClassRateClassStatistics))]
 	public partial class LocalLBRateClass : iControlInterface {
 		public LocalLBRateClass() {
@@ -107,6 +108,29 @@ namespace iControl {
 			policies}, callback, asyncState);
 	}
 	public void Endcreate_shaping_policy(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// create_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/RateClass", 
+		RequestNamespace="urn:iControl:LocalLB/RateClass", ResponseNamespace="urn:iControl:LocalLB/RateClass")]
+	public void create_v2(
+		string [] rate_classes,
+		LocalLBRateClassRateUnitV2 [] base_rates
+	) {
+		this.Invoke("create_v2", new object [] {
+				rate_classes,
+				base_rates});
+
+	}
+	public System.IAsyncResult Begincreate_v2(string [] rate_classes,LocalLBRateClassRateUnitV2 [] base_rates, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("create_v2", new object[] {
+			rate_classes,
+			base_rates}, callback, asyncState);
+	}
+	public void Endcreate_v2(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -305,6 +329,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_base_rate_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/RateClass", 
+		RequestNamespace="urn:iControl:LocalLB/RateClass", ResponseNamespace="urn:iControl:LocalLB/RateClass")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBRateClassRateUnitV2 [] get_base_rate_v2(
+		string [] rate_classes
+	) {
+		object [] results = this.Invoke("get_base_rate_v2", new object [] {
+				rate_classes});
+		return ((LocalLBRateClassRateUnitV2 [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_base_rate_v2(string [] rate_classes, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_base_rate_v2", new object[] {
+			rate_classes}, callback, asyncState);
+	}
+	public LocalLBRateClassRateUnitV2 [] Endget_base_rate_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBRateClassRateUnitV2 [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_burst_size
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/RateClass", 
@@ -346,6 +392,28 @@ namespace iControl {
 	public LocalLBRateClassRateUnit [] Endget_ceiling_rate(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBRateClassRateUnit [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_ceiling_rate_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/RateClass", 
+		RequestNamespace="urn:iControl:LocalLB/RateClass", ResponseNamespace="urn:iControl:LocalLB/RateClass")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBRateClassRateUnitV2 [] get_ceiling_rate_v2(
+		string [] rate_classes
+	) {
+		object [] results = this.Invoke("get_ceiling_rate_v2", new object [] {
+				rate_classes});
+		return ((LocalLBRateClassRateUnitV2 [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_ceiling_rate_v2(string [] rate_classes, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_ceiling_rate_v2", new object[] {
+			rate_classes}, callback, asyncState);
+	}
+	public LocalLBRateClassRateUnitV2 [] Endget_ceiling_rate_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBRateClassRateUnitV2 [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -1264,6 +1332,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_base_rate_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/RateClass", 
+		RequestNamespace="urn:iControl:LocalLB/RateClass", ResponseNamespace="urn:iControl:LocalLB/RateClass")]
+	public void set_base_rate_v2(
+		string [] rate_classes,
+		LocalLBRateClassRateUnitV2 [] rates
+	) {
+		this.Invoke("set_base_rate_v2", new object [] {
+				rate_classes,
+				rates});
+
+	}
+	public System.IAsyncResult Beginset_base_rate_v2(string [] rate_classes,LocalLBRateClassRateUnitV2 [] rates, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_base_rate_v2", new object[] {
+			rate_classes,
+			rates}, callback, asyncState);
+	}
+	public void Endset_base_rate_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_burst_size
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/RateClass", 
@@ -1306,6 +1397,29 @@ namespace iControl {
 			rates}, callback, asyncState);
 	}
 	public void Endset_ceiling_rate(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_ceiling_rate_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/RateClass", 
+		RequestNamespace="urn:iControl:LocalLB/RateClass", ResponseNamespace="urn:iControl:LocalLB/RateClass")]
+	public void set_ceiling_rate_v2(
+		string [] rate_classes,
+		LocalLBRateClassRateUnitV2 [] rates
+	) {
+		this.Invoke("set_ceiling_rate_v2", new object [] {
+				rate_classes,
+				rates});
+
+	}
+	public System.IAsyncResult Beginset_ceiling_rate_v2(string [] rate_classes,LocalLBRateClassRateUnitV2 [] rates, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_ceiling_rate_v2", new object[] {
+			rate_classes,
+			rates}, callback, asyncState);
+	}
+	public void Endset_ceiling_rate_v2(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -2200,6 +2314,28 @@ namespace iControl {
 	{
 		private long rateField;
 		public long rate
+		{
+			get { return this.rateField; }
+			set { this.rateField = value; }
+		}
+		private LocalLBRateClassUnitType unitField;
+		public LocalLBRateClassUnitType unit
+		{
+			get { return this.unitField; }
+			set { this.unitField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.RateClass.RateUnitV2", Namespace = "urn:iControl")]
+	public partial class LocalLBRateClassRateUnitV2
+	{
+		private CommonULong64 rateField;
+		public CommonULong64 rate
 		{
 			get { return this.rateField; }
 			set { this.rateField = value; }

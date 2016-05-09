@@ -169,6 +169,7 @@
     <Compile Include="Interfaces\LocalLB\LocalLBProfileSPM.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileStream.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileTCP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileTCPAnalytics.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileTFTP.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileUDP.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBPRofileUserStatistic.cs" />
@@ -263,6 +264,7 @@
     <Compile Include="Interfaces\Networking\NetworkingiSessionRemoteInterface.cs" />
     <Compile Include="Interfaces\Networking\NetworkingiSessionRemoteInterfaceV2.cs" />
     <Compile Include="Interfaces\Networking\NetworkingLLDPGlobals.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingMulticastRoute.cs" />
     <Compile Include="Interfaces\Networking\NetworkingPacketFilter.cs" />
     <Compile Include="Interfaces\Networking\NetworkingPacketFilterGlobals.cs" />
     <Compile Include="Interfaces\Networking\NetworkingPortMirror.cs" />
@@ -271,6 +273,7 @@
     <Compile Include="Interfaces\Networking\NetworkingProfileGRE.cs" />
     <Compile Include="Interfaces\Networking\NetworkingProfileIPIP.cs" />
     <Compile Include="Interfaces\Networking\NetworkingProfileIPsec.cs" />
+    <Compile Include="Interfaces\Networking\NetworkingProfileLightweight4Over6Tunnel.cs" />
     <Compile Include="Interfaces\Networking\NetworkingProfileMAP.cs" />
     <Compile Include="Interfaces\Networking\NetworkingProfileV6RD.cs" />
     <Compile Include="Interfaces\Networking\NetworkingProfileVXLAN.cs" />
@@ -331,6 +334,7 @@
     <Compile Include="Interfaces\System\SystemHAStatus.cs" />
     <Compile Include="Interfaces\System\SystemInet.cs" />
     <Compile Include="Interfaces\System\SystemInternal.cs" />
+    <Compile Include="Interfaces\System\SystemLightweightTunnelTableFile.cs" />
     <Compile Include="Interfaces\System\SystemPerformanceSFlow.cs" />
     <Compile Include="Interfaces\System\SystemServices.cs" />
     <Compile Include="Interfaces\System\SystemSession.cs" />

@@ -1137,6 +1137,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_retransmit_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_retransmit_threshold(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_retransmit_threshold", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_retransmit_threshold(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_retransmit_threshold", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_retransmit_threshold(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_rfc1323_timestamps_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -2611,6 +2633,29 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_reset_on_timeout_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_retransmit_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_retransmit_threshold(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_retransmit_threshold", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_retransmit_threshold(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_retransmit_threshold", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_retransmit_threshold(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

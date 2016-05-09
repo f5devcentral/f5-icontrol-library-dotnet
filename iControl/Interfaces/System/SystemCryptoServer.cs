@@ -196,6 +196,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_enabled_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/CryptoServer", 
+		RequestNamespace="urn:iControl:System/CryptoServer", ResponseNamespace="urn:iControl:System/CryptoServer")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState [] get_enabled_state(
+		string [] servers
+	) {
+		object [] results = this.Invoke("get_enabled_state", new object [] {
+				servers});
+		return ((CommonEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_enabled_state(string [] servers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_enabled_state", new object[] {
+			servers}, callback, asyncState);
+	}
+	public CommonEnabledState [] Endget_enabled_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_list
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/CryptoServer", 
@@ -429,6 +451,29 @@ namespace iControl {
 			addresses}, callback, asyncState);
 	}
 	public void Endset_address(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_enabled_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/CryptoServer", 
+		RequestNamespace="urn:iControl:System/CryptoServer", ResponseNamespace="urn:iControl:System/CryptoServer")]
+	public void set_enabled_state(
+		string [] servers,
+		CommonEnabledState [] states
+	) {
+		this.Invoke("set_enabled_state", new object [] {
+				servers,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_enabled_state(string [] servers,CommonEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_enabled_state", new object[] {
+			servers,
+			states}, callback, asyncState);
+	}
+	public void Endset_enabled_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

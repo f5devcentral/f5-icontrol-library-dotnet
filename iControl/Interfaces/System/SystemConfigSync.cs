@@ -62,6 +62,26 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// delete_single_configuration_file
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/ConfigSync", 
+		RequestNamespace="urn:iControl:System/ConfigSync", ResponseNamespace="urn:iControl:System/ConfigSync")]
+	public void delete_single_configuration_file(
+		string filename
+	) {
+		this.Invoke("delete_single_configuration_file", new object [] {
+				filename});
+
+	}
+	public System.IAsyncResult Begindelete_single_configuration_file(string filename, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("delete_single_configuration_file", new object[] {
+			filename}, callback, asyncState);
+	}
+	public void Enddelete_single_configuration_file(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// download_configuration
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/ConfigSync", 
@@ -139,6 +159,26 @@ namespace iControl {
 		return this.BeginInvoke("get_configuration_list", new object[0], callback, asyncState);
 	}
 	public SystemConfigSyncConfigFileEntry [] Endget_configuration_list(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemConfigSyncConfigFileEntry [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_single_configuration_file_list
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/ConfigSync", 
+		RequestNamespace="urn:iControl:System/ConfigSync", ResponseNamespace="urn:iControl:System/ConfigSync")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemConfigSyncConfigFileEntry [] get_single_configuration_file_list(
+
+	) {
+		object [] results = this.Invoke("get_single_configuration_file_list", new object [0]);
+		return ((SystemConfigSyncConfigFileEntry [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_single_configuration_file_list(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_single_configuration_file_list", new object[0], callback, asyncState);
+	}
+	public SystemConfigSyncConfigFileEntry [] Endget_single_configuration_file_list(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((SystemConfigSyncConfigFileEntry [])(results[0]));
 	}
@@ -291,6 +331,38 @@ namespace iControl {
 			passphrase}, callback, asyncState);
 	}
 	public void Endinstall_encrypted_configuration_quietly(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// install_single_configuration_file
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/ConfigSync", 
+		RequestNamespace="urn:iControl:System/ConfigSync", ResponseNamespace="urn:iControl:System/ConfigSync")]
+	public void install_single_configuration_file(
+		string filename,
+		SystemConfigSyncLoadMode load_flag,
+		string passphrase,
+		string tarfile,
+		bool merge
+	) {
+		this.Invoke("install_single_configuration_file", new object [] {
+				filename,
+				load_flag,
+				passphrase,
+				tarfile,
+				merge});
+
+	}
+	public System.IAsyncResult Begininstall_single_configuration_file(string filename,SystemConfigSyncLoadMode load_flag,string passphrase,string tarfile,bool merge, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("install_single_configuration_file", new object[] {
+			filename,
+			load_flag,
+			passphrase,
+			tarfile,
+			merge}, callback, asyncState);
+	}
+	public void Endinstall_single_configuration_file(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -486,6 +558,35 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// save_single_configuration_file
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/ConfigSync", 
+		RequestNamespace="urn:iControl:System/ConfigSync", ResponseNamespace="urn:iControl:System/ConfigSync")]
+	public void save_single_configuration_file(
+		string filename,
+		SystemConfigSyncSaveMode save_flag,
+		string passphrase,
+		string tarfile
+	) {
+		this.Invoke("save_single_configuration_file", new object [] {
+				filename,
+				save_flag,
+				passphrase,
+				tarfile});
+
+	}
+	public System.IAsyncResult Beginsave_single_configuration_file(string filename,SystemConfigSyncSaveMode save_flag,string passphrase,string tarfile, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("save_single_configuration_file", new object[] {
+			filename,
+			save_flag,
+			passphrase,
+			tarfile}, callback, asyncState);
+	}
+	public void Endsave_single_configuration_file(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// synchronize_configuration
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/ConfigSync", 
@@ -649,6 +750,7 @@ namespace iControl {
 		LOAD_HIGH_LEVEL_CONFIG,
 		LOAD_BASE_LEVEL_CONFIG,
 		LOAD_GTM_CONFIG_ONLY,
+		LOAD_EXCLUDE_GTM_CONFIG,
 	}
 
 	/// <remarks/>
@@ -661,6 +763,7 @@ namespace iControl {
 		SAVE_HIGH_LEVEL_CONFIG,
 		SAVE_BASE_LEVEL_CONFIG,
 		SAVE_GTM_CONFIG_ONLY,
+		SAVE_EXCLUDE_GTM_CONFIG,
 	}
 
 	/// <remarks/>

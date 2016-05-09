@@ -128,6 +128,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_authenticated_data_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/DNSSECZone", 
+		RequestNamespace="urn:iControl:GlobalLB/DNSSECZone", ResponseNamespace="urn:iControl:GlobalLB/DNSSECZone")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState [] get_authenticated_data_state(
+		string [] zones
+	) {
+		object [] results = this.Invoke("get_authenticated_data_state", new object [] {
+				zones});
+		return ((CommonEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_authenticated_data_state(string [] zones, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_authenticated_data_state", new object[] {
+			zones}, callback, asyncState);
+	}
+	public CommonEnabledState [] Endget_authenticated_data_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_description
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/DNSSECZone", 
@@ -449,6 +471,29 @@ namespace iControl {
 			zones}, callback, asyncState);
 	}
 	public void Endreset_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_authenticated_data_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/DNSSECZone", 
+		RequestNamespace="urn:iControl:GlobalLB/DNSSECZone", ResponseNamespace="urn:iControl:GlobalLB/DNSSECZone")]
+	public void set_authenticated_data_state(
+		string [] zones,
+		CommonEnabledState [] states
+	) {
+		this.Invoke("set_authenticated_data_state", new object [] {
+				zones,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_authenticated_data_state(string [] zones,CommonEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_authenticated_data_state", new object[] {
+			zones,
+			states}, callback, asyncState);
+	}
+	public void Endset_authenticated_data_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

@@ -39,6 +39,8 @@ namespace testclient
                         case 3:
                             //m_interfaces.SystemSystemInfo.AddHeader("X-iControl", "BLAHBLAHBLAH");
 
+                            testGlobalLBPoolMembers();
+
                             m_interfaces.GetSessionIdentifier();
                             string version = m_interfaces.SystemSystemInfo.get_version();
                             Console.WriteLine(version);
@@ -76,6 +78,24 @@ namespace testclient
             else
             {
                 Usage();
+            }
+        }
+
+        public void testGlobalLBPoolMembers()
+        {
+            String[] poolList = m_interfaces.GlobalLBPool.get_list();
+
+            String[] list1 = new String[1];
+            list1[0] = poolList[0];
+
+            iControl.GlobalLBVirtualServerID[][] membersAofA = m_interfaces.GlobalLBPool.get_member_v2(list1);
+
+            //iControl.GlobalLBPoolMemberStatistics stats2 =  interfaces.GlobalLBPool.get_member_statistics(null, null);
+
+            iControl.GlobalLBPoolMemberStatistics stats2 = m_interfaces.GlobalLBPool.get_member_statistics(list1, membersAofA);
+            if (null != stats2)
+            {
+
             }
         }
 

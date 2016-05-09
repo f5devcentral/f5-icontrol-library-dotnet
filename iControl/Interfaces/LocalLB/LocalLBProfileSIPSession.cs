@@ -345,6 +345,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_maintenance_mode_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPSession", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPSession", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPSession")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_maintenance_mode_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_maintenance_mode_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_maintenance_mode_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_maintenance_mode_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_maintenance_mode_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_max_forwards_check_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPSession", 
@@ -881,6 +903,29 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_loop_detection_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_maintenance_mode_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPSession", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPSession", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPSession")]
+	public void set_maintenance_mode_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_maintenance_mode_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_maintenance_mode_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_maintenance_mode_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_maintenance_mode_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

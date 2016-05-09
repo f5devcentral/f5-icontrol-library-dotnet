@@ -823,6 +823,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_rrset_rotate_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/DNSCache", 
+		RequestNamespace="urn:iControl:LocalLB/DNSCache", ResponseNamespace="urn:iControl:LocalLB/DNSCache")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBDNSRRSetRotateType [] get_rrset_rotate_type(
+		string [] caches
+	) {
+		object [] results = this.Invoke("get_rrset_rotate_type", new object [] {
+				caches});
+		return ((LocalLBDNSRRSetRotateType [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_rrset_rotate_type(string [] caches, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_rrset_rotate_type", new object[] {
+			caches}, callback, asyncState);
+	}
+	public LocalLBDNSRRSetRotateType [] Endget_rrset_rotate_type(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBDNSRRSetRotateType [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_statistics
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/DNSCache", 
@@ -1666,6 +1688,29 @@ namespace iControl {
 			domains}, callback, asyncState);
 	}
 	public void Endset_route_domain(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_rrset_rotate_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/DNSCache", 
+		RequestNamespace="urn:iControl:LocalLB/DNSCache", ResponseNamespace="urn:iControl:LocalLB/DNSCache")]
+	public void set_rrset_rotate_type(
+		string [] caches,
+		LocalLBDNSRRSetRotateType [] types
+	) {
+		this.Invoke("set_rrset_rotate_type", new object [] {
+				caches,
+				types});
+
+	}
+	public System.IAsyncResult Beginset_rrset_rotate_type(string [] caches,LocalLBDNSRRSetRotateType [] types, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_rrset_rotate_type", new object[] {
+			caches,
+			types}, callback, asyncState);
+	}
+	public void Endset_rrset_rotate_type(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

@@ -419,6 +419,32 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_source_address_translation_pool_with_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/MessageRoutingTransportConfig", 
+		RequestNamespace="urn:iControl:LocalLB/MessageRoutingTransportConfig", ResponseNamespace="urn:iControl:LocalLB/MessageRoutingTransportConfig")]
+	public void set_source_address_translation_pool_with_type(
+		string [] transport_configs,
+		string [] pools,
+		LocalLBMessageRoutingTransportConfigSourceAddressTranslationType [] types
+	) {
+		this.Invoke("set_source_address_translation_pool_with_type", new object [] {
+				transport_configs,
+				pools,
+				types});
+
+	}
+	public System.IAsyncResult Beginset_source_address_translation_pool_with_type(string [] transport_configs,string [] pools,LocalLBMessageRoutingTransportConfigSourceAddressTranslationType [] types, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_source_address_translation_pool_with_type", new object[] {
+			transport_configs,
+			pools,
+			types}, callback, asyncState);
+	}
+	public void Endset_source_address_translation_pool_with_type(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_source_address_translation_type
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/MessageRoutingTransportConfig", 

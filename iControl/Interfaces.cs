@@ -151,6 +151,7 @@ namespace iControl
         private LocalLBProfileSPM m_LocalLBProfileSPM;
         private LocalLBProfileStream m_LocalLBProfileStream;
         private LocalLBProfileTCP m_LocalLBProfileTCP;
+        private LocalLBProfileTCPAnalytics m_LocalLBProfileTCPAnalytics;
         private LocalLBProfileTFTP m_LocalLBProfileTFTP;
         private LocalLBProfileUDP m_LocalLBProfileUDP;
         private LocalLBProfileUserStatistic m_LocalLBProfileUserStatistic;
@@ -245,6 +246,7 @@ namespace iControl
         private NetworkingiSessionRemoteInterface m_NetworkingiSessionRemoteInterface;
         private NetworkingiSessionRemoteInterfaceV2 m_NetworkingiSessionRemoteInterfaceV2;
         private NetworkingLLDPGlobals m_NetworkingLLDPGlobals;
+        private NetworkingMulticastRoute m_NetworkingMulticastRoute;
         private NetworkingPacketFilter m_NetworkingPacketFilter;
         private NetworkingPacketFilterGlobals m_NetworkingPacketFilterGlobals;
         private NetworkingPortMirror m_NetworkingPortMirror;
@@ -253,6 +255,7 @@ namespace iControl
         private NetworkingProfileGRE m_NetworkingProfileGRE;
         private NetworkingProfileIPIP m_NetworkingProfileIPIP;
         private NetworkingProfileIPsec m_NetworkingProfileIPsec;
+        private NetworkingProfileLightweight4Over6Tunnel m_NetworkingProfileLightweight4Over6Tunnel;
         private NetworkingProfileMAP m_NetworkingProfileMAP;
         private NetworkingProfileV6RD m_NetworkingProfileV6RD;
         private NetworkingProfileVXLAN m_NetworkingProfileVXLAN;
@@ -313,6 +316,7 @@ namespace iControl
         private SystemHAStatus m_SystemHAStatus;
         private SystemInet m_SystemInet;
         private SystemInternal m_SystemInternal;
+        private SystemLightweightTunnelTableFile m_SystemLightweightTunnelTableFile;
         private SystemPerformanceSFlow m_SystemPerformanceSFlow;
         private SystemServices m_SystemServices;
         private SystemSession m_SystemSession;
@@ -447,6 +451,7 @@ namespace iControl
         public LocalLBProfileSPM LocalLBProfileSPM { get { verifyInitialized(); if (null == m_LocalLBProfileSPM) { initializeInterface(m_LocalLBProfileSPM = new LocalLBProfileSPM()); } return m_LocalLBProfileSPM; } }
         public LocalLBProfileStream LocalLBProfileStream { get { verifyInitialized(); if (null == m_LocalLBProfileStream) { initializeInterface(m_LocalLBProfileStream = new LocalLBProfileStream()); } return m_LocalLBProfileStream; } }
         public LocalLBProfileTCP LocalLBProfileTCP { get { verifyInitialized(); if (null == m_LocalLBProfileTCP) { initializeInterface(m_LocalLBProfileTCP = new LocalLBProfileTCP()); } return m_LocalLBProfileTCP; } }
+        public LocalLBProfileTCPAnalytics LocalLBProfileTCPAnalytics { get { verifyInitialized(); if (null == m_LocalLBProfileTCPAnalytics) { initializeInterface(m_LocalLBProfileTCPAnalytics = new LocalLBProfileTCPAnalytics()); } return m_LocalLBProfileTCPAnalytics; } }
         public LocalLBProfileTFTP LocalLBProfileTFTP { get { verifyInitialized(); if (null == m_LocalLBProfileTFTP) { initializeInterface(m_LocalLBProfileTFTP = new LocalLBProfileTFTP()); } return m_LocalLBProfileTFTP; } }
         public LocalLBProfileUDP LocalLBProfileUDP { get { verifyInitialized(); if (null == m_LocalLBProfileUDP) { initializeInterface(m_LocalLBProfileUDP = new LocalLBProfileUDP()); } return m_LocalLBProfileUDP; } }
         public LocalLBProfileUserStatistic LocalLBProfileUserStatistic { get { verifyInitialized(); if (null == m_LocalLBProfileUserStatistic) { initializeInterface(m_LocalLBProfileUserStatistic = new LocalLBProfileUserStatistic()); } return m_LocalLBProfileUserStatistic; } }
@@ -541,6 +546,7 @@ namespace iControl
         public NetworkingiSessionRemoteInterface NetworkingiSessionRemoteInterface { get { verifyInitialized(); if (null == m_NetworkingiSessionRemoteInterface) { initializeInterface(m_NetworkingiSessionRemoteInterface = new NetworkingiSessionRemoteInterface()); } return m_NetworkingiSessionRemoteInterface; } }
         public NetworkingiSessionRemoteInterfaceV2 NetworkingiSessionRemoteInterfaceV2 { get { verifyInitialized(); if (null == m_NetworkingiSessionRemoteInterfaceV2) { initializeInterface(m_NetworkingiSessionRemoteInterfaceV2 = new NetworkingiSessionRemoteInterfaceV2()); } return m_NetworkingiSessionRemoteInterfaceV2; } }
         public NetworkingLLDPGlobals NetworkingLLDPGlobals { get { verifyInitialized(); if (null == m_NetworkingLLDPGlobals) { initializeInterface(m_NetworkingLLDPGlobals = new NetworkingLLDPGlobals()); } return m_NetworkingLLDPGlobals; } }
+        public NetworkingMulticastRoute NetworkingMulticastRoute { get { verifyInitialized(); if (null == m_NetworkingMulticastRoute) { initializeInterface(m_NetworkingMulticastRoute = new NetworkingMulticastRoute()); } return m_NetworkingMulticastRoute; } }
         public NetworkingPacketFilter NetworkingPacketFilter { get { verifyInitialized(); if (null == m_NetworkingPacketFilter) { initializeInterface(m_NetworkingPacketFilter = new NetworkingPacketFilter()); } return m_NetworkingPacketFilter; } }
         public NetworkingPacketFilterGlobals NetworkingPacketFilterGlobals { get { verifyInitialized(); if (null == m_NetworkingPacketFilterGlobals) { initializeInterface(m_NetworkingPacketFilterGlobals = new NetworkingPacketFilterGlobals()); } return m_NetworkingPacketFilterGlobals; } }
         public NetworkingPortMirror NetworkingPortMirror { get { verifyInitialized(); if (null == m_NetworkingPortMirror) { initializeInterface(m_NetworkingPortMirror = new NetworkingPortMirror()); } return m_NetworkingPortMirror; } }
@@ -549,6 +555,7 @@ namespace iControl
         public NetworkingProfileGRE NetworkingProfileGRE { get { verifyInitialized(); if (null == m_NetworkingProfileGRE) { initializeInterface(m_NetworkingProfileGRE = new NetworkingProfileGRE()); } return m_NetworkingProfileGRE; } }
         public NetworkingProfileIPIP NetworkingProfileIPIP { get { verifyInitialized(); if (null == m_NetworkingProfileIPIP) { initializeInterface(m_NetworkingProfileIPIP = new NetworkingProfileIPIP()); } return m_NetworkingProfileIPIP; } }
         public NetworkingProfileIPsec NetworkingProfileIPsec { get { verifyInitialized(); if (null == m_NetworkingProfileIPsec) { initializeInterface(m_NetworkingProfileIPsec = new NetworkingProfileIPsec()); } return m_NetworkingProfileIPsec; } }
+        public NetworkingProfileLightweight4Over6Tunnel NetworkingProfileLightweight4Over6Tunnel { get { verifyInitialized(); if (null == m_NetworkingProfileLightweight4Over6Tunnel) { initializeInterface(m_NetworkingProfileLightweight4Over6Tunnel = new NetworkingProfileLightweight4Over6Tunnel()); } return m_NetworkingProfileLightweight4Over6Tunnel; } }
         public NetworkingProfileMAP NetworkingProfileMAP { get { verifyInitialized(); if (null == m_NetworkingProfileMAP) { initializeInterface(m_NetworkingProfileMAP = new NetworkingProfileMAP()); } return m_NetworkingProfileMAP; } }
         public NetworkingProfileV6RD NetworkingProfileV6RD { get { verifyInitialized(); if (null == m_NetworkingProfileV6RD) { initializeInterface(m_NetworkingProfileV6RD = new NetworkingProfileV6RD()); } return m_NetworkingProfileV6RD; } }
         public NetworkingProfileVXLAN NetworkingProfileVXLAN { get { verifyInitialized(); if (null == m_NetworkingProfileVXLAN) { initializeInterface(m_NetworkingProfileVXLAN = new NetworkingProfileVXLAN()); } return m_NetworkingProfileVXLAN; } }
@@ -609,6 +616,7 @@ namespace iControl
         public SystemHAStatus SystemHAStatus { get { verifyInitialized(); if (null == m_SystemHAStatus) { initializeInterface(m_SystemHAStatus = new SystemHAStatus()); } return m_SystemHAStatus; } }
         public SystemInet SystemInet { get { verifyInitialized(); if (null == m_SystemInet) { initializeInterface(m_SystemInet = new SystemInet()); } return m_SystemInet; } }
         public SystemInternal SystemInternal { get { verifyInitialized(); if (null == m_SystemInternal) { initializeInterface(m_SystemInternal = new SystemInternal()); } return m_SystemInternal; } }
+        public SystemLightweightTunnelTableFile SystemLightweightTunnelTableFile { get { verifyInitialized(); if (null == m_SystemLightweightTunnelTableFile) { initializeInterface(m_SystemLightweightTunnelTableFile = new SystemLightweightTunnelTableFile()); } return m_SystemLightweightTunnelTableFile; } }
         public SystemPerformanceSFlow SystemPerformanceSFlow { get { verifyInitialized(); if (null == m_SystemPerformanceSFlow) { initializeInterface(m_SystemPerformanceSFlow = new SystemPerformanceSFlow()); } return m_SystemPerformanceSFlow; } }
         public SystemServices SystemServices { get { verifyInitialized(); if (null == m_SystemServices) { initializeInterface(m_SystemServices = new SystemServices()); } return m_SystemServices; } }
         public SystemSession SystemSession { get { verifyInitialized(); if (null == m_SystemSession) { initializeInterface(m_SystemSession = new SystemSession()); } return m_SystemSession; } }
@@ -839,6 +847,7 @@ namespace iControl
                 m_LocalLBProfileSPM = null;
                 m_LocalLBProfileStream = null;
                 m_LocalLBProfileTCP = null;
+                m_LocalLBProfileTCPAnalytics = null;
                 m_LocalLBProfileUDP = null;
                 m_LocalLBProfileUserStatistic = null;
                 m_LocalLBProfileWebAcceleration = null;
@@ -928,6 +937,7 @@ namespace iControl
                 m_NetworkingiSessionRemoteInterface = null;
                 m_NetworkingiSessionRemoteInterfaceV2 = null;
                 m_NetworkingLLDPGlobals = null;
+                m_NetworkingMulticastRoute = null;
                 m_NetworkingPacketFilter = null;
                 m_NetworkingPacketFilterGlobals = null;
                 m_NetworkingPortMirror = null;
@@ -935,6 +945,7 @@ namespace iControl
                 m_NetworkingProfileGRE = null;
                 m_NetworkingProfileIPIP = null;
                 m_NetworkingProfileIPsec = null;
+                m_NetworkingProfileLightweight4Over6Tunnel = null;
                 m_NetworkingProfileV6RD = null;
                 m_NetworkingProfileVXLAN = null;
                 m_NetworkingProfileWCCPGRE = null;
@@ -992,6 +1003,7 @@ namespace iControl
                 m_SystemHAStatus = null;
                 m_SystemInet = null;
                 m_SystemInternal = null;
+                m_SystemLightweightTunnelTableFile = null;
                 m_SystemPerformanceSFlow = null;
                 m_SystemServices = null;
                 m_SystemSession = null;

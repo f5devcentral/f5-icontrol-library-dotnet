@@ -495,6 +495,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_spanning_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualAddressV2", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualAddressV2", ResponseNamespace="urn:iControl:LocalLB/VirtualAddressV2")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState [] get_spanning_state(
+		string [] virtual_addresses
+	) {
+		object [] results = this.Invoke("get_spanning_state", new object [] {
+				virtual_addresses});
+		return ((CommonEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_spanning_state(string [] virtual_addresses, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_spanning_state", new object[] {
+			virtual_addresses}, callback, asyncState);
+	}
+	public CommonEnabledState [] Endget_spanning_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_statistics
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualAddressV2", 
@@ -972,6 +994,29 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_route_advertisement_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_spanning_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualAddressV2", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualAddressV2", ResponseNamespace="urn:iControl:LocalLB/VirtualAddressV2")]
+	public void set_spanning_state(
+		string [] virtual_addresses,
+		CommonEnabledState [] states
+	) {
+		this.Invoke("set_spanning_state", new object [] {
+				virtual_addresses,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_spanning_state(string [] virtual_addresses,CommonEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_spanning_state", new object[] {
+			virtual_addresses,
+			states}, callback, asyncState);
+	}
+	public void Endset_spanning_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

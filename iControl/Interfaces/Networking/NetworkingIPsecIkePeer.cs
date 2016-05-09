@@ -439,6 +439,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_my_certificate_key_passphrase
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_my_certificate_key_passphrase(
+		string [] peers
+	) {
+		object [] results = this.Invoke("get_my_certificate_key_passphrase", new object [] {
+				peers});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_my_certificate_key_passphrase(string [] peers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_my_certificate_key_passphrase", new object[] {
+			peers}, callback, asyncState);
+	}
+	public string [] Endget_my_certificate_key_passphrase(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_my_id_type
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
@@ -1195,6 +1217,38 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_my_certificate_authentication
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	public void set_my_certificate_authentication(
+		string [] peers,
+		NetworkingIPsecSaMethod [] methods,
+		string [] certs,
+		string [] keys,
+		string [] passphrases
+	) {
+		this.Invoke("set_my_certificate_authentication", new object [] {
+				peers,
+				methods,
+				certs,
+				keys,
+				passphrases});
+
+	}
+	public System.IAsyncResult Beginset_my_certificate_authentication(string [] peers,NetworkingIPsecSaMethod [] methods,string [] certs,string [] keys,string [] passphrases, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_my_certificate_authentication", new object[] {
+			peers,
+			methods,
+			certs,
+			keys,
+			passphrases}, callback, asyncState);
+	}
+	public void Endset_my_certificate_authentication(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_my_certificate_file
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
@@ -1237,6 +1291,29 @@ namespace iControl {
 			files}, callback, asyncState);
 	}
 	public void Endset_my_certificate_key_file(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_my_certificate_key_passphrase
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/IPsecIkePeer", 
+		RequestNamespace="urn:iControl:Networking/IPsecIkePeer", ResponseNamespace="urn:iControl:Networking/IPsecIkePeer")]
+	public void set_my_certificate_key_passphrase(
+		string [] peers,
+		string [] passphrases
+	) {
+		this.Invoke("set_my_certificate_key_passphrase", new object [] {
+				peers,
+				passphrases});
+
+	}
+	public System.IAsyncResult Beginset_my_certificate_key_passphrase(string [] peers,string [] passphrases, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_my_certificate_key_passphrase", new object[] {
+			peers,
+			passphrases}, callback, asyncState);
+	}
+	public void Endset_my_certificate_key_passphrase(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

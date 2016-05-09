@@ -680,6 +680,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_maximum_active_handshakes
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_maximum_active_handshakes(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_maximum_active_handshakes", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_maximum_active_handshakes(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_maximum_active_handshakes", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_maximum_active_handshakes(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_modssl_emulation_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
@@ -1849,6 +1871,29 @@ namespace iControl {
 			keys}, callback, asyncState);
 	}
 	public void Endset_key_file(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_maximum_active_handshakes
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_maximum_active_handshakes(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_maximum_active_handshakes", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_maximum_active_handshakes(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_maximum_active_handshakes", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_maximum_active_handshakes(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

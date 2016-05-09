@@ -11,6 +11,7 @@ namespace iControl {
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="Networking.ProfileVXLANBinding", Namespace="urn:iControl")]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(NetworkingProfileVXLANProfileVXLANEncapsulationType))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(NetworkingProfileVXLANProfileVXLANFloodingType))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonProfilePortNumber))]
 	public partial class NetworkingProfileVXLAN : iControlInterface {
@@ -121,6 +122,28 @@ namespace iControl {
 	public string [] Endget_description(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_encapsulation_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/ProfileVXLAN", 
+		RequestNamespace="urn:iControl:Networking/ProfileVXLAN", ResponseNamespace="urn:iControl:Networking/ProfileVXLAN")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public NetworkingProfileVXLANProfileVXLANEncapsulationType [] get_encapsulation_type(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_encapsulation_type", new object [] {
+				profile_names});
+		return ((NetworkingProfileVXLANProfileVXLANEncapsulationType [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_encapsulation_type(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_encapsulation_type", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public NetworkingProfileVXLANProfileVXLANEncapsulationType [] Endget_encapsulation_type(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((NetworkingProfileVXLANProfileVXLANEncapsulationType [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -300,6 +323,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_encapsulation_type
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/ProfileVXLAN", 
+		RequestNamespace="urn:iControl:Networking/ProfileVXLAN", ResponseNamespace="urn:iControl:Networking/ProfileVXLAN")]
+	public void set_encapsulation_type(
+		string [] profile_names,
+		NetworkingProfileVXLANProfileVXLANEncapsulationType [] encapsulation_types
+	) {
+		this.Invoke("set_encapsulation_type", new object [] {
+				profile_names,
+				encapsulation_types});
+
+	}
+	public System.IAsyncResult Beginset_encapsulation_type(string [] profile_names,NetworkingProfileVXLANProfileVXLANEncapsulationType [] encapsulation_types, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_encapsulation_type", new object[] {
+			profile_names,
+			encapsulation_types}, callback, asyncState);
+	}
+	public void Endset_encapsulation_type(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_flooding_type
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Networking/ProfileVXLAN", 
@@ -353,6 +399,17 @@ namespace iControl {
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Networking.ProfileVXLAN.VXLANEncapsulationType", Namespace = "urn:iControl")]
+	public enum NetworkingProfileVXLANVXLANEncapsulationType
+	{
+		PROFILE_VXLAN_ENCAPSULATION_TYPE_UNKNOWN,
+		PROFILE_VXLAN_ENCAPSULATION_TYPE_VXLAN,
+		PROFILE_VXLAN_ENCAPSULATION_TYPE_VXLAN_GPE,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Networking.ProfileVXLAN.VXLANFloodingType", Namespace = "urn:iControl")]
 	public enum NetworkingProfileVXLANVXLANFloodingType
 	{
@@ -366,6 +423,28 @@ namespace iControl {
 	//=======================================================================
 	// Structs
 	//=======================================================================
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Networking.ProfileVXLAN.ProfileVXLANEncapsulationType", Namespace = "urn:iControl")]
+	public partial class NetworkingProfileVXLANProfileVXLANEncapsulationType
+	{
+		private NetworkingProfileVXLANVXLANEncapsulationType valueField;
+		public NetworkingProfileVXLANVXLANEncapsulationType value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
 
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]

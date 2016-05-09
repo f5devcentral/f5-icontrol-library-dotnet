@@ -159,6 +159,17 @@ namespace iControl
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.DNSRRSetRotateType", Namespace = "urn:iControl")]
+	public enum LocalLBDNSRRSetRotateType
+	{
+		DNS_RRSET_ROTATE_TYPE_UNKNOWN,
+		DNS_RRSET_ROTATE_TYPE_NONE,
+		DNS_RRSET_ROTATE_TYPE_QID,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.DataGroupType", Namespace = "urn:iControl")]
 	public enum LocalLBDataGroupType
 	{

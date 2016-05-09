@@ -13,8 +13,9 @@ namespace iControl {
 	[System.Web.Services.WebServiceBindingAttribute(Name="LocalLB.ProfileSIPRouterBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileSIPRouterSIPRouterProfileStatistics))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
-	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStatisticsByVirtual))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileEnabledState))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStatisticsByVirtual))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileString))]
 	public partial class LocalLBProfileSIPRouter : iControlInterface {
 		public LocalLBProfileSIPRouter() {
 			this.Url = "https://url_to_service";
@@ -169,6 +170,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_ha_message_sweeper_interval
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPRouter", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPRouter")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_ha_message_sweeper_interval(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_ha_message_sweeper_interval", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_ha_message_sweeper_interval(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_ha_message_sweeper_interval", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_ha_message_sweeper_interval(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_list
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
@@ -186,6 +209,28 @@ namespace iControl {
 	public string [] Endget_list(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_maximum_media_sessions
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPRouter", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPRouter")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_maximum_media_sessions(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_maximum_media_sessions", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_maximum_media_sessions(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_maximum_media_sessions", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_maximum_media_sessions(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -230,6 +275,72 @@ namespace iControl {
 	public LocalLBProfileULong [] Endget_maximum_pending_messages(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_maximum_session_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPRouter", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPRouter")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_maximum_session_timeout(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_maximum_session_timeout", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_maximum_session_timeout(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_maximum_session_timeout", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_maximum_session_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_media_inactivity_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPRouter", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPRouter")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_media_inactivity_timeout(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_media_inactivity_timeout", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_media_inactivity_timeout(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_media_inactivity_timeout", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_media_inactivity_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_mirroring_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPRouter", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPRouter")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_mirroring_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_mirroring_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_mirroring_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_mirroring_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_mirroring_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -299,6 +410,28 @@ namespace iControl {
 	public LocalLBProfileStatisticsByVirtual Endget_statistics_by_virtual(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileStatisticsByVirtual)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_traffic_group
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPRouter", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPRouter")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileString [] get_traffic_group(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_traffic_group", new object [] {
+				profile_names});
+		return ((LocalLBProfileString [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_traffic_group(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_traffic_group", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileString [] Endget_traffic_group(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileString [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -544,6 +677,52 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_ha_message_sweeper_interval
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPRouter", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPRouter")]
+	public void set_ha_message_sweeper_interval(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_ha_message_sweeper_interval", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_ha_message_sweeper_interval(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_ha_message_sweeper_interval", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_ha_message_sweeper_interval(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_maximum_media_sessions
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPRouter", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPRouter")]
+	public void set_maximum_media_sessions(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_maximum_media_sessions", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_maximum_media_sessions(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_maximum_media_sessions", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_maximum_media_sessions(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_maximum_pending_bytes
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
@@ -586,6 +765,98 @@ namespace iControl {
 			values}, callback, asyncState);
 	}
 	public void Endset_maximum_pending_messages(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_maximum_session_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPRouter", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPRouter")]
+	public void set_maximum_session_timeout(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_maximum_session_timeout", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_maximum_session_timeout(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_maximum_session_timeout", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_maximum_session_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_media_inactivity_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPRouter", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPRouter")]
+	public void set_media_inactivity_timeout(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_media_inactivity_timeout", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_media_inactivity_timeout(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_media_inactivity_timeout", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_media_inactivity_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_mirroring_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPRouter", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPRouter")]
+	public void set_mirroring_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] values
+	) {
+		this.Invoke("set_mirroring_state", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_mirroring_state(string [] profile_names,LocalLBProfileEnabledState [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_mirroring_state", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_mirroring_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_traffic_group
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileSIPRouter", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileSIPRouter", ResponseNamespace="urn:iControl:LocalLB/ProfileSIPRouter")]
+	public void set_traffic_group(
+		string [] profile_names,
+		LocalLBProfileString [] values
+	) {
+		this.Invoke("set_traffic_group", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_traffic_group(string [] profile_names,LocalLBProfileString [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_traffic_group", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_traffic_group(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

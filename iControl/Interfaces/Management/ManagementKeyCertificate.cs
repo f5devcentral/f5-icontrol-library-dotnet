@@ -838,6 +838,31 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_certificate_request_subject_alternative_name
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/KeyCertificate", 
+		RequestNamespace="urn:iControl:Management/KeyCertificate", ResponseNamespace="urn:iControl:Management/KeyCertificate")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_certificate_request_subject_alternative_name(
+		ManagementKeyCertificateManagementModeType mode,
+		string [] files
+	) {
+		object [] results = this.Invoke("get_certificate_request_subject_alternative_name", new object [] {
+				mode,
+				files});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_certificate_request_subject_alternative_name(ManagementKeyCertificateManagementModeType mode,string [] files, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_certificate_request_subject_alternative_name", new object[] {
+			mode,
+			files}, callback, asyncState);
+	}
+	public string [] Endget_certificate_request_subject_alternative_name(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_certificate_subject_alternative_name
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/KeyCertificate", 
@@ -1514,6 +1539,7 @@ namespace iControl {
 		ELLIPTIC_CURVE_NONE,
 		ELLIPTIC_CURVE_PRIME256V1,
 		ELLIPTIC_CURVE_SECP384R1,
+		ELLIPTIC_CURVE_SECP521R1,
 	}
 
 	/// <remarks/>
