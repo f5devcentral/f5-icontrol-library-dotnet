@@ -15,6 +15,7 @@ namespace iControl {
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBDataCenterDataCenterStatistics))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBDataCenterDataCenterLinkDefinition))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonObjectStatus))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBProberSelection))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBDataCenterDataCenterServerDefinition))]
 	public partial class GlobalLBDataCenter : iControlInterface {
 		public GlobalLBDataCenter() {
@@ -400,6 +401,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_prober_selection
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/DataCenter", 
+		RequestNamespace="urn:iControl:GlobalLB/DataCenter", ResponseNamespace="urn:iControl:GlobalLB/DataCenter")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBProberSelection [] get_prober_selection(
+		string [] data_centers
+	) {
+		object [] results = this.Invoke("get_prober_selection", new object [] {
+				data_centers});
+		return ((GlobalLBProberSelection [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_prober_selection(string [] data_centers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_prober_selection", new object[] {
+			data_centers}, callback, asyncState);
+	}
+	public GlobalLBProberSelection [] Endget_prober_selection(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBProberSelection [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_server
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/DataCenter", 
@@ -718,6 +741,29 @@ namespace iControl {
 			pools}, callback, asyncState);
 	}
 	public void Endset_prober_pool(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_prober_selection
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/DataCenter", 
+		RequestNamespace="urn:iControl:GlobalLB/DataCenter", ResponseNamespace="urn:iControl:GlobalLB/DataCenter")]
+	public void set_prober_selection(
+		string [] data_centers,
+		GlobalLBProberSelection [] prober_selections
+	) {
+		this.Invoke("set_prober_selection", new object [] {
+				data_centers,
+				prober_selections});
+
+	}
+	public System.IAsyncResult Beginset_prober_selection(string [] data_centers,GlobalLBProberSelection [] prober_selections, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_prober_selection", new object[] {
+			data_centers,
+			prober_selections}, callback, asyncState);
+	}
+	public void Endset_prober_selection(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

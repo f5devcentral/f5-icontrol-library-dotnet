@@ -58,6 +58,7 @@
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ASM\ASMPolicyGroup.cs" />
+    <Compile Include="Interfaces\ASM\ASMPSMProfile.cs" />
     <Compile Include="Interfaces\Classification\ClassificationApplication.cs" />
     <Compile Include="Interfaces\Classification\ClassificationCategory.cs" />
     <Compile Include="Interfaces\Classification\ClassificationCommon.cs" />
@@ -104,6 +105,8 @@
     <Compile Include="Interfaces\GlobalLB\GlobalLBVirtualServerV2.cs" />
     <Compile Include="Interfaces\GlobalLB\GlobalLBWideip.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBALGLogProfile.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBCipherGroup.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBCipherRule.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBClass.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBCommon.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBContentPolicy.cs" />
@@ -138,6 +141,8 @@
     <Compile Include="Interfaces\LocalLB\LocalLBProfileClientSSL.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileDiameter.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileDiameterEndpoint.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileDiameterRouter.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileDiameterSession.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileDNS.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileDNSLogging.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileFastHTTP.cs" />
@@ -149,6 +154,7 @@
     <Compile Include="Interfaces\LocalLB\LocalLBProfileHttpCompression.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileICAP.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileIIOP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileIPsecALG.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileOneConnect.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfilePCP.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfilePersistence.cs" />
@@ -171,6 +177,7 @@
     <Compile Include="Interfaces\LocalLB\LocalLBProfileTCP.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileTCPAnalytics.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileTFTP.cs" />
+    <Compile Include="Interfaces\LocalLB\LocalLBProfileTrafficAcceleration.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileUDP.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBPRofileUserStatistic.cs" />
     <Compile Include="Interfaces\LocalLB\LocalLBProfileWebAcceleration.cs" />
@@ -204,6 +211,7 @@
     <Compile Include="Interfaces\Management\ManagementApplicationService.cs" />
     <Compile Include="Interfaces\Management\ManagementApplicationTemplate.cs" />
     <Compile Include="Interfaces\Management\ManagementCCLDAPConfiguration.cs" />
+    <Compile Include="Interfaces\Management\ManagementCertificateValidatorOCSP.cs" />
     <Compile Include="Interfaces\Management\ManagementCertLDAPConfiguration.cs" />
     <Compile Include="Interfaces\Management\ManagementChangeControl.cs" />
     <Compile Include="Interfaces\Management\ManagementCLIScript.cs" />

@@ -299,6 +299,26 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_fallback
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/UserManagement", 
+		RequestNamespace="urn:iControl:Management/UserManagement", ResponseNamespace="urn:iControl:Management/UserManagement")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public bool get_fallback(
+
+	) {
+		object [] results = this.Invoke("get_fallback", new object [0]);
+		return ((bool)(results[0]));
+	}
+	public System.IAsyncResult Beginget_fallback(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_fallback", new object[0], callback, asyncState);
+	}
+	public bool Endget_fallback(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((bool)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_fullname
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/UserManagement", 
@@ -678,6 +698,26 @@ namespace iControl {
 			descriptions}, callback, asyncState);
 	}
 	public void Endset_description(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_fallback
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/UserManagement", 
+		RequestNamespace="urn:iControl:Management/UserManagement", ResponseNamespace="urn:iControl:Management/UserManagement")]
+	public void set_fallback(
+		bool fallback
+	) {
+		this.Invoke("set_fallback", new object [] {
+				fallback});
+
+	}
+	public System.IAsyncResult Beginset_fallback(bool fallback, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_fallback", new object[] {
+			fallback}, callback, asyncState);
+	}
+	public void Endset_fallback(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

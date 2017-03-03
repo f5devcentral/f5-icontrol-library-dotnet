@@ -11,12 +11,16 @@ namespace iControl {
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="GlobalLB.ServerBinding", Namespace="urn:iControl")]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBServerDeviceDefinition))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBServerServerIPDefinition))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBServerServerIPs))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBServerDeviceStatistics))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBServerServerStatistics))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBServerServerMetricLimit))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBServerMonitorAssociation))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBMonitorRuleV2))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonObjectStatus))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBProberSelection))]
 	public partial class GlobalLBServer : iControlInterface {
 		public GlobalLBServer() {
 			this.Url = "https://url_to_service";
@@ -25,6 +29,29 @@ namespace iControl {
 	//=======================================================================
 	// Operations
 	//=======================================================================
+	//-----------------------------------------------------------------------
+	// add_device_ip
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	public void add_device_ip(
+		GlobalLBServerDeviceDefinition [] devices,
+		string [] [] ips
+	) {
+		this.Invoke("add_device_ip", new object [] {
+				devices,
+				ips});
+
+	}
+	public System.IAsyncResult Beginadd_device_ip(GlobalLBServerDeviceDefinition [] devices,string [] [] ips, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("add_device_ip", new object[] {
+			devices,
+			ips}, callback, asyncState);
+	}
+	public void Endadd_device_ip(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
 	//-----------------------------------------------------------------------
 	// add_ip
 	//-----------------------------------------------------------------------
@@ -121,6 +148,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// create_device
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	public void create_device(
+		GlobalLBServerDeviceDefinition [] devices,
+		string [] [] ips
+	) {
+		this.Invoke("create_device", new object [] {
+				devices,
+				ips});
+
+	}
+	public System.IAsyncResult Begincreate_device(GlobalLBServerDeviceDefinition [] devices,string [] [] ips, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("create_device", new object[] {
+			devices,
+			ips}, callback, asyncState);
+	}
+	public void Endcreate_device(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// create_v2
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
@@ -168,6 +218,26 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// delete_device
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	public void delete_device(
+		GlobalLBServerDeviceDefinition [] devices
+	) {
+		this.Invoke("delete_device", new object [] {
+				devices});
+
+	}
+	public System.IAsyncResult Begindelete_device(GlobalLBServerDeviceDefinition [] devices, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("delete_device", new object[] {
+			devices}, callback, asyncState);
+	}
+	public void Enddelete_device(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// delete_server
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
@@ -185,6 +255,26 @@ namespace iControl {
 	}
 	public void Enddelete_server(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// get_all_device_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBServerDeviceStatistics get_all_device_statistics(
+
+	) {
+		object [] results = this.Invoke("get_all_device_statistics", new object [0]);
+		return ((GlobalLBServerDeviceStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_all_device_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_all_device_statistics", new object[0], callback, asyncState);
+	}
+	public GlobalLBServerDeviceStatistics Endget_all_device_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBServerDeviceStatistics)(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -337,6 +427,189 @@ namespace iControl {
 	public string [] Endget_description(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_device_description
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_device_description(
+		GlobalLBServerDeviceDefinition [] devices
+	) {
+		object [] results = this.Invoke("get_device_description", new object [] {
+				devices});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_device_description(GlobalLBServerDeviceDefinition [] devices, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_device_description", new object[] {
+			devices}, callback, asyncState);
+	}
+	public string [] Endget_device_description(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_device_ip
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] [] get_device_ip(
+		GlobalLBServerDeviceDefinition [] devices
+	) {
+		object [] results = this.Invoke("get_device_ip", new object [] {
+				devices});
+		return ((string [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_device_ip(GlobalLBServerDeviceDefinition [] devices, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_device_ip", new object[] {
+			devices}, callback, asyncState);
+	}
+	public string [] [] Endget_device_ip(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_device_ip_description
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] [] get_device_ip_description(
+		GlobalLBServerDeviceDefinition [] devices,
+		string [] [] ips
+	) {
+		object [] results = this.Invoke("get_device_ip_description", new object [] {
+				devices,
+				ips});
+		return ((string [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_device_ip_description(GlobalLBServerDeviceDefinition [] devices,string [] [] ips, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_device_ip_description", new object[] {
+			devices,
+			ips}, callback, asyncState);
+	}
+	public string [] [] Endget_device_ip_description(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_device_ip_explicit_link
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] [] get_device_ip_explicit_link(
+		GlobalLBServerDeviceDefinition [] devices,
+		string [] [] ips
+	) {
+		object [] results = this.Invoke("get_device_ip_explicit_link", new object [] {
+				devices,
+				ips});
+		return ((string [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_device_ip_explicit_link(GlobalLBServerDeviceDefinition [] devices,string [] [] ips, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_device_ip_explicit_link", new object[] {
+			devices,
+			ips}, callback, asyncState);
+	}
+	public string [] [] Endget_device_ip_explicit_link(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_device_ip_translation
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] [] get_device_ip_translation(
+		GlobalLBServerDeviceDefinition [] devices,
+		string [] [] ips
+	) {
+		object [] results = this.Invoke("get_device_ip_translation", new object [] {
+				devices,
+				ips});
+		return ((string [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_device_ip_translation(GlobalLBServerDeviceDefinition [] devices,string [] [] ips, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_device_ip_translation", new object[] {
+			devices,
+			ips}, callback, asyncState);
+	}
+	public string [] [] Endget_device_ip_translation(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_device_list
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBServerDeviceDefinition [] get_device_list(
+
+	) {
+		object [] results = this.Invoke("get_device_list", new object [0]);
+		return ((GlobalLBServerDeviceDefinition [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_device_list(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_device_list", new object[0], callback, asyncState);
+	}
+	public GlobalLBServerDeviceDefinition [] Endget_device_list(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBServerDeviceDefinition [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_device_list_by_server
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBServerDeviceDefinition [] [] get_device_list_by_server(
+		string [] servers
+	) {
+		object [] results = this.Invoke("get_device_list_by_server", new object [] {
+				servers});
+		return ((GlobalLBServerDeviceDefinition [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_device_list_by_server(string [] servers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_device_list_by_server", new object[] {
+			servers}, callback, asyncState);
+	}
+	public GlobalLBServerDeviceDefinition [] [] Endget_device_list_by_server(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBServerDeviceDefinition [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_device_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBServerDeviceStatistics get_device_statistics(
+		GlobalLBServerDeviceDefinition [] devices
+	) {
+		object [] results = this.Invoke("get_device_statistics", new object [] {
+				devices});
+		return ((GlobalLBServerDeviceStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_device_statistics(GlobalLBServerDeviceDefinition [] devices, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_device_statistics", new object[] {
+			devices}, callback, asyncState);
+	}
+	public GlobalLBServerDeviceStatistics Endget_device_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBServerDeviceStatistics)(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -589,6 +862,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_monitor_rule
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBMonitorRuleV2 [] get_monitor_rule(
+		string [] servers
+	) {
+		object [] results = this.Invoke("get_monitor_rule", new object [] {
+				servers});
+		return ((GlobalLBMonitorRuleV2 [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_monitor_rule(string [] servers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_monitor_rule", new object[] {
+			servers}, callback, asyncState);
+	}
+	public GlobalLBMonitorRuleV2 [] Endget_monitor_rule(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBMonitorRuleV2 [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_object_status
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
@@ -655,6 +950,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_prober_selection
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBProberSelection [] get_prober_selection(
+		string [] servers
+	) {
+		object [] results = this.Invoke("get_prober_selection", new object [] {
+				servers});
+		return ((GlobalLBProberSelection [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_prober_selection(string [] servers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_prober_selection", new object[] {
+			servers}, callback, asyncState);
+	}
+	public GlobalLBProberSelection [] Endget_prober_selection(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBProberSelection [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_server_type
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
@@ -672,6 +989,28 @@ namespace iControl {
 			servers}, callback, asyncState);
 	}
 	public GlobalLBServerType [] Endget_server_type(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBServerType [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_server_type_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBServerType [] get_server_type_v2(
+		string [] servers
+	) {
+		object [] results = this.Invoke("get_server_type_v2", new object [] {
+				servers});
+		return ((GlobalLBServerType [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_server_type_v2(string [] servers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_server_type_v2", new object[] {
+			servers}, callback, asyncState);
+	}
+	public GlobalLBServerType [] Endget_server_type_v2(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((GlobalLBServerType [])(results[0]));
 	}
@@ -737,6 +1076,29 @@ namespace iControl {
 			servers}, callback, asyncState);
 	}
 	public void Endremove_all_metadata(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_device_ip
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	public void remove_device_ip(
+		GlobalLBServerDeviceDefinition [] devices,
+		string [] [] ips
+	) {
+		this.Invoke("remove_device_ip", new object [] {
+				devices,
+				ips});
+
+	}
+	public System.IAsyncResult Beginremove_device_ip(GlobalLBServerDeviceDefinition [] devices,string [] [] ips, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_device_ip", new object[] {
+			devices,
+			ips}, callback, asyncState);
+	}
+	public void Endremove_device_ip(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -823,6 +1185,46 @@ namespace iControl {
 			server_names}, callback, asyncState);
 	}
 	public void Endremove_monitor_association(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_monitor_rule
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	public void remove_monitor_rule(
+		string [] servers
+	) {
+		this.Invoke("remove_monitor_rule", new object [] {
+				servers});
+
+	}
+	public System.IAsyncResult Beginremove_monitor_rule(string [] servers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_monitor_rule", new object[] {
+			servers}, callback, asyncState);
+	}
+	public void Endremove_monitor_rule(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// reset_device_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	public void reset_device_statistics(
+		GlobalLBServerDeviceDefinition [] devices
+	) {
+		this.Invoke("reset_device_statistics", new object [] {
+				devices});
+
+	}
+	public System.IAsyncResult Beginreset_device_statistics(GlobalLBServerDeviceDefinition [] devices, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("reset_device_statistics", new object[] {
+			devices}, callback, asyncState);
+	}
+	public void Endreset_device_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -981,6 +1383,107 @@ namespace iControl {
 			descriptions}, callback, asyncState);
 	}
 	public void Endset_description(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_device_description
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	public void set_device_description(
+		GlobalLBServerDeviceDefinition [] devices,
+		string [] descriptions
+	) {
+		this.Invoke("set_device_description", new object [] {
+				devices,
+				descriptions});
+
+	}
+	public System.IAsyncResult Beginset_device_description(GlobalLBServerDeviceDefinition [] devices,string [] descriptions, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_device_description", new object[] {
+			devices,
+			descriptions}, callback, asyncState);
+	}
+	public void Endset_device_description(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_device_ip_description
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	public void set_device_ip_description(
+		GlobalLBServerDeviceDefinition [] devices,
+		string [] [] ips,
+		string [] [] descriptions
+	) {
+		this.Invoke("set_device_ip_description", new object [] {
+				devices,
+				ips,
+				descriptions});
+
+	}
+	public System.IAsyncResult Beginset_device_ip_description(GlobalLBServerDeviceDefinition [] devices,string [] [] ips,string [] [] descriptions, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_device_ip_description", new object[] {
+			devices,
+			ips,
+			descriptions}, callback, asyncState);
+	}
+	public void Endset_device_ip_description(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_device_ip_explicit_link
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	public void set_device_ip_explicit_link(
+		GlobalLBServerDeviceDefinition [] devices,
+		string [] [] ips,
+		string [] [] links
+	) {
+		this.Invoke("set_device_ip_explicit_link", new object [] {
+				devices,
+				ips,
+				links});
+
+	}
+	public System.IAsyncResult Beginset_device_ip_explicit_link(GlobalLBServerDeviceDefinition [] devices,string [] [] ips,string [] [] links, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_device_ip_explicit_link", new object[] {
+			devices,
+			ips,
+			links}, callback, asyncState);
+	}
+	public void Endset_device_ip_explicit_link(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_device_ip_translation
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	public void set_device_ip_translation(
+		GlobalLBServerDeviceDefinition [] devices,
+		string [] [] ips,
+		string [] [] translations
+	) {
+		this.Invoke("set_device_ip_translation", new object [] {
+				devices,
+				ips,
+				translations});
+
+	}
+	public System.IAsyncResult Beginset_device_ip_translation(GlobalLBServerDeviceDefinition [] devices,string [] [] ips,string [] [] translations, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_device_ip_translation", new object[] {
+			devices,
+			ips,
+			translations}, callback, asyncState);
+	}
+	public void Endset_device_ip_translation(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -1149,6 +1652,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_monitor_rule
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	public void set_monitor_rule(
+		string [] servers,
+		GlobalLBMonitorRuleV2 [] monitor_rules
+	) {
+		this.Invoke("set_monitor_rule", new object [] {
+				servers,
+				monitor_rules});
+
+	}
+	public System.IAsyncResult Beginset_monitor_rule(string [] servers,GlobalLBMonitorRuleV2 [] monitor_rules, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_monitor_rule", new object[] {
+			servers,
+			monitor_rules}, callback, asyncState);
+	}
+	public void Endset_monitor_rule(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_prober_address
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
@@ -1195,6 +1721,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_prober_selection
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
+		RequestNamespace="urn:iControl:GlobalLB/Server", ResponseNamespace="urn:iControl:GlobalLB/Server")]
+	public void set_prober_selection(
+		string [] servers,
+		GlobalLBProberSelection [] prober_selections
+	) {
+		this.Invoke("set_prober_selection", new object [] {
+				servers,
+				prober_selections});
+
+	}
+	public System.IAsyncResult Beginset_prober_selection(string [] servers,GlobalLBProberSelection [] prober_selections, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_prober_selection", new object[] {
+			servers,
+			prober_selections}, callback, asyncState);
+	}
+	public void Endset_prober_selection(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_server_type
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/Server", 
@@ -1225,6 +1774,72 @@ namespace iControl {
 	//=======================================================================
 	// Structs
 	//=======================================================================
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.Server.DeviceDefinition", Namespace = "urn:iControl")]
+	public partial class GlobalLBServerDeviceDefinition
+	{
+		private string serverField;
+		public string server
+		{
+			get { return this.serverField; }
+			set { this.serverField = value; }
+		}
+		private string deviceField;
+		public string device
+		{
+			get { return this.deviceField; }
+			set { this.deviceField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.Server.DeviceStatisticEntry", Namespace = "urn:iControl")]
+	public partial class GlobalLBServerDeviceStatisticEntry
+	{
+		private GlobalLBServerDeviceDefinition deviceField;
+		public GlobalLBServerDeviceDefinition device
+		{
+			get { return this.deviceField; }
+			set { this.deviceField = value; }
+		}
+		private CommonStatistic [] statisticsField;
+		public CommonStatistic [] statistics
+		{
+			get { return this.statisticsField; }
+			set { this.statisticsField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.Server.DeviceStatistics", Namespace = "urn:iControl")]
+	public partial class GlobalLBServerDeviceStatistics
+	{
+		private GlobalLBServerDeviceStatisticEntry [] statisticsField;
+		public GlobalLBServerDeviceStatisticEntry [] statistics
+		{
+			get { return this.statisticsField; }
+			set { this.statisticsField = value; }
+		}
+		private CommonTimeStamp time_stampField;
+		public CommonTimeStamp time_stamp
+		{
+			get { return this.time_stampField; }
+			set { this.time_stampField = value; }
+		}
+	};
 
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]

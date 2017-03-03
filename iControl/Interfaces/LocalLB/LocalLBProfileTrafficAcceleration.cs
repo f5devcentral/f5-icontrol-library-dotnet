@@ -10,12 +10,12 @@ namespace iControl {
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Web.Services.WebServiceBindingAttribute(Name="LocalLB.ProfilePPTPBinding", Namespace="urn:iControl")]
-	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfilePPTPProfilePPTPStatistics))]
-	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileEnabledState))]
+	[System.Web.Services.WebServiceBindingAttribute(Name="LocalLB.ProfileTrafficAccelerationBinding", Namespace="urn:iControl")]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatistics))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStatisticsByVirtual))]
-	public partial class LocalLBProfilePPTP : iControlInterface {
-		public LocalLBProfilePPTP() {
+	public partial class LocalLBProfileTrafficAcceleration : iControlInterface {
+		public LocalLBProfileTrafficAcceleration() {
 			this.Url = "https://url_to_service";
 		}
 
@@ -25,8 +25,8 @@ namespace iControl {
 	//-----------------------------------------------------------------------
 	// create
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	public void create(
 		string [] profile_names
 	) {
@@ -45,8 +45,8 @@ namespace iControl {
 	//-----------------------------------------------------------------------
 	// delete_all_profiles
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	public void delete_all_profiles(
 
 	) {
@@ -63,8 +63,8 @@ namespace iControl {
 	//-----------------------------------------------------------------------
 	// delete_profile
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	public void delete_profile(
 		string [] profile_names
 	) {
@@ -83,50 +83,28 @@ namespace iControl {
 	//-----------------------------------------------------------------------
 	// get_all_statistics
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	[return: System.Xml.Serialization.SoapElementAttribute("return")]
-	public LocalLBProfilePPTPProfilePPTPStatistics get_all_statistics(
+	public LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatistics get_all_statistics(
 
 	) {
 		object [] results = this.Invoke("get_all_statistics", new object [0]);
-		return ((LocalLBProfilePPTPProfilePPTPStatistics)(results[0]));
+		return ((LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatistics)(results[0]));
 	}
 	public System.IAsyncResult Beginget_all_statistics(System.AsyncCallback callback, object asyncState) {
 		return this.BeginInvoke("get_all_statistics", new object[0], callback, asyncState);
 	}
-	public LocalLBProfilePPTPProfilePPTPStatistics Endget_all_statistics(System.IAsyncResult asyncResult) {
+	public LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatistics Endget_all_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
-		return ((LocalLBProfilePPTPProfilePPTPStatistics)(results[0]));
-	}
-
-	//-----------------------------------------------------------------------
-	// get_csv_format_state
-	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
-	[return: System.Xml.Serialization.SoapElementAttribute("return")]
-	public LocalLBProfileEnabledState [] get_csv_format_state(
-		string [] profiles
-	) {
-		object [] results = this.Invoke("get_csv_format_state", new object [] {
-				profiles});
-		return ((LocalLBProfileEnabledState [])(results[0]));
-	}
-	public System.IAsyncResult Beginget_csv_format_state(string [] profiles, System.AsyncCallback callback, object asyncState) {
-		return this.BeginInvoke("get_csv_format_state", new object[] {
-			profiles}, callback, asyncState);
-	}
-	public LocalLBProfileEnabledState [] Endget_csv_format_state(System.IAsyncResult asyncResult) {
-		object [] results = this.EndInvoke(asyncResult);
-		return ((LocalLBProfileEnabledState [])(results[0]));
+		return ((LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatistics)(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
 	// get_default_profile
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	[return: System.Xml.Serialization.SoapElementAttribute("return")]
 	public string [] get_default_profile(
 		string [] profile_names
@@ -147,8 +125,8 @@ namespace iControl {
 	//-----------------------------------------------------------------------
 	// get_description
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	[return: System.Xml.Serialization.SoapElementAttribute("return")]
 	public string [] get_description(
 		string [] profile_names
@@ -167,32 +145,32 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
-	// get_include_destination_ip_state
+	// get_idle_timeout
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	[return: System.Xml.Serialization.SoapElementAttribute("return")]
-	public LocalLBProfileEnabledState [] get_include_destination_ip_state(
+	public LocalLBProfileULong [] get_idle_timeout(
 		string [] profile_names
 	) {
-		object [] results = this.Invoke("get_include_destination_ip_state", new object [] {
+		object [] results = this.Invoke("get_idle_timeout", new object [] {
 				profile_names});
-		return ((LocalLBProfileEnabledState [])(results[0]));
+		return ((LocalLBProfileULong [])(results[0]));
 	}
-	public System.IAsyncResult Beginget_include_destination_ip_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
-		return this.BeginInvoke("get_include_destination_ip_state", new object[] {
+	public System.IAsyncResult Beginget_idle_timeout(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_idle_timeout", new object[] {
 			profile_names}, callback, asyncState);
 	}
-	public LocalLBProfileEnabledState [] Endget_include_destination_ip_state(System.IAsyncResult asyncResult) {
+	public LocalLBProfileULong [] Endget_idle_timeout(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
-		return ((LocalLBProfileEnabledState [])(results[0]));
+		return ((LocalLBProfileULong [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
 	// get_list
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	[return: System.Xml.Serialization.SoapElementAttribute("return")]
 	public string [] get_list(
 
@@ -209,54 +187,32 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
-	// get_publisher_name
-	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
-	[return: System.Xml.Serialization.SoapElementAttribute("return")]
-	public string [] get_publisher_name(
-		string [] profile_names
-	) {
-		object [] results = this.Invoke("get_publisher_name", new object [] {
-				profile_names});
-		return ((string [])(results[0]));
-	}
-	public System.IAsyncResult Beginget_publisher_name(string [] profile_names, System.AsyncCallback callback, object asyncState) {
-		return this.BeginInvoke("get_publisher_name", new object[] {
-			profile_names}, callback, asyncState);
-	}
-	public string [] Endget_publisher_name(System.IAsyncResult asyncResult) {
-		object [] results = this.EndInvoke(asyncResult);
-		return ((string [])(results[0]));
-	}
-
-	//-----------------------------------------------------------------------
 	// get_statistics
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	[return: System.Xml.Serialization.SoapElementAttribute("return")]
-	public LocalLBProfilePPTPProfilePPTPStatistics get_statistics(
+	public LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatistics get_statistics(
 		string [] profile_names
 	) {
 		object [] results = this.Invoke("get_statistics", new object [] {
 				profile_names});
-		return ((LocalLBProfilePPTPProfilePPTPStatistics)(results[0]));
+		return ((LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatistics)(results[0]));
 	}
 	public System.IAsyncResult Beginget_statistics(string [] profile_names, System.AsyncCallback callback, object asyncState) {
 		return this.BeginInvoke("get_statistics", new object[] {
 			profile_names}, callback, asyncState);
 	}
-	public LocalLBProfilePPTPProfilePPTPStatistics Endget_statistics(System.IAsyncResult asyncResult) {
+	public LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatistics Endget_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
-		return ((LocalLBProfilePPTPProfilePPTPStatistics)(results[0]));
+		return ((LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatistics)(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
 	// get_statistics_by_virtual
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	[return: System.Xml.Serialization.SoapElementAttribute("return")]
 	public LocalLBProfileStatisticsByVirtual get_statistics_by_virtual(
 		string [] profile_names,
@@ -278,10 +234,54 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_tcp_handshake_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_tcp_handshake_timeout(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_tcp_handshake_timeout", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_tcp_handshake_timeout(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_tcp_handshake_timeout", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_tcp_handshake_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_time_wait_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_time_wait_timeout(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_time_wait_timeout", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_time_wait_timeout(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_time_wait_timeout", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_time_wait_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_version
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	[return: System.Xml.Serialization.SoapElementAttribute("return")]
 	public string get_version(
 
@@ -302,8 +302,8 @@ namespace iControl {
 	//-----------------------------------------------------------------------
 	// is_base_profile
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	[return: System.Xml.Serialization.SoapElementAttribute("return")]
 	public bool [] is_base_profile(
 		string [] profile_names
@@ -324,8 +324,8 @@ namespace iControl {
 	//-----------------------------------------------------------------------
 	// is_system_profile
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	[return: System.Xml.Serialization.SoapElementAttribute("return")]
 	public bool [] is_system_profile(
 		string [] profile_names
@@ -346,8 +346,8 @@ namespace iControl {
 	//-----------------------------------------------------------------------
 	// reset_statistics
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	public void reset_statistics(
 		string [] profile_names
 	) {
@@ -366,8 +366,8 @@ namespace iControl {
 	//-----------------------------------------------------------------------
 	// reset_statistics_by_virtual
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	public void reset_statistics_by_virtual(
 		string [] profile_names,
 		string [] [] virtual_names
@@ -387,33 +387,10 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
-	// set_csv_format_state
-	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
-	public void set_csv_format_state(
-		string [] profiles,
-		LocalLBProfileEnabledState [] states
-	) {
-		this.Invoke("set_csv_format_state", new object [] {
-				profiles,
-				states});
-
-	}
-	public System.IAsyncResult Beginset_csv_format_state(string [] profiles,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
-		return this.BeginInvoke("set_csv_format_state", new object[] {
-			profiles,
-			states}, callback, asyncState);
-	}
-	public void Endset_csv_format_state(System.IAsyncResult asyncResult) {
-		object [] results = this.EndInvoke(asyncResult);
-	}
-
-	//-----------------------------------------------------------------------
 	// set_default_profile
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	public void set_default_profile(
 		string [] profile_names,
 		string [] defaults
@@ -435,8 +412,8 @@ namespace iControl {
 	//-----------------------------------------------------------------------
 	// set_description
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
 	public void set_description(
 		string [] profile_names,
 		string [] descriptions
@@ -456,48 +433,71 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
-	// set_include_destination_ip_state
+	// set_idle_timeout
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
-	public void set_include_destination_ip_state(
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
+	public void set_idle_timeout(
 		string [] profile_names,
-		LocalLBProfileEnabledState [] states
+		LocalLBProfileULong [] values
 	) {
-		this.Invoke("set_include_destination_ip_state", new object [] {
+		this.Invoke("set_idle_timeout", new object [] {
 				profile_names,
-				states});
+				values});
 
 	}
-	public System.IAsyncResult Beginset_include_destination_ip_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
-		return this.BeginInvoke("set_include_destination_ip_state", new object[] {
+	public System.IAsyncResult Beginset_idle_timeout(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_idle_timeout", new object[] {
 			profile_names,
-			states}, callback, asyncState);
+			values}, callback, asyncState);
 	}
-	public void Endset_include_destination_ip_state(System.IAsyncResult asyncResult) {
+	public void Endset_idle_timeout(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
 	//-----------------------------------------------------------------------
-	// set_publisher_name
+	// set_tcp_handshake_timeout
 	//-----------------------------------------------------------------------
-	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfilePPTP", 
-		RequestNamespace="urn:iControl:LocalLB/ProfilePPTP", ResponseNamespace="urn:iControl:LocalLB/ProfilePPTP")]
-	public void set_publisher_name(
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
+	public void set_tcp_handshake_timeout(
 		string [] profile_names,
-		string [] publishers
+		LocalLBProfileULong [] values
 	) {
-		this.Invoke("set_publisher_name", new object [] {
+		this.Invoke("set_tcp_handshake_timeout", new object [] {
 				profile_names,
-				publishers});
+				values});
 
 	}
-	public System.IAsyncResult Beginset_publisher_name(string [] profile_names,string [] publishers, System.AsyncCallback callback, object asyncState) {
-		return this.BeginInvoke("set_publisher_name", new object[] {
+	public System.IAsyncResult Beginset_tcp_handshake_timeout(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_tcp_handshake_timeout", new object[] {
 			profile_names,
-			publishers}, callback, asyncState);
+			values}, callback, asyncState);
 	}
-	public void Endset_publisher_name(System.IAsyncResult asyncResult) {
+	public void Endset_tcp_handshake_timeout(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_time_wait_timeout
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTrafficAcceleration", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration", ResponseNamespace="urn:iControl:LocalLB/ProfileTrafficAcceleration")]
+	public void set_time_wait_timeout(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_time_wait_timeout", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_time_wait_timeout(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_time_wait_timeout", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_time_wait_timeout(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -515,8 +515,8 @@ namespace iControl {
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfilePPTP.ProfilePPTPStatisticEntry", Namespace = "urn:iControl")]
-	public partial class LocalLBProfilePPTPProfilePPTPStatisticEntry
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileTrafficAcceleration.TrafficAccelerationProfileStatisticEntry", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatisticEntry
 	{
 		private string profile_nameField;
 		public string profile_name
@@ -537,11 +537,11 @@ namespace iControl {
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfilePPTP.ProfilePPTPStatistics", Namespace = "urn:iControl")]
-	public partial class LocalLBProfilePPTPProfilePPTPStatistics
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileTrafficAcceleration.TrafficAccelerationProfileStatistics", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatistics
 	{
-		private LocalLBProfilePPTPProfilePPTPStatisticEntry [] statisticsField;
-		public LocalLBProfilePPTPProfilePPTPStatisticEntry [] statistics
+		private LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatisticEntry [] statisticsField;
+		public LocalLBProfileTrafficAccelerationTrafficAccelerationProfileStatisticEntry [] statistics
 		{
 			get { return this.statisticsField; }
 			set { this.statisticsField = value; }

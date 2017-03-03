@@ -16,6 +16,8 @@ namespace iControl {
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileEnabledState))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileFastL4ProfileLateBindingTimeoutRecoveryMode))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPPacketDFMode))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPPacketTTLMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileFastL4ProfilePVAOffloadState))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStatisticsByVirtual))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPOptionMode))]
@@ -517,6 +519,94 @@ namespace iControl {
 			profile_names}, callback, asyncState);
 	}
 	public LocalLBProfileULong [] Endget_mss_override(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_packet_df_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileTCPPacketDFMode [] get_packet_df_mode(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_packet_df_mode", new object [] {
+				profile_names});
+		return ((LocalLBProfileTCPPacketDFMode [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_packet_df_mode(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_packet_df_mode", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileTCPPacketDFMode [] Endget_packet_df_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileTCPPacketDFMode [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_packet_ttl_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileTCPPacketTTLMode [] get_packet_ttl_mode(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_packet_ttl_mode", new object [] {
+				profile_names});
+		return ((LocalLBProfileTCPPacketTTLMode [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_packet_ttl_mode(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_packet_ttl_mode", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileTCPPacketTTLMode [] Endget_packet_ttl_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileTCPPacketTTLMode [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_packet_ttl_v4
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_packet_ttl_v4(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_packet_ttl_v4", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_packet_ttl_v4(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_packet_ttl_v4", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_packet_ttl_v4(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_packet_ttl_v6
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_packet_ttl_v6(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_packet_ttl_v6", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_packet_ttl_v6(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_packet_ttl_v6", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_packet_ttl_v6(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileULong [])(results[0]));
 	}
@@ -1330,6 +1420,98 @@ namespace iControl {
 			mss_overrides}, callback, asyncState);
 	}
 	public void Endset_mss_override(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_packet_df_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	public void set_packet_df_mode(
+		string [] profile_names,
+		LocalLBProfileTCPPacketDFMode [] values
+	) {
+		this.Invoke("set_packet_df_mode", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_packet_df_mode(string [] profile_names,LocalLBProfileTCPPacketDFMode [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_packet_df_mode", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_packet_df_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_packet_ttl_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	public void set_packet_ttl_mode(
+		string [] profile_names,
+		LocalLBProfileTCPPacketTTLMode [] values
+	) {
+		this.Invoke("set_packet_ttl_mode", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_packet_ttl_mode(string [] profile_names,LocalLBProfileTCPPacketTTLMode [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_packet_ttl_mode", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_packet_ttl_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_packet_ttl_v4
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	public void set_packet_ttl_v4(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_packet_ttl_v4", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_packet_ttl_v4(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_packet_ttl_v4", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_packet_ttl_v4(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_packet_ttl_v6
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileFastL4", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileFastL4", ResponseNamespace="urn:iControl:LocalLB/ProfileFastL4")]
+	public void set_packet_ttl_v6(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_packet_ttl_v6", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_packet_ttl_v6(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_packet_ttl_v6", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_packet_ttl_v6(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

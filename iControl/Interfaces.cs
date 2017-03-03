@@ -51,6 +51,7 @@ namespace iControl
         private ASMObjectParams m_ASMObjectParams;
         private ASMPolicy m_ASMPolicy;
         private ASMPolicyGroup m_ASMPolicyGroup;
+        private ASMPSMProfile m_ASMPSMProfile;
         private ASMSystemConfiguration m_ASMSystemConfiguration;
         private ASMWebApplication m_ASMWebApplication;
         private ASMWebApplicationGroup m_ASMWebApplicationGroup;
@@ -87,6 +88,8 @@ namespace iControl
         private iCallTriggeredHandler m_iCallTriggeredHandler;
 
         private LocalLBALGLogProfile m_LocalLBALGLogProfile;
+        private LocalLBCipherGroup m_LocalLBCipherGroup;
+        private LocalLBCipherRule m_LocalLBCipherRule;
         private LocalLBClass m_LocalLBClass;
         private LocalLBContentPolicy m_LocalLBContentPolicy;
         private LocalLBContentPolicyStrategy m_LocalLBContentPolicyStrategy;
@@ -120,6 +123,8 @@ namespace iControl
         private LocalLBProfileClientSSL m_LocalLBProfileClientSSL;
         private LocalLBProfileDiameter m_LocalLBProfileDiameter;
         private LocalLBProfileDiameterEndpoint m_LocalLBProfileDiameterEndpoint;
+        private LocalLBProfileDiameterRouter m_LocalLBProfileDiameterRouter;
+        private LocalLBProfileDiameterSession m_LocalLBProfileDiameterSession;
         private LocalLBProfileDNS m_LocalLBProfileDNS;
         private LocalLBProfileDNSLogging m_LocalLBProfileDNSLogging;
         private LocalLBProfileFastHttp m_LocalLBProfileFastHttp;
@@ -131,6 +136,7 @@ namespace iControl
         private LocalLBProfileHttpCompression m_LocalLBProfileHttpCompression;
         private LocalLBProfileICAP m_LocalLBProfileICAP;
         private LocalLBProfileIIOP m_LocalLBProfileIIOP;
+        private LocalLBProfileIPsecALG m_LocalLBProfileIPsecALG;
         private LocalLBProfileOneConnect m_LocalLBProfileOneConnect;
         private LocalLBProfilePCP m_LocalLBProfilePCP;
         private LocalLBProfilePersistence m_LocalLBProfilePersistence;
@@ -153,6 +159,7 @@ namespace iControl
         private LocalLBProfileTCP m_LocalLBProfileTCP;
         private LocalLBProfileTCPAnalytics m_LocalLBProfileTCPAnalytics;
         private LocalLBProfileTFTP m_LocalLBProfileTFTP;
+        private LocalLBProfileTrafficAcceleration m_LocalLBProfileTrafficAcceleration;
         private LocalLBProfileUDP m_LocalLBProfileUDP;
         private LocalLBProfileUserStatistic m_LocalLBProfileUserStatistic;
         private LocalLBProfileWebAcceleration m_LocalLBProfileWebAcceleration;
@@ -188,6 +195,7 @@ namespace iControl
         private ManagementApplicationTemplate m_ManagementApplicationTemplate;
         private ManagementCCLDAPConfiguration m_ManagementCCLDAPConfiguration;
         private ManagementCertLDAPConfiguration m_ManagementCertLDAPConfiguration;
+        private ManagementCertificateValidatorOCSP m_ManagementCertificateValidatorOCSP;
         private ManagementChangeControl m_ManagementChangeControl;
         private ManagementCLIScript m_ManagementCLIScript;
         private ManagementCRLDPConfiguration m_ManagementCRLDPConfiguration;
@@ -351,6 +359,7 @@ namespace iControl
         public ASMObjectParams ASMObjectParams { get { verifyInitialized(); if (null == m_ASMObjectParams) { initializeInterface(m_ASMObjectParams = new ASMObjectParams()); } return m_ASMObjectParams; } }
         public ASMPolicy ASMPolicy { get { verifyInitialized(); if (null == m_ASMPolicy) { initializeInterface(m_ASMPolicy = new ASMPolicy()); } return m_ASMPolicy; } }
         public ASMPolicyGroup ASMPolicyGroup { get { verifyInitialized(); if (null == m_ASMPolicyGroup) { initializeInterface(m_ASMPolicyGroup = new ASMPolicyGroup()); } return m_ASMPolicyGroup; } }
+        public ASMPSMProfile ASMPSMProfile { get { verifyInitialized(); if (null == m_ASMPSMProfile) { initializeInterface(m_ASMPSMProfile = new ASMPSMProfile()); } return m_ASMPSMProfile; } }
         public ASMSystemConfiguration ASMSystemConfiguration { get { verifyInitialized(); if (null == m_ASMSystemConfiguration) { initializeInterface(m_ASMSystemConfiguration = new ASMSystemConfiguration()); } return m_ASMSystemConfiguration; } }
         public ASMWebApplication ASMWebApplication { get { verifyInitialized(); if (null == m_ASMWebApplication) { initializeInterface(m_ASMWebApplication = new ASMWebApplication()); } return m_ASMWebApplication; } }
         public ASMWebApplicationGroup ASMWebApplicationGroup { get { verifyInitialized(); if (null == m_ASMWebApplicationGroup) { initializeInterface(m_ASMWebApplicationGroup = new ASMWebApplicationGroup()); } return m_ASMWebApplicationGroup; } }
@@ -387,6 +396,8 @@ namespace iControl
         public iCallTriggeredHandler iCallTriggeredHandler { get { verifyInitialized(); if (null == m_iCallTriggeredHandler) { initializeInterface(m_iCallTriggeredHandler = new iCallTriggeredHandler()); } return m_iCallTriggeredHandler; } }
 
         public LocalLBALGLogProfile LocalLBALGLogProfile { get { verifyInitialized(); if (null == m_LocalLBALGLogProfile) { initializeInterface(m_LocalLBALGLogProfile = new LocalLBALGLogProfile()); } return m_LocalLBALGLogProfile; } }
+        public LocalLBCipherGroup LocalLBCipherGroup { get { verifyInitialized(); if (null == m_LocalLBCipherGroup) { initializeInterface(m_LocalLBCipherGroup = new LocalLBCipherGroup()); } return m_LocalLBCipherGroup; } }
+        public LocalLBCipherRule LocalLBCipherRule { get { verifyInitialized(); if (null == m_LocalLBCipherRule) { initializeInterface(m_LocalLBCipherRule = new LocalLBCipherRule()); } return m_LocalLBCipherRule; } }
         public LocalLBClass LocalLBClass { get { verifyInitialized(); if (null == m_LocalLBClass) { initializeInterface(m_LocalLBClass = new LocalLBClass()); } return m_LocalLBClass; } }
         public LocalLBContentPolicy LocalLBContentPolicy { get { verifyInitialized(); if (null == m_LocalLBContentPolicy) { initializeInterface(m_LocalLBContentPolicy = new LocalLBContentPolicy()); } return m_LocalLBContentPolicy; } }
         public LocalLBContentPolicyStrategy LocalLBContentPolicyStrategy { get { verifyInitialized(); if (null == m_LocalLBContentPolicyStrategy) { initializeInterface(m_LocalLBContentPolicyStrategy = new LocalLBContentPolicyStrategy()); } return m_LocalLBContentPolicyStrategy; } }
@@ -420,6 +431,8 @@ namespace iControl
         public LocalLBProfileClientSSL LocalLBProfileClientSSL { get { verifyInitialized(); if (null == m_LocalLBProfileClientSSL) { initializeInterface(m_LocalLBProfileClientSSL = new LocalLBProfileClientSSL()); } return m_LocalLBProfileClientSSL; } }
         public LocalLBProfileDiameter LocalLBProfileDiameter { get { verifyInitialized(); if (null == m_LocalLBProfileDiameter) { initializeInterface(m_LocalLBProfileDiameter = new LocalLBProfileDiameter()); } return m_LocalLBProfileDiameter; } }
         public LocalLBProfileDiameterEndpoint LocalLBProfileDiameterEndpoint { get { verifyInitialized(); if (null == m_LocalLBProfileDiameterEndpoint) { initializeInterface(m_LocalLBProfileDiameterEndpoint = new LocalLBProfileDiameterEndpoint()); } return m_LocalLBProfileDiameterEndpoint; } }
+        public LocalLBProfileDiameterRouter LocalLBProfileDiameterRouter { get { verifyInitialized(); if (null == m_LocalLBProfileDiameterRouter) { initializeInterface(m_LocalLBProfileDiameterRouter = new LocalLBProfileDiameterRouter()); } return m_LocalLBProfileDiameterRouter; } }
+        public LocalLBProfileDiameterSession LocalLBProfileDiameterSession { get { verifyInitialized(); if (null == m_LocalLBProfileDiameterSession) { initializeInterface(m_LocalLBProfileDiameterSession = new LocalLBProfileDiameterSession()); } return m_LocalLBProfileDiameterSession; } }
         public LocalLBProfileDNS LocalLBProfileDNS { get { verifyInitialized(); if (null == m_LocalLBProfileDNS) { initializeInterface(m_LocalLBProfileDNS = new LocalLBProfileDNS()); } return m_LocalLBProfileDNS; } }
         public LocalLBProfileDNSLogging LocalLBProfileDNSLogging { get { verifyInitialized(); if (null == m_LocalLBProfileDNSLogging) { initializeInterface(m_LocalLBProfileDNSLogging = new LocalLBProfileDNSLogging()); } return m_LocalLBProfileDNSLogging; } }
         public LocalLBProfileFastHttp LocalLBProfileFastHttp { get { verifyInitialized(); if (null == m_LocalLBProfileFastHttp) { initializeInterface(m_LocalLBProfileFastHttp = new LocalLBProfileFastHttp()); } return m_LocalLBProfileFastHttp; } }
@@ -431,6 +444,7 @@ namespace iControl
         public LocalLBProfileHttpCompression LocalLBProfileHttpCompression { get { verifyInitialized(); if (null == m_LocalLBProfileHttpCompression) { initializeInterface(m_LocalLBProfileHttpCompression = new LocalLBProfileHttpCompression()); } return m_LocalLBProfileHttpCompression; } }
         public LocalLBProfileICAP LocalLBProfileICAP { get { verifyInitialized(); if (null == m_LocalLBProfileICAP) { initializeInterface(m_LocalLBProfileICAP = new LocalLBProfileICAP()); } return m_LocalLBProfileICAP; } }
         public LocalLBProfileIIOP LocalLBProfileIIOP { get { verifyInitialized(); if (null == m_LocalLBProfileIIOP) { initializeInterface(m_LocalLBProfileIIOP = new LocalLBProfileIIOP()); } return m_LocalLBProfileIIOP; } }
+        public LocalLBProfileIPsecALG LocalLBProfileIPsecALG { get { verifyInitialized(); if (null == m_LocalLBProfileIPsecALG) { initializeInterface(m_LocalLBProfileIPsecALG = new LocalLBProfileIPsecALG()); } return m_LocalLBProfileIPsecALG; } }
         public LocalLBProfileOneConnect LocalLBProfileOneConnect { get { verifyInitialized(); if (null == m_LocalLBProfileOneConnect) { initializeInterface(m_LocalLBProfileOneConnect = new LocalLBProfileOneConnect()); } return m_LocalLBProfileOneConnect; } }
         public LocalLBProfilePCP LocalLBProfilePCP { get { verifyInitialized(); if (null == m_LocalLBProfilePCP) { initializeInterface(m_LocalLBProfilePCP = new LocalLBProfilePCP()); } return m_LocalLBProfilePCP; } }
         public LocalLBProfilePersistence LocalLBProfilePersistence { get { verifyInitialized(); if (null == m_LocalLBProfilePersistence) { initializeInterface(m_LocalLBProfilePersistence = new LocalLBProfilePersistence()); } return m_LocalLBProfilePersistence; } }
@@ -453,6 +467,8 @@ namespace iControl
         public LocalLBProfileTCP LocalLBProfileTCP { get { verifyInitialized(); if (null == m_LocalLBProfileTCP) { initializeInterface(m_LocalLBProfileTCP = new LocalLBProfileTCP()); } return m_LocalLBProfileTCP; } }
         public LocalLBProfileTCPAnalytics LocalLBProfileTCPAnalytics { get { verifyInitialized(); if (null == m_LocalLBProfileTCPAnalytics) { initializeInterface(m_LocalLBProfileTCPAnalytics = new LocalLBProfileTCPAnalytics()); } return m_LocalLBProfileTCPAnalytics; } }
         public LocalLBProfileTFTP LocalLBProfileTFTP { get { verifyInitialized(); if (null == m_LocalLBProfileTFTP) { initializeInterface(m_LocalLBProfileTFTP = new LocalLBProfileTFTP()); } return m_LocalLBProfileTFTP; } }
+        public LocalLBProfileTrafficAcceleration LocalLBProfileTrafficAcceleration { get { verifyInitialized(); if (null == m_LocalLBProfileTrafficAcceleration) { initializeInterface(m_LocalLBProfileTrafficAcceleration = new LocalLBProfileTrafficAcceleration()); } return m_LocalLBProfileTrafficAcceleration; } }
+
         public LocalLBProfileUDP LocalLBProfileUDP { get { verifyInitialized(); if (null == m_LocalLBProfileUDP) { initializeInterface(m_LocalLBProfileUDP = new LocalLBProfileUDP()); } return m_LocalLBProfileUDP; } }
         public LocalLBProfileUserStatistic LocalLBProfileUserStatistic { get { verifyInitialized(); if (null == m_LocalLBProfileUserStatistic) { initializeInterface(m_LocalLBProfileUserStatistic = new LocalLBProfileUserStatistic()); } return m_LocalLBProfileUserStatistic; } }
         public LocalLBProfileWebAcceleration LocalLBProfileWebAcceleration { get { verifyInitialized(); if (null == m_LocalLBProfileWebAcceleration) { initializeInterface(m_LocalLBProfileWebAcceleration = new LocalLBProfileWebAcceleration()); } return m_LocalLBProfileWebAcceleration; } }
@@ -488,6 +504,7 @@ namespace iControl
         public ManagementApplicationTemplate ManagementApplicationTemplate { get { verifyInitialized(); if (null == m_ManagementApplicationTemplate) { initializeInterface(m_ManagementApplicationTemplate = new ManagementApplicationTemplate()); } return m_ManagementApplicationTemplate; } }
         public ManagementCCLDAPConfiguration ManagementCCLDAPConfiguration { get { verifyInitialized(); if (null == m_ManagementCCLDAPConfiguration) { initializeInterface(m_ManagementCCLDAPConfiguration = new ManagementCCLDAPConfiguration()); } return m_ManagementCCLDAPConfiguration; } }
         public ManagementCertLDAPConfiguration ManagementCertLDAPConfiguration { get { verifyInitialized(); if (null == m_ManagementCertLDAPConfiguration) { initializeInterface(m_ManagementCertLDAPConfiguration = new ManagementCertLDAPConfiguration()); } return m_ManagementCertLDAPConfiguration; } }
+        public ManagementCertificateValidatorOCSP ManagementCertificateValidatorOCSP { get { verifyInitialized(); if (null == m_ManagementCertificateValidatorOCSP) { initializeInterface(m_ManagementCertificateValidatorOCSP = new ManagementCertificateValidatorOCSP()); } return m_ManagementCertificateValidatorOCSP; } }
         public ManagementChangeControl ManagementChangeControl { get { verifyInitialized(); if (null == m_ManagementChangeControl) { initializeInterface(m_ManagementChangeControl = new ManagementChangeControl()); } return m_ManagementChangeControl; } }
         public ManagementCLIScript ManagementCLIScript { get { verifyInitialized(); if (null == m_ManagementCLIScript) { initializeInterface(m_ManagementCLIScript = new ManagementCLIScript()); } return m_ManagementCLIScript; } }
         public ManagementCRLDPConfiguration ManagementCRLDPConfiguration { get { verifyInitialized(); if (null == m_ManagementCRLDPConfiguration) { initializeInterface(m_ManagementCRLDPConfiguration = new ManagementCRLDPConfiguration()); } return m_ManagementCRLDPConfiguration; } }
@@ -762,6 +779,7 @@ namespace iControl
                 m_ASMObjectParams = null;
                 m_ASMPolicy = null;
                 m_ASMPolicyGroup = null;
+                m_ASMPSMProfile = null;
                 m_ASMSystemConfiguration = null;
                 m_ASMWebApplication = null;
                 m_ASMWebApplicationGroup = null;
@@ -795,6 +813,9 @@ namespace iControl
                 m_iCallScript = null;
                 m_iCallTriggeredHandler = null;
 
+                m_LocalLBALGLogProfile = null;
+                m_LocalLBCipherGroup = null;
+                m_LocalLBCipherRule = null;
                 m_LocalLBClass = null;
                 m_LocalLBDataGroupFile = null;
                 m_LocalLBDNSCache = null;
@@ -819,6 +840,8 @@ namespace iControl
                 m_LocalLBProfileClientSSL = null;
                 m_LocalLBProfileDiameter = null;
                 m_LocalLBProfileDiameterEndpoint = null;
+                m_LocalLBProfileDiameterRouter = null;
+                m_LocalLBProfileDiameterSession = null;
                 m_LocalLBProfileDNS = null;
                 m_LocalLBProfileDNSLogging = null;
                 m_LocalLBProfileFastHttp = null;
@@ -830,6 +853,7 @@ namespace iControl
                 m_LocalLBProfileHttpCompression = null;
                 m_LocalLBProfileICAP = null;
                 m_LocalLBProfileIIOP = null;
+                m_LocalLBProfileIPsecALG = null;
                 m_LocalLBProfileOneConnect = null;
                 m_LocalLBProfilePCP = null;
                 m_LocalLBProfilePersistence = null;
@@ -848,6 +872,8 @@ namespace iControl
                 m_LocalLBProfileStream = null;
                 m_LocalLBProfileTCP = null;
                 m_LocalLBProfileTCPAnalytics = null;
+                m_LocalLBProfileTFTP = null;
+                m_LocalLBProfileTrafficAcceleration = null;
                 m_LocalLBProfileUDP = null;
                 m_LocalLBProfileUserStatistic = null;
                 m_LocalLBProfileWebAcceleration = null;
@@ -881,6 +907,7 @@ namespace iControl
                 m_ManagementApplicationTemplate = null;
                 m_ManagementCCLDAPConfiguration = null;
                 m_ManagementCertLDAPConfiguration = null;
+                m_ManagementCertificateValidatorOCSP = null;
                 m_ManagementChangeControl = null;
                 m_ManagementCLIScript = null;
                 m_ManagementCRLDPConfiguration = null;

@@ -16,6 +16,7 @@ namespace iControl {
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBPoolV2PoolStatistics))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBMetricLimit))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBMonitorRule))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBMonitorRuleV2))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonObjectStatus))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBPoolV2MemberStatistics))]
 	public partial class GlobalLBPoolV2 : iControlInterface {
@@ -667,6 +668,31 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_member_monitor_rule_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/PoolV2", 
+		RequestNamespace="urn:iControl:GlobalLB/PoolV2", ResponseNamespace="urn:iControl:GlobalLB/PoolV2")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBMonitorRuleV2 [] [] get_member_monitor_rule_v2(
+		GlobalLBPoolID [] pools,
+		GlobalLBVirtualServerID [] [] members
+	) {
+		object [] results = this.Invoke("get_member_monitor_rule_v2", new object [] {
+				pools,
+				members});
+		return ((GlobalLBMonitorRuleV2 [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_member_monitor_rule_v2(GlobalLBPoolID [] pools,GlobalLBVirtualServerID [] [] members, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_member_monitor_rule_v2", new object[] {
+			pools,
+			members}, callback, asyncState);
+	}
+	public GlobalLBMonitorRuleV2 [] [] Endget_member_monitor_rule_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBMonitorRuleV2 [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_member_object_status
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/PoolV2", 
@@ -883,6 +909,28 @@ namespace iControl {
 	public GlobalLBMonitorRule [] Endget_monitor_rule(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((GlobalLBMonitorRule [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_monitor_rule_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/PoolV2", 
+		RequestNamespace="urn:iControl:GlobalLB/PoolV2", ResponseNamespace="urn:iControl:GlobalLB/PoolV2")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBMonitorRuleV2 [] get_monitor_rule_v2(
+		GlobalLBPoolID [] pools
+	) {
+		object [] results = this.Invoke("get_monitor_rule_v2", new object [] {
+				pools});
+		return ((GlobalLBMonitorRuleV2 [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_monitor_rule_v2(GlobalLBPoolID [] pools, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_monitor_rule_v2", new object[] {
+			pools}, callback, asyncState);
+	}
+	public GlobalLBMonitorRuleV2 [] Endget_monitor_rule_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBMonitorRuleV2 [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -2142,6 +2190,32 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_member_monitor_rule_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/PoolV2", 
+		RequestNamespace="urn:iControl:GlobalLB/PoolV2", ResponseNamespace="urn:iControl:GlobalLB/PoolV2")]
+	public void set_member_monitor_rule_v2(
+		GlobalLBPoolID [] pools,
+		GlobalLBVirtualServerID [] [] members,
+		GlobalLBMonitorRuleV2 [] [] monitor_rules
+	) {
+		this.Invoke("set_member_monitor_rule_v2", new object [] {
+				pools,
+				members,
+				monitor_rules});
+
+	}
+	public System.IAsyncResult Beginset_member_monitor_rule_v2(GlobalLBPoolID [] pools,GlobalLBVirtualServerID [] [] members,GlobalLBMonitorRuleV2 [] [] monitor_rules, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_member_monitor_rule_v2", new object[] {
+			pools,
+			members,
+			monitor_rules}, callback, asyncState);
+	}
+	public void Endset_member_monitor_rule_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_member_order
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/PoolV2", 
@@ -2291,6 +2365,29 @@ namespace iControl {
 			rules}, callback, asyncState);
 	}
 	public void Endset_monitor_rule(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_monitor_rule_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/PoolV2", 
+		RequestNamespace="urn:iControl:GlobalLB/PoolV2", ResponseNamespace="urn:iControl:GlobalLB/PoolV2")]
+	public void set_monitor_rule_v2(
+		GlobalLBPoolID [] pools,
+		GlobalLBMonitorRuleV2 [] monitor_rules
+	) {
+		this.Invoke("set_monitor_rule_v2", new object [] {
+				pools,
+				monitor_rules});
+
+	}
+	public System.IAsyncResult Beginset_monitor_rule_v2(GlobalLBPoolID [] pools,GlobalLBMonitorRuleV2 [] monitor_rules, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_monitor_rule_v2", new object[] {
+			pools,
+			monitor_rules}, callback, asyncState);
+	}
+	public void Endset_monitor_rule_v2(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

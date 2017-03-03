@@ -983,6 +983,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_hsts_preload_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileHttp", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileHttp", ResponseNamespace="urn:iControl:LocalLB/ProfileHttp")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_hsts_preload_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_hsts_preload_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_hsts_preload_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_hsts_preload_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_hsts_preload_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_hsts_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileHttp", 
@@ -3122,6 +3144,29 @@ namespace iControl {
 			values}, callback, asyncState);
 	}
 	public void Endset_hsts_maximum_age(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_hsts_preload_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileHttp", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileHttp", ResponseNamespace="urn:iControl:LocalLB/ProfileHttp")]
+	public void set_hsts_preload_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_hsts_preload_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_hsts_preload_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_hsts_preload_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_hsts_preload_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

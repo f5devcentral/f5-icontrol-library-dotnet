@@ -15,6 +15,7 @@ namespace iControl {
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonIPPortDefinition))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBMetricLimit))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBMonitorRule))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBMonitorRuleV2))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(CommonObjectStatus))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(GlobalLBVirtualServerV2VirtualServerStatistics))]
 	public partial class GlobalLBVirtualServerV2 : iControlInterface {
@@ -303,6 +304,28 @@ namespace iControl {
 	public GlobalLBMonitorRule [] Endget_monitor_rule(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((GlobalLBMonitorRule [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_monitor_rule_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/VirtualServerV2", 
+		RequestNamespace="urn:iControl:GlobalLB/VirtualServerV2", ResponseNamespace="urn:iControl:GlobalLB/VirtualServerV2")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public GlobalLBMonitorRuleV2 [] get_monitor_rule_v2(
+		GlobalLBVirtualServerID [] virtual_servers
+	) {
+		object [] results = this.Invoke("get_monitor_rule_v2", new object [] {
+				virtual_servers});
+		return ((GlobalLBMonitorRuleV2 [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_monitor_rule_v2(GlobalLBVirtualServerID [] virtual_servers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_monitor_rule_v2", new object[] {
+			virtual_servers}, callback, asyncState);
+	}
+	public GlobalLBMonitorRuleV2 [] Endget_monitor_rule_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((GlobalLBMonitorRuleV2 [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -613,6 +636,29 @@ namespace iControl {
 			rules}, callback, asyncState);
 	}
 	public void Endset_monitor_rule(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_monitor_rule_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:GlobalLB/VirtualServerV2", 
+		RequestNamespace="urn:iControl:GlobalLB/VirtualServerV2", ResponseNamespace="urn:iControl:GlobalLB/VirtualServerV2")]
+	public void set_monitor_rule_v2(
+		GlobalLBVirtualServerID [] virtual_servers,
+		GlobalLBMonitorRuleV2 [] monitor_rules
+	) {
+		this.Invoke("set_monitor_rule_v2", new object [] {
+				virtual_servers,
+				monitor_rules});
+
+	}
+	public System.IAsyncResult Beginset_monitor_rule_v2(GlobalLBVirtualServerID [] virtual_servers,GlobalLBMonitorRuleV2 [] monitor_rules, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_monitor_rule_v2", new object[] {
+			virtual_servers,
+			monitor_rules}, callback, asyncState);
+	}
+	public void Endset_monitor_rule_v2(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

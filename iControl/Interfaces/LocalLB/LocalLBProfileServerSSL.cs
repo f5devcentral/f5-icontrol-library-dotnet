@@ -220,6 +220,50 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_bypass_on_failed_client_certificate_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_bypass_on_failed_client_certificate_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_bypass_on_failed_client_certificate_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_bypass_on_failed_client_certificate_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_bypass_on_failed_client_certificate_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_bypass_on_failed_client_certificate_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_bypass_on_handshake_alert_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_bypass_on_handshake_alert_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_bypass_on_handshake_alert_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_bypass_on_handshake_alert_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_bypass_on_handshake_alert_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_bypass_on_handshake_alert_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_ca_file
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
@@ -1431,6 +1475,52 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_authenticate_once_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_bypass_on_failed_client_certificate_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_bypass_on_failed_client_certificate_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_bypass_on_failed_client_certificate_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_bypass_on_failed_client_certificate_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_bypass_on_failed_client_certificate_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_bypass_on_failed_client_certificate_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_bypass_on_handshake_alert_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_bypass_on_handshake_alert_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_bypass_on_handshake_alert_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_bypass_on_handshake_alert_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_bypass_on_handshake_alert_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_bypass_on_handshake_alert_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

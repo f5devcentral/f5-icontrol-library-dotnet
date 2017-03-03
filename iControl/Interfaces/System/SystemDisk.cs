@@ -670,6 +670,7 @@ namespace iControl {
 		APPV_OWNER_AFM,
 		APPV_OWNER_SWG,
 		APPV_OWNER_ASM,
+		APPV_OWNER_URLDB,
 	}
 
 	/// <remarks/>

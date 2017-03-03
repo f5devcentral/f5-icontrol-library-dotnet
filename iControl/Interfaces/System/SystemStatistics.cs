@@ -750,6 +750,26 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_ipsecalg_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
+		RequestNamespace="urn:iControl:System/Statistics", ResponseNamespace="urn:iControl:System/Statistics")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public SystemStatisticsSystemStatistics get_ipsecalg_statistics(
+
+	) {
+		object [] results = this.Invoke("get_ipsecalg_statistics", new object [0]);
+		return ((SystemStatisticsSystemStatistics)(results[0]));
+	}
+	public System.IAsyncResult Beginget_ipsecalg_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_ipsecalg_statistics", new object[0], callback, asyncState);
+	}
+	public SystemStatisticsSystemStatistics Endget_ipsecalg_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((SystemStatisticsSystemStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_ipv6_statistics
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
@@ -1939,6 +1959,24 @@ namespace iControl {
 		return this.BeginInvoke("reset_ip_statistics", new object[0], callback, asyncState);
 	}
 	public void Endreset_ip_statistics(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// reset_ipsecalg_statistics
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/Statistics", 
+		RequestNamespace="urn:iControl:System/Statistics", ResponseNamespace="urn:iControl:System/Statistics")]
+	public void reset_ipsecalg_statistics(
+
+	) {
+		this.Invoke("reset_ipsecalg_statistics", new object [0]);
+
+	}
+	public System.IAsyncResult Beginreset_ipsecalg_statistics(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("reset_ipsecalg_statistics", new object[0], callback, asyncState);
+	}
+	public void Endreset_ipsecalg_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

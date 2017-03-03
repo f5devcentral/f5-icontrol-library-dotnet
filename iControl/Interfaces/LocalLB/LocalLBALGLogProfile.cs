@@ -12,6 +12,7 @@ namespace iControl {
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="LocalLB.ALGLogProfileBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileLogElementSequence))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileEnabledState))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileLogAction))]
 	public partial class LocalLBALGLogProfile : iControlInterface {
 		public LocalLBALGLogProfile() {
@@ -169,6 +170,28 @@ namespace iControl {
 	}
 	public void Enddelete_all_alg_log_profiles(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// get_csv_format_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ALGLogProfile", 
+		RequestNamespace="urn:iControl:LocalLB/ALGLogProfile", ResponseNamespace="urn:iControl:LocalLB/ALGLogProfile")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_csv_format_state(
+		string [] profiles
+	) {
+		object [] results = this.Invoke("get_csv_format_state", new object [] {
+				profiles});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_csv_format_state(string [] profiles, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_csv_format_state", new object[] {
+			profiles}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_csv_format_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -668,6 +691,29 @@ namespace iControl {
 			elements}, callback, asyncState);
 	}
 	public void Endremove_start_data_channel_element(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_csv_format_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ALGLogProfile", 
+		RequestNamespace="urn:iControl:LocalLB/ALGLogProfile", ResponseNamespace="urn:iControl:LocalLB/ALGLogProfile")]
+	public void set_csv_format_state(
+		string [] profiles,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_csv_format_state", new object [] {
+				profiles,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_csv_format_state(string [] profiles,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_csv_format_state", new object[] {
+			profiles,
+			states}, callback, asyncState);
+	}
+	public void Endset_csv_format_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

@@ -2885,6 +2885,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_traffic_acceleration_status
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualServer", ResponseNamespace="urn:iControl:LocalLB/VirtualServer")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonTrafficAccelerationStatus [] get_traffic_acceleration_status(
+		string [] virtual_servers
+	) {
+		object [] results = this.Invoke("get_traffic_acceleration_status", new object [] {
+				virtual_servers});
+		return ((CommonTrafficAccelerationStatus [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_traffic_acceleration_status(string [] virtual_servers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_traffic_acceleration_status", new object[] {
+			virtual_servers}, callback, asyncState);
+	}
+	public CommonTrafficAccelerationStatus [] Endget_traffic_acceleration_status(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonTrafficAccelerationStatus [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_translate_address_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualServer", 

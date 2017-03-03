@@ -283,6 +283,31 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_member_traffic_acceleration_status
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/SNATPool", 
+		RequestNamespace="urn:iControl:LocalLB/SNATPool", ResponseNamespace="urn:iControl:LocalLB/SNATPool")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonTrafficAccelerationStatus [] [] get_member_traffic_acceleration_status(
+		string [] snat_pools,
+		string [] [] members
+	) {
+		object [] results = this.Invoke("get_member_traffic_acceleration_status", new object [] {
+				snat_pools,
+				members});
+		return ((CommonTrafficAccelerationStatus [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_member_traffic_acceleration_status(string [] snat_pools,string [] [] members, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_member_traffic_acceleration_status", new object[] {
+			snat_pools,
+			members}, callback, asyncState);
+	}
+	public CommonTrafficAccelerationStatus [] [] Endget_member_traffic_acceleration_status(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonTrafficAccelerationStatus [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_member_v2
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/SNATPool", 
@@ -324,6 +349,28 @@ namespace iControl {
 	public LocalLBSNATPoolSNATPoolStatistics Endget_statistics(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBSNATPoolSNATPoolStatistics)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_traffic_acceleration_status
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/SNATPool", 
+		RequestNamespace="urn:iControl:LocalLB/SNATPool", ResponseNamespace="urn:iControl:LocalLB/SNATPool")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonTrafficAccelerationStatus [] get_traffic_acceleration_status(
+		string [] snat_pools
+	) {
+		object [] results = this.Invoke("get_traffic_acceleration_status", new object [] {
+				snat_pools});
+		return ((CommonTrafficAccelerationStatus [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_traffic_acceleration_status(string [] snat_pools, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_traffic_acceleration_status", new object[] {
+			snat_pools}, callback, asyncState);
+	}
+	public CommonTrafficAccelerationStatus [] Endget_traffic_acceleration_status(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonTrafficAccelerationStatus [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------

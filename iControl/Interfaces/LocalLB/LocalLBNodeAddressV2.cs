@@ -579,6 +579,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_traffic_acceleration_status
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/NodeAddressV2", 
+		RequestNamespace="urn:iControl:LocalLB/NodeAddressV2", ResponseNamespace="urn:iControl:LocalLB/NodeAddressV2")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonTrafficAccelerationStatus [] get_traffic_acceleration_status(
+		string [] nodes
+	) {
+		object [] results = this.Invoke("get_traffic_acceleration_status", new object [] {
+				nodes});
+		return ((CommonTrafficAccelerationStatus [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_traffic_acceleration_status(string [] nodes, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_traffic_acceleration_status", new object[] {
+			nodes}, callback, asyncState);
+	}
+	public CommonTrafficAccelerationStatus [] Endget_traffic_acceleration_status(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonTrafficAccelerationStatus [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_version
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/NodeAddressV2", 

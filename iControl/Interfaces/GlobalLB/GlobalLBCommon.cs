@@ -217,6 +217,22 @@ namespace iControl
 		MONITOR_RULE_TYPE_SINGLE,
 		MONITOR_RULE_TYPE_AND_LIST,
 		MONITOR_RULE_TYPE_M_OF_N,
+		MONITOR_RULE_TYPE_M_FROM_N,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.ProberSelectionType", Namespace = "urn:iControl")]
+	public enum GlobalLBProberSelectionType
+	{
+		PROBER_SELECTION_UNKNOWN,
+		PROBER_SELECTION_INSIDE_DATACENTER,
+		PROBER_SELECTION_OUTSIDE_DATACENTER,
+		PROBER_SELECTION_POOL,
+		PROBER_SELECTION_ANY_AVAILABLE,
+		PROBER_SELECTION_INHERIT,
+		PROBER_SELECTION_NONE,
 	}
 
 	/// <remarks/>
@@ -270,6 +286,7 @@ namespace iControl
 		SERVER_TYPE_NT4,
 		SERVER_TYPE_SOLARIS,
 		SERVER_TYPE_RADWARE,
+		SERVER_TYPE_BIGIP,
 	}
 
 	//=======================================================================
@@ -403,6 +420,40 @@ namespace iControl
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.MonitorRuleV2", Namespace = "urn:iControl")]
+	public partial class GlobalLBMonitorRuleV2
+	{
+		private GlobalLBMonitorRuleType typeField;
+		public GlobalLBMonitorRuleType type
+		{
+			get { return this.typeField; }
+			set { this.typeField = value; }
+		}
+		private long quorumField;
+		public long quorum
+		{
+			get { return this.quorumField; }
+			set { this.quorumField = value; }
+		}
+		private long prober_countField;
+		public long prober_count
+		{
+			get { return this.prober_countField; }
+			set { this.prober_countField = value; }
+		}
+		private string [] monitor_templatesField;
+		public string [] monitor_templates
+		{
+			get { return this.monitor_templatesField; }
+			set { this.monitor_templatesField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.PoolID", Namespace = "urn:iControl")]
 	public partial class GlobalLBPoolID
 	{
@@ -417,6 +468,34 @@ namespace iControl
 		{
 			get { return this.pool_typeField; }
 			set { this.pool_typeField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "GlobalLB.ProberSelection", Namespace = "urn:iControl")]
+	public partial class GlobalLBProberSelection
+	{
+		private GlobalLBProberSelectionType prober_preferenceField;
+		public GlobalLBProberSelectionType prober_preference
+		{
+			get { return this.prober_preferenceField; }
+			set { this.prober_preferenceField = value; }
+		}
+		private GlobalLBProberSelectionType prober_fallbackField;
+		public GlobalLBProberSelectionType prober_fallback
+		{
+			get { return this.prober_fallbackField; }
+			set { this.prober_fallbackField = value; }
+		}
+		private string prober_poolField;
+		public string prober_pool
+		{
+			get { return this.prober_poolField; }
+			set { this.prober_poolField = value; }
 		}
 	};
 

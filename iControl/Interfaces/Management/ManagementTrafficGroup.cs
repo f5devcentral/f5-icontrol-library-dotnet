@@ -172,6 +172,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_failover_method
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/TrafficGroup", 
+		RequestNamespace="urn:iControl:Management/TrafficGroup", ResponseNamespace="urn:iControl:Management/TrafficGroup")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public ManagementTrafficGroupFailoverMethod [] get_failover_method(
+		string [] traffic_groups
+	) {
+		object [] results = this.Invoke("get_failover_method", new object [] {
+				traffic_groups});
+		return ((ManagementTrafficGroupFailoverMethod [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_failover_method(string [] traffic_groups, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_failover_method", new object[] {
+			traffic_groups}, callback, asyncState);
+	}
+	public ManagementTrafficGroupFailoverMethod [] Endget_failover_method(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((ManagementTrafficGroupFailoverMethod [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_ha_group
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/TrafficGroup", 
@@ -297,6 +319,28 @@ namespace iControl {
 			traffic_groups}, callback, asyncState);
 	}
 	public string [] Endget_mac_masquerade_address(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_monitor_ha_group
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/TrafficGroup", 
+		RequestNamespace="urn:iControl:Management/TrafficGroup", ResponseNamespace="urn:iControl:Management/TrafficGroup")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_monitor_ha_group(
+		string [] traffic_groups
+	) {
+		object [] results = this.Invoke("get_monitor_ha_group", new object [] {
+				traffic_groups});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_monitor_ha_group(string [] traffic_groups, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_monitor_ha_group", new object[] {
+			traffic_groups}, callback, asyncState);
+	}
+	public string [] Endget_monitor_ha_group(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [])(results[0]));
 	}
@@ -481,6 +525,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_failover_method
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/TrafficGroup", 
+		RequestNamespace="urn:iControl:Management/TrafficGroup", ResponseNamespace="urn:iControl:Management/TrafficGroup")]
+	public void set_failover_method(
+		string [] traffic_groups,
+		ManagementTrafficGroupFailoverMethod [] failover_methods
+	) {
+		this.Invoke("set_failover_method", new object [] {
+				traffic_groups,
+				failover_methods});
+
+	}
+	public System.IAsyncResult Beginset_failover_method(string [] traffic_groups,ManagementTrafficGroupFailoverMethod [] failover_methods, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_failover_method", new object[] {
+			traffic_groups,
+			failover_methods}, callback, asyncState);
+	}
+	public void Endset_failover_method(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_ha_group
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/TrafficGroup", 
@@ -549,10 +616,44 @@ namespace iControl {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
+	//-----------------------------------------------------------------------
+	// set_monitor_ha_group
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/TrafficGroup", 
+		RequestNamespace="urn:iControl:Management/TrafficGroup", ResponseNamespace="urn:iControl:Management/TrafficGroup")]
+	public void set_monitor_ha_group(
+		string [] traffic_groups,
+		string [] ha_groups
+	) {
+		this.Invoke("set_monitor_ha_group", new object [] {
+				traffic_groups,
+				ha_groups});
+
+	}
+	public System.IAsyncResult Beginset_monitor_ha_group(string [] traffic_groups,string [] ha_groups, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_monitor_ha_group", new object[] {
+			traffic_groups,
+			ha_groups}, callback, asyncState);
+	}
+	public void Endset_monitor_ha_group(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
 	}
 	//=======================================================================
 	// Enums
 	//=======================================================================
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Management.TrafficGroup.FailoverMethod", Namespace = "urn:iControl")]
+	public enum ManagementTrafficGroupFailoverMethod
+	{
+		TRAFFIC_GROUP_FAILOVER_METHOD_UNKNOWN,
+		TRAFFIC_GROUP_FAILOVER_METHOD_HA_SCORE,
+		TRAFFIC_GROUP_FAILOVER_METHOD_HA_ORDER,
+	}
 
 	//=======================================================================
 	// Structs

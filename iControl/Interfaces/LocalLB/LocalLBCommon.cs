@@ -549,6 +549,7 @@ namespace iControl
 		PROFILE_TYPE_IPINTELLIGENCE,
 		PROFILE_TYPE_SPDY,
 		PROFILE_TYPE_DIAMETER_ENDPOINT,
+		PROFILE_TYPE_DIAMETER_ROUTER,
 		PROFILE_TYPE_WEBSECURITY,
 		PROFILE_TYPE_HTTPSECURITY,
 		PROFILE_TYPE_PPTP,
@@ -558,6 +559,9 @@ namespace iControl
 		PROFILE_TYPE_CLIENT_LDAP,
 		PROFILE_TYPE_SERVER_LDAP,
 		PROFILE_TYPE_TFTP,
+		PROFILE_TYPE_DIAMETER_SESSION,
+		PROFILE_TYPE_IPSECALG,
+		PROFILE_TYPE_TRAFFIC_ACCELERATION,
 	}
 
 	/// <remarks/>
@@ -778,6 +782,32 @@ namespace iControl
 		TCP_OPTION_MODE_PRESERVE,
 		TCP_OPTION_MODE_STRIP,
 		TCP_OPTION_MODE_REWRITE,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.TCPPacketDFMode", Namespace = "urn:iControl")]
+	public enum LocalLBTCPPacketDFMode
+	{
+		TCP_PACKET_IP_DF_UNKNOWN,
+		TCP_PACKET_IP_DF_PMTU,
+		TCP_PACKET_IP_DF_PRESERVE,
+		TCP_PACKET_IP_DF_SET,
+		TCP_PACKET_IP_DF_CLEAR,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.TCPPacketTTLMode", Namespace = "urn:iControl")]
+	public enum LocalLBTCPPacketTTLMode
+	{
+		TCP_PACKET_IP_TTL_UNKNOWN,
+		TCP_PACKET_IP_TTL_PROXY,
+		TCP_PACKET_IP_TTL_PRESERVE,
+		TCP_PACKET_IP_TTL_DECREMENT,
+		TCP_PACKET_IP_TTL_SET,
 	}
 
 	/// <remarks/>
@@ -1755,6 +1785,50 @@ namespace iControl
 	{
 		private LocalLBTCPOptionMode valueField;
 		public LocalLBTCPOptionMode value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileTCPPacketDFMode", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileTCPPacketDFMode
+	{
+		private LocalLBTCPPacketDFMode valueField;
+		public LocalLBTCPPacketDFMode value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileTCPPacketTTLMode", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileTCPPacketTTLMode
+	{
+		private LocalLBTCPPacketTTLMode valueField;
+		public LocalLBTCPPacketTTLMode value
 		{
 			get { return this.valueField; }
 			set { this.valueField = value; }

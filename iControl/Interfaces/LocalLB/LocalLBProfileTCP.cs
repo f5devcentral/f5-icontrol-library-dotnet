@@ -17,6 +17,8 @@ namespace iControl {
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPCongestionControlMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileString))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPProfileTCPMode))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPPacketDFMode))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPPacketTTLMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStatisticsByVirtual))]
 	public partial class LocalLBProfileTCP : iControlInterface {
 		public LocalLBProfileTCP() {
@@ -144,6 +146,72 @@ namespace iControl {
 			profile_names}, callback, asyncState);
 	}
 	public LocalLBProfileEnabledState [] Endget_appropriate_byte_counting_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_auto_proxy_buffer_size_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_auto_proxy_buffer_size_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_auto_proxy_buffer_size_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_auto_proxy_buffer_size_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_auto_proxy_buffer_size_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_auto_proxy_buffer_size_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_auto_receive_window_size_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_auto_receive_window_size_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_auto_receive_window_size_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_auto_receive_window_size_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_auto_receive_window_size_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_auto_receive_window_size_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_auto_send_buffer_size_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_auto_send_buffer_size_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_auto_send_buffer_size_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_auto_send_buffer_size_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_auto_send_buffer_size_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_auto_send_buffer_size_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
@@ -917,6 +985,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_packet_df_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileTCPPacketDFMode [] get_packet_df_mode(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_packet_df_mode", new object [] {
+				profile_names});
+		return ((LocalLBProfileTCPPacketDFMode [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_packet_df_mode(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_packet_df_mode", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileTCPPacketDFMode [] Endget_packet_df_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileTCPPacketDFMode [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_packet_loss_ignore_burst
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -956,6 +1046,72 @@ namespace iControl {
 			profile_names}, callback, asyncState);
 	}
 	public LocalLBProfileULong [] Endget_packet_loss_ignore_rate(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_packet_ttl_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileTCPPacketTTLMode [] get_packet_ttl_mode(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_packet_ttl_mode", new object [] {
+				profile_names});
+		return ((LocalLBProfileTCPPacketTTLMode [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_packet_ttl_mode(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_packet_ttl_mode", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileTCPPacketTTLMode [] Endget_packet_ttl_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileTCPPacketTTLMode [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_packet_ttl_v4
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_packet_ttl_v4(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_packet_ttl_v4", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_packet_ttl_v4(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_packet_ttl_v4", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_packet_ttl_v4(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_packet_ttl_v6
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_packet_ttl_v6(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_packet_ttl_v6", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_packet_ttl_v6(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_packet_ttl_v6", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_packet_ttl_v6(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileULong [])(results[0]));
 	}
@@ -1621,6 +1777,75 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_appropriate_byte_counting_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_auto_proxy_buffer_size_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_auto_proxy_buffer_size_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_auto_proxy_buffer_size_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_auto_proxy_buffer_size_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_auto_proxy_buffer_size_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_auto_proxy_buffer_size_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_auto_receive_window_size_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_auto_receive_window_size_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_auto_receive_window_size_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_auto_receive_window_size_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_auto_receive_window_size_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_auto_receive_window_size_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_auto_send_buffer_size_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_auto_send_buffer_size_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_auto_send_buffer_size_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_auto_send_buffer_size_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_auto_send_buffer_size_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_auto_send_buffer_size_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -2407,6 +2632,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_packet_df_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_packet_df_mode(
+		string [] profile_names,
+		LocalLBProfileTCPPacketDFMode [] values
+	) {
+		this.Invoke("set_packet_df_mode", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_packet_df_mode(string [] profile_names,LocalLBProfileTCPPacketDFMode [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_packet_df_mode", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_packet_df_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_packet_loss_ignore_burst
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -2449,6 +2697,75 @@ namespace iControl {
 			thresholds}, callback, asyncState);
 	}
 	public void Endset_packet_loss_ignore_rate(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_packet_ttl_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_packet_ttl_mode(
+		string [] profile_names,
+		LocalLBProfileTCPPacketTTLMode [] values
+	) {
+		this.Invoke("set_packet_ttl_mode", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_packet_ttl_mode(string [] profile_names,LocalLBProfileTCPPacketTTLMode [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_packet_ttl_mode", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_packet_ttl_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_packet_ttl_v4
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_packet_ttl_v4(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_packet_ttl_v4", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_packet_ttl_v4(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_packet_ttl_v4", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_packet_ttl_v4(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_packet_ttl_v6
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_packet_ttl_v6(
+		string [] profile_names,
+		LocalLBProfileULong [] values
+	) {
+		this.Invoke("set_packet_ttl_v6", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_packet_ttl_v6(string [] profile_names,LocalLBProfileULong [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_packet_ttl_v6", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endset_packet_ttl_v6(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

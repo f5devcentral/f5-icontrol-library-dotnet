@@ -225,6 +225,56 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_cluster_attribute_minimum_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
+		RequestNamespace="urn:iControl:System/HAGroup", ResponseNamespace="urn:iControl:System/HAGroup")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_cluster_attribute_minimum_threshold(
+		string [] ha_groups,
+		string [] [] clusters
+	) {
+		object [] results = this.Invoke("get_cluster_attribute_minimum_threshold", new object [] {
+				ha_groups,
+				clusters});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_cluster_attribute_minimum_threshold(string [] ha_groups,string [] [] clusters, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_cluster_attribute_minimum_threshold", new object[] {
+			ha_groups,
+			clusters}, callback, asyncState);
+	}
+	public long [] [] Endget_cluster_attribute_minimum_threshold(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_cluster_attribute_sufficient_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
+		RequestNamespace="urn:iControl:System/HAGroup", ResponseNamespace="urn:iControl:System/HAGroup")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_cluster_attribute_sufficient_threshold(
+		string [] ha_groups,
+		string [] [] clusters
+	) {
+		object [] results = this.Invoke("get_cluster_attribute_sufficient_threshold", new object [] {
+				ha_groups,
+				clusters});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_cluster_attribute_sufficient_threshold(string [] ha_groups,string [] [] clusters, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_cluster_attribute_sufficient_threshold", new object[] {
+			ha_groups,
+			clusters}, callback, asyncState);
+	}
+	public long [] [] Endget_cluster_attribute_sufficient_threshold(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_cluster_attribute_threshold
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
@@ -436,6 +486,56 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_pool_attribute_minimum_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
+		RequestNamespace="urn:iControl:System/HAGroup", ResponseNamespace="urn:iControl:System/HAGroup")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_pool_attribute_minimum_threshold(
+		string [] ha_groups,
+		string [] [] pools
+	) {
+		object [] results = this.Invoke("get_pool_attribute_minimum_threshold", new object [] {
+				ha_groups,
+				pools});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_pool_attribute_minimum_threshold(string [] ha_groups,string [] [] pools, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_pool_attribute_minimum_threshold", new object[] {
+			ha_groups,
+			pools}, callback, asyncState);
+	}
+	public long [] [] Endget_pool_attribute_minimum_threshold(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_pool_attribute_sufficient_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
+		RequestNamespace="urn:iControl:System/HAGroup", ResponseNamespace="urn:iControl:System/HAGroup")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_pool_attribute_sufficient_threshold(
+		string [] ha_groups,
+		string [] [] pools
+	) {
+		object [] results = this.Invoke("get_pool_attribute_sufficient_threshold", new object [] {
+				ha_groups,
+				pools});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_pool_attribute_sufficient_threshold(string [] ha_groups,string [] [] pools, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_pool_attribute_sufficient_threshold", new object[] {
+			ha_groups,
+			pools}, callback, asyncState);
+	}
+	public long [] [] Endget_pool_attribute_sufficient_threshold(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_pool_attribute_threshold
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
@@ -602,6 +702,56 @@ namespace iControl {
 	public SystemHAGroupHAGroupTrunkAttribute [] [] Endget_trunk_attribute(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((SystemHAGroupHAGroupTrunkAttribute [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_trunk_attribute_minimum_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
+		RequestNamespace="urn:iControl:System/HAGroup", ResponseNamespace="urn:iControl:System/HAGroup")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_trunk_attribute_minimum_threshold(
+		string [] ha_groups,
+		string [] [] trunks
+	) {
+		object [] results = this.Invoke("get_trunk_attribute_minimum_threshold", new object [] {
+				ha_groups,
+				trunks});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_trunk_attribute_minimum_threshold(string [] ha_groups,string [] [] trunks, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_trunk_attribute_minimum_threshold", new object[] {
+			ha_groups,
+			trunks}, callback, asyncState);
+	}
+	public long [] [] Endget_trunk_attribute_minimum_threshold(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_trunk_attribute_sufficient_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
+		RequestNamespace="urn:iControl:System/HAGroup", ResponseNamespace="urn:iControl:System/HAGroup")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] [] get_trunk_attribute_sufficient_threshold(
+		string [] ha_groups,
+		string [] [] trunks
+	) {
+		object [] results = this.Invoke("get_trunk_attribute_sufficient_threshold", new object [] {
+				ha_groups,
+				trunks});
+		return ((long [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_trunk_attribute_sufficient_threshold(string [] ha_groups,string [] [] trunks, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_trunk_attribute_sufficient_threshold", new object[] {
+			ha_groups,
+			trunks}, callback, asyncState);
+	}
+	public long [] [] Endget_trunk_attribute_sufficient_threshold(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [] [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -905,6 +1055,58 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_cluster_attribute_minimum_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
+		RequestNamespace="urn:iControl:System/HAGroup", ResponseNamespace="urn:iControl:System/HAGroup")]
+	public void set_cluster_attribute_minimum_threshold(
+		string [] ha_groups,
+		string [] [] clusters,
+		long [] [] thresholds
+	) {
+		this.Invoke("set_cluster_attribute_minimum_threshold", new object [] {
+				ha_groups,
+				clusters,
+				thresholds});
+
+	}
+	public System.IAsyncResult Beginset_cluster_attribute_minimum_threshold(string [] ha_groups,string [] [] clusters,long [] [] thresholds, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_cluster_attribute_minimum_threshold", new object[] {
+			ha_groups,
+			clusters,
+			thresholds}, callback, asyncState);
+	}
+	public void Endset_cluster_attribute_minimum_threshold(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_cluster_attribute_sufficient_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
+		RequestNamespace="urn:iControl:System/HAGroup", ResponseNamespace="urn:iControl:System/HAGroup")]
+	public void set_cluster_attribute_sufficient_threshold(
+		string [] ha_groups,
+		string [] [] clusters,
+		long [] [] thresholds
+	) {
+		this.Invoke("set_cluster_attribute_sufficient_threshold", new object [] {
+				ha_groups,
+				clusters,
+				thresholds});
+
+	}
+	public System.IAsyncResult Beginset_cluster_attribute_sufficient_threshold(string [] ha_groups,string [] [] clusters,long [] [] thresholds, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_cluster_attribute_sufficient_threshold", new object[] {
+			ha_groups,
+			clusters,
+			thresholds}, callback, asyncState);
+	}
+	public void Endset_cluster_attribute_sufficient_threshold(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_cluster_attribute_threshold
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
@@ -1029,6 +1231,58 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_pool_attribute_minimum_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
+		RequestNamespace="urn:iControl:System/HAGroup", ResponseNamespace="urn:iControl:System/HAGroup")]
+	public void set_pool_attribute_minimum_threshold(
+		string [] ha_groups,
+		string [] [] pools,
+		long [] [] thresholds
+	) {
+		this.Invoke("set_pool_attribute_minimum_threshold", new object [] {
+				ha_groups,
+				pools,
+				thresholds});
+
+	}
+	public System.IAsyncResult Beginset_pool_attribute_minimum_threshold(string [] ha_groups,string [] [] pools,long [] [] thresholds, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_pool_attribute_minimum_threshold", new object[] {
+			ha_groups,
+			pools,
+			thresholds}, callback, asyncState);
+	}
+	public void Endset_pool_attribute_minimum_threshold(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_pool_attribute_sufficient_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
+		RequestNamespace="urn:iControl:System/HAGroup", ResponseNamespace="urn:iControl:System/HAGroup")]
+	public void set_pool_attribute_sufficient_threshold(
+		string [] ha_groups,
+		string [] [] pools,
+		long [] [] thresholds
+	) {
+		this.Invoke("set_pool_attribute_sufficient_threshold", new object [] {
+				ha_groups,
+				pools,
+				thresholds});
+
+	}
+	public System.IAsyncResult Beginset_pool_attribute_sufficient_threshold(string [] ha_groups,string [] [] pools,long [] [] thresholds, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_pool_attribute_sufficient_threshold", new object[] {
+			ha_groups,
+			pools,
+			thresholds}, callback, asyncState);
+	}
+	public void Endset_pool_attribute_sufficient_threshold(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_pool_attribute_threshold
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
@@ -1103,6 +1357,58 @@ namespace iControl {
 			attributes}, callback, asyncState);
 	}
 	public void Endset_trunk_attribute(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_trunk_attribute_minimum_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
+		RequestNamespace="urn:iControl:System/HAGroup", ResponseNamespace="urn:iControl:System/HAGroup")]
+	public void set_trunk_attribute_minimum_threshold(
+		string [] ha_groups,
+		string [] [] trunks,
+		long [] [] thresholds
+	) {
+		this.Invoke("set_trunk_attribute_minimum_threshold", new object [] {
+				ha_groups,
+				trunks,
+				thresholds});
+
+	}
+	public System.IAsyncResult Beginset_trunk_attribute_minimum_threshold(string [] ha_groups,string [] [] trunks,long [] [] thresholds, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_trunk_attribute_minimum_threshold", new object[] {
+			ha_groups,
+			trunks,
+			thresholds}, callback, asyncState);
+	}
+	public void Endset_trunk_attribute_minimum_threshold(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_trunk_attribute_sufficient_threshold
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/HAGroup", 
+		RequestNamespace="urn:iControl:System/HAGroup", ResponseNamespace="urn:iControl:System/HAGroup")]
+	public void set_trunk_attribute_sufficient_threshold(
+		string [] ha_groups,
+		string [] [] trunks,
+		long [] [] thresholds
+	) {
+		this.Invoke("set_trunk_attribute_sufficient_threshold", new object [] {
+				ha_groups,
+				trunks,
+				thresholds});
+
+	}
+	public System.IAsyncResult Beginset_trunk_attribute_sufficient_threshold(string [] ha_groups,string [] [] trunks,long [] [] thresholds, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_trunk_attribute_sufficient_threshold", new object[] {
+			ha_groups,
+			trunks,
+			thresholds}, callback, asyncState);
+	}
+	public void Endset_trunk_attribute_sufficient_threshold(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

@@ -62,6 +62,50 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// add_authority_device_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/Trust", 
+		RequestNamespace="urn:iControl:Management/Trust", ResponseNamespace="urn:iControl:Management/Trust")]
+	public void add_authority_device_v2(
+		string address,
+		long port,
+		string username,
+		string password,
+		string device_object_name,
+		string browser_cert_serial_number,
+		string browser_cert_signature,
+		string browser_cert_sha1_fingerprint,
+		string browser_cert_md5_fingerprint
+	) {
+		this.Invoke("add_authority_device_v2", new object [] {
+				address,
+				port,
+				username,
+				password,
+				device_object_name,
+				browser_cert_serial_number,
+				browser_cert_signature,
+				browser_cert_sha1_fingerprint,
+				browser_cert_md5_fingerprint});
+
+	}
+	public System.IAsyncResult Beginadd_authority_device_v2(string address,long port,string username,string password,string device_object_name,string browser_cert_serial_number,string browser_cert_signature,string browser_cert_sha1_fingerprint,string browser_cert_md5_fingerprint, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("add_authority_device_v2", new object[] {
+			address,
+			port,
+			username,
+			password,
+			device_object_name,
+			browser_cert_serial_number,
+			browser_cert_signature,
+			browser_cert_sha1_fingerprint,
+			browser_cert_md5_fingerprint}, callback, asyncState);
+	}
+	public void Endadd_authority_device_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// add_non_authority_device
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/Trust", 
@@ -103,6 +147,50 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// add_non_authority_device_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/Trust", 
+		RequestNamespace="urn:iControl:Management/Trust", ResponseNamespace="urn:iControl:Management/Trust")]
+	public void add_non_authority_device_v2(
+		string address,
+		long port,
+		string username,
+		string password,
+		string device_object_name,
+		string browser_cert_serial_number,
+		string browser_cert_signature,
+		string browser_cert_sha1_fingerprint,
+		string browser_cert_md5_fingerprint
+	) {
+		this.Invoke("add_non_authority_device_v2", new object [] {
+				address,
+				port,
+				username,
+				password,
+				device_object_name,
+				browser_cert_serial_number,
+				browser_cert_signature,
+				browser_cert_sha1_fingerprint,
+				browser_cert_md5_fingerprint});
+
+	}
+	public System.IAsyncResult Beginadd_non_authority_device_v2(string address,long port,string username,string password,string device_object_name,string browser_cert_serial_number,string browser_cert_signature,string browser_cert_sha1_fingerprint,string browser_cert_md5_fingerprint, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("add_non_authority_device_v2", new object[] {
+			address,
+			port,
+			username,
+			password,
+			device_object_name,
+			browser_cert_serial_number,
+			browser_cert_signature,
+			browser_cert_sha1_fingerprint,
+			browser_cert_md5_fingerprint}, callback, asyncState);
+	}
+	public void Endadd_non_authority_device_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// generate_csr
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/Trust", 
@@ -122,6 +210,26 @@ namespace iControl {
 	public string Endgenerate_csr(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_authority_device
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/Trust", 
+		RequestNamespace="urn:iControl:Management/Trust", ResponseNamespace="urn:iControl:Management/Trust")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_authority_device(
+
+	) {
+		object [] results = this.Invoke("get_authority_device", new object [0]);
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_authority_device(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_authority_device", new object[0], callback, asyncState);
+	}
+	public string [] Endget_authority_device(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -227,6 +335,49 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_device_object_name_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/Trust", 
+		RequestNamespace="urn:iControl:Management/Trust", ResponseNamespace="urn:iControl:Management/Trust")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string get_device_object_name_v2(
+		string address,
+		long port,
+		string username,
+		string password,
+		string browser_cert_serial_number,
+		string browser_cert_signature,
+		string browser_cert_sha1_fingerprint,
+		string browser_cert_md5_fingerprint
+	) {
+		object [] results = this.Invoke("get_device_object_name_v2", new object [] {
+				address,
+				port,
+				username,
+				password,
+				browser_cert_serial_number,
+				browser_cert_signature,
+				browser_cert_sha1_fingerprint,
+				browser_cert_md5_fingerprint});
+		return ((string)(results[0]));
+	}
+	public System.IAsyncResult Beginget_device_object_name_v2(string address,long port,string username,string password,string browser_cert_serial_number,string browser_cert_signature,string browser_cert_sha1_fingerprint,string browser_cert_md5_fingerprint, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_device_object_name_v2", new object[] {
+			address,
+			port,
+			username,
+			password,
+			browser_cert_serial_number,
+			browser_cert_signature,
+			browser_cert_sha1_fingerprint,
+			browser_cert_md5_fingerprint}, callback, asyncState);
+	}
+	public string Endget_device_object_name_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_guid
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/Trust", 
@@ -264,6 +415,26 @@ namespace iControl {
 		return this.BeginInvoke("get_list", new object[0], callback, asyncState);
 	}
 	public string [] Endget_list(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_non_authority_device
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/Trust", 
+		RequestNamespace="urn:iControl:Management/Trust", ResponseNamespace="urn:iControl:Management/Trust")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_non_authority_device(
+
+	) {
+		object [] results = this.Invoke("get_non_authority_device", new object [0]);
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_non_authority_device(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_non_authority_device", new object[0], callback, asyncState);
+	}
+	public string [] Endget_non_authority_device(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string [])(results[0]));
 	}
