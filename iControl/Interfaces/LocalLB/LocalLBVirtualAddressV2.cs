@@ -290,6 +290,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_icmp_echo_state_v3
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualAddressV2", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualAddressV2", ResponseNamespace="urn:iControl:LocalLB/VirtualAddressV2")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBVirtualAddressV2IcmpEchoType2 [] get_icmp_echo_state_v3(
+		string [] virtual_addresses
+	) {
+		object [] results = this.Invoke("get_icmp_echo_state_v3", new object [] {
+				virtual_addresses});
+		return ((LocalLBVirtualAddressV2IcmpEchoType2 [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_icmp_echo_state_v3(string [] virtual_addresses, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_icmp_echo_state_v3", new object[] {
+			virtual_addresses}, callback, asyncState);
+	}
+	public LocalLBVirtualAddressV2IcmpEchoType2 [] Endget_icmp_echo_state_v3(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBVirtualAddressV2IcmpEchoType2 [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_is_floating_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualAddressV2", 
@@ -492,6 +514,28 @@ namespace iControl {
 	public CommonEnabledState [] Endget_route_advertisement_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((CommonEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_route_advertisement_state_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualAddressV2", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualAddressV2", ResponseNamespace="urn:iControl:LocalLB/VirtualAddressV2")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBVirtualAddressV2RouteAdvertisementType [] get_route_advertisement_state_v2(
+		string [] virtual_addresses
+	) {
+		object [] results = this.Invoke("get_route_advertisement_state_v2", new object [] {
+				virtual_addresses});
+		return ((LocalLBVirtualAddressV2RouteAdvertisementType [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_route_advertisement_state_v2(string [] virtual_addresses, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_route_advertisement_state_v2", new object[] {
+			virtual_addresses}, callback, asyncState);
+	}
+	public LocalLBVirtualAddressV2RouteAdvertisementType [] Endget_route_advertisement_state_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBVirtualAddressV2RouteAdvertisementType [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -851,6 +895,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_icmp_echo_state_v3
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualAddressV2", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualAddressV2", ResponseNamespace="urn:iControl:LocalLB/VirtualAddressV2")]
+	public void set_icmp_echo_state_v3(
+		string [] virtual_addresses,
+		LocalLBVirtualAddressV2IcmpEchoType2 [] types
+	) {
+		this.Invoke("set_icmp_echo_state_v3", new object [] {
+				virtual_addresses,
+				types});
+
+	}
+	public System.IAsyncResult Beginset_icmp_echo_state_v3(string [] virtual_addresses,LocalLBVirtualAddressV2IcmpEchoType2 [] types, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_icmp_echo_state_v3", new object[] {
+			virtual_addresses,
+			types}, callback, asyncState);
+	}
+	public void Endset_icmp_echo_state_v3(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_is_floating_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualAddressV2", 
@@ -998,6 +1065,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_route_advertisement_state_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualAddressV2", 
+		RequestNamespace="urn:iControl:LocalLB/VirtualAddressV2", ResponseNamespace="urn:iControl:LocalLB/VirtualAddressV2")]
+	public void set_route_advertisement_state_v2(
+		string [] virtual_addresses,
+		LocalLBVirtualAddressV2RouteAdvertisementType [] states
+	) {
+		this.Invoke("set_route_advertisement_state_v2", new object [] {
+				virtual_addresses,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_route_advertisement_state_v2(string [] virtual_addresses,LocalLBVirtualAddressV2RouteAdvertisementType [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_route_advertisement_state_v2", new object[] {
+			virtual_addresses,
+			states}, callback, asyncState);
+	}
+	public void Endset_route_advertisement_state_v2(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_spanning_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/VirtualAddressV2", 
@@ -1080,6 +1170,34 @@ namespace iControl {
 		IETYPE_ENABLED,
 		IETYPE_DISABLED,
 		IETYPE_SELECTIVE,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.VirtualAddressV2.IcmpEchoType2", Namespace = "urn:iControl")]
+	public enum LocalLBVirtualAddressV2IcmpEchoType2
+	{
+		IETYPE_2_UNKNOWN,
+		IETYPE_2_DISABLED,
+		IETYPE_2_ALWAYS,
+		IETYPE_2_SELECTIVE,
+		IETYPE_2_ANY,
+		IETYPE_2_ALL,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.VirtualAddressV2.RouteAdvertisementType", Namespace = "urn:iControl")]
+	public enum LocalLBVirtualAddressV2RouteAdvertisementType
+	{
+		RA_TYPE_UNKNOWN,
+		RA_TYPE_DISABLED,
+		RA_TYPE_ALWAYS,
+		RA_TYPE_SELECTIVE,
+		RA_TYPE_ANY,
+		RA_TYPE_ALL,
 	}
 
 	//=======================================================================

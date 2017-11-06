@@ -744,6 +744,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// is_policy_base_complex
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:ASM/Policy", 
+		RequestNamespace="urn:iControl:ASM/Policy", ResponseNamespace="urn:iControl:ASM/Policy")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public bool [] is_policy_base_complex(
+		string [] policy_names
+	) {
+		object [] results = this.Invoke("is_policy_base_complex", new object [] {
+				policy_names});
+		return ((bool [])(results[0]));
+	}
+	public System.IAsyncResult Beginis_policy_base_complex(string [] policy_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("is_policy_base_complex", new object[] {
+			policy_names}, callback, asyncState);
+	}
+	public bool [] Endis_policy_base_complex(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((bool [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// reconfigure
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:ASM/Policy", 

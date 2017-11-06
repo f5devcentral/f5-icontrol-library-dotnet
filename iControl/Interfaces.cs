@@ -312,6 +312,7 @@ namespace iControl
         private SystemCertificateRevocationListFile m_SystemCertificateRevocationListFile;
         private SystemCluster m_SystemCluster;
 
+        private SystemCABundleManager m_SystemCABundleManager;
         private SystemConfigSync m_SystemConfigSync;
         private SystemConnections m_SystemConnections;
         private SystemCryptoClient m_SystemCryptoClient;
@@ -619,6 +620,7 @@ namespace iControl
         public SecurityProfileDoS SecurityProfileDoS { get { verifyInitialized(); if (null == m_SecurityProfileDoS) { initializeInterface(m_SecurityProfileDoS = new SecurityProfileDoS()); } return m_SecurityProfileDoS; } }
         public SecurityProfileIPIntelligence SecurityProfileIPIntelligence { get { verifyInitialized(); if (null == m_SecurityProfileIPIntelligence) { initializeInterface(m_SecurityProfileIPIntelligence = new SecurityProfileIPIntelligence()); } return m_SecurityProfileIPIntelligence; } }
 
+        public SystemCABundleManager SystemCABundleManager { get { verifyInitialized(); if (null == m_SystemCABundleManager) { initializeInterface(m_SystemCABundleManager = new SystemCABundleManager()); } return m_SystemCABundleManager; } }
         public SystemCertificateRevocationListFile SystemCertificateRevocationListFile { get { verifyInitialized(); if (null == m_SystemCertificateRevocationListFile) { initializeInterface(m_SystemCertificateRevocationListFile = new SystemCertificateRevocationListFile()); } return m_SystemCertificateRevocationListFile; } }
         public SystemCluster SystemCluster { get { verifyInitialized(); if (null == m_SystemCluster) { initializeInterface(m_SystemCluster = new SystemCluster()); } return m_SystemCluster; } }
         public SystemConfigSync SystemConfigSync { get { verifyInitialized(); if (null == m_SystemConfigSync) { initializeInterface(m_SystemConfigSync = new SystemConfigSync()); } return m_SystemConfigSync; } }
@@ -735,10 +737,15 @@ namespace iControl
 
 		public bool initialize(String hostname, long port, String username, String password)
 		{
-			return initialize(hostname, port, username, password, null, 0, null, null);
+			return initialize(hostname, port, username, password, null, 0, null, null, 443 == port);
 		}
 
-        public bool initialize(String hostname, long port, String username, String password, String proxyServer, long proxyPort, String proxyUser, String proxyPass)
+        public bool initialize(String hostname, long port, String username, String password, Boolean use_https)
+        {
+            return initialize(hostname, port, username, password, null, 0, null, null, use_https);
+        }
+
+        public bool initialize(String hostname, long port, String username, String password, String proxyServer, long proxyPort, String proxyUser, String proxyPass, Boolean use_https)
         {
             m_bInitialized = false;
             try
@@ -774,6 +781,8 @@ namespace iControl
                 {
                     m_proxyServer = null;
                 }
+
+                m_ci.useHttps = use_https;
 
                 m_ASMLoggingProfile = null;
                 m_ASMObjectParams = null;
@@ -1018,6 +1027,7 @@ namespace iControl
                 m_SecurityProfileDoS = null;
                 m_SecurityProfileIPIntelligence = null;
 
+                m_SystemCABundleManager = null;
                 m_SystemCertificateRevocationListFile = null;
                 m_SystemCluster = null;
                 m_SystemConfigSync = null;

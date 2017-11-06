@@ -53,6 +53,7 @@ namespace iControl.Dialogs
             this.label8 = new System.Windows.Forms.Label();
             this.ProxyAddressTextBox = new System.Windows.Forms.TextBox();
             this.ProxyPortTextBox = new System.Windows.Forms.TextBox();
+            this.UseHttpsCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,7 +132,7 @@ namespace iControl.Dialogs
             // OKLinkLabel
             // 
             this.OKLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.OKLinkLabel.Location = new System.Drawing.Point(260, 61);
+            this.OKLinkLabel.Location = new System.Drawing.Point(260, 72);
             this.OKLinkLabel.Name = "OKLinkLabel";
             this.OKLinkLabel.Size = new System.Drawing.Size(40, 16);
             this.OKLinkLabel.TabIndex = 7;
@@ -143,7 +144,7 @@ namespace iControl.Dialogs
             // CancelLinkLabel
             // 
             this.CancelLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.CancelLinkLabel.Location = new System.Drawing.Point(260, 85);
+            this.CancelLinkLabel.Location = new System.Drawing.Point(261, 94);
             this.CancelLinkLabel.Name = "CancelLinkLabel";
             this.CancelLinkLabel.Size = new System.Drawing.Size(40, 16);
             this.CancelLinkLabel.TabIndex = 8;
@@ -207,6 +208,7 @@ namespace iControl.Dialogs
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.UseHttpsCheckbox);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.ProxyUserTextBox);
             this.groupBox1.Controls.Add(this.ClearLinkLabel);
@@ -311,6 +313,19 @@ namespace iControl.Dialogs
             this.ProxyPortTextBox.TabIndex = 12;
             this.ProxyPortTextBox.Text = "8080";
             // 
+            // UseHttpsCheckbox
+            // 
+            this.UseHttpsCheckbox.AutoSize = true;
+            this.UseHttpsCheckbox.Checked = true;
+            this.UseHttpsCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.UseHttpsCheckbox.Location = new System.Drawing.Point(260, 46);
+            this.UseHttpsCheckbox.Name = "UseHttpsCheckbox";
+            this.UseHttpsCheckbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UseHttpsCheckbox.Size = new System.Drawing.Size(49, 17);
+            this.UseHttpsCheckbox.TabIndex = 20;
+            this.UseHttpsCheckbox.Text = "https";
+            this.UseHttpsCheckbox.UseVisualStyleBackColor = true;
+            // 
             // ConnectionDialog
             // 
             this.AcceptButton = this.OKLinkLabel;
@@ -329,8 +344,8 @@ namespace iControl.Dialogs
             this.Name = "ConnectionDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Connect to BIG-IP";
-            this.Load += new System.EventHandler(this.ConnectionDialog_Load);
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.ConnectionDialog_HelpButtonClicked);
+            this.Load += new System.EventHandler(this.ConnectionDialog_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -365,6 +380,7 @@ namespace iControl.Dialogs
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.TextBox ProxyPassTextBox;
+        private System.Windows.Forms.CheckBox UseHttpsCheckbox;
     
     }
 }

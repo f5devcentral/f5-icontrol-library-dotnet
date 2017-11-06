@@ -108,6 +108,7 @@ namespace iControl.Dialogs
                 HostnameComboBox.Text = m_ci.hostname;
                 UsernameTextBox.Focus();
             }
+            UseHttpsCheckbox.Checked = m_ci.useHttps;
             if (-1 != m_ci.port)
             {
                 PortTextBox.Text = m_ci.port.ToString();
@@ -193,11 +194,11 @@ namespace iControl.Dialogs
 
 				if (UseProxyCheckBox.Checked)
 				{
-					bInitialized = m_interfaces.initialize(HostnameComboBox.Text, Convert.ToUInt32(PortTextBox.Text), UsernameTextBox.Text, PasswordTextBox.Text, ProxyAddressTextBox.Text, Convert.ToInt32(ProxyPortTextBox.Text), ProxyUserTextBox.Text, ProxyPassTextBox.Text);
+					bInitialized = m_interfaces.initialize(HostnameComboBox.Text, Convert.ToUInt32(PortTextBox.Text), UsernameTextBox.Text, PasswordTextBox.Text, ProxyAddressTextBox.Text, Convert.ToInt32(ProxyPortTextBox.Text), ProxyUserTextBox.Text, ProxyPassTextBox.Text, m_ci.useHttps);
 				}
 				else
 				{
-					bInitialized = m_interfaces.initialize(HostnameComboBox.Text, Convert.ToUInt32(PortTextBox.Text), UsernameTextBox.Text, PasswordTextBox.Text);
+					bInitialized = m_interfaces.initialize(HostnameComboBox.Text, Convert.ToUInt32(PortTextBox.Text), UsernameTextBox.Text, PasswordTextBox.Text, m_ci.useHttps);
 				}
 
 				if (bInitialized)

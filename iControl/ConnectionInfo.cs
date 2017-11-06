@@ -53,6 +53,7 @@ namespace iControl
         
         private String m_hostname = "";
         private long m_port = -1;
+        private Boolean m_useHttps = true;
         private String m_endpoint = "";
         private String m_username = "";
         private String m_password = "";
@@ -97,6 +98,11 @@ namespace iControl
             get { return m_password; }
             set { m_password = value; }
         }
+        public Boolean useHttps
+        {
+            get { return m_useHttps; }
+            set { m_useHttps = value; }
+        }
 
         public System.Net.NetworkCredential creds
         {
@@ -105,10 +111,16 @@ namespace iControl
 
         public void setEndpoint(String hostname, long port, String endpoint)
 		{
-			m_hostname = hostname;
-			m_port = port;
-			m_endpoint = endpoint;
+            setEndpoint(hostname, port, endpoint, port == 443);
 		}
+
+        public void setEndpoint(String hostname, long port, String endpoint, Boolean use_https)
+        {
+            m_hostname = hostname;
+            m_port = port;
+            m_endpoint = endpoint;
+            m_useHttps = use_https;
+        }
 		public void setCredentials(string username, string password)
 		{
 			m_creds.UserName = username;
@@ -139,7 +151,7 @@ namespace iControl
         {
             String sURL;
             sURL = "http";
-            if (443 == m_port)
+            if ((443 == m_port) || m_useHttps )
             {
                 sURL = sURL + "s";
             }

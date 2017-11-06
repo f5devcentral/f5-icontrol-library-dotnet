@@ -81,6 +81,50 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_automatic_initialization_interval
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/MessageRoutingPeer", 
+		RequestNamespace="urn:iControl:LocalLB/MessageRoutingPeer", ResponseNamespace="urn:iControl:LocalLB/MessageRoutingPeer")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public long [] get_automatic_initialization_interval(
+		string [] peers
+	) {
+		object [] results = this.Invoke("get_automatic_initialization_interval", new object [] {
+				peers});
+		return ((long [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_automatic_initialization_interval(string [] peers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_automatic_initialization_interval", new object[] {
+			peers}, callback, asyncState);
+	}
+	public long [] Endget_automatic_initialization_interval(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((long [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_automatic_initialization_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/MessageRoutingPeer", 
+		RequestNamespace="urn:iControl:LocalLB/MessageRoutingPeer", ResponseNamespace="urn:iControl:LocalLB/MessageRoutingPeer")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public CommonEnabledState [] get_automatic_initialization_state(
+		string [] peers
+	) {
+		object [] results = this.Invoke("get_automatic_initialization_state", new object [] {
+				peers});
+		return ((CommonEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_automatic_initialization_state(string [] peers, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_automatic_initialization_state", new object[] {
+			peers}, callback, asyncState);
+	}
+	public CommonEnabledState [] Endget_automatic_initialization_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((CommonEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_connection_mode
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/MessageRoutingPeer", 
@@ -274,6 +318,52 @@ namespace iControl {
 	public string Endget_version(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((string)(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// set_automatic_initialization_interval
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/MessageRoutingPeer", 
+		RequestNamespace="urn:iControl:LocalLB/MessageRoutingPeer", ResponseNamespace="urn:iControl:LocalLB/MessageRoutingPeer")]
+	public void set_automatic_initialization_interval(
+		string [] peers,
+		long [] values
+	) {
+		this.Invoke("set_automatic_initialization_interval", new object [] {
+				peers,
+				values});
+
+	}
+	public System.IAsyncResult Beginset_automatic_initialization_interval(string [] peers,long [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_automatic_initialization_interval", new object[] {
+			peers,
+			values}, callback, asyncState);
+	}
+	public void Endset_automatic_initialization_interval(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_automatic_initialization_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/MessageRoutingPeer", 
+		RequestNamespace="urn:iControl:LocalLB/MessageRoutingPeer", ResponseNamespace="urn:iControl:LocalLB/MessageRoutingPeer")]
+	public void set_automatic_initialization_state(
+		string [] peers,
+		CommonEnabledState [] states
+	) {
+		this.Invoke("set_automatic_initialization_state", new object [] {
+				peers,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_automatic_initialization_state(string [] peers,CommonEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_automatic_initialization_state", new object[] {
+			peers,
+			states}, callback, asyncState);
+	}
+	public void Endset_automatic_initialization_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
 	}
 
 	//-----------------------------------------------------------------------

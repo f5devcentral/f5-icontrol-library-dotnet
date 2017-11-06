@@ -11,11 +11,11 @@ namespace iControl {
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="LocalLB.ProfileServerSSLBinding", Namespace="urn:iControl")]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStringArray))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileServerSSLProfileServerSSLStatistics))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileEnabledState))]
-	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileString))]
-	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStringArray))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileSSLC3DCertificateExtension))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileResponseControlMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileServerSSLCertificateMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileProfileMode))]
@@ -31,6 +31,29 @@ namespace iControl {
 	//=======================================================================
 	// Operations
 	//=======================================================================
+	//-----------------------------------------------------------------------
+	// add_c3d_certificate_extension_custom_oid
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void add_c3d_certificate_extension_custom_oid(
+		string [] profile_names,
+		LocalLBProfileStringArray [] values
+	) {
+		this.Invoke("add_c3d_certificate_extension_custom_oid", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginadd_c3d_certificate_extension_custom_oid(string [] profile_names,LocalLBProfileStringArray [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("add_c3d_certificate_extension_custom_oid", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endadd_c3d_certificate_extension_custom_oid(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
 	//-----------------------------------------------------------------------
 	// create
 	//-----------------------------------------------------------------------
@@ -259,6 +282,160 @@ namespace iControl {
 			profile_names}, callback, asyncState);
 	}
 	public LocalLBProfileEnabledState [] Endget_bypass_on_handshake_alert_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_c3d_ca_certificate_file
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileString [] get_c3d_ca_certificate_file(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_c3d_ca_certificate_file", new object [] {
+				profile_names});
+		return ((LocalLBProfileString [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_c3d_ca_certificate_file(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_c3d_ca_certificate_file", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileString [] Endget_c3d_ca_certificate_file(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileString [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_c3d_ca_key_file
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileString [] get_c3d_ca_key_file(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_c3d_ca_key_file", new object [] {
+				profile_names});
+		return ((LocalLBProfileString [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_c3d_ca_key_file(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_c3d_ca_key_file", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileString [] Endget_c3d_ca_key_file(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileString [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_c3d_ca_passphrase
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileString [] get_c3d_ca_passphrase(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_c3d_ca_passphrase", new object [] {
+				profile_names});
+		return ((LocalLBProfileString [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_c3d_ca_passphrase(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_c3d_ca_passphrase", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileString [] Endget_c3d_ca_passphrase(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileString [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_c3d_certificate_extension_custom_oid
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileStringArray [] get_c3d_certificate_extension_custom_oid(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_c3d_certificate_extension_custom_oid", new object [] {
+				profile_names});
+		return ((LocalLBProfileStringArray [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_c3d_certificate_extension_custom_oid(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_c3d_certificate_extension_custom_oid", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileStringArray [] Endget_c3d_certificate_extension_custom_oid(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileStringArray [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_c3d_certificate_extension_include
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileSSLC3DCertificateExtension [] get_c3d_certificate_extension_include(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_c3d_certificate_extension_include", new object [] {
+				profile_names});
+		return ((LocalLBProfileSSLC3DCertificateExtension [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_c3d_certificate_extension_include(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_c3d_certificate_extension_include", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileSSLC3DCertificateExtension [] Endget_c3d_certificate_extension_include(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileSSLC3DCertificateExtension [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_c3d_certificate_lifespan
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileULong [] get_c3d_certificate_lifespan(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_c3d_certificate_lifespan", new object [] {
+				profile_names});
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_c3d_certificate_lifespan(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_c3d_certificate_lifespan", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileULong [] Endget_c3d_certificate_lifespan(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileULong [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_c3d_enabled_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileEnabledState [] get_c3d_enabled_state(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_c3d_enabled_state", new object [] {
+				profile_names});
+		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_c3d_enabled_state(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_c3d_enabled_state", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileEnabledState [] Endget_c3d_enabled_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileEnabledState [])(results[0]));
 	}
@@ -765,6 +942,28 @@ namespace iControl {
 	public LocalLBProfileEnabledState [] Endget_modssl_emulation_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_ocsp
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileString [] get_ocsp(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_ocsp", new object [] {
+				profile_names});
+		return ((LocalLBProfileString [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_ocsp(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_ocsp", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileString [] Endget_ocsp(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileString [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -1321,6 +1520,49 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// remove_all_c3d_certificate_extension_custom_oids
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void remove_all_c3d_certificate_extension_custom_oids(
+		string [] profile_names
+	) {
+		this.Invoke("remove_all_c3d_certificate_extension_custom_oids", new object [] {
+				profile_names});
+
+	}
+	public System.IAsyncResult Beginremove_all_c3d_certificate_extension_custom_oids(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_all_c3d_certificate_extension_custom_oids", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public void Endremove_all_c3d_certificate_extension_custom_oids(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// remove_c3d_certificate_extension_custom_oid
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void remove_c3d_certificate_extension_custom_oid(
+		string [] profile_names,
+		LocalLBProfileStringArray [] values
+	) {
+		this.Invoke("remove_c3d_certificate_extension_custom_oid", new object [] {
+				profile_names,
+				values});
+
+	}
+	public System.IAsyncResult Beginremove_c3d_certificate_extension_custom_oid(string [] profile_names,LocalLBProfileStringArray [] values, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("remove_c3d_certificate_extension_custom_oid", new object[] {
+			profile_names,
+			values}, callback, asyncState);
+	}
+	public void Endremove_c3d_certificate_extension_custom_oid(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// reset_statistics
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
@@ -1521,6 +1763,124 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_bypass_on_handshake_alert_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_c3d_ca_key_certificate_file
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_c3d_ca_key_certificate_file(
+		string [] profile_names,
+		LocalLBProfileString [] keys,
+		LocalLBProfileString [] certs
+	) {
+		this.Invoke("set_c3d_ca_key_certificate_file", new object [] {
+				profile_names,
+				keys,
+				certs});
+
+	}
+	public System.IAsyncResult Beginset_c3d_ca_key_certificate_file(string [] profile_names,LocalLBProfileString [] keys,LocalLBProfileString [] certs, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_c3d_ca_key_certificate_file", new object[] {
+			profile_names,
+			keys,
+			certs}, callback, asyncState);
+	}
+	public void Endset_c3d_ca_key_certificate_file(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_c3d_ca_passphrase
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_c3d_ca_passphrase(
+		string [] profile_names,
+		LocalLBProfileString [] passphrases
+	) {
+		this.Invoke("set_c3d_ca_passphrase", new object [] {
+				profile_names,
+				passphrases});
+
+	}
+	public System.IAsyncResult Beginset_c3d_ca_passphrase(string [] profile_names,LocalLBProfileString [] passphrases, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_c3d_ca_passphrase", new object[] {
+			profile_names,
+			passphrases}, callback, asyncState);
+	}
+	public void Endset_c3d_ca_passphrase(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_c3d_certificate_extension_include
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_c3d_certificate_extension_include(
+		string [] profile_names,
+		LocalLBProfileSSLC3DCertificateExtension [] extensions
+	) {
+		this.Invoke("set_c3d_certificate_extension_include", new object [] {
+				profile_names,
+				extensions});
+
+	}
+	public System.IAsyncResult Beginset_c3d_certificate_extension_include(string [] profile_names,LocalLBProfileSSLC3DCertificateExtension [] extensions, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_c3d_certificate_extension_include", new object[] {
+			profile_names,
+			extensions}, callback, asyncState);
+	}
+	public void Endset_c3d_certificate_extension_include(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_c3d_certificate_lifespan
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_c3d_certificate_lifespan(
+		string [] profile_names,
+		LocalLBProfileULong [] lifespans
+	) {
+		this.Invoke("set_c3d_certificate_lifespan", new object [] {
+				profile_names,
+				lifespans});
+
+	}
+	public System.IAsyncResult Beginset_c3d_certificate_lifespan(string [] profile_names,LocalLBProfileULong [] lifespans, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_c3d_certificate_lifespan", new object[] {
+			profile_names,
+			lifespans}, callback, asyncState);
+	}
+	public void Endset_c3d_certificate_lifespan(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_c3d_enabled_state
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_c3d_enabled_state(
+		string [] profile_names,
+		LocalLBProfileEnabledState [] states
+	) {
+		this.Invoke("set_c3d_enabled_state", new object [] {
+				profile_names,
+				states});
+
+	}
+	public System.IAsyncResult Beginset_c3d_enabled_state(string [] profile_names,LocalLBProfileEnabledState [] states, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_c3d_enabled_state", new object[] {
+			profile_names,
+			states}, callback, asyncState);
+	}
+	public void Endset_c3d_enabled_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -2007,6 +2367,29 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_modssl_emulation_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_ocsp
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileServerSSL", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileServerSSL", ResponseNamespace="urn:iControl:LocalLB/ProfileServerSSL")]
+	public void set_ocsp(
+		string [] profile_names,
+		LocalLBProfileString [] ocsp_objects
+	) {
+		this.Invoke("set_ocsp", new object [] {
+				profile_names,
+				ocsp_objects});
+
+	}
+	public System.IAsyncResult Beginset_ocsp(string [] profile_names,LocalLBProfileString [] ocsp_objects, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_ocsp", new object[] {
+			profile_names,
+			ocsp_objects}, callback, asyncState);
+	}
+	public void Endset_ocsp(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

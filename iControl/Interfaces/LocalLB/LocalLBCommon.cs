@@ -627,6 +627,19 @@ namespace iControl
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.SSLC3DCertificateExtension", Namespace = "urn:iControl")]
+	public enum LocalLBSSLC3DCertificateExtension
+	{
+		SSL_C3D_CERT_EXT_UNKNOWN,
+		SSL_C3D_CERT_EXT_BASIC_CONSTRAINTS,
+		SSL_C3D_CERT_EXT_EXTENDED_KEY_USAGE,
+		SSL_C3D_CERT_EXT_KEY_USAGE,
+		SSL_C3D_CERT_EXT_SUBJECT_ALTERNATIVE_NAME,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.SSLCertificateExtension", Namespace = "urn:iControl")]
 	public enum LocalLBSSLCertificateExtension
 	{
@@ -642,6 +655,7 @@ namespace iControl
 		SSL_FWDP_CERT_EXT_SUBJECT_ALTERNATIVE_NAME,
 		SSL_FWDP_CERT_EXT_SUBJECT_DIRECTORY_ATTRIBUTES,
 		SSL_FWDP_CERT_EXT_SUBJECT_KEY_IDENTIFIER,
+		SSL_FWDP_CERT_EXT_TLS_FEATURE,
 	}
 
 	/// <remarks/>
@@ -1565,6 +1579,28 @@ namespace iControl
 	{
 		private LocalLBRtspProxyType valueField;
 		public LocalLBRtspProxyType value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileSSLC3DCertificateExtension", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileSSLC3DCertificateExtension
+	{
+		private LocalLBSSLC3DCertificateExtension [] valueField;
+		public LocalLBSSLC3DCertificateExtension [] value
 		{
 			get { return this.valueField; }
 			set { this.valueField = value; }

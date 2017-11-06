@@ -327,6 +327,7 @@
     <Compile Include="Interfaces\Security\SecurityProfileDNSSecurity.cs" />
     <Compile Include="Interfaces\Security\SecurityProfileDoS.cs" />
     <Compile Include="Interfaces\Security\SecurityProfileIPIntelligence.cs" />
+    <Compile Include="Interfaces\System\SystemCABundleManager.cs" />
     <Compile Include="Interfaces\System\SystemCertificateRevocationListFile.cs" />
     <Compile Include="Interfaces\System\SystemCluster.cs" />
     <Compile Include="Interfaces\System\SystemCommon.cs" />

@@ -375,6 +375,26 @@ namespace iControl {
 		return ((bool)(results[0]));
 	}
 
+	//-----------------------------------------------------------------------
+	// revoke_license
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/LicenseAdministration", 
+		RequestNamespace="urn:iControl:Management/LicenseAdministration", ResponseNamespace="urn:iControl:Management/LicenseAdministration")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public bool revoke_license(
+
+	) {
+		object [] results = this.Invoke("revoke_license", new object [0]);
+		return ((bool)(results[0]));
+	}
+	public System.IAsyncResult Beginrevoke_license(System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("revoke_license", new object[0], callback, asyncState);
+	}
+	public bool Endrevoke_license(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((bool)(results[0]));
+	}
+
 	}
 	//=======================================================================
 	// Enums

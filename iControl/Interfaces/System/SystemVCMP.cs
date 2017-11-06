@@ -379,6 +379,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_fips_name
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
+		RequestNamespace="urn:iControl:System/VCMP", ResponseNamespace="urn:iControl:System/VCMP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_fips_name(
+		string [] guests
+	) {
+		object [] results = this.Invoke("get_fips_name", new object [] {
+				guests});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_fips_name(string [] guests, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_fips_name", new object[] {
+			guests}, callback, asyncState);
+	}
+	public string [] Endget_fips_name(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_guest_allowed_slots
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
@@ -1031,6 +1053,29 @@ namespace iControl {
 			values}, callback, asyncState);
 	}
 	public void Endset_capability_value(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_fips_name
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:System/VCMP", 
+		RequestNamespace="urn:iControl:System/VCMP", ResponseNamespace="urn:iControl:System/VCMP")]
+	public void set_fips_name(
+		string [] guests,
+		string [] fips_names
+	) {
+		this.Invoke("set_fips_name", new object [] {
+				guests,
+				fips_names});
+
+	}
+	public System.IAsyncResult Beginset_fips_name(string [] guests,string [] fips_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_fips_name", new object[] {
+			guests,
+			fips_names}, callback, asyncState);
+	}
+	public void Endset_fips_name(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 

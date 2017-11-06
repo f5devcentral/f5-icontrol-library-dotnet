@@ -18,8 +18,10 @@ namespace iControl {
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateRequest_v2))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateDetail))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateDetail_v2))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateDetail_v3))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateInformation))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateInformation_v2))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateInformation_v3))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateRequestInformation))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateRequestInformation_v2))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementKeyCertificateCertificateRequestInformation_v3))]
@@ -840,6 +842,56 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_certificate_bundle_v3
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/KeyCertificate", 
+		RequestNamespace="urn:iControl:Management/KeyCertificate", ResponseNamespace="urn:iControl:Management/KeyCertificate")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public ManagementKeyCertificateCertificateDetail_v3 [] [] get_certificate_bundle_v3(
+		ManagementKeyCertificateManagementModeType mode,
+		string [] file_names
+	) {
+		object [] results = this.Invoke("get_certificate_bundle_v3", new object [] {
+				mode,
+				file_names});
+		return ((ManagementKeyCertificateCertificateDetail_v3 [] [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_certificate_bundle_v3(ManagementKeyCertificateManagementModeType mode,string [] file_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_certificate_bundle_v3", new object[] {
+			mode,
+			file_names}, callback, asyncState);
+	}
+	public ManagementKeyCertificateCertificateDetail_v3 [] [] Endget_certificate_bundle_v3(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((ManagementKeyCertificateCertificateDetail_v3 [] [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_certificate_fingerprint
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/KeyCertificate", 
+		RequestNamespace="urn:iControl:Management/KeyCertificate", ResponseNamespace="urn:iControl:Management/KeyCertificate")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public string [] get_certificate_fingerprint(
+		ManagementKeyCertificateManagementModeType mode,
+		string [] cert_ids
+	) {
+		object [] results = this.Invoke("get_certificate_fingerprint", new object [] {
+				mode,
+				cert_ids});
+		return ((string [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_certificate_fingerprint(ManagementKeyCertificateManagementModeType mode,string [] cert_ids, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_certificate_fingerprint", new object[] {
+			mode,
+			cert_ids}, callback, asyncState);
+	}
+	public string [] Endget_certificate_fingerprint(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((string [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_certificate_list
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/KeyCertificate", 
@@ -881,6 +933,28 @@ namespace iControl {
 	public ManagementKeyCertificateCertificateInformation_v2 [] Endget_certificate_list_v2(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((ManagementKeyCertificateCertificateInformation_v2 [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_certificate_list_v3
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/KeyCertificate", 
+		RequestNamespace="urn:iControl:Management/KeyCertificate", ResponseNamespace="urn:iControl:Management/KeyCertificate")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public ManagementKeyCertificateCertificateInformation_v3 [] get_certificate_list_v3(
+		ManagementKeyCertificateManagementModeType mode
+	) {
+		object [] results = this.Invoke("get_certificate_list_v3", new object [] {
+				mode});
+		return ((ManagementKeyCertificateCertificateInformation_v3 [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_certificate_list_v3(ManagementKeyCertificateManagementModeType mode, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_certificate_list_v3", new object[] {
+			mode}, callback, asyncState);
+	}
+	public ManagementKeyCertificateCertificateInformation_v3 [] Endget_certificate_list_v3(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((ManagementKeyCertificateCertificateInformation_v3 [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -1791,6 +1865,32 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_certificate_validator
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/KeyCertificate", 
+		RequestNamespace="urn:iControl:Management/KeyCertificate", ResponseNamespace="urn:iControl:Management/KeyCertificate")]
+	public void set_certificate_validator(
+		ManagementKeyCertificateManagementModeType mode,
+		string [] cert_ids,
+		string [] [] cert_validators
+	) {
+		this.Invoke("set_certificate_validator", new object [] {
+				mode,
+				cert_ids,
+				cert_validators});
+
+	}
+	public System.IAsyncResult Beginset_certificate_validator(ManagementKeyCertificateManagementModeType mode,string [] cert_ids,string [] [] cert_validators, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_certificate_validator", new object[] {
+			mode,
+			cert_ids,
+			cert_validators}, callback, asyncState);
+	}
+	public void Endset_certificate_validator(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_issuer_certificate
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/KeyCertificate", 
@@ -2132,6 +2232,94 @@ namespace iControl {
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Management.KeyCertificate.CertificateDetail_v3", Namespace = "urn:iControl")]
+	public partial class ManagementKeyCertificateCertificateDetail_v3
+	{
+		private ManagementKeyCertificateCertificate cert_infoField;
+		public ManagementKeyCertificateCertificate cert_info
+		{
+			get { return this.cert_infoField; }
+			set { this.cert_infoField = value; }
+		}
+		private ManagementKeyCertificateCertificateType cert_typeField;
+		public ManagementKeyCertificateCertificateType cert_type
+		{
+			get { return this.cert_typeField; }
+			set { this.cert_typeField = value; }
+		}
+		private ManagementKeyCertificateKeyType key_typeField;
+		public ManagementKeyCertificateKeyType key_type
+		{
+			get { return this.key_typeField; }
+			set { this.key_typeField = value; }
+		}
+		private long bit_lengthField;
+		public long bit_length
+		{
+			get { return this.bit_lengthField; }
+			set { this.bit_lengthField = value; }
+		}
+		private long versionField;
+		public long version
+		{
+			get { return this.versionField; }
+			set { this.versionField = value; }
+		}
+		private string serial_numberField;
+		public string serial_number
+		{
+			get { return this.serial_numberField; }
+			set { this.serial_numberField = value; }
+		}
+		private string expiration_stringField;
+		public string expiration_string
+		{
+			get { return this.expiration_stringField; }
+			set { this.expiration_stringField = value; }
+		}
+		private long expiration_dateField;
+		public long expiration_date
+		{
+			get { return this.expiration_dateField; }
+			set { this.expiration_dateField = value; }
+		}
+		private ManagementKeyCertificateX509Data subjectField;
+		public ManagementKeyCertificateX509Data subject
+		{
+			get { return this.subjectField; }
+			set { this.subjectField = value; }
+		}
+		private ManagementKeyCertificateX509Data issuerField;
+		public ManagementKeyCertificateX509Data issuer
+		{
+			get { return this.issuerField; }
+			set { this.issuerField = value; }
+		}
+		private ManagementKeyCertificateCurveName curve_nameField;
+		public ManagementKeyCertificateCurveName curve_name
+		{
+			get { return this.curve_nameField; }
+			set { this.curve_nameField = value; }
+		}
+		private string fingerprintField;
+		public string fingerprint
+		{
+			get { return this.fingerprintField; }
+			set { this.fingerprintField = value; }
+		}
+		private ManagementKeyCertificateCertificateExtension [] cert_extensionsField;
+		public ManagementKeyCertificateCertificateExtension [] cert_extensions
+		{
+			get { return this.cert_extensionsField; }
+			set { this.cert_extensionsField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Management.KeyCertificate.CertificateExtension", Namespace = "urn:iControl")]
 	public partial class ManagementKeyCertificateCertificateExtension
 	{
@@ -2199,6 +2387,34 @@ namespace iControl {
 		}
 		private ManagementKeyCertificateCertificateDetail_v2 certificateField;
 		public ManagementKeyCertificateCertificateDetail_v2 certificate
+		{
+			get { return this.certificateField; }
+			set { this.certificateField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Management.KeyCertificate.CertificateInformation_v3", Namespace = "urn:iControl")]
+	public partial class ManagementKeyCertificateCertificateInformation_v3
+	{
+		private bool is_bundledField;
+		public bool is_bundled
+		{
+			get { return this.is_bundledField; }
+			set { this.is_bundledField = value; }
+		}
+		private string file_nameField;
+		public string file_name
+		{
+			get { return this.file_nameField; }
+			set { this.file_nameField = value; }
+		}
+		private ManagementKeyCertificateCertificateDetail_v3 certificateField;
+		public ManagementKeyCertificateCertificateDetail_v3 certificate
 		{
 			get { return this.certificateField; }
 			set { this.certificateField = value; }

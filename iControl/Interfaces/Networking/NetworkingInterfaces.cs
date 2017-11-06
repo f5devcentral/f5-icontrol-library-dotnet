@@ -1334,7 +1334,16 @@ namespace iControl {
 		MT_20000_FULL,
 		MT_1000CX_FULL,
 		MT_10000SFP_PLUS_CU_FULL,
+		MT_40000_FULL,
+		MT_42000_FULL,
 		MT_40000SR_FULL,
+		MT_40000LR_FULL,
+		MT_40000CR_FULL,
+		MT_100000_FULL,
+		MT_100000SR_FULL,
+		MT_100000LR_FULL,
+		MT_100000CR_FULL,
+		MT_100000AR_FULL,
 	}
 
 	//=======================================================================

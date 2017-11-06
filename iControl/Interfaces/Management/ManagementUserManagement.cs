@@ -12,6 +12,7 @@ namespace iControl {
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name="Management.UserManagementBinding", Namespace="urn:iControl")]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementUserManagementPasswordInfo))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementUserManagementPasswordChangeInfo))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementUserManagementUserInfo))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementUserManagementUserInfo2))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(ManagementUserManagementUserInfo3))]
@@ -42,6 +43,26 @@ namespace iControl {
 			password}, callback, asyncState);
 	}
 	public void Endchange_my_password(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// change_my_password_v2
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:Management/UserManagement", 
+		RequestNamespace="urn:iControl:Management/UserManagement", ResponseNamespace="urn:iControl:Management/UserManagement")]
+	public void change_my_password_v2(
+		ManagementUserManagementPasswordChangeInfo password
+	) {
+		this.Invoke("change_my_password_v2", new object [] {
+				password});
+
+	}
+	public System.IAsyncResult Beginchange_my_password_v2(ManagementUserManagementPasswordChangeInfo password, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("change_my_password_v2", new object[] {
+			password}, callback, asyncState);
+	}
+	public void Endchange_my_password_v2(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -936,6 +957,34 @@ namespace iControl {
 	//=======================================================================
 	// Structs
 	//=======================================================================
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "Management.UserManagement.PasswordChangeInfo", Namespace = "urn:iControl")]
+	public partial class ManagementUserManagementPasswordChangeInfo
+	{
+		private bool encryptedField;
+		public bool encrypted
+		{
+			get { return this.encryptedField; }
+			set { this.encryptedField = value; }
+		}
+		private string new_passwordField;
+		public string new_password
+		{
+			get { return this.new_passwordField; }
+			set { this.new_passwordField = value; }
+		}
+		private string current_passwordField;
+		public string current_password
+		{
+			get { return this.current_passwordField; }
+			set { this.current_passwordField = value; }
+		}
+	};
 
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]

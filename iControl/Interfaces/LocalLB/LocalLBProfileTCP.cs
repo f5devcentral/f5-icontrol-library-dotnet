@@ -16,9 +16,11 @@ namespace iControl {
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileULong))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPCongestionControlMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileString))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPProfileMPTCPMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPProfileTCPMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPPacketDFMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPPacketTTLMode))]
+	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileTCPProfileTCPPushFlagMode))]
 	[System.Xml.Serialization.SoapIncludeAttribute(typeof(LocalLBProfileStatisticsByVirtual))]
 	public partial class LocalLBProfileTCP : iControlInterface {
 		public LocalLBProfileTCP() {
@@ -941,6 +943,28 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// get_mptcp_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileTCPProfileMPTCPMode [] get_mptcp_mode(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_mptcp_mode", new object [] {
+				profile_names});
+		return ((LocalLBProfileTCPProfileMPTCPMode [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_mptcp_mode(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_mptcp_mode", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileTCPProfileMPTCPMode [] Endget_mptcp_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileTCPProfileMPTCPMode [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
 	// get_mptcp_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -1202,6 +1226,28 @@ namespace iControl {
 	public LocalLBProfileEnabledState [] Endget_proxy_option_state(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 		return ((LocalLBProfileEnabledState [])(results[0]));
+	}
+
+	//-----------------------------------------------------------------------
+	// get_push_flag_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	[return: System.Xml.Serialization.SoapElementAttribute("return")]
+	public LocalLBProfileTCPProfileTCPPushFlagMode [] get_push_flag_mode(
+		string [] profile_names
+	) {
+		object [] results = this.Invoke("get_push_flag_mode", new object [] {
+				profile_names});
+		return ((LocalLBProfileTCPProfileTCPPushFlagMode [])(results[0]));
+	}
+	public System.IAsyncResult Beginget_push_flag_mode(string [] profile_names, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("get_push_flag_mode", new object[] {
+			profile_names}, callback, asyncState);
+	}
+	public LocalLBProfileTCPProfileTCPPushFlagMode [] Endget_push_flag_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+		return ((LocalLBProfileTCPProfileTCPPushFlagMode [])(results[0]));
 	}
 
 	//-----------------------------------------------------------------------
@@ -2586,6 +2632,29 @@ namespace iControl {
 	}
 
 	//-----------------------------------------------------------------------
+	// set_mptcp_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_mptcp_mode(
+		string [] profile_names,
+		LocalLBProfileTCPProfileMPTCPMode [] modes
+	) {
+		this.Invoke("set_mptcp_mode", new object [] {
+				profile_names,
+				modes});
+
+	}
+	public System.IAsyncResult Beginset_mptcp_mode(string [] profile_names,LocalLBProfileTCPProfileMPTCPMode [] modes, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_mptcp_mode", new object[] {
+			profile_names,
+			modes}, callback, asyncState);
+	}
+	public void Endset_mptcp_mode(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
 	// set_mptcp_state
 	//-----------------------------------------------------------------------
 	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
@@ -2858,6 +2927,29 @@ namespace iControl {
 			states}, callback, asyncState);
 	}
 	public void Endset_proxy_option_state(System.IAsyncResult asyncResult) {
+		object [] results = this.EndInvoke(asyncResult);
+	}
+
+	//-----------------------------------------------------------------------
+	// set_push_flag_mode
+	//-----------------------------------------------------------------------
+	[System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:iControl:LocalLB/ProfileTCP", 
+		RequestNamespace="urn:iControl:LocalLB/ProfileTCP", ResponseNamespace="urn:iControl:LocalLB/ProfileTCP")]
+	public void set_push_flag_mode(
+		string [] profile_names,
+		LocalLBProfileTCPProfileTCPPushFlagMode [] modes
+	) {
+		this.Invoke("set_push_flag_mode", new object [] {
+				profile_names,
+				modes});
+
+	}
+	public System.IAsyncResult Beginset_push_flag_mode(string [] profile_names,LocalLBProfileTCPProfileTCPPushFlagMode [] modes, System.AsyncCallback callback, object asyncState) {
+		return this.BeginInvoke("set_push_flag_mode", new object[] {
+			profile_names,
+			modes}, callback, asyncState);
+	}
+	public void Endset_push_flag_mode(System.IAsyncResult asyncResult) {
 		object [] results = this.EndInvoke(asyncResult);
 	}
 
@@ -3260,6 +3352,18 @@ namespace iControl {
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
 	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileTCP.MPTCPMode", Namespace = "urn:iControl")]
+	public enum LocalLBProfileTCPMPTCPMode
+	{
+		MPTCP_MODE_UNKNOWN,
+		MPTCP_MODE_DISABLED,
+		MPTCP_MODE_ENABLED,
+		MPTCP_MODE_PASSTHROUGH,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileTCP.TCPMode", Namespace = "urn:iControl")]
 	public enum LocalLBProfileTCPTCPMode
 	{
@@ -3267,6 +3371,19 @@ namespace iControl {
 		TCP_MODE_DISABLED,
 		TCP_MODE_ENABLED,
 		TCP_MODE_AUTO,
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileTCP.TCPPushFlagMode", Namespace = "urn:iControl")]
+	public enum LocalLBProfileTCPTCPPushFlagMode
+	{
+		TCP_PUSHFLAGMODE_UNKNOWN,
+		TCP_PUSHFLAGMODE_DEFAULT,
+		TCP_PUSHFLAGMODE_NONE,
+		TCP_PUSHFLAGMODE_ONE,
+		TCP_PUSHFLAGMODE_AUTO,
 	}
 
 	//=======================================================================
@@ -3278,11 +3395,55 @@ namespace iControl {
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileTCP.ProfileMPTCPMode", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileTCPProfileMPTCPMode
+	{
+		private LocalLBProfileTCPMPTCPMode valueField;
+		public LocalLBProfileTCPMPTCPMode value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileTCP.ProfileTCPMode", Namespace = "urn:iControl")]
 	public partial class LocalLBProfileTCPProfileTCPMode
 	{
 		private LocalLBProfileTCPTCPMode valueField;
 		public LocalLBProfileTCPTCPMode value
+		{
+			get { return this.valueField; }
+			set { this.valueField = value; }
+		}
+		private bool default_flagField;
+		public bool default_flag
+		{
+			get { return this.default_flagField; }
+			set { this.default_flagField = value; }
+		}
+	};
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.3038")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.SoapTypeAttribute(TypeName = "LocalLB.ProfileTCP.ProfileTCPPushFlagMode", Namespace = "urn:iControl")]
+	public partial class LocalLBProfileTCPProfileTCPPushFlagMode
+	{
+		private LocalLBProfileTCPTCPPushFlagMode valueField;
+		public LocalLBProfileTCPTCPPushFlagMode value
 		{
 			get { return this.valueField; }
 			set { this.valueField = value; }
